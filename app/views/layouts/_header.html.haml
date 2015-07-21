@@ -1,0 +1,17 @@
+.header
+  .nav-wrap.top#top
+    %nav.nav
+      = link_to root_path do
+        %span.site-logo
+      = link_to "О Клинике", about_us_path, class: "link"
+      %span.icon
+      = link_to "Услуги", root_path, class: "link"
+      = link_to "Персонал", root_path, class: "link"
+      = link_to "Контакты", root_path, class: "link"
+      %span.icon
+      = link_to "Запись на прием", root_path, class: "link red"
+      = link_to "Регистрация", root_path, class: "link login"
+      = link_to "Войти", root_path, class: "link login"
+      = link_to root_path, class: "social-icon" do
+        %i.fa.fa-search.fa-2x
+
