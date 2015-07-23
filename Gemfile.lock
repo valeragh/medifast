@@ -306,6 +306,7 @@ DEPENDENCIES
   less-rails
   libv8 (~> 3.16.14.7)
   metamagic
+  nokogiri
   pg
   pry-rails
   rails (= 4.1.6)
