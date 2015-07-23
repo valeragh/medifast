@@ -1,2 +1,228 @@
-%h1 StatiPages#about_us
-%p Find me in app/views/stati_pages/about_us.html.haml
+.nav-wrap.sub-nav#sub-nav-wrapper
+  %nav.nav#sub-nav
+    %a(class="link" href="#slogan")
+      Девиз клиники
+    %a(class="link" href="#our-history")
+      Наша история
+    %a(class="link" href="#command")
+      Наша команда
+    %a(class="link" href="#meet-our-partners")
+      Вопрос специалистам
+%button.back-to-top.back-to-top-bind#back-to-top
+%article.header-content#carousel
+  %article.carousel.home-carousel
+    .carouselBody
+      %ul
+        %li.clinic
+          .carousel-slide
+            .section-wrapper
+              %h1.header-intro
+                Клиника медифаст
+              %p.header-standfirst
+                Мы победим болезнь вместе
+  %a.main-cta#stickyNavPoint
+    Узнайте больше
+    %span.right-icon
+%section.content-section.about
+  .section-wrapper
+    %h2.section-heading
+      О клиники
+    .left-column
+      %p.paragraph
+        В течении 10 лет врачи нашей клиники изо дня в день своими действиями доказывают, что медицинская помощь должна быть качественной, доступной и камфортной. Для нас работа – это призвание, в которое мы вкладываем душу. Мы постоянно и интенсивно развиваемся, сегодня клиника одна из лучших частных клиник высшей категории в нашем регионе, представляющая широкий спектр качественных медицинских услуг и имеющая разрешение на оформление больничных листов.
+      %p.paragraph
+        За время работы клиники нашими пациентами стали десятки тысяч человек, которым наши специалисты спасли жизнь, вернули здоровье и хорошее настроение. В клинике есть своя аккредитованная и сертифицированная лаборатория, выполняющая клинические, биохимические, иммунологические обследования.
+    .right-column
+      %p.paragraph
+        Клиника оснащена современным диагностическим и лечебным оборудованием. Для пациентов созданы условия комфортабельного пребывания и лечения. В клинике имеется современный операционный блок на две операционные, оснащенные современным оборудованием. Специалисты клиники прошли обучение в ведущих клиниках Украины и за рубежом, являются действительными членами международных ассоциаций хирургов - лапароскопистов.
+      %p.paragraph
+        В клинике Медифаст работают врачи высшей и первой категории, имеющие большой практический и теоретический уровень подготовки. У нас работает поликлиническое отделение, полноценный стационар и несколько отделений.
+        Постоянно ведут прием врачи всех специальностей.
+%section.content-section.welcome.active#slogan
+  .section-wrapper
+    %h1.section-heading
+      Заменить на девиз клиники!!!!В медцентре имеется современный операционный блок на две операционные,
+      оснащенные современными операционными столами, наркозно-дыхательной аппаратурой,
+      передвижным рентгеновским аппаратом, аппаратурой и инструментарием для
+      лапароскопических операций
+%section.content-section.our-history.active#our-history
+  .section-wrapper
+    %h2.section-heading
+      Наша история
+    .controls-wrapper
+      %nav.slider-controls
+        %span.previous-button.disabled
+        %span.next-button
+      .history-slider
+        .history-wrapper
+          .slider-section
+            .top-half
+              %h3.sub-heading
+                Открытие клиники
+              = image_tag "medifast_logo_slide.jpg"
+              %span.date
+                2005
+              = image_tag "connector-start.jpg", class: "connector-image"
+              %p.paragraph
+                Медицинский центр  «МЕДИФАСТ» открыт 3 января 2005 года  по адресу ул.Волгодонская 18. Отделение лапароскопической хирургии и гинекологии и амбулаторное отделение
+          .slider-section
+            .top-half
+              %h3.sub-heading
+                Амбулаторное отделение
+              = image_tag "medifast_building.jpg"
+              %span.date
+                2007
+              = image_tag "connector-section.jpg", class: "connector-image"
+              %p.paragraph
+                В марте 2007г. открыто амбулаторное отделение по адресу: ул.Олимпийская,181.
+          .slider-section
+            .top-half
+              %h3.sub-heading.double-line
+                Выдача больничных листов
+              = image_tag "medifast_sign.jpg"
+              %span.date
+                2008
+              = image_tag "connector-section.jpg", class: "connector-image"
+              %p.paragraph
+                В августе 2008г. получено разрешение на выдачу документов, которые подтверждают временную нетрудоспособность граждан (больничные листы)
+          .slider-section
+            .top-half
+              %h3.sub-heading
+                Отделение в Бердянске
+              = image_tag "medifast_building.jpg"
+              %span.date
+                2008
+              = image_tag "connector-section.jpg", class: "connector-image"
+              %p.paragraph
+                В сентябре 2008 года открыто Бердянское отделение медицинского центра «Медифаст» по адресу: г.Бердянск, ул.Розы Люксембург, 49
+          .slider-section
+            .top-half
+              %h3.sub-heading.double-line
+                Рентгенэндоваскулярная хирургия
+              = image_tag "medifast_medical_equipment.jpg"
+              %span.date
+                2008
+              = image_tag "connector-section.jpg", class: "connector-image"
+              %p.paragraph
+                В специально оборудованной операционной установлен рентген аппарат фирмы Siemens, позволяющий проводить рентгеновскую съемку крупных и мелких сосудов. Применение этого аппарата позволяет точно и достоверно провести  диагностику ишемической болезни сердца, стенозирующих заболеваний сосудов (атеросклероз и др.), проводить малоинвазивное, т.е. малотравматичное, лечение этих заболеваний
+          .slider-section
+            .top-half
+              %h3.sub-heading
+                Кабинет УЗД
+              = image_tag "medifast_medical_equipment.jpg"
+              %span.date
+                2012
+              = image_tag "connector-section.jpg", class: "connector-image"
+              %p.paragraph
+                В апреле 2012г. открыт кабинет УЗД по адресу: ул. 50 лет СССР, 46
+          .slider-section
+            .top-half
+              %h3.sub-heading
+                Амбулаторное отделение
+              = image_tag "medifast_building.jpg"
+              %span.date
+                2013
+              = image_tag "connector-section.jpg", class: "connector-image"
+              %p.paragraph
+                В июне 2013г открыто амбулаторное отделение по адресу: пр.. Ленина, 42 Детское специализированное отделение (прием узких детских специалистов, выдача справок при поступлении в детский сад, школу, медосмотры). Ведется прием и взрослых пациентов
+          .slider-section
+            .top-half
+              %h3.sub-heading
+                Открытие аптеки
+              = image_tag "medifast_pharmacy.jpg"
+              %span.date
+                2013
+              = image_tag "connector-end.jpg", class: "connector-image"
+              %p.paragraph
+                В августе 2013г. открыта аптека по адресу: ул. Олимпийская, 181 и аптечный пункт по адресу: ул.Волгодонская 18.
+%section.content-section.about#command
+  .section-wrapper
+    %h2.section-heading
+      Команда профессионалов
+    .left-column
+      %p.paragraph
+        В клинике работают специалисты высшей категории, прошедшие обучение в ведущих клиниках Украины, России, Германии, США
+      %p.paragraph
+        Персонал клиники Медифаст - это не только высококлассные профессионалы, фанатично преданные своему делу, но и чуткие отзывчивые люди
+    .right-column
+      %p.paragraph
+        Мы ценим доверия наших клиентов, поэтому взяв на себя ответственность за Ваше здоровье, в полной мере обеспечиваем рациональность лечения и гарантию качества
+      = link_to root_path, class: "blue-button" do
+        Подробней
+        %span.icon.right-icon
+%section.content-section.partners.active#meet-our-partners
+  .section-wrapper
+    %h2.section-heading
+      Консультация специалистов
+    .tab-button-container
+      %a.tab-button.active(data-index="0")
+        %span.partners-icon
+        Администрация
+      %a.tab-button(data-index="1")
+        %span.membership-icon
+        Ведущие специалисты
+    .tab-container
+      %article.tab-content.active(data-index="0")
+        .container.active
+          %article.carousel
+            .carouselBody.partners-carousel
+              %ul
+                %li
+                  .carousel-slide
+                    = image_tag "medifast_email.png", class: "3D-and-imaging"
+                    %h3.sub-heading
+                      Написать нам
+                    %p.paragraph
+                      Если у Вас есть вопрос по поводу работы клиники. Необходимо перейти на разделу Контакты и заполнив необходимые поля отправить нам письмо. Наша администрация ответим Вам в ближайшее время
+                    = link_to "Контакты", contacts_path, class: "partner-link"
+                %li
+                  .carousel-slide
+                    = image_tag "medifast_vacansies.png", class: "3D-and-imaging"
+                    %h3.sub-heading
+                      Работа с нами
+                    %p.paragraph
+                      Если Вы хотите устроится к нам на работу, просмотрите раздел Вакансии и напишите нам. Наша администрация ответит Вам в ближайшее время
+                    = link_to "Вакансии", root_path, class: "partner-link"
+                %li
+                  .carousel-slide
+                    = image_tag "medifast_warning.png", class: "3D-and-imaging"
+                    %h3.sub-heading
+                      Замечание
+                    %p.paragraph
+                      Если у Вас есть замечания или рекомендации по поводу нашей работы, Вы можите позвонить на телефон доверия: +38 050 478 95 30, или перейти в раздер Контакты и заполнив необходимые поля написать нам письмо. Наша администрация ответит Вам в ближайшее время
+                    = link_to "Контакты", contacts_path, class: "partner-link"
+      %article.tab-content(data-index="1")
+        .container.active
+          %article.carousel
+            .carouselBody.partners-carousel
+              %ul
+                %li
+                  .carousel-slide
+                    = image_tag "medifast_user.png", class: "3D-and-imaging"
+                    %h3.sub-heading
+                      Регистрация
+                    %p.paragraph
+                      Для получения консультации, необходимо зарегистрироваться на нашем сайте, перейдя в раздел Регистрация, заполнив се необходимы поля.
+                    = link_to "Регистрация", root_path, class: "partner-link"
+                %li
+                  .carousel-slide
+                    = image_tag "medifast_diary.png", class: "3D-and-imaging"
+                    %h3.sub-heading
+                      Личный кабинет
+                    %p.paragraph
+                      После регистрации, Вы можите войти в свой личный кабинет, где будет сохраняться история Ваших консультаций и другие возможности
+                    = link_to "Ваш кабинет", root_path, class: "partner-link"
+                %li
+                  .carousel-slide
+                    = image_tag "medifast_doctor.png", class: "3D-and-imaging"
+                    %h3.sub-heading
+                      Поиск врача
+                    %p.paragraph
+                      В Вашем личном кабинете Вы можите просмотреть список наших врачей, которые проводят бесплатные консультации и задать врачу вопрос
+                    = link_to "Личный кабинет", root_path, class: "partner-link"
+
+
+- content_for :scripts do
+  :javascript
+    About.init();
+

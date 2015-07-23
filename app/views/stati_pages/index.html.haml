@@ -1,1 +1,202 @@
+.nav-wrap.sub-nav#sub-nav-wrapper
+  %nav.nav#sub-nav
+    %a(class="link" href="#sale")
+      Акция дня
+    %a(class="link" href="#personal")
+      Персонал
+    %a(class="link" href="#contacts")
+      Отделения клиники
+    %a(class="link" href="#priem")
+      Запись на прием
+    %a(class="link" href="#news")
+      Новости
+%button.back-to-top.back-to-top-bind#back-to-top
+%article.header-content#carousel
+  %article.carousel.home-carousel
+    .carouselBody
+      %ul
+        %li
+          .carousel-slide
+            .section-wrapper
+              %h1.header-intro
+                Гинекология
+              %p.header-standfirst
+                Мы победим болезнь вместе
+              = link_to root_path, class: "red-button" do
+                Подробней
+                %span.icon.right-icon
+        %li.onko
+          .carousel-slide
+            .section-wrapper
+              %h1.header-intro
+                Онкология
+              %p.header-standfirst
+                Мы победим болезнь вместе
+              = link_to root_path, class: "red-button" do
+                Подробней
+                %span.icon.right-icon
+  = link_to root_path, class: "main-cta", id: "stickyNavPoint" do
+    Все услуги клиники
+    %span.right-icon
+%section.main.content-section.choose-your-own
+  .section-wrapper
+    %article.left-column
+      %h2.section-heading
+        Литотрипсия "Золотой" стандарт лечения мочекаменной болезни
+      %p
+        Литотрипсия – дробление камней, находящихся в почках, мочеточниках, мочевом пузыре,
+        которые могут вызывать, боли в пояснице, рези мочеиспускании, повышение
+        температуры тела, примесь крови в моче. Появление этого метода явилось революцией в
+        лечении мочекаменной болезни, так как он малоинвазивный, малотравматичный и
+        высокоэффективный.
+        %br
+        %br
+        Принцип этого метода состоит в фрагментации конкрементов, находящихся в мочевом
+        тракте и эвакуации всех фрагметов под эндоскопическим контролем во время процедуры.
+        Подлежат дроблению любые камни независимо от плотности, локализации и размеров.
+        Так как травматизация тканей минимальная пациент в кратчайшие сроки выписывается и
+        полностью возвращается к работе.
+        %br
+        %br
+        После проведения литотрипсии обязательно необходимы постоянные методы по
+        профилактике повторного камнеобразования и ведение здорового образа жизни.
+    %article.right-column
+      %blockquote.blockquote
+        = image_tag "new_medifast.png"
+%section.main.content-section.choose-your-own.sale#sale
+  .section-wrapper
+    %article.right-column
+      %h2.section-heading
+        Акция выходного дня
+      %p
+        Каждую субботу и воскресенье в клинике «МЕДИФАСТ» проходит акция, по условиям которой, каждый записавшийся на эндоскопию, ФГДС (гастроскопия), колоноскопию, эндоскопию гортани, бронхоскопию получают 15% скидку.
+      = link_to root_path, class: "blue-button" do
+        Подробней
+        %span.icon.right-icon
+    %article.left-column
+%section.main.content-section.delivering-experience#personal
+  .section-wrapper
+    %article.right-column
+      %h2.section-heading
+        Квалификация персонала клиники
+      %p
+        «Победим болезнь вместе» - принцип работы клиники «Медифаст», заложенный с момента ее основания в 2005г.
+        %br
+        %br
+        На базе нашего медицинского центра создан мощнейший в Приазовском регионе Центр оказания лечебной и диагностической помощи населению.
+        %br
+        %br
+        Гордостью «Медифаста» являются наши специалисты, которые постоянно усовершенствуют свои профессиональные знания и навыки, участвуют в международных и всеукраинских симпозиумах и конференциях.
+        %br
+        %br
+        Главным принципом работы нашего персонала является оказание высококвалифицированной, качественной и современной медицинской помощи 24 часа в сутки и 365 дней в году.
+        %br
+        %br
+        Со времени основания клиники нашими докторами было выполнено более 15000 оперативных вмешательств с положительными результатами. Клиника обладает для этого современной материально- технической базой, придерживается современных стандартов лечения и предоставляет европейский сервис.
+      = link_to root_path, class: "blue-button" do
+        Подробней
+        %span.icon.right-icon
+    %article.left-column
+      = image_tag "medifast_personal.jpg"
+      %span.text-center.name
+        %h2
+          Шарафан Владимир Григорьевич
+        %p
+          Заведующий хирургическим отделением
+%section.main.content-section.bold-quote
+  .section-wrapper
+    %span.quotation-icon.up
+    %span.quotation-icon.down
+    %h2.section-heading
+      «Очень хорошая клиника, спасибо что вы есть!!!»
+    %span.citation
+      Елена
+%section.main.content-section.choose-your-own.contacts#contacts
+  .section-wrapper
+    %h2.section-heading.text-center
+      Отделения клиники
+    %article.left-column
+      %article.text-center
+        %h2.town
+          Мариуполь
+        %p
+          Запишитесь на прием в клинику города
+        = link_to root_path, class: "red-button" do
+          Запись на прием
+          %span.icon.right-icon
+        = link_to root_path, class: "blue-button" do
+          Отделения
+          %span.icon.right-icon
+      %p
+      %article.text-center
+        %h2.town
+          Бердянск
+        %p
+          Запишитесь на прием в клинику города
+        = link_to root_path, class: "red-button" do
+          Запись на прием
+          %span.icon.right-icon
+        = link_to root_path, class: "blue-button" do
+          Отделения
+          %span.icon.right-icon
+      %p
+      %article.text-center
+        %h2.town
+          Днепропетровск
+        %p
+          Запишитесь на прием в клинику города
+        = link_to root_path, class: "red-button" do
+          Запись на прием
+          %span.icon.right-icon
+        = link_to root_path, class: "blue-button" do
+          Отделения
+          %span.icon.right-icon
+    %article.right-column
+%section.main.content-section.priem#priem
+  .section-wrapper
+    %h1.header-intro
+      Запись на прием онлайн это просто
+    %p.header-standfirst
+      Наши доктора всегда готовы Вам помочь
+    = link_to root_path, class: "red-button" do
+      Подробней
+      %span.icon.right-icon
+%section.main.content-section.smarter-engagement#news
+  .section-wrapper
+    %h2.section-heading
+      Новости Медифаст
+    .carousel-container
+      %article.carousel
+        .carouselBody
+          %ul
+            %li
+              .carousel-slider
+                .left-section
+                  = image_tag "news_app.jpg", class: "carousel-image"
+                %article.carousel-content
+                  %h4.sub-heading
+                    Открытие отделения
+                  %p.paragraph
+                    С ноября 2007г. в клинике «МЕДИФАСТ» открыто единственное в г.Мариуполе
+                    отделение кардиологии и эндоваскулярной хирургии.
+                  = link_to root_path, class: "case-studies-link" do
+                    Узнайте больше
+                    %span.case-studies-icon
+            %li
+              .carousel-slider
+                .left-section
+                  = image_tag "news_app.jpg", class: "carousel-image"
+                %article.carousel-content
+                  %h4.sub-heading
+                    Заголовок новости
+                  %p.paragraph
+                    Текст новости
+                  = link_to root_path, class: "case-studies-link" do
+                    Узнайте больше
+                    %span.case-studies-icon
+%section.main.content-section.view-case-studies
+  .section-wrapper
+    = link_to root_path, class: "case-studies-link" do
+      Все новости
+      %span.case-studies-icon
 

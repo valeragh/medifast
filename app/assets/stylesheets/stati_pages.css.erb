@@ -60,7 +60,7 @@ q, blockquote {
 }
 /* line 103, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -77,29 +77,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /*===============================
   Core includes
 =================================*/
-@font-face {
-  font-family: 'sirisllymedium';
-  src: url("sirislly-webfont.eot");
-  src: url("sirislly-webfont.eot?#iefix") format("embedded-opentype"), url("sirislly-webfont.woff") format("woff"), url("sirislly-webfont.ttf") format("truetype"), url("sirislly-webfont.svg#sirisllymedium") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'duke_fillfill';
-  src: url("/content/css/duke_fill-webfont.eot");
-  src: url("/content/css/duke_fill-webfont.eot?#iefix") format("embedded-opentype"), url("/content/css/duke_fill-webfont.woff") format("woff"), url("/content/css/duke_fill-webfont.ttf") format("truetype"), url("/content/css/duke_fill-webfont.svg#duke_fillfill") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+
 /* line 37, ../../Sass/core/_typography.scss */
 body {
-  font-family: "Avenir LT W01 45 Book";
+  font-family: 'Cuprum', sans-serif;
   color: #111111;
 }
 
 /* line 42, ../../Sass/core/_typography.scss */
 .section-heading {
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Cuprum', sans-serif;
   font-size: 3.125em;
   margin-bottom: 44px;
   text-transform: uppercase;
@@ -108,7 +95,7 @@ body {
 
 /* line 50, ../../Sass/core/_typography.scss */
 .sub-heading {
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Cuprum', sans-serif;
   font-size: 1.25em;
   margin-bottom: 25px;
   text-transform: uppercase;
@@ -116,7 +103,7 @@ body {
 
 /* line 57, ../../Sass/core/_typography.scss */
 .inline-heading {
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Cuprum', sans-serif;
   margin-bottom: 27px;
   text-transform: uppercase;
 }
@@ -135,7 +122,7 @@ p {
 
 /* line 73, ../../Sass/core/_typography.scss */
 .blockquote {
-  font-family: "sirisllymedium";
+  font-family: 'sirisllymedium';
   font-size: 5.3125em;
 }
 
@@ -263,7 +250,7 @@ html, body {
 
 /* line 100, ../../Sass/core/_layout.scss */
 .home-carousel .carouselBody > ul li {
-  background: url("../images/home-image.jpg");
+  background: url(<%= asset_path('genikologia_medifast.jpg') %>);
   background-position: top center;
   -webkit-background-size: cover;
   -ms-background-size: cover;
@@ -274,7 +261,7 @@ html, body {
 
 /* line 106, ../../Sass/core/_layout.scss */
 .home-carousel .carouselBody > ul li.id {
-  background: url("../images/top-banner-id.jpg");
+  background: url(<%= asset_path('genikologia_medifast.jpg') %>);
   background-position: top center;
   -webkit-background-size: cover;
   -ms-background-size: cover;
@@ -309,7 +296,7 @@ html, body {
   width: 43px;
   height: 43px;
   display: block;
-  background: url("../images/home-carousel-icon.png");
+  background: url(<%= asset_path('home-carousel-icon.png') %>);
   margin-bottom: 0;
   background-size: 100%;
   -webkit-transform: rotate(0deg);
@@ -330,7 +317,7 @@ html, body {
   -moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
-  background: url("../images/home-carousel-icon.png");
+  background: url(<%= asset_path('home-carousel-icon.png') %>);
   background-size: 100%;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -388,11 +375,11 @@ html, body {
 
 /* line 202, ../../Sass/core/_layout.scss */
 .header-standfirst {
-  font-size: 1em;
-  color: white;
+  font-size: 1.3em;
+  color: #179C8C;
   width: 400px;
   margin-bottom: 45px;
-  font-family: "Avenir LT W01 45 Book";
+  font-family: 'Cuprum', sans-serif;;
   font-style: italic;
   line-height: 1.3em;
 }
@@ -401,7 +388,7 @@ html, body {
 .site-logo {
   width: 60px;
   height: 42px;
-  background: url("../images/ae-logo.jpg");
+  background: url(<%= asset_path('medifast_logo.jpg') %>);
   background-size: 100%;
   display: block;
   float: left;
@@ -414,8 +401,8 @@ html, body {
 
 /* line 226, ../../Sass/core/_layout.scss */
 .header-intro {
-  font-family: "Avenir LT W01 85 Heavy";
-  color: white;
+  font-family: 'Cuprum', sans-serif;
+  color: #179C8C;
   margin-bottom: 15px;
   font-size: 3.4375em;
   padding-top: 130px;
@@ -448,7 +435,7 @@ html, body {
 .nav .link {
   text-decoration: none;
   color: black;
-  font-family: "Avenir LT W01 65 Medium";
+  font-family: 'Cuprum', sans-serif;
   margin-right: 15px;
   padding-left: 2px;
   padding-right: 2px;
@@ -482,7 +469,7 @@ html, body {
 /* line 300, ../../Sass/core/_layout.scss */
 .header-title {
   font-size: 4.6875em;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   color: white;
   text-transform: uppercase;
   width: 540px;
@@ -542,16 +529,17 @@ html, body {
   padding: 20px 0px 20px 0px;
   cursor: pointer;
   text-align: center;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Cuprum', sans-serif;
   font-size: 0.9375em;
   text-transform: uppercase;
-  background-color: #e20055;
+  background-color: #E80000;
   letter-spacing: 0.1em;
+  text-decoration: none;
 }
 /* line 374, ../../Sass/core/_layout.scss */
 .main-cta .right-icon {
   margin-bottom: -7px;
-  background: url(../images/large-white-arrow.png);
+  background: url(<%= asset_path('large-white-arrow.png') %>);
   background-size: 100%;
   -webkit-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -600,7 +588,7 @@ html, body {
   height: 40px;
   display: none;
   background-size: 100% 100%;
-  background-image: url("../images/icon-mobilemenu.jpg");
+  background-image: url('../images/icon-mobilemenu.jpg');
   -webkit-transition: 0.3s all cubic-bezier(0.23, 1, 0.32, 1);
   -ms-transition: 0.3s all cubic-bezier(0.23, 1, 0.32, 1);
   -moz-transition: 0.3s all cubic-bezier(0.23, 1, 0.32, 1);
@@ -732,7 +720,7 @@ html, body {
 .footer-logo {
   width: 81px;
   height: 49px;
-  background: url("../images/footer-logo.jpg");
+  background: url(<%= asset_path('medifast_logo_footer.jpg') %>);
   display: block;
   float: left;
   background-repeat: none;
@@ -753,14 +741,14 @@ html, body {
   box-sizing: border-box;
   padding-bottom: 139px;
   margin-bottom: -139px;
-  background: url("../images/not-found-bg.jpg");
+  background: url('../images/not-found-bg.jpg');
   background-position: top center;
   background-color: black;
   background-repeat: no-repeat;
 }
 /* line 535, ../../Sass/core/_layout.scss */
 .header-content.not-found .blue-button {
-  padding: 13px 25px 13px 25px;
+  padding: 14px 21px 19px 21px;
 }
 /* line 539, ../../Sass/core/_layout.scss */
 .header-content.not-found .section-wrapper {
@@ -769,7 +757,7 @@ html, body {
 
 /* line 544, ../../Sass/core/_layout.scss */
 .not-found .section-heading {
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   font-size: 13.4375em;
   color: white;
   width: 100%;
@@ -781,7 +769,7 @@ html, body {
 /* line 554, ../../Sass/core/_layout.scss */
 .not-found .section-sub-heading {
   text-align: center;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   font-size: 1.25em;
   color: white;
   width: 100%;
@@ -794,7 +782,7 @@ html, body {
   width: 38px;
   height: 38px;
   background-size: 100%;
-  background-image: url(../images/back-to-top.png);
+  background-image: url(<%= asset_path('back-to-top.png') %>);
   position: fixed;
   cursor: pointer;
   z-index: 9999;
@@ -847,7 +835,7 @@ html, body {
   color: #fff;
   text-decoration: none;
   padding: 5px 15px;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   letter-spacing: 0px;
   font-weight: bold;
 }
@@ -864,32 +852,32 @@ html, body {
 .red-button {
   letter-spacing: 0.15em;
   padding: 14px 21px 19px 21px;
-  border: 1px solid #cd5880;
-  background: #e10054;
+  border: 1px solid #FA8A92;
+  background: #E80000;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #e10054 0%, #a3063a 98%);
+  background: -moz-linear-gradient(top, #FD6B6B 0%, #E80000 98%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e10054), color-stop(98%, #a3063a));
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FD6B6B), color-stop(98%, #E80000));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #e10054 0%, #a3063a 98%);
+  background: -webkit-linear-gradient(top, #FD6B6B 0%, #E80000 98%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #e10054 0%, #a3063a 98%);
+  background: -o-linear-gradient(top, #FD6B6B 0%, #E80000 98%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #e10054 0%, #a3063a 98%);
+  background: -ms-linear-gradient(top, #FD6B6B 0%, #E80000 98%);
   /* IE10+ */
-  background: linear-gradient(to bottom, #e10054 0%, #a3063a 98%);
+  background: linear-gradient(to bottom, #FD6B6B 0%, #E80000 98%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e10054', endColorstr='#a3063a',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FD6B6B', endColorstr='#E80000',GradientType=0 );
   /* IE6-9 */
   border-radius: 4px;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Cuprum', sans-serif;
   font-size: 0.8125em;
   text-transform: uppercase;
-  -webkit-box-shadow: 0px 4px 0px 0px #74081f;
-  -ms-box-shadow: 0px 4px 0px 0px #74081f;
-  -moz-box-shadow: 0px 4px 0px 0px #74081f;
-  -o-box-shadow: 0px 4px 0px 0px #74081f;
-  box-shadow: 0px 4px 0px 0px #74081f;
+  -webkit-box-shadow: 0px 4px 0px 0px #A90101;
+  -ms-box-shadow: 0px 4px 0px 0px #A90101;
+  -moz-box-shadow: 0px 4px 0px 0px #A90101;
+  -o-box-shadow: 0px 4px 0px 0px #A90101;
+  box-shadow: 0px 4px 0px 0px #A90101;
   display: inline-block;
   margin: 0 auto;
   margin-bottom: 4px;
@@ -902,7 +890,7 @@ html, body {
 .red-button .icon {
   margin-left: 20px;
   margin-right: 0;
-  background: url("../images/large-white-arrow.png");
+  background: url(<%= asset_path('large-white-arrow.png') %>);
   background-size: 100%;
 }
 
@@ -920,7 +908,7 @@ html, body {
 ====================================*/
 /* line 72, ../../Sass/modules/_buttons.scss */
 .blue-button {
-  padding: 13px 25px 13px 25px;
+  padding: 14px 21px 19px 21px;
   border: 1px solid #5ca7c6;
   background: #1e5799;
   /* Old browsers */
@@ -939,7 +927,7 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#0a7ead',GradientType=0 );
   /* IE6-9 */
   border-radius: 5px;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Cuprum', sans-serif;
   font-size: 0.8125em;
   text-transform: uppercase;
   text-decoration: none;
@@ -959,7 +947,7 @@ html, body {
 .blue-button .icon {
   margin-left: 20px;
   margin-right: 0;
-  background: url("../images/large-white-arrow.png");
+  background: url(<%= asset_path('large-white-arrow.png') %>);
   background-size: 100%;
 }
 
@@ -1019,7 +1007,7 @@ html, body {
   text-decoration: none;
   color: #111111;
   text-transform: uppercase;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Cuprum', sans-serif;
 }
 
 /* line 46, ../../Sass/modules/_carousel-slides.scss */
@@ -1027,7 +1015,7 @@ html, body {
   display: block;
   width: 20px;
   height: 20px;
-  background: url("../images/down-icon.png");
+  background: url('../images/down-icon.png');
   background-size: 100%;
   display: inline-block;
   margin-left: 16px;
@@ -1156,7 +1144,7 @@ html, body {
   overflow: hidden;
   padding: 0;
   position: absolute;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Cuprum', sans-serif;
   white-space: nowrap;
   z-index: 1;
   cursor: pointer;
@@ -1189,7 +1177,7 @@ html, body {
 }
 /* line 50, ../../Sass/modules/_carousel.scss */
 .carousel nav > button.previous .icon {
-  background-image: url("../images/carousel-icon-small.png");
+  background-image: url(<%= asset_path('carousel-icon-small.png') %>);
   display: inline-block;
   margin-right: 11px;
   width: 8px;
@@ -1211,7 +1199,7 @@ html, body {
 }
 /* line 69, ../../Sass/modules/_carousel.scss */
 .carousel nav > button.next .icon {
-  background-image: url("../images/carousel-icon-small.png");
+  background-image: url(<%= asset_path('carousel-icon-small.png') %>);
   display: inline-block;
   margin-left: 11px;
   width: 8px;
@@ -1246,7 +1234,7 @@ html, body {
 
 /* line 82, ../../Sass/modules/_carousel.scss */
 .carousel nav li button {
-  background: url(../images/carousel-sprite.png) -24px 0;
+  background: url(<%= asset_path('carousel-sprite.png') %>) -24px 0;
   border: 0;
   display: block;
   height: 12px;
@@ -1264,7 +1252,7 @@ html, body {
 
 /* line 85, ../../Sass/modules/_carousel.scss */
 .carousel.home-carousel nav li button {
-  background: url(../images/carousel-inactive.png);
+  background: url('../images/carousel-inactive.png');
   background-size: 100%;
   border: 0;
   display: block;
@@ -1278,14 +1266,14 @@ html, body {
 
 /* line 86, ../../Sass/modules/_carousel.scss */
 .carousel.home-carousel nav li.active button {
-  background: url(../images/carousel-active.png);
+  background: url('../images/carousel-active.png');
   background-size: 100%;
   background-position: 0 0;
 }
 
 /* line 88, ../../Sass/modules/_carousel.scss */
 .feature .carousel nav li button {
-  background: url(../images/carousel-inactive.png);
+  background: url('../images/carousel-inactive.png');
   background-size: 100%;
   border: 0;
   display: block;
@@ -1299,7 +1287,7 @@ html, body {
 
 /* line 89, ../../Sass/modules/_carousel.scss */
 .feature .carousel nav li.active button {
-  background: url(../images/carousel-active.png);
+  background: url(<%= asset_path('carousel-active.png') %>);
   background-size: 100%;
   background-position: 0 0;
 }
@@ -1344,32 +1332,32 @@ html, body {
 }
 /* line 16, ../../Sass/modules/_icons.scss */
 .social-icon.linkedin {
-  background-image: url("../images/linkedin-icon.png");
+  background-image: url('../images/linkedin-icon.png');
   -webkit-backface-visibility: hidden;
 }
 /* line 20, ../../Sass/modules/_icons.scss */
 .social-icon.linkedin:hover {
-  background-image: url("../images/linkedin-icon-hover.png");
+  background-image: url('../images/linkedin-icon-hover.png');
 }
 /* line 25, ../../Sass/modules/_icons.scss */
 .social-icon.twitter {
-  background-image: url("../images/twitter-icon.png");
+  background-image: url('../images/twitter-icon.png');
   right: 45px;
   -webkit-backface-visibility: hidden;
 }
 /* line 30, ../../Sass/modules/_icons.scss */
 .social-icon.twitter:hover {
-  background-image: url("../images/twitter-icon-hover.png");
+  background-image: url('../images/twitter-icon-hover.png');
 }
 /* line 35, ../../Sass/modules/_icons.scss */
 .social-icon.facebook {
-  background-image: url("../images/facebook-icon.png");
+  background-image: url('../images/facebook-icon.png');
   right: 90px;
   -webkit-backface-visibility: hidden;
 }
 /* line 40, ../../Sass/modules/_icons.scss */
 .social-icon.facebook:hover {
-  background-image: url("../images/facebook-icon-hover.png");
+  background-image: url('../images/facebook-icon-hover.png');
 }
 
 /*==================================
@@ -1383,7 +1371,7 @@ html, body {
 
 /* line 55, ../../Sass/modules/_icons.scss */
 .quotation-icon.up {
-  background: url("../images/up-quotation.png") no-repeat;
+  background: url(<%= asset_path('up-quotation.png') %>) no-repeat;
   width: 149px;
   height: 111px;
   display: block;
@@ -1393,7 +1381,7 @@ html, body {
 
 /* line 64, ../../Sass/modules/_icons.scss */
 .quotation-icon.down {
-  background: url("../images/down-quotation.png") no-repeat;
+  background: url(<%= asset_path('down-quotation.png')%>) no-repeat;
   width: 154px;
   height: 123px;
   bottom: -38px;
@@ -1416,7 +1404,7 @@ html, body {
 
 /* line 87, ../../Sass/modules/_icons.scss */
 .tweet-links a {
-  background-image: url("../images/tweet-icons.png");
+  background-image: url('../images/tweet-icons.png');
   display: inline-block;
 }
 
@@ -1453,7 +1441,7 @@ html, body {
   display: block;
   position: relative;
   margin-right: 10px;
-  background: url("../images/case-link-icon.png");
+  background: url(<%= asset_path('case-link-icon.png')%>);
   display: inline-block;
   margin-bottom: -8px;
 }
@@ -1466,8 +1454,8 @@ html, body {
 ====================================*/
 /* line 5, ../../Sass/pages/_home.scss */
 .choose-your-own {
-  background-color: #0d1319;
-  background-image: url("../images/rocky-bg.png");
+  background-color: #179C8C;
+  background-image: url(<%= asset_path('new_medifast.jpg') %>);
   background-position: top center;
   background-repeat: no-repeat;
   color: white;
@@ -1482,11 +1470,11 @@ html, body {
 }
 /* line 20, ../../Sass/pages/_home.scss */
 .choose-your-own .blockquote {
-  margin-left: -75px;
+  margin-left: -175px;
   margin-top: 19px;
   text-indent: -9999em;
-  width: 422px;
-  height: 437px;
+  width: 100px;
+  height: 100px;
 }
 /* line 27, ../../Sass/pages/_home.scss */
 .choose-your-own .blockquote img {
@@ -1653,7 +1641,7 @@ html, body {
 }
 /* line 38, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .delivering-experience:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -1665,9 +1653,7 @@ html, body {
 }
 /* line 182, ../../Sass/pages/_home.scss */
 .delivering-experience .left-column img {
-  width: 184%;
-  margin-left: -54%;
-  margin-top: -125px;
+  width: 100%;
 }
 /* line 189, ../../Sass/pages/_home.scss */
 .delivering-experience .right-column {
@@ -1692,7 +1678,7 @@ html, body {
   background-color: #0083b7;
   text-align: center;
   font-size: 1.125em;
-  background: url(../images/quote-bg.png);
+  background: url(<%= asset_path('quote-bg.png') %>);
   padding-top: 67px;
   padding-bottom: 67px;
   background-position: bottom center;
@@ -1704,7 +1690,7 @@ html, body {
 /* line 221, ../../Sass/pages/_home.scss */
 .bold-quote .section-heading {
   font-size: 2.5em;
-  font-family: "AvenirLTW01-85HeavyObli";
+  font-family: 'Cuprum', sans-serif;
   margin-bottom: 0;
   width: 60%;
   margin: 0 auto;
@@ -1842,7 +1828,7 @@ html, body {
   height: 37px;
   position: absolute;
   display: block;
-  background: url("../images/white-close-icon.png");
+  background: url('../images/white-close-icon.png');
   top: 0;
   right: 0;
   cursor: pointer;
@@ -1878,7 +1864,7 @@ html, body {
 }
 /* line 362, ../../Sass/pages/_home.scss */
 .overlay-content .sub-heading {
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   color: #00b7ff;
   font-size: 1.8em;
   margin-bottom: 30px;
@@ -2016,7 +2002,7 @@ html, body {
 
 /* line 497, ../../Sass/pages/_home.scss */
 .view-case-studies .case-studies-link {
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   font-size: 0.9375em;
   color: #111111;
   text-transform: uppercase;
@@ -2033,7 +2019,7 @@ html, body {
   display: block;
   position: relative;
   margin-right: 10px;
-  background: url("../images/case-link-icon.png");
+  background: url(<%= asset_path('case-link-icon.png') %>);
   background-size: 100%;
   display: inline-block;
   margin-bottom: -8px;
@@ -2731,7 +2717,7 @@ html, body {
 
 /* line 1054, ../../Sass/pages/_home.scss */
 .overlay-heading {
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   font-size: 40px;
   margin-bottom: 24px;
   text-transform: uppercase;
@@ -2781,7 +2767,7 @@ html, body {
   height: 37px;
   position: absolute;
   display: block;
-  background: url("../images/white-close-icon.png");
+  background: url('../images/white-close-icon.png');
   cursor: pointer;
   z-index: 10;
   background-size: 100%;
@@ -2830,7 +2816,7 @@ html, body {
   position: absolute;
   top: 0;
   background-size: 100%;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   font-size: 24px;
   z-index: 6000;
   width: 10%;
@@ -2928,7 +2914,7 @@ html, body {
   height: 26px;
   display: inline-block;
   margin-left: 10px;
-  background: url("/content/images/download-icon.png");
+  background: url('/content/images/download-icon.png');
   background-size: 100%;
   margin-bottom: -7px;
 }
@@ -2941,7 +2927,7 @@ html, body {
 /* line 1, ../../Sass/pages/_experience.scss */
 .event-playback-cursor {
   position: absolute;
-  background: url("../images/pointer.png");
+  background: url('../images/pointer.png');
   width: 14px;
   height: 22px;
   z-index: 9999;
@@ -3069,7 +3055,7 @@ html, body {
   top: 0;
   width: 50%;
   background-color: black;
-  content: "";
+  content: '';
   display: none;
 }
 
@@ -3093,7 +3079,7 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  cursor: url("../images/me-cursor.png") 47 38, auto;
+  cursor: url('../images/me-cursor.png') 47 38, auto;
   -webkit-transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   -ms-transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   -moz-transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
@@ -3133,7 +3119,7 @@ html, body {
   right: 50px;
   position: absolute;
   display: block;
-  background: url("../images/menu-button.png");
+  background: url('../images/menu-button.png');
   width: 29px;
   height: 24px;
   border: 0;
@@ -3319,7 +3305,7 @@ html, body {
 .id-logo-ex {
   width: 38px;
   height: 37px;
-  background-image: url("../images/id-logo-ex.png");
+  background-image: url('../images/id-logo-ex.png');
   display: inline-block;
   margin-bottom: -4px;
   margin-left: 10px;
@@ -3463,7 +3449,7 @@ html, body {
   display: table;
   width: 100%;
   background-size: cover;
-  background: url("../images/end-bg.png");
+  background: url('../images/end-bg.png');
   height: 100%;
 }
 
@@ -3603,7 +3589,7 @@ html, body {
 
 /* line 510, ../../Sass/pages/_experience.scss */
 .experience-section-heading {
-  font-family: "duke_fillfill";
+  font-family: 'duke_fillfill';
   font-size: 4.5em;
   color: white;
   text-transform: uppercase;
@@ -3619,7 +3605,7 @@ html, body {
 
 /* line 524, ../../Sass/pages/_experience.scss */
 .text-label {
-  font-family: "duke_fillfill";
+  font-family: 'duke_fillfill';
   font-size: 4.5em;
   color: white;
   fill: white;
@@ -3700,7 +3686,7 @@ polyline {
   display: block;
   width: 44px;
   height: 42px;
-  background: url("../images/learn-more-icon.png");
+  background: url('../images/learn-more-icon.png');
   display: block;
   float: left;
   margin-right: 15px;
@@ -3708,7 +3694,7 @@ polyline {
 
 /* line 601, ../../Sass/pages/_experience.scss */
 .learn-more-title {
-  font-family: "duke_fillfill";
+  font-family: 'duke_fillfill';
   color: white;
   text-transform: uppercase;
   font-size: 1.875em;
@@ -3732,7 +3718,7 @@ polyline {
 /* line 623, ../../Sass/pages/_experience.scss */
 .replay-title {
   font-size: 1.875em;
-  font-family: "duke_fillfill";
+  font-family: 'duke_fillfill';
   color: white;
   float: left;
   display: block;
@@ -3871,7 +3857,7 @@ polyline {
 
 /* line 730, ../../Sass/pages/_experience.scss */
 .choice-title {
-  font-family: "duke_fillfill";
+  font-family: 'duke_fillfill';
   color: white;
   font-size: 6.25em;
   text-transform: uppercase;
@@ -3910,7 +3896,7 @@ polyline {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("../images/start-bg-new.jpg");
+  background-image: url('../images/start-bg-new.jpg');
   background-size: cover;
   -webkit-transition: 1.5s all cubic-bezier(0.72, -0.045, 0.33, 1.05);
   -ms-transition: 1.5s all cubic-bezier(0.72, -0.045, 0.33, 1.05);
@@ -3943,7 +3929,7 @@ polyline {
 
 /* line 789, ../../Sass/pages/_experience.scss */
 .experience-sub-heading {
-  font-family: "duke_fillfill";
+  font-family: 'duke_fillfill';
   color: white;
   font-size: 45px;
   display: block;
@@ -3974,8 +3960,8 @@ polyline {
   width: 118px;
   height: 118px;
   text-align: center;
-  background: url("../images/start-bg.png");
-  font-family: "duke_fillfill";
+  background: url('../images/start-bg.png');
+  font-family: 'duke_fillfill';
   text-transform: uppercase;
   color: #f0c538;
   font-size: 32px;
@@ -4254,7 +4240,7 @@ polyline {
 /* line 1008, ../../Sass/pages/_experience.scss */
 .tutorial-heading {
   font-size: 2.8125em;
-  font-family: "duke_fillfill";
+  font-family: 'duke_fillfill';
   color: #f0c538;
   width: 100%;
   text-align: center;
@@ -4496,7 +4482,7 @@ polyline {
 /* line 1183, ../../Sass/pages/_experience.scss */
 .make-choice-heading {
   font-size: 2.625em;
-  font-family: "duke_fillfill";
+  font-family: 'duke_fillfill';
   color: white;
   display: block;
   text-align: center;
@@ -4514,7 +4500,7 @@ polyline {
 /* line 1196, ../../Sass/pages/_experience.scss */
 .or {
   font-size: 4.75em;
-  font-family: "duke_fillfill";
+  font-family: 'duke_fillfill';
   color: white;
   text-transform: uppercase;
   z-index: 10;
@@ -4866,7 +4852,7 @@ polyline {
   top: -10px;
   right: -10px;
   z-index: 9999;
-  content: "";
+  content: '';
   display: block;
   -webkit-transition: 0.5s all;
   -ms-transition: 0.5s all;
@@ -5975,7 +5961,7 @@ polyline {
 ====================================*/
 /* line 5, ../../Sass/pages/_about.scss */
 .welcome {
-  background: url("../images/diagonal_pattern.png"), url("../images/welcome-bg.jpg");
+  background: url(<%= asset_path('diagonal_pattern.png') %>), url(<%= asset_path('welcome-bg.jpg') %>);
   -o-background-size: auto, cover;
   -moz-background-size: auto, cover;
   -webkit-background-size: auto, cover;
@@ -5988,7 +5974,7 @@ polyline {
 .welcome .section-heading {
   font-size: 1.625em;
   text-align: center;
-  font-family: "AvenirLTW01-85HeavyObli";
+  font-family: 'AvenirLTW01-85HeavyObli';
   line-height: 1.7em;
   color: white;
   text-shadow: 0px 1px 3px #2a0014;
@@ -6087,7 +6073,7 @@ polyline {
   text-align: left;
   background-color: white;
   color: #009edc;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Cuprum', sans-serif;
   font-size: 1.25em;
   text-transform: uppercase;
   cursor: pointer;
@@ -6183,7 +6169,7 @@ polyline {
 
 /* line 171, ../../Sass/pages/_about.scss */
 .accordion-name .name {
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   color: #111111;
   text-decoration: none;
   display: block;
@@ -6196,7 +6182,7 @@ polyline {
 .accordion-name .standfirst {
   font-size: 1.125em;
   text-transform: uppercase;
-  font-family: "Avenir LT W01 65 Medium";
+  font-family: 'Avenir LT W01 65 Medium';
 }
 
 /* line 187, ../../Sass/pages/_about.scss */
@@ -6220,7 +6206,7 @@ polyline {
 
 /* line 200, ../../Sass/pages/_about.scss */
 .accordion-name .status-open {
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   font-size: 0.8125em;
   position: absolute;
   right: 40px;
@@ -6241,7 +6227,7 @@ polyline {
 /* line 217, ../../Sass/pages/_about.scss */
 .accordion-name .status-close {
   opacity: 0;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   font-size: 0.8125em;
   position: absolute;
   right: 40px;
@@ -6278,7 +6264,7 @@ polyline {
 .icon-open {
   width: 29px;
   height: 27px;
-  background: url("../images/icon-open.jpg");
+  background: url('../images/icon-open.jpg');
   display: block;
   position: absolute;
   top: 0;
@@ -6304,7 +6290,7 @@ polyline {
 .icon-close {
   width: 29px;
   height: 27px;
-  background: url("../images/icon-close.jpg");
+  background: url('../images/icon-close.jpg');
   display: block;
   top: 0;
   left: 0;
@@ -6402,7 +6388,7 @@ polyline {
 
 /* line 331, ../../Sass/pages/_about.scss */
 .partners-icon {
-  background-image: url("../images/about-sprite.png");
+  background-image: url(<%= asset_path('about-sprite.png') %>);
   background-position: -94px -9px;
   width: 59px;
   height: 36px;
@@ -6430,7 +6416,7 @@ polyline {
 }
 /* line 359, ../../Sass/pages/_about.scss */
 .partners .carousel nav .previous .icon {
-  background: url("../images/partners-carousel-icon.png");
+  background: url(<%= asset_path('partners-carousel-icon.png') %>);
   width: 32px;
   height: 32px;
   margin-bottom: -2px;
@@ -6438,7 +6424,7 @@ polyline {
 }
 /* line 370, ../../Sass/pages/_about.scss */
 .partners .carousel nav .next .icon {
-  background: url("../images/partners-carousel-icon.png");
+  background: url(<%= asset_path('partners-carousel-icon.png') %>);
   width: 32px;
   height: 32px;
   margin-bottom: -2px;
@@ -6462,20 +6448,20 @@ polyline {
 }
 /* line 392, ../../Sass/pages/_about.scss */
 .partners .carousel nav li button {
-  background: url("../images/about-carousel-sprite.png") no-repeat -74px -10px;
+  background: url(<%= asset_path('about-carousel-sprite.png') %>) no-repeat -74px -10px;
   width: 12px;
   height: 12px;
 }
 /* line 398, ../../Sass/pages/_about.scss */
 .partners .carousel nav li.active button {
-  background: url("../images/about-carousel-sprite.png") no-repeat -50px -10px;
+  background: url(<%= asset_path('about-carousel-sprite.png') %>) no-repeat -50px -10px;
   width: 12px;
   height: 12px;
 }
 
 /* line 405, ../../Sass/pages/_about.scss */
 .active .partners-icon {
-  background-image: url("../images/about-sprite.png");
+  background-image: url(<%= asset_path('about-sprite.png')%>);
   background-position: -18px -9px;
   width: 59px;
   height: 36px;
@@ -6502,7 +6488,7 @@ polyline {
 
 /* line 429, ../../Sass/pages/_about.scss */
 .membership-icon {
-  background-image: url("../images/about-sprite.png");
+  background-image: url(<%= asset_path('about-sprite.png') %>);
   background-position: -97px -56px;
   width: 54px;
   height: 34px;
@@ -6514,7 +6500,7 @@ polyline {
 
 /* line 440, ../../Sass/pages/_about.scss */
 .active .membership-icon {
-  background-image: url("../images/about-sprite.png");
+  background-image: url(<%= asset_path('about-sprite.png') %>);
   background-position: -20px -56px;
   width: 54px;
   height: 34px;
@@ -6558,7 +6544,7 @@ polyline {
 }
 /* line 477, ../../Sass/pages/_about.scss */
 .slider-section .sub-heading {
-  font: "Avenir LT W01 65 Medium";
+  font: 'Cuprum', sans-serif;
   font-size: 1.375em;
   color: #00b7ff;
   margin-bottom: 20px;
@@ -6567,7 +6553,7 @@ polyline {
 /* line 484, ../../Sass/pages/_about.scss */
 .slider-section .date {
   display: block;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Cuprum', sans-serif;
   margin-bottom: 5px;
   font-size: 1.375em;
 }
@@ -6639,7 +6625,7 @@ polyline {
   width: 43px;
   height: 43px;
   display: block;
-  background: url("../images/large-white-arrow.png");
+  background: url(<%= asset_path('large-white-arrow.png') %>);
   background-size: 100%;
   position: absolute;
   cursor: pointer;
@@ -6672,7 +6658,7 @@ polyline {
 ====================================*/
 /* line 5, ../../Sass/pages/_newsfeed.scss */
 .feature {
-  background: url(../images/quote-bg.png);
+  background: url(<%= asset_path('quote-bg.png') %>);
   background-size: cover;
   color: white;
 }
@@ -6709,7 +6695,7 @@ polyline {
 /* line 38, ../../Sass/pages/_newsfeed.scss */
 .newsfeed {
   background-color: #e6e7e7;
-  background: url("../images/newsfeed-bg.jpg") bottom center repeat-x;
+  background: url('../images/newsfeed-bg.jpg') bottom center repeat-x;
   background-color: #e6e7e7;
   padding-top: 30px;
 }
@@ -6746,10 +6732,10 @@ polyline {
 .newsfeed-link {
   text-decoration: none;
   color: #111111;
-  font: "Avenir LT W01 85 Heavy";
+  font: 'Avenir LT W01 85 Heavy';
   font-size: 0.8125em;
   text-transform: uppercase;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
 }
 
 /* line 76, ../../Sass/pages/_newsfeed.scss */
@@ -6792,7 +6778,7 @@ polyline {
   padding-bottom: 23px;
   text-decoration: none;
   color: black;
-  font-family: "Avenir LT W01 65 Medium";
+  font-family: 'Avenir LT W01 65 Medium';
   margin-right: 2%;
   margin-left: 2%;
   border-top: 5px solid transparent;
@@ -6818,7 +6804,7 @@ polyline {
   position: absolute;
   top: 29px;
   color: black;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   border-top: 5px solid transparent;
   text-transform: uppercase;
   font-size: 13px;
@@ -6837,7 +6823,7 @@ polyline {
 /* line 150, ../../Sass/pages/_newsfeed.scss */
 .newsfeed .tweet:after {
   display: block;
-  content: "";
+  content: '';
   width: 0px;
   height: 0px;
   border-style: solid;
@@ -6883,7 +6869,7 @@ polyline {
 /* line 187, ../../Sass/pages/_newsfeed.scss */
 .article-template h3 {
   font-size: 1.5em;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   text-transform: uppercase;
   margin-bottom: 15px;
 }
@@ -6910,7 +6896,7 @@ polyline {
 .back-link {
   font-size: 13px;
   color: white;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   display: block;
   margin-bottom: 45px;
   text-transform: uppercase;
@@ -6922,7 +6908,7 @@ polyline {
 .back-link .icon {
   width: 9px;
   height: 13px;
-  background: url(../images/back-icon.jpg);
+  background: url(<%= asset_path('back-icon.jpg') %>);
   display: block;
   float: left;
   margin-right: 10px;
@@ -6943,7 +6929,7 @@ polyline {
   width: 32px;
   height: 32px;
   display: block;
-  background: url("../images/large-white-arrow.png");
+  background: url(<%= asset_path('large-white-arrow.png') %>);
   margin-bottom: 0;
   background-size: 100%;
   -webkit-transform: rotate(0deg);
@@ -6962,7 +6948,7 @@ polyline {
   -moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
-  background: url("../images/large-white-arrow.png");
+  background: url(<%= asset_path('large-white-arrow.png') %>);
   background-size: 100%;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -7062,13 +7048,13 @@ polyline {
 
 /* line 32, ../../Sass/pages/_contact.scss */
 .org {
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   font-size: 1em;
 }
 
 /* line 37, ../../Sass/pages/_contact.scss */
 .vcard {
-  font-family: "Avenir LT W01 45 Book";
+  font-family: 'Avenir LT W01 45 Book';
   font-size: 16;
   line-height: 1.4em;
 }
@@ -7087,7 +7073,7 @@ polyline {
 /* line 54, ../../Sass/pages/_contact.scss */
 #contact-form label {
   font-size: 0.8125em;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   margin-bottom: 15px;
   width: 100%;
   display: inline-block;
@@ -7102,7 +7088,7 @@ polyline {
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Avenir LT W01 45 Book";
+  font-family: 'Avenir LT W01 45 Book';
   font-size: 1.125em;
   padding: 10px 5px 10px 5px;
   border: 1px solid #9f9f9f;
@@ -7163,7 +7149,7 @@ polyline {
   text-align: center;
   padding: 20px 0px 20px 0px;
   text-align: center;
-  font-family: "Avenir LT W01 65 Medium";
+  font-family: 'Avenir LT W01 65 Medium';
   font-size: 0.9375em;
   background-color: #e20055;
   letter-spacing: 0px;
@@ -7245,7 +7231,7 @@ polyline {
 }
 /* line 89, ../../Sass/pages/_sdk.scss */
 .sdk .developer .header-bar h1 {
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   font-size: 120%;
   font-weight: bold;
   display: inline;
@@ -7334,7 +7320,7 @@ polyline {
   transition: all 0.2s;
   display: block;
   padding: 6%;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   font-weight: bold;
   font-size: 80%;
   text-decoration: none;
@@ -7446,7 +7432,7 @@ polyline {
   font-size: 460%;
   text-transform: uppercase;
   font-weight: bold;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
 }
 /* line 284, ../../Sass/pages/_sdk.scss */
 .sdk .banner .intro p {
@@ -7513,7 +7499,7 @@ polyline {
 }
 /* line 352, ../../Sass/pages/_sdk.scss */
 .sdk .are-you h2 {
-  font-family: "AvenirLTW01-85HeavyObli";
+  font-family: 'AvenirLTW01-85HeavyObli';
   color: #fff;
   max-width: 800px;
   line-height: 140%;
@@ -7583,7 +7569,7 @@ polyline {
 }
 /* line 420, ../../Sass/pages/_sdk.scss */
 .sdk .heres-how h2 {
-  font-family: "AvenirLTW01-85HeavyObli";
+  font-family: 'AvenirLTW01-85HeavyObli';
   color: #fff;
   max-width: 800px;
   font-size: 1.5625em;
@@ -7802,7 +7788,7 @@ polyline {
 /* line 628, ../../Sass/pages/_sdk.scss */
 #sdk-form label, .sdk-header label {
   font-size: 0.8125em;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   margin-bottom: 15px;
   width: 100%;
   display: inline-block;
@@ -7817,7 +7803,7 @@ polyline {
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Avenir LT W01 45 Book";
+  font-family: 'Avenir LT W01 45 Book';
   font-size: 1.125em;
   padding: 10px 5px 10px 5px;
   border: 1px solid #9f9f9f;
@@ -7852,7 +7838,7 @@ polyline {
 }
 /* line 676, ../../Sass/pages/_sdk.scss */
 #sdk-form input.blue-button, .sdk-header input.blue-button {
-  padding: 13px 25px 13px 25px;
+  padding: 14px 21px 19px 21px;
   border: 1px solid #5ca7c6;
   background: #1e5799;
   /* Old browsers */
@@ -7871,7 +7857,7 @@ polyline {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#0a7ead',GradientType=0 );
   /* IE6-9 */
   border-radius: 5px;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Cuprum', sans-serif;
   font-size: 0.8125em;
   text-transform: uppercase;
   text-decoration: none;
@@ -7892,7 +7878,7 @@ polyline {
 #sdk-form input.blue-button .icon, .sdk-header input.blue-button .icon {
   margin-left: 20px;
   margin-right: 0;
-  background: url("../images/large-white-arrow.png");
+  background: url(<%= asset_path('large-white-arrow.png') %>);
   background-size: 100%;
 }
 
@@ -7905,7 +7891,7 @@ polyline {
   border-radius: 50%;
   background-color: #8f8f8f;
   color: white;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   font-size: 22px;
   line-height: 45px;
   text-align: center;
@@ -7915,7 +7901,7 @@ polyline {
 /* line 726, ../../Sass/pages/_sdk.scss */
 .progress-container {
   color: #111111;
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
   font-size: 16px;
   text-transform: uppercase;
   font-weight: bold;
@@ -7973,7 +7959,7 @@ polyline {
   height: 26px;
   display: inline-block;
   margin-left: 10px;
-  background: url("/content/images/download-icon.png");
+  background: url('/content/images/download-icon.png');
   background-size: 100%;
   margin-bottom: -7px;
 }
@@ -7994,7 +7980,7 @@ polyline {
   height: 150px;
   overflow-y: scroll;
   background-color: #f7f7f7;
-  font-family: "Avenir LT W01 65 Medium";
+  font-family: 'Avenir LT W01 65 Medium';
   margin-bottom: 40px;
 }
 /* line 803, ../../Sass/pages/_sdk.scss */
@@ -8031,7 +8017,7 @@ polyline {
 }
 /* line 832, ../../Sass/pages/_sdk.scss */
 .terms-and-conditions strong {
-  font-family: "Avenir LT W01 85 Heavy";
+  font-family: 'Avenir LT W01 85 Heavy';
 }
 
 /* line 837, ../../Sass/pages/_sdk.scss */
@@ -8121,7 +8107,7 @@ polyline {
 
   /* line 24, ../../Sass/pages/_breakpoints.scss */
   .home-carousel .carouselBody > ul li {
-    background-image: url("../images/home-image-ipad.jpg");
+    background-image: url(<%= asset_path('genikologia_medifast.jpg') %>);
     background-color: black;
     background-position: 76% 172px;
     background-repeat: no-repeat;
@@ -8281,7 +8267,7 @@ polyline {
     display: block;
     margin-top: 39px;
     /* padding-top: 12px; */
-    background-image: url("../images/rocky-bg.png");
+    background-image: url('../images/rocky-bg.png');
     background-position: top center;
     background-size: 137%;
     background-repeat: no-repeat;
@@ -8469,7 +8455,7 @@ polyline {
 
   /* line 333, ../../Sass/pages/_breakpoints.scss */
   .quotation-icon.up {
-    background: url("../images/up-quotation.png") no-repeat;
+    background: url(<%= asset_path('up-quotation.png') %>) no-repeat;
     width: 82px;
     height: 65px;
     display: block;
@@ -9051,7 +9037,7 @@ polyline {
   }
   /* line 899, ../../Sass/pages/_breakpoints.scss */
   .nav.open .icon-mobilemenu {
-    background-image: url("../images/icon-menu-close.jpg");
+    background-image: url('../images/icon-menu-close.jpg');
   }
 
   /* line 904, ../../Sass/pages/_breakpoints.scss */
@@ -9336,7 +9322,7 @@ polyline {
   .footer-logo {
     width: 81px;
     height: 49px;
-    background: url("../images/footer-logo.jpg");
+    background: url('../images/footer-logo.jpg');
     display: block;
     float: none;
     clear: none;
@@ -9540,3 +9526,53 @@ polyline {
 }
 
 
+h2.town{
+  font-size: 2.8em;
+  text-transform: uppercase;
+  text-align: center;
+}
+article.text-center{
+  text-align: center;
+  padding-top: 20px;
+}
+h2.section-heading.text-center{
+  text-align: center;
+}
+.nav .link.red{
+  color: #E80000;
+}
+.nav .link.login{
+  color: #00b5fb;
+}
+.fa-search{
+  color: #00b5fb;
+}
+.choose-your-own.sale{
+  min-height: 70%;
+  background-image: url(<%= asset_path('sale_medifast.jpg') %>);
+}
+.choose-your-own.contacts{
+  background-image: url(<%= asset_path('contacts_medifast.jpg') %>);
+}
+.choose-your-own.sale .right-column{
+  width: 45%;
+}
+.content-section.priem{
+  background-image: url(<%= asset_path('record_online_medifast.jpg') %>);
+}
+span.red{
+  color: #E80000;
+}
+span.text-center.name{
+  text-align: center;
+}
+span.text-center.name h2{
+  font-size: 1.5em;
+  padding-top: 10px;
+}
+.home-carousel .carouselBody > ul li.clinic{
+  background: url(<%= asset_path('clinic_medifast.jpg') %>);
+}
+.home-carousel .carouselBody > ul li.onko{
+  background: url(<%= asset_path('onkologia_medifast.jpg') %>);
+}

@@ -4,6 +4,7 @@
   <%= metamagic %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Cuprum:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -11,6 +12,7 @@
   <%= render partial: "layouts/messages", flash: flash %>
   <%= yield %>
   <%= render 'layouts/footer' %>
+  <%= javascript_include_tag 'scripts' %>
   <%= yield :scripts %>
 </body>
 </html>
