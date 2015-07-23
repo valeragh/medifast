@@ -32,7 +32,6 @@ gem 'therubyracer', platforms: :ruby
 gem 'ransack'
 gem 'libv8', '~> 3.16.14.7'
 gem 'execjs'
-gem 'nokogiri'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'devise'
