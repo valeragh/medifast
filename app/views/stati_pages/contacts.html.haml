@@ -1,2 +1,298 @@
-%h1 StatiPages#contacts
-%p Find me in app/views/stati_pages/contacts.html.haml
+%script{src: "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry", type: "text/javascript"}
+%script{src: "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", type: "text/javascript"}
+.nav-wrap.sub-nav#sub-nav-wrapper
+  %nav.nav#sub-nav
+    %a(class="link" href="#contacts")
+      Отделения клиники
+    %a(class="link" href="#meet-our-partners")
+      Вопрос специалистам
+%button.back-to-top.back-to-top-bind#back-to-top
+%article.header-content#carousel
+  %article.carousel.home-carousel
+    .carouselBody
+      %ul
+        %li.clinic
+          .carousel-slide
+            .section-wrapper
+              %h1.header-intro
+                Клиника медифаст
+              %p.header-standfirst
+                Мы победим болезнь вместе
+  %a.main-cta#stickyNavPoint
+    Узнайте больше
+    %span.right-icon
+%section.content-section.who-we-are.active#who-we-are
+  .section-wrapper
+    %h2.section-heading
+      Контакты отделений медифаст
+    %dl.accordion.bio
+      %dt.accordion-name
+        %a.name
+          Мариуполь
+        %span.standfirst
+          ул. Волгодонская, 18
+        .icon-wrapper
+          %span.icon-open
+          %span.icon-close
+        %span.status-open
+          открыть
+        %span.status-close
+          закрыть
+      %dd.bio-body
+        .accordion-content
+          %div(style='width: 800px;')
+            #map(style='width: 800px; height: 400px;')
+          %p.paragraph
+            Медифаст
+            %br
+            ул. Волгодонская, 18
+            %br
+            +38(0629)-58-21-23
+            %br
+            +38(050)-478-93-74
+            %br
+            +38(097)-009-90-01
+            %br
+            = link_to "support@medifast.com", root_path
+    %dl.accordion.bio
+      %dt.accordion-name
+        %a.name
+          Мариуполь
+        %span.standfirst
+          ул. Олимпийская, 181
+        .icon-wrapper
+          %span.icon-open
+          %span.icon-close
+        %span.status-open
+          открыть
+        %span.status-close
+          закрыть
+      %dd.bio-body
+        .accordion-content
+          %div(style='width: 800px;')
+            #map_two(style='width: 800px; height: 400px;')
+          %p.paragraph
+            Медифаст
+            %br
+            ул. Олимпийская, 181
+            %br
+            +38(0629)-24-54-34
+            %br
+            = link_to "support@medifast.com", root_path
+    %dl.accordion.bio
+      %dt.accordion-name
+        %a.name
+          Мариуполь
+        %span.standfirst
+          ул. Бахмутская, 20а
+        .icon-wrapper
+          %span.icon-open
+          %span.icon-close
+        %span.status-open
+          открыть
+        %span.status-close
+          закрыть
+      %dd.bio-body
+        .accordion-content
+          %div(style='width: 800px;')
+            #map_three(style='width: 800px; height: 400px;')
+          %p.paragraph
+            Медифаст
+            %br
+            ул. Бахмутская, 20а
+            %br
+            +38(0629)-49-32-47
+            %br
+            +38(050)-600-60-62
+            %br
+            +38(097)-471-23-05
+            %br
+            = link_to "support@medifast.com", root_path
+    %dl.accordion.bio
+      %dt.accordion-name
+        %a.name
+          Мариуполь
+        %span.standfirst
+          ул. 50 лет СССР, 46
+        .icon-wrapper
+          %span.icon-open
+          %span.icon-close
+        %span.status-open
+          открыть
+        %span.status-close
+          закрыть
+      %dd.bio-body
+        .accordion-content
+          %div(style='width: 800px;')
+            #map_four(style='width: 800px; height: 400px;')
+          %p.paragraph
+            Медифаст
+            %br
+            ул. 50 лет СССР, 46
+            %br
+            +38(0629)-51-12-10
+            %br
+            = link_to "support@medifast.com", root_path
+    %dl.accordion.bio
+      %dt.accordion-name
+        %a.name
+          Мариуполь
+        %span.standfirst
+          пр. Ленина, 42
+        .icon-wrapper
+          %span.icon-open
+          %span.icon-close
+        %span.status-open
+          открыть
+        %span.status-close
+          закрыть
+      %dd.bio-body
+        .accordion-content
+          %div(style='width: 800px;')
+            #map_five(style='width: 800px; height: 400px;')
+          %p.paragraph
+            Медифаст
+            %br
+            пр. Ленина, 42
+            %br
+            +38(0629)-54-34-71
+            %br
+            +38(0629)-54-34-72
+            %br
+            = link_to "support@medifast.com", root_path
+    %dl.accordion.bio
+      %dt.accordion-name
+        %a.name
+          Бердянск
+        %span.standfirst
+          ул. Розы Люксембург, 49
+        .icon-wrapper
+          %span.icon-open
+          %span.icon-close
+        %span.status-open
+          открыть
+        %span.status-close
+          закрыть
+      %dd.bio-body
+        .accordion-content
+          %div(style='width: 800px;')
+            #map_six(style='width: 800px; height: 400px;')
+          %p.paragraph
+            Медифаст
+            %br
+            ул. Розы Люксембург, 49
+            %br
+            +38(06153)-4-50-53
+            %br
+            = link_to "support@medifast.com", root_path
+
+%section.content-section.partners.active#meet-our-partners
+  .section-wrapper
+    %h2.section-heading
+      Консультация специалистов
+    .tab-button-container
+      %a.tab-button.active(data-index="0")
+        %span.partners-icon
+        Администрация
+      %a.tab-button(data-index="1")
+        %span.membership-icon
+        Ведущие специалисты
+    .tab-container
+      %article.tab-content.active(data-index="0")
+        .container.active
+          %article.carousel
+            .carouselBody.partners-carousel
+              %ul
+                %li
+                  .carousel-slide
+                    = image_tag "medifast_email.png", class: "3D-and-imaging"
+                    %h3.sub-heading
+                      Написать нам
+                    %p.paragraph
+                      Если у Вас есть вопрос по поводу работы клиники. Необходимо перейти на разделу Контакты и заполнив необходимые поля отправить нам письмо. Наша администрация ответим Вам в ближайшее время
+                    = link_to "Контакты", contacts_path, class: "partner-link"
+                %li
+                  .carousel-slide
+                    = image_tag "medifast_vacansies.png", class: "3D-and-imaging"
+                    %h3.sub-heading
+                      Работа с нами
+                    %p.paragraph
+                      Если Вы хотите устроится к нам на работу, просмотрите раздел Вакансии и напишите нам. Наша администрация ответит Вам в ближайшее время
+                    = link_to "Вакансии", root_path, class: "partner-link"
+                %li
+                  .carousel-slide
+                    = image_tag "medifast_warning.png", class: "3D-and-imaging"
+                    %h3.sub-heading
+                      Замечание
+                    %p.paragraph
+                      Если у Вас есть замечания или рекомендации по поводу нашей работы, Вы можите позвонить на телефон доверия: +38 050 478 95 30, или перейти в раздер Контакты и заполнив необходимые поля написать нам письмо. Наша администрация ответит Вам в ближайшее время
+                    = link_to "Контакты", contacts_path, class: "partner-link"
+      %article.tab-content(data-index="1")
+        .container.active
+          %article.carousel
+            .carouselBody.partners-carousel
+              %ul
+                %li
+                  .carousel-slide
+                    = image_tag "medifast_user.png", class: "3D-and-imaging"
+                    %h3.sub-heading
+                      Регистрация
+                    %p.paragraph
+                      Для получения консультации, необходимо зарегистрироваться на нашем сайте, перейдя в раздел Регистрация, заполнив се необходимы поля.
+                    = link_to "Регистрация", root_path, class: "partner-link"
+                %li
+                  .carousel-slide
+                    = image_tag "medifast_diary.png", class: "3D-and-imaging"
+                    %h3.sub-heading
+                      Личный кабинет
+                    %p.paragraph
+                      После регистрации, Вы можите войти в свой личный кабинет, где будет сохраняться история Ваших консультаций и другие возможности
+                    = link_to "Ваш кабинет", root_path, class: "partner-link"
+                %li
+                  .carousel-slide
+                    = image_tag "medifast_doctor.png", class: "3D-and-imaging"
+                    %h3.sub-heading
+                      Поиск врача
+                    %p.paragraph
+                      В Вашем личном кабинете Вы можите просмотреть список наших врачей, которые проводят бесплатные консультации и задать врачу вопрос
+                    = link_to "Личный кабинет", root_path, class: "partner-link"
+
+- content_for :scripts do
+  :javascript
+    About.init();
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers(#{raw @hash.to_json});
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map_two'}}, function(){
+      markers = handler.addMarkers(#{raw @hash.to_json});
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map_three'}}, function(){
+      markers = handler.addMarkers(#{raw @hash.to_json});
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map_four'}}, function(){
+      markers = handler.addMarkers(#{raw @hash.to_json});
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map_five'}}, function(){
+      markers = handler.addMarkers(#{raw @hash.to_json});
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map_six'}}, function(){
+      markers = handler.addMarkers(#{raw @hash.to_json});
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });

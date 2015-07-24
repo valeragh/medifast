@@ -376,7 +376,7 @@ html, body {
 /* line 202, ../../Sass/core/_layout.scss */
 .header-standfirst {
   font-size: 1.3em;
-  color: #179C8C;
+  color: #E80000;
   width: 400px;
   margin-bottom: 45px;
   font-family: 'Cuprum', sans-serif;;
@@ -402,7 +402,7 @@ html, body {
 /* line 226, ../../Sass/core/_layout.scss */
 .header-intro {
   font-family: 'Cuprum', sans-serif;
-  color: #179C8C;
+  color: #10A770;
   margin-bottom: 15px;
   font-size: 3.4375em;
   padding-top: 130px;
@@ -6169,7 +6169,7 @@ polyline {
 
 /* line 171, ../../Sass/pages/_about.scss */
 .accordion-name .name {
-  font-family: 'Avenir LT W01 85 Heavy';
+  font-family: 'Cuprum', sans-serif;
   color: #111111;
   text-decoration: none;
   display: block;
@@ -6182,7 +6182,7 @@ polyline {
 .accordion-name .standfirst {
   font-size: 1.125em;
   text-transform: uppercase;
-  font-family: 'Avenir LT W01 65 Medium';
+  font-family: 'Cuprum', sans-serif;
 }
 
 /* line 187, ../../Sass/pages/_about.scss */
@@ -6206,7 +6206,7 @@ polyline {
 
 /* line 200, ../../Sass/pages/_about.scss */
 .accordion-name .status-open {
-  font-family: 'Avenir LT W01 85 Heavy';
+  font-family: 'Cuprum', sans-serif;
   font-size: 0.8125em;
   position: absolute;
   right: 40px;
@@ -6227,7 +6227,7 @@ polyline {
 /* line 217, ../../Sass/pages/_about.scss */
 .accordion-name .status-close {
   opacity: 0;
-  font-family: 'Avenir LT W01 85 Heavy';
+  font-family: 'Cuprum', sans-serif;
   font-size: 0.8125em;
   position: absolute;
   right: 40px;
@@ -6264,7 +6264,7 @@ polyline {
 .icon-open {
   width: 29px;
   height: 27px;
-  background: url('../images/icon-open.jpg');
+  background: url(<%= asset_path('icon-open.jpg') %>);
   display: block;
   position: absolute;
   top: 0;
@@ -6290,7 +6290,7 @@ polyline {
 .icon-close {
   width: 29px;
   height: 27px;
-  background: url('../images/icon-close.jpg');
+  background: url(<%= asset_path('icon-close.jpg') %>);
   display: block;
   top: 0;
   left: 0;
@@ -6372,6 +6372,7 @@ polyline {
 .about .paragraph {
   display: block;
   clear: both;
+  font-size: 1.2em;
 }
 
 /* line 322, ../../Sass/pages/_about.scss */
@@ -9572,7 +9573,19 @@ span.text-center.name h2{
 }
 .home-carousel .carouselBody > ul li.clinic{
   background: url(<%= asset_path('clinic_medifast.jpg') %>);
+  background-position: top center;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .home-carousel .carouselBody > ul li.onko{
   background: url(<%= asset_path('onkologia_medifast.jpg') %>);
+  background-position: top center;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
