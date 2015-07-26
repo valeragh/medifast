@@ -1,0 +1,56 @@
+%section.content-section.feature
+  .section-wrapper
+    %article.carousel.newsfeed-carousel
+      .carouselBody.partners-carousel
+        %ul
+          %li
+            .carousel-slider
+              = image_tag "news_app.jpg", class: "feature-image"
+              %article.feature-article
+                %h1.section-heading
+                  Открытие отделения
+                %p.paragraph
+                  С ноября 2007г. в клинике «МЕДИФАСТ» открыто единственное в г.Мариуполе
+                  отделение кардиологии и эндоваскулярной хирургии.
+                = link_to root_path, class: "feature-link blue-button" do
+                  Узнайте больше
+          %li
+            .carousel-slider
+              = image_tag "news_app.jpg", class: "feature-image"
+              %article.feature-article
+                %h1.section-heading
+                  Открытие отделения
+                %p.paragraph
+                  С ноября 2007г. в клинике «МЕДИФАСТ» открыто единственное в г.Мариуполе
+                  отделение кардиологии и эндоваскулярной хирургии.
+                = link_to root_path, class: "feature-link blue-button" do
+                  Узнайте больше
+%section.content-section.newsfeed-filter
+  .section-wrapper
+    %nav.filter-nav
+      = link_to news_path, class: "filter-link all active", data:{filter: "*"} do
+        Все новости
+      = link_to news_path, class: "filter-link all", data:{filter: ".news-and-events"} do
+        Открытие отделений
+      = link_to news_path, class: "filter-link all", data:{filter: ".news-and-events"} do
+        Советы специалистов
+      = link_to news_path, class: "filter-link all", data:{filter: ".news-and-events"} do
+        Востоновление после операций
+%section.content-section.newsfeed.active#newsfeed
+  #newsfeedBody.section-wrapper
+    %article.newsfeed-article.news-end-events
+      = link_to news_path do
+        = image_tag "news_app.jpg", class: "newsfeed-image"
+      .container
+        = link_to news_path, class: "newsfeed-link" do
+          %h2.sub-heading
+            Открытие отделения
+        %p.paragraph
+          С ноября 2007г. в клинике «МЕДИФАСТ» открыто единственное в г.Мариуполе отделение кардиологии и эндоваскулярной хирургии.
+        = link_to news_path, class: "newsfeed-link" do
+          %span.case-studies-icon
+          Узнайте больше
+
+- content_for :scripts do
+  :javascript
+    Newsfeed.init();
