@@ -10,4 +10,7 @@ class StatiPagesController < ApplicationController
 
   def faqs
   end
+
+  def vacancies
+  end
 end
