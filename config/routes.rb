@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'procedures/show'
   get 'news/show'
 
   root 'stati_pages#index'
@@ -8,4 +9,5 @@ Rails.application.routes.draw do
   match '/faqs', to: 'stati_pages#faqs', via: 'get'
   match '/vacancies', to: 'stati_pages#vacancies', via: 'get'
   match '/news', to: 'news#index', via: 'get'
+  match '/procedures', to: 'procedures#index', via: 'get'
 end

@@ -1,0 +1,102 @@
+%section.main.content-section.priem#priem
+  .section-wrapper
+    %h1.header-intro
+      Запись на прием онлайн это просто
+    %p.header-standfirst
+      Наши доктора всегда готовы Вам помочь
+    = link_to root_path, class: "red-button" do
+      Подробней
+      %span.icon.right-icon
+%section.content-section.newsfeed-filter
+  .section-wrapper
+    %nav.filter-nav
+      = link_to procedures_path, class: "filter-link all" do
+        Геникология
+      = link_to procedures_path, class: "filter-link all" do
+        Урология
+      = link_to procedures_path, class: "filter-link all" do
+        Кардиология
+      = link_to procedures_path, class: "filter-link all" do
+        Травматология
+      = link_to procedures_path, class: "filter-link all" do
+        Хирургия
+      = link_to procedures_path, class: "filter-link all" do
+        Педиатрия
+      = link_to procedures_path, class: "filter-link all" do
+        Лаборатория
+      = link_to procedures_path, class: "filter-link all" do
+        Узи
+      = link_to procedures_path, class: "filter-link all" do
+        Онкология
+%section.content-section.newsfeed.active
+  .section-wrapper
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
+      .container
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Гинекология
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "ulorogia_medifast_small.jpg", class: "newsfeed-image"
+      .container
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Урология
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "cardiologia_medifast_small.jpg", class: "newsfeed-image"
+      .container
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Кардиология
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "travmatologia_medifast_small.jpg", class: "newsfeed-image"
+      .container
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Травматология
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "hilurgia_medifast_small.jpg", class: "newsfeed-image"
+      .container
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Хирургия
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "pediatria_medifast_small.jpg", class: "newsfeed-image"
+      .container
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Педиатрия
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "Laboratoria_medifast_small.jpg", class: "newsfeed-image"
+      .container
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Лаборатория
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "yzi_medifast_small.jpg", class: "newsfeed-image"
+      .container
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Узи
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "onkologia_medifast_small.jpg", class: "newsfeed-image"
+      .container
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Онкология
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "otolaringologia_medifast_small.jpg", class: "newsfeed-image"
+      .container
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Отоларингология
