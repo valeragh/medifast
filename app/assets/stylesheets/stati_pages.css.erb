@@ -6747,6 +6747,12 @@ polyline {
   background-color: white;
   color: #111111;
 }
+.newsfeed-article .container.procedure {
+  padding: 30px;
+  background-color: white;
+  color: #111111;
+  height: 40px;
+}
 
 /* line 82, ../../Sass/pages/_newsfeed.scss */
 .newsfeed-image {
@@ -6899,7 +6905,7 @@ polyline {
 .back-link {
   font-size: 13px;
   color: white;
-  font-family: 'Avenir LT W01 85 Heavy';
+  font-family: 'Cuprum', sans-serif;
   display: block;
   margin-bottom: 45px;
   text-transform: uppercase;
@@ -9588,6 +9594,15 @@ span.text-center.name h2{
   -o-background-size: cover;
   background-size: cover;
 }
+.home-carousel .carouselBody > ul li.team{
+  background: url(<%= asset_path('team_medifast.jpg') %>);
+  background-position: top center;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .home-carousel .carouselBody > ul li.onko{
   background: url(<%= asset_path('onkologia_medifast.jpg') %>);
   background-position: top center;
@@ -9599,6 +9614,6 @@ span.text-center.name h2{
 }
 h2.sub-heading.text-center{
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.1em;
 
 }

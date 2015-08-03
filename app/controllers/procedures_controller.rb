@@ -4,4 +4,7 @@ class ProceduresController < ApplicationController
 
   def show
   end
+
+  def show_procedur
+  end
 end

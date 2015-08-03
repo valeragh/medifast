@@ -1,2 +1,96 @@
-%h1 Procedures#show
-%p Find me in app/views/procedures/show.html.haml
+%button.back-to-top.back-to-top-bind#back-to-top
+%section.main.content-section.priem#priem
+  .section-wrapper
+    %h1.header-intro
+      Запись на прием онлайн это просто
+    %p.header-standfirst
+      Наши доктора всегда готовы Вам помочь
+    = link_to root_path, class: "red-button" do
+      Подробней
+      %span.icon.right-icon
+%section.content-section.newsfeed-filter
+  .section-wrapper
+    %nav.filter-nav
+      = link_to procedures_path, class: "filter-link all" do
+        Эрозия шейки матки
+      = link_to procedures_path, class: "filter-link all" do
+        Миома матки
+      = link_to procedures_path, class: "filter-link all" do
+        Вагинальный кандидоз, молочница
+      = link_to procedures_path, class: "filter-link all" do
+        Киста яичников
+      = link_to procedures_path, class: "filter-link all" do
+        Нарушение менструального цикла
+      = link_to procedures_path, class: "filter-link all" do
+        Контрапцепция
+      = link_to procedures_path, class: "filter-link all" do
+        Детская гинекология
+      = link_to procedures_path, class: "filter-link all" do
+        Бесплодие
+      = link_to procedures_path, class: "filter-link all" do
+        Недержание мочи
+%section.content-section.newsfeed.active
+  .section-wrapper
+    %article.newsfeed-article
+      = link_to procedures_show_procedur_path do
+        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
+      .container.procedure
+        = link_to procedures_show_procedur_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Эрозия шейки матки
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
+      .container.procedure
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Миома матки
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
+      .container.procedure
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Вагинальный кандидоз, молочница
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
+      .container.procedure
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Киста яичников
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
+      .container.procedure
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Контрапцепция
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
+      .container.procedure
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Нарушение менструального цикла
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
+      .container.procedure
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Детская гинекология
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
+      .container.procedure
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Бесплодие
+    %article.newsfeed-article
+      = link_to procedures_path do
+        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
+      .container.procedure
+        = link_to procedures_path, class: "newsfeed-link" do
+          %h2.sub-heading.text-center
+            Недержание мочи
