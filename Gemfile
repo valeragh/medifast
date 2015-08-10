@@ -41,6 +41,10 @@ gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
 gem 'gmaps4rails'
 gem 'geocoder'
 gem 'metamagic'
+gem 'cancancan'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
 
 
 group :production do

@@ -1,0 +1,22 @@
+%section.content-section.contact
+  .section-wrapper
+    .left-column
+      %h1.section-heading
+        Восстановление пароля
+      %h2.sub-heading
+        Личный кабинет
+      %p.paragraph
+        После входа у Вас появится возможность в Вашем личном кабинете бесплатно консультироваться с врачами клиники Медифаст
+    #contact-form.right-column
+
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        = devise_error_messages!
+
+        %fieldset
+          = f.label :email
+          = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
+
+        .actions
+          = f.submit "Отправить инструкцию восстановление пароля", class: "blue-button submit"
+
+      = render "devise/shared/links"

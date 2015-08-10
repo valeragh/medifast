@@ -1,0 +1,22 @@
+%section.content-section.contact
+  .section-wrapper
+    .left-column
+      %h1.section-heading
+        Повторная отправка письма для подтверждения регистрации
+      %h2.sub-heading
+        Личный кабинет
+      %p.paragraph
+        После входа у Вас появится возможность в Вашем личном кабинете бесплатно консультироваться с врачами клиники Медифаст
+    #contact-form.right-column
+
+      = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+        = devise_error_messages!
+
+        %fieldset
+          = f.label :email
+          = f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+
+        .actions
+          = f.submit "Отправить повторно инструкцию"
+
+      = render "devise/shared/links"

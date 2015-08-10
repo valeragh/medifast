@@ -1,0 +1,48 @@
+%section.content-section.contact
+  .section-wrapper
+    .left-column
+      %h1.section-heading
+        Личный кабинет
+        = resource_name.to_s.humanize
+      %h2.sub-heading
+        Смена пароля
+      %p.paragraph
+        Вы можите поменять пароль или удалить аккаунт
+    #contact-form.right-column
+
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        = devise_error_messages!
+
+        %fieldset
+          = f.label :email
+          = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
+
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          %div
+            Currently waiting confirmation for: = resource.unconfirmed_email
+
+        %fieldset
+          = f.label :password, "Новый пароль"
+          %i Оставте пустым, если не хотите менять
+          = f.password_field :password, autocomplete: "off", type: 'text', placeholder: "Пароль"
+
+        %fieldset
+          = f.label :password_confirmation, "Подтвердите новый пароль"
+          = f.password_field :password_confirmation, autocomplete: "off", type: 'text', placeholder: "Пароль"
+
+        %fieldset
+          = f.label :current_password, "Текущий пароль"
+          %i Введите текущий пароль для его замены
+          = f.password_field :current_password, autocomplete: "off", type: 'text', placeholder: "Пароль"
+
+        .actions
+          = f.submit "Обновить", class: "blue-button submit"
+
+
+
+      %h3
+        Удаление аккаунта
+
+      = button_to "Удалить", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "red-button submit"
+
+      = link_to "На главную", root_path

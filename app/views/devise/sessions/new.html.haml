@@ -1,0 +1,29 @@
+%section.content-section.contact
+  .section-wrapper
+    .left-column
+      %h1.section-heading
+        Войти
+      %h2.sub-heading
+        Личный кабинет
+      %p.paragraph
+        После входа у Вас появится возможность в Вашем личном кабинете бесплатно консультироваться с врачами клиники Медифаст
+    #contact-form.right-column
+
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        %fieldset
+          = f.label :email
+          = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
+
+        %fieldset
+          = f.label :password, "Пароль"
+          = f.password_field :password, autocomplete: "off", type: 'text', placeholder: "Пароль"
+
+        - if devise_mapping.rememberable?
+          %fieldset
+            = f.check_box :remember_me, type: "checkbox", class: "optout-check"
+            = f.label :remember_me, "Запомнить меня", class: "optout-label"
+
+        .actions
+          = f.submit "Войти", class: "blue-button submit"
+
+      = render "devise/shared/links"

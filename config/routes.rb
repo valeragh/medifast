@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  devise_for :users,
+             controllers: { :omniauth_callbacks => 'users/omniauth_callbacks' },
+             path: '',
+             path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
+
+
+  ActiveAdmin.routes(self)
+
   get 'personals/show'
   get 'news/show'
 

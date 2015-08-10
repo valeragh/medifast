@@ -1,0 +1,37 @@
+%section.content-section.contact
+  .section-wrapper
+    .left-column
+      %h1.section-heading
+        Регистрация пользователя
+      %h2.sub-heading
+        Личный кабинет
+      %p.paragraph
+        После регистрации у Вас появится возможность в Вашем личном кабинете бесплатно консультироваться с врачами клиники Медифаст
+    #contact-form.right-column
+
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+
+        %fieldset
+          = f.label :email
+          = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
+
+        %fieldset
+          = f.label :password, "Пароль"
+          - if @minimum_password_length
+            %em
+              = @minimum_password_length
+              символов минимум
+          %br
+          = f.password_field :password, autocomplete: "off", type: 'text', placeholder: "Пароль"
+
+        %fieldset
+          = f.label :password_confirmation, "Повторите пароль"
+          %br
+          = f.password_field :password_confirmation, autocomplete: "off", type: 'text', placeholder: "Пароль"
+
+
+        .actions
+          = f.submit "Регистрация", class: "blue-button submit"
+
+      = render "devise/shared/links"
