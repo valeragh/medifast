@@ -51,7 +51,7 @@ default_run_options[:pty] = true
 set :application,     "medifast"
 
 # Сервер размещения проекта.
-set :deploy_server,   "sulfur.locum.ru"
+set :deploy_server,   "titanium.locum.ru"
 
 # Не включать в поставку разработческие инструменты и пакеты тестирования.
 set :bundle_without,  [:development, :test]
