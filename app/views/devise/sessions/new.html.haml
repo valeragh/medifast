@@ -7,6 +7,9 @@
         Личный кабинет
       %p.paragraph
         После входа у Вас появится возможность в Вашем личном кабинете бесплатно консультироваться с врачами клиники Медифаст
+      %p.paragraph
+        Войти как
+        = link_to "доктор", new_personal_session_path
     #contact-form.right-column
 
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
