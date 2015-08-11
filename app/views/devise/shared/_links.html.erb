@@ -5,7 +5,7 @@
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  Если Вы хотите зарегистрироваться нажмите
+  Если Вы хотите зарегистрироваться как пользователь нажмите
   <br />
   <%= link_to "Регистрация", new_registration_path(resource_name) %><br />
 <% end -%>
