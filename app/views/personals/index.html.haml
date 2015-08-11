@@ -42,45 +42,36 @@
   .section-wrapper
     %h2.section-heading
       Ведущие специалисты
-    %dl.accordion.bio
-      %dt.accordion-name
-        %a.name
-          Шарафан Владимир Гиоргиевич
-        %span.standfirst
-          заведующий хирургическим отделением
-        %span.standfirst
-          медифаст, ул. волгодонская, 18
-        .icon-wrapper
-          %span.icon-open
-          %span.icon-close
-        %span.status-open
-          открыть
-        %span.status-close
-          закрыть
-      %dd.bio-body
-        .accordion-content
-          = image_tag "sharafan_medifast.jpg", class: "accordion-image"
-          %p.paragraph
-            Высшая категория, стаж работы 28 лет
-            %br
-            Специализация: хирургия, лапароскопическая хирургия, сосудистая хирургия, проктология, лазерная хирургия
-            %br
-            %br
-            Закончил Донецкий государственный мединститут им.М.Горького
-            %br
-            Курсы усовершенствования проходил в Донецке, Киеве, Москве, Санкт-Петербурге
-            %br
-            %br
-            Является действительным членом Европейской и Украинской ассоциаций хирургов-герниологов
-            %br
-            %br
-            = link_to root_path, class: "blue-button" do
-              Задать вопрос
-              %span.icon.right-icon
-            \|
-            = link_to root_path, class: "red-button" do
-              Запись на прием
-              %span.icon.right-icon
+    - @personals.each do |personal|
+      %dl.accordion.bio
+        %dt.accordion-name
+          %a.name
+            = personal.name
+          %span.standfirst
+            = personal.position
+          %span.standfirst
+            = personal.clinic
+          .icon-wrapper
+            %span.icon-open
+            %span.icon-close
+          %span.status-open
+            открыть
+          %span.status-close
+            закрыть
+        %dd.bio-body
+          .accordion-content
+            = image_tag "#{personal.image_url}", class: "accordion-image"
+            %p.paragraph
+              = personal.description.html_safe
+              %br
+              %br
+              = link_to root_path, class: "blue-button" do
+                Задать вопрос
+                %span.icon.right-icon
+              \|
+              = link_to root_path, class: "red-button" do
+                Запись на прием
+                %span.icon.right-icon
 %section.content-section.partners.active#meet-our-partners
   .section-wrapper
     %h2.section-heading
