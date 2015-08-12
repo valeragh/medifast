@@ -11,86 +11,16 @@
 %section.content-section.newsfeed-filter
   .section-wrapper
     %nav.filter-nav
-      = link_to procedures_path, class: "filter-link all" do
-        Эрозия шейки матки
-      = link_to procedures_path, class: "filter-link all" do
-        Миома матки
-      = link_to procedures_path, class: "filter-link all" do
-        Вагинальный кандидоз, молочница
-      = link_to procedures_path, class: "filter-link all" do
-        Киста яичников
-      = link_to procedures_path, class: "filter-link all" do
-        Нарушение менструального цикла
-      = link_to procedures_path, class: "filter-link all" do
-        Контрапцепция
-      = link_to procedures_path, class: "filter-link all" do
-        Детская гинекология
-      = link_to procedures_path, class: "filter-link all" do
-        Бесплодие
-      = link_to procedures_path, class: "filter-link all" do
-        Недержание мочи
+      - @services.each do |service|
+        = link_to procedure_path(@service_category[:slug], service[:slug]), class: "filter-link all" do
+          = service.name
 %section.content-section.newsfeed.active
   .section-wrapper
-    %article.newsfeed-article
-      = link_to procedures_show_procedur_path do
-        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_show_procedur_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Эрозия шейки матки
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Миома матки
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Вагинальный кандидоз, молочница
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Киста яичников
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Контрапцепция
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Нарушение менструального цикла
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Детская гинекология
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Бесплодие
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Недержание мочи
+    - @services.each do |service|
+      %article.newsfeed-article
+        = link_to procedure_path(@service_category[:slug], service[:slug]) do
+          = image_tag "#{service.image_url}", class: "newsfeed-image"
+        .container.procedure
+          = link_to procedure_path(@service_category[:slug], service[:slug]), class: "newsfeed-link" do
+            %h2.sub-heading.text-center
+              = service.name

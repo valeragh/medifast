@@ -393,6 +393,11 @@ ru:
       blog: "Блог"
   activerecord:
     models:
+      service_category:
+        one:  "Категория"
+        few:  "Категории"
+        many: "Категории"
+        other: "Категории"
       service:
         one:  "Услугу"
         few:  "Услуг"

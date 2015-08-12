@@ -10,93 +10,17 @@
 %section.content-section.newsfeed-filter
   .section-wrapper
     %nav.filter-nav
-      = link_to procedures_show_path, class: "filter-link all" do
-        Гинекология
-      = link_to procedures_path, class: "filter-link all" do
-        Урология
-      = link_to procedures_path, class: "filter-link all" do
-        Кардиология
-      = link_to procedures_path, class: "filter-link all" do
-        Травматология
-      = link_to procedures_path, class: "filter-link all" do
-        Хирургия
-      = link_to procedures_path, class: "filter-link all" do
-        Педиатрия
-      = link_to procedures_path, class: "filter-link all" do
-        Лаборатория
-      = link_to procedures_path, class: "filter-link all" do
-        Узи
-      = link_to procedures_path, class: "filter-link all" do
-        Онкология
+      - @service_categories.each do |category|
+        = link_to procedure_category_path(category[:slug]), class: "filter-link all" do
+          = category.name
 %section.content-section.newsfeed.active
   .section-wrapper
     %article.newsfeed-article
-      = link_to procedures_show_path do
-        = image_tag "genikologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_show_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Гинекология
-    %article.newsfeed-article
-      = link_to procedures_show_path do
-        = image_tag "ulorogia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Урология
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "cardiologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Кардиология
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "travmatologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Травматология
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "hilurgia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Хирургия
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "pediatria_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Педиатрия
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "Laboratoria_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Лаборатория
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "yzi_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Узи
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "onkologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Онкология
-    %article.newsfeed-article
-      = link_to procedures_path do
-        = image_tag "otolaringologia_medifast_small.jpg", class: "newsfeed-image"
-      .container.procedure
-        = link_to procedures_path, class: "newsfeed-link" do
-          %h2.sub-heading.text-center
-            Отоларингология
+      - @service_categories.each do |category|
+        = link_to procedure_category_path(category[:slug]) do
+          = image_tag "#{category.image_small_url}", class: "newsfeed-image"
+        .container.procedure
+          = link_to procedure_category_path(category[:slug]), class: "newsfeed-link" do
+            %h2.sub-heading.text-center
+              = category.name
+

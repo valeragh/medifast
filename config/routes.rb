@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   match '/news', to: 'news#index', via: 'get'
   match '/news/show', to: 'news#show', via: 'get'
   match '/procedures', to: 'procedures#index', via: 'get'
-  match '/procedures/show', to: 'procedures#show', via: 'get'
-  match '/procedures/show_procedur', to: 'procedures#show_procedur', via: 'get'
+  get '/procedures/:service_category_id', to: 'procedures#show', as: :procedure_category
+  get '/procedures/:service_category_id/service/:id', to: 'procedures#show_procedur', as: :procedure
   match '/personals', to: 'personals#index', via: 'get'
 end

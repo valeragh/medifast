@@ -58,7 +58,7 @@ ActiveAdmin.register Personal do
 
   index do
     column("Имя"){|personal| personal.name}
-    column("Имя"){|personal| personal.position}
+    column("Должность"){|personal| personal.position}
     column("Клиника"){|personal| personal.clinic}
     column("Email"){|personal| personal.email}
     column "Дата создания", :created_at
