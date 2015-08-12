@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'personals/show'
   get 'news/show'
 
+  resources :records
+
   root 'stati_pages#index'
   match '/about_us', to: 'stati_pages#about_us', via: 'get'
   match '/contacts', to: 'stati_pages#contacts', via: 'get'
@@ -25,4 +27,5 @@ Rails.application.routes.draw do
   get '/procedures/:service_category_id', to: 'procedures#show', as: :procedure_category
   get '/procedures/:service_category_id/service/:id', to: 'procedures#show_procedur', as: :procedure
   match '/personals', to: 'personals#index', via: 'get'
+
 end

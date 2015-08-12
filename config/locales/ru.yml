@@ -443,3 +443,10 @@ ru:
         few:  "Адрес"
         many: "Адрес"
         other: "Адрес"
+    attributes:
+      record:
+        name: "Имя"
+        phone: "Номер телефона"
+        service_id: "Услуга"
+        clinic_id: "Клиника"
+        description: "Сообщение"

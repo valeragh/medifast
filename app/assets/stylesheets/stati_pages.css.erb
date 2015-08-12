@@ -7089,7 +7089,7 @@ polyline {
   text-transform: uppercase;
 }
 /* line 63, ../../Sass/pages/_contact.scss */
-#contact-form input[type='text'], #contact-form textarea {
+#contact-form input[type='text'], #contact-form textarea, #contact-form select {
   width: 100%;
   display: inline-block;
   -webkit-box-sizing: border-box;
@@ -9612,10 +9612,23 @@ span.text-center.name h2{
   -o-background-size: cover;
   background-size: cover;
 }
+.home-carousel .carouselBody > ul li.record{
+  background: url(<%= asset_path('record_online_medifast.jpg') %>);
+  background-position: top center;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 h2.sub-heading.text-center{
   text-align: center;
   font-size: 1.1em;
 }
 .fa-facebook-square, .fa-vk{
   color: #1e5799;
+}
+
+#error_explanation{
+  color: #E80000;
 }

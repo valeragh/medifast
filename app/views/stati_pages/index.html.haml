@@ -152,15 +152,7 @@
           Отделения
           %span.icon.right-icon
     %article.right-column
-%section.main.content-section.priem#priem
-  .section-wrapper
-    %h1.header-intro
-      Запись на прием онлайн это просто
-    %p.header-standfirst
-      Наши доктора всегда готовы Вам помочь
-    = link_to root_path, class: "red-button" do
-      Подробней
-      %span.icon.right-icon
+= render "layouts/record"
 %section.main.content-section.smarter-engagement#news
   .section-wrapper
     %h2.section-heading

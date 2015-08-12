@@ -9,7 +9,7 @@
       = link_to "Персонал", personals_path, class: "link"
       = link_to "Контакты", contacts_path, class: "link"
       %span.icon
-      = link_to "Запись на прием", root_path, class: "link red"
+      = link_to "Запись на прием", records_path, class: "link red"
       - if signed_in?
         = link_to "Личный кабинет", edit_user_registration_path, class: "link login", style: "margin-right: -1px"
         \/

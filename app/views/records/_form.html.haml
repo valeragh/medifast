@@ -1,0 +1,35 @@
+= form_for @record do |f|
+  - if @record.errors.any?
+    #error_explanation
+      %p
+        Исправте следующие ошибки перед отправкой:
+      %ul
+        - @record.errors.full_messages.each do |msg|
+          %li= msg
+
+  %fieldset
+    = f.label :name, "Имя*"
+    = f.email_field :name, autofocus: true, type: 'text', placeholder: "Ваше имя"
+
+  %fieldset
+    = f.label :phone, "Телефон*"
+    = f.phone_field :phone, autofocus: true, type: 'text', placeholder: "Ваш номер телефона"
+
+  %fieldset
+    = f.label :email
+    = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
+
+  %fieldset
+    = f.label :service_id, "Услуга*"
+    = collection_select :record, :service_id, Service.all, :id, :name, {}, { :multiple => false }
+
+  %fieldset
+    = f.label :clinic_id, "Клиника*"
+    = collection_select :record, :service_id, Service.all, :id, :name, {}, { :multiple => false }
+
+  %fieldset
+    = f.label :description, "Сообщение"
+    = f.text_field :description, type: 'text', placeholder: "Ваше сообщение"
+
+  .actions
+    = f.submit "Отправить", class: "blue-button submit"

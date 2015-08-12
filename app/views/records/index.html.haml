@@ -1,0 +1,49 @@
+%button.back-to-top.back-to-top-bind#back-to-top
+%article.header-content#carousel
+  %article.carousel.home-carousel
+    .carouselBody
+      %ul
+        %li.record
+          .carousel-slide
+            .section-wrapper
+              %h1.header-intro
+                Запись на прием онлайн это просто
+              %p.header-standfirst
+                Наши доктора всегда готовы Вам помочь
+  %a.main-cta#stickyNavPoint
+    Узнайте больше
+    %span.right-icon
+%section.content-section.about
+  .section-wrapper
+    %h2.section-heading
+      Медифаст запись на прием онлайн
+    .left-column
+      %p.paragraph
+        Этот сервис мы разработали для Вашего удобства. Записаться на прием в клинику Медифаст теперь можно онлайн на нашем сайте.
+      %p.paragraph
+        Для этого необходимо заполнить свои контактные данные, Ваше имя, номер телефона и если есть адрес электроной почты. Если Вы хотите что то узнать или проконсультироватся, напишите нам в поле сообщение.
+    .right-column
+      %p.paragraph
+        Так же необходимо выбрать услугу на которую Вы хотите записаться и отделение клиники Медифаст. Более детальней о услугах клиники, смотрите в разделе
+        = link_to "услуги", procedures_path
+        , информация о отделених клиники Медифаст находиться в разделе
+        = link_to "контакты", contacts_path
+      %p.paragraph
+        После отправки Ваших данных, администраторы клиники Медифаст, свяжуться с Вами в ближайшее время.
+%section.content-section.contact
+  .section-wrapper
+    .left-column
+      %h1.section-heading
+        Запись на прием
+      %h2.sub-heading
+        Введите Ваши данные
+      %p.paragraph
+        Поля со зведочкой обязательные для заполнения
+    #contact-form.right-column
+
+      = render "records/form"
+= render "layouts/consultation"
+
+- content_for :scripts do
+  :javascript
+    About.init();

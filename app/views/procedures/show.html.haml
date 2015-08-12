@@ -1,13 +1,5 @@
 %button.back-to-top.back-to-top-bind#back-to-top
-%section.main.content-section.priem#priem
-  .section-wrapper
-    %h1.header-intro
-      Запись на прием онлайн это просто
-    %p.header-standfirst
-      Наши доктора всегда готовы Вам помочь
-    = link_to root_path, class: "red-button" do
-      Подробней
-      %span.icon.right-icon
+= render "layouts/record"
 %section.content-section.newsfeed-filter
   .section-wrapper
     %nav.filter-nav
