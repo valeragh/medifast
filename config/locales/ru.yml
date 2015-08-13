@@ -458,6 +458,11 @@ ru:
         few:  "Пользователи"
         many: "Пользователи"
         other: "Пользователи"
+      vacancy:
+        one:  "Вакансия"
+        few:  "Вакансии"
+        many: "Вакансии"
+        other: "Вакансии"
     attributes:
       record:
         name: "Ф.И.О."
