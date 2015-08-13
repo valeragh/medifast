@@ -1,0 +1,33 @@
+= render "layouts/record"
+%section.content-section.about
+  .section-wrapper
+    %h2.section-heading
+      Медифаст консультация
+    .left-column
+      %p.paragraph
+        Этот сервис мы разработали для Вашего удобства. Вы можите получить консультацию по любой услуги клиники Медифаст на нашем сайте.
+      %p.paragraph
+        Для этого необходимо заполнить свои контактные данные, Ваше имя, номер телефона и если есть адрес электроной почты. Если у Вас есть вопрос, напишите его.
+    .right-column
+      %p.paragraph
+        Так же необходимо выбрать услугу на которую Вы хотите записаться и отделение клиники Медифаст. Более детальней о услугах клиники, смотрите в разделе
+        = link_to "услуги", procedures_path
+      %p.paragraph
+        После отправки Ваших данных, администраторы клиники Медифаст, свяжуться с Вами в ближайшее время.
+%section.content-section.contact
+  .section-wrapper
+    .left-column
+      %h1.section-heading
+        Консультация
+      %h2.sub-heading
+        Введите Ваши данные
+      %p.paragraph
+        Поля со зведочкой обязательные для заполнения
+    #contact-form.right-column
+
+      = render "consultations/form"
+= render "layouts/consultation"
+
+- content_for :scripts do
+  :javascript
+    About.init();

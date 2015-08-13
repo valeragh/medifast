@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'news/show'
 
   resources :records
+  resources :consultations
 
   root 'stati_pages#index'
   match '/about_us', to: 'stati_pages#about_us', via: 'get'

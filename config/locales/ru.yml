@@ -404,10 +404,10 @@ ru:
         many: "Услуги"
         other: "Услуги"
       consultation:
-        one:  "Концильтация"
-        few:  "Концильтации"
-        many: "Концильтации"
-        other: "Концильтации"
+        one:  "Консультация"
+        few:  "Консультации"
+        many: "Консультации"
+        other: "Консультации"
       record:
         one:  "Запись на прием"
         few:  "Записи на прием"
@@ -460,8 +460,13 @@ ru:
         other: "Пользователи"
     attributes:
       record:
-        name: "Имя"
+        name: "Ф.И.О."
         phone: "Номер телефона"
         service_id: "Услуга"
         clinic_id: "Клиника"
         description: "Сообщение"
+      consultation:
+        name: "Имя"
+        phone: "Номер телефона"
+        service_id: "Услуга"
+        description: "Вопрос"

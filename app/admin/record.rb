@@ -12,7 +12,7 @@ ActiveAdmin.register Record do
   filter :checked_out_at, label: 'Дата ответа'
   filter :name, label: 'Имя'
   filter :service, label: 'Процедура', as: :select, collection: proc { Service.find(Record.pluck(:service_id)).map { |m| [m.name, m.id] } }
-  filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Record.pluck(:clinic_id)).map { |m| [m.address, m.id] } }
+  #filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Record.pluck(:clinic_id)).map { |m| [m.name, m.id] } }
 
   scope "Все", :all, :default => true
   scope "Новый", :in_progress
@@ -50,7 +50,7 @@ ActiveAdmin.register Record do
   index do
     column("Дата создания"){|record| l record.created_at, format: :long}
     column("Имя"){|record| record.name }
-    column("Телефон"){|record| record.phone_record}
+    column("Телефон"){|record| record.phone}
     column("Услуга"){|record| record.service.name}
     column("Клиника"){|record| record.clinic.address}
     column("Статус"){|record| status_tag(record.state)}

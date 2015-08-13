@@ -1,14 +1,14 @@
-= form_for @record do |f|
-  - if @record.errors.any?
+= form_for @consultation do |f|
+  - if @consultation.errors.any?
     #error_explanation
       %p
         Исправте следующие ошибки перед отправкой:
       %ul
-        - @record.errors.full_messages.each do |msg|
+        - @consultation.errors.full_messages.each do |msg|
           %li= msg
 
   %fieldset
-    = f.label :name, "Ф.И.О.*"
+    = f.label :name, "Имя*"
     = f.email_field :name, autofocus: true, type: 'text', placeholder: "Ваше имя"
 
   %fieldset
@@ -24,12 +24,8 @@
     = collection_select :record, :service_id, Service.all, :id, :name, {}, { :multiple => false }
 
   %fieldset
-    = f.label :clinic_id, "Клиника*"
-    = collection_select :record, :clinic_id, Clinic.all, :id, :address, {}, { :multiple => false }
-
-  %fieldset
-    = f.label :description, "Сообщение"
-    = f.text_field :description, type: 'text', placeholder: "Ваше сообщение"
+    = f.label :description, "Вопрос"
+    = f.text_field :description, type: 'text', placeholder: "Ваш вопрос"
 
   .actions
     = f.submit "Отправить", class: "blue-button submit"
