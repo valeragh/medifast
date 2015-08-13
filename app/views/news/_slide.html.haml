@@ -1,0 +1,16 @@
+%section.content-section.feature
+  .section-wrapper
+    %article.carousel.newsfeed-carousel
+      .carouselBody.partners-carousel
+        %ul
+          - @posts_slide.each do |post|
+            %li
+              .carousel-slider
+                = image_tag "#{post.image_url}", class: "feature-image"
+                %article.feature-article
+                  %h1.section-heading
+                    = post.name
+                  %p.paragraph
+                    = post.title.html_safe
+                  = link_to show_news_path(post[:slug]), class: "feature-link blue-button" do
+                    Узнайте больше

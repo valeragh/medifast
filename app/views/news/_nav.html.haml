@@ -1,0 +1,13 @@
+%section.content-section.newsfeed-filter
+  .section-wrapper
+    %nav.filter-nav
+      = link_to news_path, class: "filter-link all active", data:{filter: "*"} do
+        Все новости
+      = link_to news_stacionar_path, class: "filter-link all", data:{filter: ".news-and-events"} do
+        Стационар
+      = link_to news_policlinica_path, class: "filter-link all", data:{filter: ".news-and-events"} do
+        Поликлиника
+      = link_to news_filialy_path, class: "filter-link all", data:{filter: ".news-and-events"} do
+        Филиалы
+      = link_to news_specialisty_path, class: "filter-link all", data:{filter: ".news-and-events"} do
+        Специалисты

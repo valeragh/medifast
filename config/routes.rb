@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   get 'personals/show'
-  get 'news/show'
 
   resources :records
   resources :consultations
@@ -24,7 +23,11 @@ Rails.application.routes.draw do
   match '/faqs', to: 'stati_pages#faqs', via: 'get'
   match '/vacansies', to: 'stati_pages#vacansies', via: 'get'
   match '/news', to: 'news#index', via: 'get'
-  match '/news/show', to: 'news#show', via: 'get'
+  match '/news/stacionar', to: 'news#stacionar', via: 'get'
+  match '/news/policlinica', to: 'news#policlinica', via: 'get'
+  match '/news/filialy', to: 'news#filialy', via: 'get'
+  match '/news/specialisty', to: 'news#specialisty', via: 'get'
+  get '/news/:id', to: 'news#show', as: :show_news
   match '/procedures', to: 'procedures#index', via: 'get'
   get '/procedures/:service_category_id', to: 'procedures#show', as: :procedure_category
   get '/procedures/:service_category_id/service/:id', to: 'procedures#show_procedur', as: :procedure

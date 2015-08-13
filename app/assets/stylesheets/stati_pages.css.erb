@@ -1253,7 +1253,7 @@ html, body {
 
 /* line 85, ../../Sass/modules/_carousel.scss */
 .carousel.home-carousel nav li button {
-  background: url('../images/carousel-inactive.png');
+  background: url(<%= asset_path('carousel-inactive.png') %>);
   background-size: 100%;
   border: 0;
   display: block;
@@ -1267,14 +1267,14 @@ html, body {
 
 /* line 86, ../../Sass/modules/_carousel.scss */
 .carousel.home-carousel nav li.active button {
-  background: url('../images/carousel-active.png');
+  background: url(<%= asset_path('carousel-active.png') %>);
   background-size: 100%;
   background-position: 0 0;
 }
 
 /* line 88, ../../Sass/modules/_carousel.scss */
 .feature .carousel nav li button {
-  background: url('../images/carousel-inactive.png');
+  background: url(<%= asset_path('carousel-inactive.png') %>);
   background-size: 100%;
   border: 0;
   display: block;
