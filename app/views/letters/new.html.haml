@@ -1,0 +1,32 @@
+= render "layouts/record"
+%section.content-section.about
+  .section-wrapper
+    %h2.section-heading
+      Медифаст обратная связь
+    .left-column
+      %p.paragraph
+        Этот сервис мы разработали для Вашего удобства. Вы можите отправить письмо с сайте Медифаст.
+      %p.paragraph
+        Для этого необходимо заполнить свои контактные данные, Ваше имя, адрес электроной почты и написать Ваше сообщение.
+    .right-column
+      %p.paragraph
+        Нам очень важно Ваше мнение, напишите нам.
+      %p.paragraph
+        После отправки Ваших данных, администраторы клиники Медифаст, ответять Вам в ближайшее время.
+%section.content-section.contact
+  .section-wrapper
+    .left-column
+      %h1.section-heading
+        Письмо
+      %h2.sub-heading
+        Введите Ваши данные
+      %p.paragraph
+        Поля со зведочкой обязательные для заполнения
+    #contact-form.right-column
+
+      = render "letters/form"
+= render "layouts/consultation"
+
+- content_for :scripts do
+  :javascript
+    About.init();

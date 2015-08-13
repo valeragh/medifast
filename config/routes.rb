@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :records
   resources :consultations
+  resources :letters
 
   root 'stati_pages#index'
   match '/about_us', to: 'stati_pages#about_us', via: 'get'

@@ -1,0 +1,24 @@
+= form_for @letter do |f|
+  - if @letter.errors.any?
+    #error_explanation
+      %p
+        Исправте следующие ошибки перед отправкой:
+      %ul
+        - @letter.errors.full_messages.each do |msg|
+          %li= msg
+
+  %fieldset
+    = f.label :name, "Имя*"
+    = f.text_field :name, autofocus: true, type: 'text', placeholder: "Ваше имя"
+
+
+  %fieldset
+    = f.label :email, "Email*"
+    = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
+
+
+  = f.label :description, "Сообщение*"
+  = f.text_area :description, type: 'text', placeholder: "Ваше сообщение"
+
+  .actions
+    = f.submit "Отправить", class: "blue-button submit"

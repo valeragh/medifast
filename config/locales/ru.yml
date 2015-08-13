@@ -414,10 +414,10 @@ ru:
         many: "Записи на прием"
         other: "Записи на прием"
       letter:
-        one:  "Сообщение"
-        few:  "Сообщения"
-        many: "Сообщения"
-        other: "Сообщения"
+        one:  "Письмо"
+        few:  "Письма"
+        many: "Письма"
+        other: "Письма"
       comment:
         one:  "Комментарий"
         few:  "Комментарии"
@@ -470,3 +470,6 @@ ru:
         phone: "Номер телефона"
         service_id: "Услуга"
         description: "Вопрос"
+      letter:
+        name: "Имя"
+        description: "Сообщение"

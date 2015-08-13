@@ -3,31 +3,42 @@ ActiveAdmin.register_page "Dashboard" do
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
-    div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
+    columns do
+
+      column do
+        panel "Записи на прием" do
+          table_for Record.order(created_at: :desc).limit(10) do
+            column("Дата создания"){|record| l record.created_at, format: :long}
+            column("Имя"){|record| record.name }
+            column("Телефон"){|record| record.phone}
+            column("Услуга"){|record| record.service.name}
+            column("Клиника"){|record| record.clinic.address}
+            column("Статус"){|record| status_tag(record.state)}
+          end
+        end
+
+        panel "Консультации" do
+          table_for Consultation.order(created_at: :desc).limit(10) do
+            column("Дата создания"){|consultation| l consultation.created_at, format: :long}
+            column("Имя"){|consultation| consultation.name }
+            column("Телефон"){|consultation| consultation.phone}
+            column("Услуга"){|consultation| consultation.service.name}
+            column("Вопрос"){|consultation| consultation.description}
+            column("Статус"){|consultation| status_tag(consultation.state)}
+          end
+        end
+
+        panel "Письма" do
+          table_for Letter.order(created_at: :desc).limit(10) do
+            column("Дата создания"){|letter| l letter.created_at, format: :long}
+            column("Имя"){|letter| letter.name }
+            column("Email"){|letter| letter.email}
+            column("Сообщение"){|letter| letter.description}
+            column("Статус"){|letter| status_tag(letter.state)}
+          end
+        end
       end
+
     end
-
-    # Here is an example of a simple dashboard with columns and panels.
-    #
-    # columns do
-    #   column do
-    #     panel "Recent Posts" do
-    #       ul do
-    #         Post.recent(5).map do |post|
-    #           li link_to(post.title, admin_post_path(post))
-    #         end
-    #       end
-    #     end
-    #   end
-
-    #   column do
-    #     panel "Info" do
-    #       para "Welcome to ActiveAdmin."
-    #     end
-    #   end
-    # end
   end # content
 end
