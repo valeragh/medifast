@@ -107,10 +107,11 @@
   .section-wrapper
     %span.quotation-icon.up
     %span.quotation-icon.down
-    %h2.section-heading
-      «Очень хорошая клиника, спасибо что вы есть!!!»
-    %span.citation
-      Елена
+    - @reviews.each do |review|
+      %h2.section-heading
+        = review.description
+      %span.citation
+        = review.name
 %section.main.content-section.choose-your-own.contacts#contacts
   .section-wrapper
     %h2.section-heading.text-center

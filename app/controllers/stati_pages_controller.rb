@@ -3,6 +3,7 @@ class StatiPagesController < ApplicationController
 
   def index
     @cities = City.all
+    @reviews = Review.all.sample(1)
   end
 
   def about_us

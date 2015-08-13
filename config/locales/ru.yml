@@ -448,6 +448,16 @@ ru:
         few:  "Клиники"
         many: "Клиники"
         other: "Клиники"
+      review:
+        one:  "Отзыв"
+        few:  "Отзывы"
+        many: "Отзывы"
+        other: "Отзывы"
+      user:
+        one:  "Пользователь"
+        few:  "Пользователи"
+        many: "Пользователи"
+        other: "Пользователи"
     attributes:
       record:
         name: "Имя"
