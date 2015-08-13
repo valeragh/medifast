@@ -463,6 +463,11 @@ ru:
         few:  "Вакансии"
         many: "Вакансии"
         other: "Вакансии"
+      answer:
+        one:  "Ответ на вакансию"
+        few:  "Ответы на вакансии"
+        many: "Ответы на вакансии"
+        other: "Ответы на вакансии"
     attributes:
       record:
         name: "Ф.И.О."
@@ -478,3 +483,8 @@ ru:
       letter:
         name: "Имя"
         description: "Сообщение"
+      answer:
+        name: "Имя"
+        phone: "Номер телефона"
+        vacancy_id: "Вакансия"
+        description: "Резюме"

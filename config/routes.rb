@@ -17,11 +17,12 @@ Rails.application.routes.draw do
   resources :records
   resources :consultations
   resources :letters
+  resources :answers
 
   root 'stati_pages#index'
   match '/about_us', to: 'stati_pages#about_us', via: 'get'
   match '/faqs', to: 'stati_pages#faqs', via: 'get'
-  match '/vacancies', to: 'stati_pages#vacancies', via: 'get'
+  match '/vacansies', to: 'stati_pages#vacansies', via: 'get'
   match '/news', to: 'news#index', via: 'get'
   match '/news/show', to: 'news#show', via: 'get'
   match '/procedures', to: 'procedures#index', via: 'get'

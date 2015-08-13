@@ -1,0 +1,27 @@
+%section.content-section.about
+  .section-wrapper
+    %h2.section-heading
+      Ответ на вакансию клиники Медифаст
+    .left-column
+      %p.paragraph
+        Этот сервис мы разработали для Вашего удобства. Вы можите ответить на вакансию клиники Медифаст на нашем сайте.
+      %p.paragraph
+        Для этого необходимо заполнить свои контактные данные, Ваше имя, номер телефона и адрес электроной почты. Ваше резюме напишите в поле резюме.
+    .right-column
+      %p.paragraph
+        Так же необходимо выбрать вакансию на которую вы претендуете. Более детальней о вакансиях клиники, смотрите в разделе
+        = link_to "вакансии", vacansies_path
+      %p.paragraph
+        После отправки Ваших данных, администраторы клиники Медифаст, свяжуться с Вами в ближайшее время.
+%section.content-section.contact
+  .section-wrapper
+    .left-column
+      %h1.section-heading
+        Ответ на вакансию
+      %h2.sub-heading
+        Введите Ваши данные
+      %p.paragraph
+        Поля со зведочкой обязательные для заполнения
+    #contact-form.right-column
+
+      = render "answers/form"

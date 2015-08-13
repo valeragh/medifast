@@ -37,6 +37,16 @@ ActiveAdmin.register_page "Dashboard" do
             column("Статус"){|letter| status_tag(letter.state)}
           end
         end
+
+        panel "Ответы на вакансии" do
+          table_for Answer.order(created_at: :desc).limit(10) do
+            column("Дата создания"){|answer| l answer.created_at, format: :long}
+            column("Имя"){|answer| answer.name }
+            column("Телефон"){|answer| answer.phone}
+            column("Вакансия"){|answer| answer.vacancy.name}
+            column("Статус"){|answer| status_tag(answer.state)}
+          end
+        end
       end
 
     end

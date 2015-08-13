@@ -1,0 +1,30 @@
+= form_for @answer do |f|
+  - if @answer.errors.any?
+    #error_explanation
+      %p
+        Исправте следующие ошибки перед отправкой:
+      %ul
+        - @answer.errors.full_messages.each do |msg|
+          %li= msg
+
+  %fieldset
+    = f.label :name, "Ф.И.О.*"
+    = f.text_field :name, autofocus: true, type: 'text', placeholder: "Ваше имя"
+
+  %fieldset
+    = f.label :phone, "Телефон*"
+    = f.phone_field :phone, autofocus: true, type: 'text', placeholder: "Ваш номер телефона"
+
+  %fieldset
+    = f.label :email, "Email*"
+    = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
+
+  %fieldset
+    = f.label :vacancy_id, "Вакансия*"
+    = collection_select :answer, :vacancy_id, Vacancy.all, :id, :name, {}, { :multiple => false }
+
+  = f.label :description, "Резюме*"
+  = f.text_area :description, type: 'text', placeholder: "Ваше резюме"
+
+  .actions
+    = f.submit "Отправить", class: "blue-button submit"
