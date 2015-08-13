@@ -18,7 +18,6 @@ Rails.application.routes.draw do
 
   root 'stati_pages#index'
   match '/about_us', to: 'stati_pages#about_us', via: 'get'
-  match '/contacts', to: 'stati_pages#contacts', via: 'get'
   match '/faqs', to: 'stati_pages#faqs', via: 'get'
   match '/vacancies', to: 'stati_pages#vacancies', via: 'get'
   match '/news', to: 'news#index', via: 'get'
@@ -27,5 +26,8 @@ Rails.application.routes.draw do
   get '/procedures/:service_category_id', to: 'procedures#show', as: :procedure_category
   get '/procedures/:service_category_id/service/:id', to: 'procedures#show_procedur', as: :procedure
   match '/personals', to: 'personals#index', via: 'get'
+  match '/contacts', to: 'contacts#index', via: 'get'
+  get '/contacts/:city_id', to: 'contacts#show', as: :contacts_city
+  get '/contacts/:city_id/clinic/:id', to: 'contacts#show_clinic', as: :contacts_clinic
 
 end

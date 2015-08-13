@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812170806) do
+ActiveRecord::Schema.define(version: 20150812204131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,30 @@ ActiveRecord::Schema.define(version: 20150812170806) do
   add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+
+  create_table "cities", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  add_index "cities", ["slug"], name: "index_cities_on_slug", unique: true, using: :btree
+
+  create_table "clinics", force: true do |t|
+    t.integer  "city_id"
+    t.string   "address"
+    t.text     "contacts"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.text     "description"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  add_index "clinics", ["slug"], name: "index_clinics_on_slug", unique: true, using: :btree
 
   create_table "personals", force: true do |t|
     t.string   "email",                  default: "", null: false

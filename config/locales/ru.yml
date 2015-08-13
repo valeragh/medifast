@@ -438,11 +438,16 @@ ru:
         few:  "Доктора"
         many: "Доктора"
         other: "Доктора"
-      company:
-        one:  "Адрес"
-        few:  "Адрес"
-        many: "Адрес"
-        other: "Адрес"
+      city:
+        one:  "Город"
+        few:  "Города"
+        many: "Города"
+        other: "Города"
+      clinic:
+        one:  "Клиника"
+        few:  "Клиники"
+        many: "Клиники"
+        other: "Клиники"
     attributes:
       record:
         name: "Имя"

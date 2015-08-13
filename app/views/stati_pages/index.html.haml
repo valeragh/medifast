@@ -35,7 +35,7 @@
               = link_to root_path, class: "red-button" do
                 Подробней
                 %span.icon.right-icon
-  = link_to root_path, class: "main-cta", id: "stickyNavPoint" do
+  %a.main-cta#stickyNavPoint
     Все услуги клиники
     %span.right-icon
 %section.main.content-section.choose-your-own
@@ -116,41 +116,18 @@
     %h2.section-heading.text-center
       Отделения клиники
     %article.left-column
-      %article.text-center
-        %h2.town
-          Мариуполь
-        %p
-          Запишитесь на прием в клинику города
-        = link_to root_path, class: "red-button" do
-          Запись на прием
-          %span.icon.right-icon
-        = link_to root_path, class: "blue-button" do
-          Отделения
-          %span.icon.right-icon
-      %p
-      %article.text-center
-        %h2.town
-          Бердянск
-        %p
-          Запишитесь на прием в клинику города
-        = link_to root_path, class: "red-button" do
-          Запись на прием
-          %span.icon.right-icon
-        = link_to root_path, class: "blue-button" do
-          Отделения
-          %span.icon.right-icon
-      %p
-      %article.text-center
-        %h2.town
-          Днепропетровск
-        %p
-          Запишитесь на прием в клинику города
-        = link_to root_path, class: "red-button" do
-          Запись на прием
-          %span.icon.right-icon
-        = link_to root_path, class: "blue-button" do
-          Отделения
-          %span.icon.right-icon
+      - @cities.each do |city|
+        %article.text-center
+          %h2.town
+            = city.name
+          %p
+            Запишитесь на прием в клинику города
+          = link_to records_path, class: "red-button" do
+            Запись на прием
+            %span.icon.right-icon
+          = link_to contacts_city_path(city[:slug]), class: "blue-button" do
+            Отделения
+            %span.icon.right-icon
     %article.right-column
 = render "layouts/record"
 %section.main.content-section.smarter-engagement#news

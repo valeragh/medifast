@@ -1,0 +1,30 @@
+%script{src: "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry", type: "text/javascript"}
+%script{src: "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", type: "text/javascript"}
+.nav-wrap.sub-nav#sub-nav-wrapper
+  %nav.nav#sub-nav
+    %a(class="link" href="#contacts")
+      Отделения клиники
+    %a(class="link" href="#meet-our-partners")
+      Вопрос специалистам
+%section.main.content-section.map
+  %div(style='width: 100%;')
+    #map(style='width: 100%; height: 550px;')
+%section.content-section.who-we-are.active#who-we-are
+  .section-wrapper
+    %h2.section-heading
+      Контакты отделений медифаст
+      = @city.name
+    = render "contacts/form"
+
+= render "layouts/consultation"
+= render "layouts/record"
+
+- content_for :scripts do
+  :javascript
+    About.init();
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers(#{raw @hash.to_json});
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });

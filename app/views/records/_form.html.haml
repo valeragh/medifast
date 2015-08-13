@@ -25,7 +25,7 @@
 
   %fieldset
     = f.label :clinic_id, "Клиника*"
-    = collection_select :record, :service_id, Service.all, :id, :name, {}, { :multiple => false }
+    = collection_select :record, :clinic_id, Clinic.all, :id, :address, {}, { :multiple => false }
 
   %fieldset
     = f.label :description, "Сообщение"
