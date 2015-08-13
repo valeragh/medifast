@@ -139,31 +139,20 @@
       %article.carousel
         .carouselBody
           %ul
-            %li
-              .carousel-slider
-                .left-section
-                  = image_tag "news_app.jpg", class: "carousel-image"
-                %article.carousel-content
-                  %h4.sub-heading
-                    Открытие отделения
-                  %p.paragraph
-                    С ноября 2007г. в клинике «МЕДИФАСТ» открыто единственное в г.Мариуполе
-                    отделение кардиологии и эндоваскулярной хирургии.
-                  = link_to root_path, class: "case-studies-link" do
-                    Узнайте больше
-                    %span.case-studies-icon
-            %li
-              .carousel-slider
-                .left-section
-                  = image_tag "news_app.jpg", class: "carousel-image"
-                %article.carousel-content
-                  %h4.sub-heading
-                    Заголовок новости
-                  %p.paragraph
-                    Текст новости
-                  = link_to root_path, class: "case-studies-link" do
-                    Узнайте больше
-                    %span.case-studies-icon
+            - @posts_slide.each do |post|
+              %li
+                .carousel-slider
+                  .left-section
+                    = image_tag "#{post.image_url}", class: "carousel-image"
+                  %article.carousel-content
+                    %h4.sub-heading
+                      = post.name
+                    %p.paragraph
+                      = post.title.html_safe
+                    = link_to show_news_path(post[:slug]), class: "case-studies-link" do
+                      Узнайте больше
+                      %span.case-studies-icon
+
 %section.main.content-section.view-case-studies
   .section-wrapper
     = link_to news_path, class: "case-studies-link" do

@@ -4,6 +4,7 @@ class StatiPagesController < ApplicationController
   def index
     @cities = City.all
     @reviews = Review.all.sample(1)
+    @posts_slide = Post.all.first(5)
   end
 
   def about_us
