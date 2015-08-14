@@ -15,51 +15,33 @@
   %article.carousel.home-carousel
     .carouselBody
       %ul
-        %li
-          .carousel-slide
-            .section-wrapper
-              %h1.header-intro
-                Гинекология
-              %p.header-standfirst
-                Победим болезнь вместе
-              = link_to root_path, class: "red-button" do
-                Подробней
-                %span.icon.right-icon
-        %li.onko
-          .carousel-slide
-            .section-wrapper
-              %h1.header-intro
-                Онкология
-              %p.header-standfirst
-                Победим болезнь вместе
-              = link_to root_path, class: "red-button" do
-                Подробней
-                %span.icon.right-icon
+        - @service_category.each do |category|
+          %li{:style => "background: url(#{image_path "#{category.image_url}"})"}
+            .carousel-slide
+              .section-wrapper
+                %h1.header-intro
+                  = category.name
+                %p.header-standfirst
+                  Победим болезнь вместе
+                = link_to procedures_path, class: "red-button" do
+                  Подробней
+                  %span.icon.right-icon
   %a.main-cta#stickyNavPoint
     Все услуги клиники
     %span.right-icon
-%section.main.content-section.choose-your-own
+%section.main.content-section.choose-your-own.ads
   .section-wrapper
     %article.left-column
       %h2.section-heading
         Литотрипсия "Золотой" стандарт лечения мочекаменной болезни
       %p
-        Литотрипсия – дробление камней, находящихся в почках, мочеточниках, мочевом пузыре,
-        которые могут вызывать, боли в пояснице, рези мочеиспускании, повышение
-        температуры тела, примесь крови в моче. Появление этого метода явилось революцией в
-        лечении мочекаменной болезни, так как он малоинвазивный, малотравматичный и
-        высокоэффективный.
+        Литотрипсия – дробление камней, находящихся в почках, мочеточниках, мочевом пузыре, которые могут вызывать, боли в пояснице, рези мочеиспускании, повышение температуры тела, примесь крови в моче. Появление этого метода явилось революцией в лечении мочекаменной болезни, так как он малоинвазивный, малотравматичный и высокоэффективный.
         %br
         %br
-        Принцип этого метода состоит в фрагментации конкрементов, находящихся в мочевом
-        тракте и эвакуации всех фрагметов под эндоскопическим контролем во время процедуры.
-        Подлежат дроблению любые камни независимо от плотности, локализации и размеров.
-        Так как травматизация тканей минимальная пациент в кратчайшие сроки выписывается и
-        полностью возвращается к работе.
+        Принцип этого метода состоит в фрагментации конкрементов, находящихся в мочевом тракте и эвакуации всех фрагметов под эндоскопическим контролем во время процедуры. Подлежат дроблению любые камни независимо от плотности, локализации и размеров. Так как травматизация тканей минимальная пациент в кратчайшие сроки выписывается и полностью возвращается к работе.
         %br
         %br
-        После проведения литотрипсии обязательно необходимы постоянные методы по
-        профилактике повторного камнеобразования и ведение здорового образа жизни.
+        После проведения литотрипсии обязательно необходимы постоянные методы по профилактике повторного камнеобразования и ведение здорового образа жизни.
     %article.right-column
       %blockquote.blockquote
         = image_tag "new_medifast.png"
@@ -152,6 +134,15 @@
                     = link_to show_news_path(post[:slug]), class: "case-studies-link" do
                       Узнайте больше
                       %span.case-studies-icon
+    %h3.sub-heading
+      Наши партнеры
+    .companies-container
+      = image_tag "storz_medical.png", class: "logo samsung-logo"
+      = image_tag "siemens.png", class: "logo samsung-logo"
+      = image_tag "richard_wolf.png", class: "logo samsung-logo"
+      = image_tag "toshiba.png", class: "logo samsung-logo"
+      = image_tag "siemens.png", class: "logo samsung-logo"
+      = image_tag "ethicon.png", class: "logo samsung-logo"
 
 %section.main.content-section.view-case-studies
   .section-wrapper
