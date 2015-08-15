@@ -37,7 +37,7 @@
         Мы ценим доверия наших пациентов, поэтому взяв на себя ответственность за Ваше здоровье, в полной мере обеспечиваем рациональность лечения и гарантию качества
 %section.content-section.who-we-are.active#who-we-are
   .section-wrapper
-    %h2.section-heading
+    %h2.section-heading.white
       Ведущие специалисты
     - @personals.each do |personal|
       %dl.accordion.bio
@@ -66,88 +66,11 @@
                 Задать вопрос
                 %span.icon.right-icon
               \|
-              = link_to root_path, class: "red-button" do
+              = link_to records_path, class: "red-button" do
                 Запись на прием
                 %span.icon.right-icon
-%section.content-section.partners.active#meet-our-partners
-  .section-wrapper
-    %h2.section-heading
-      Консультация специалистов
-    .tab-button-container
-      %a.tab-button.active(data-index="0")
-        %span.partners-icon
-        Администрация
-      %a.tab-button(data-index="1")
-        %span.membership-icon
-        Ведущие специалисты
-    .tab-container
-      %article.tab-content.active(data-index="0")
-        .container.active
-          %article.carousel
-            .carouselBody.partners-carousel
-              %ul
-                %li
-                  .carousel-slide
-                    = image_tag "medifast_email.png", class: "3D-and-imaging"
-                    %h3.sub-heading
-                      Написать нам
-                    %p.paragraph
-                      Если у Вас есть вопрос по поводу работы клиники. Необходимо перейти на разделу Контакты и заполнив необходимые поля отправить нам письмо. Наша администрация ответим Вам в ближайшее время
-                    = link_to "Контакты", contacts_path, class: "partner-link"
-                %li
-                  .carousel-slide
-                    = image_tag "medifast_vacansies.png", class: "3D-and-imaging"
-                    %h3.sub-heading
-                      Работа с нами
-                    %p.paragraph
-                      Если Вы хотите устроится к нам на работу, просмотрите раздел Вакансии и напишите нам. Наша администрация ответит Вам в ближайшее время
-                    = link_to "Вакансии", root_path, class: "partner-link"
-                %li
-                  .carousel-slide
-                    = image_tag "medifast_warning.png", class: "3D-and-imaging"
-                    %h3.sub-heading
-                      Замечание
-                    %p.paragraph
-                      Если у Вас есть замечания или рекомендации по поводу нашей работы, Вы можите позвонить на телефон доверия: +38 050 478 95 30, или перейти в раздер Контакты и заполнив необходимые поля написать нам письмо. Наша администрация ответит Вам в ближайшее время
-                    = link_to "Контакты", contacts_path, class: "partner-link"
-      %article.tab-content(data-index="1")
-        .container.active
-          %article.carousel
-            .carouselBody.partners-carousel
-              %ul
-                %li
-                  .carousel-slide
-                    = image_tag "medifast_user.png", class: "3D-and-imaging"
-                    %h3.sub-heading
-                      Регистрация
-                    %p.paragraph
-                      Для получения консультации, необходимо зарегистрироваться на нашем сайте, перейдя в раздел Регистрация, заполнив се необходимы поля.
-                    = link_to "Регистрация", root_path, class: "partner-link"
-                %li
-                  .carousel-slide
-                    = image_tag "medifast_diary.png", class: "3D-and-imaging"
-                    %h3.sub-heading
-                      Личный кабинет
-                    %p.paragraph
-                      После регистрации, Вы можите войти в свой личный кабинет, где будет сохраняться история Ваших консультаций и другие возможности
-                    = link_to "Ваш кабинет", root_path, class: "partner-link"
-                %li
-                  .carousel-slide
-                    = image_tag "medifast_doctor.png", class: "3D-and-imaging"
-                    %h3.sub-heading
-                      Поиск врача
-                    %p.paragraph
-                      В Вашем личном кабинете Вы можите просмотреть список наших врачей, которые проводят бесплатные консультации и задать врачу вопрос
-                    = link_to "Личный кабинет", root_path, class: "partner-link"
-%section.main.content-section.priem#priem
-  .section-wrapper
-    %h1.header-intro
-      Запись на прием онлайн это просто
-    %p.header-standfirst
-      Наши доктора всегда готовы Вам помочь
-    = link_to root_path, class: "red-button" do
-      Подробней
-      %span.icon.right-icon
+= render "layouts/consultation"
+= render "layouts/record"
 
 - content_for :scripts do
   :javascript

@@ -1,31 +1,31 @@
 <%- if controller_name != 'sessions' %>
   Если Вы уже зарегистрированы нажмите
   <br />
-  <%= link_to "Войти", new_session_path(resource_name) %><br />
+  <%= link_to "Войти", new_session_path(resource_name), class: "link login" %><br />
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   Если Вы хотите зарегистрироваться как пользователь нажмите
   <br />
-  <%= link_to "Регистрация", new_registration_path(resource_name) %><br />
+  <%= link_to "Регистрация", new_registration_path(resource_name), class: "link login" %><br />
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   Если Вы забыли пароль нажмите
   <br />
-  <%= link_to "Восстановить пароль", new_password_path(resource_name) %><br />
+  <%= link_to "Восстановить пароль", new_password_path(resource_name), class: "link login" %><br />
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
   Если Вам не пришло письмо на почту для подтверждения нажмите
   <br />
-  <%= link_to "Отправить инструкцию", new_confirmation_path(resource_name) %><br />
+  <%= link_to "Отправить инструкцию", new_confirmation_path(resource_name), class: "link login" %><br />
 <% end -%>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
   Если Вам не пришло письмо на почту нажмите
   <br />
-  <%= link_to "Отправить инструкцию", new_unlock_path(resource_name) %><br />
+  <%= link_to "Отправить инструкцию", new_unlock_path(resource_name), class: "link login" %><br />
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>

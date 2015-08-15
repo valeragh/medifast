@@ -29,9 +29,9 @@
   %a.main-cta#stickyNavPoint
     Все услуги клиники
     %span.right-icon
-%section.main.content-section.choose-your-own.ads
+%section.main.content-section.delivering-experience.ads
   .section-wrapper
-    %article.left-column
+    %article.right-column
       %h2.section-heading
         Литотрипсия "Золотой" стандарт лечения мочекаменной болезни
       %p
@@ -42,12 +42,13 @@
         %br
         %br
         После проведения литотрипсии обязательно необходимы постоянные методы по профилактике повторного камнеобразования и ведение здорового образа жизни.
-    %article.right-column
-      %blockquote.blockquote
-        = image_tag "new_medifast.png"
-%section.main.content-section.choose-your-own.sale#sale
+    %article.left-column
+      = image_tag "medifast_personal.jpg"
+%section.main.content-section.delivering-experience.sale#sale
   .section-wrapper
     %article.right-column
+      = image_tag "medifast_personal.jpg"
+    %article.left-column
       %h2.section-heading
         Акция выходного дня
       %p
@@ -55,7 +56,7 @@
       = link_to root_path, class: "blue-button" do
         Подробней
         %span.icon.right-icon
-    %article.left-column
+
 %section.main.content-section.delivering-experience#personal
   .section-wrapper
     %article.right-column
@@ -87,6 +88,8 @@
           Заведующий хирургическим отделением
 %section.main.content-section.bold-quote
   .section-wrapper
+    %h2.section-heading
+      Отзывы пациентов
     %span.quotation-icon.up
     %span.quotation-icon.down
     - @reviews.each do |review|
@@ -94,28 +97,34 @@
         = review.description
       %span.citation
         = review.name
-%section.main.content-section.choose-your-own.contacts#contacts
-  .section-wrapper
-    %h2.section-heading.text-center
+%section.content-section.newsfeed.active#newsfeed
+  #newsfeedBody.section-wrapper
+    %h2.section-heading.white
       Отделения клиники
-    %article.left-column
-      - @cities.each do |city|
-        %article.text-center
-          %h2.town
-            = city.name
-          %p
+    - @cities.each do |city|
+      %article.newsfeed-article.news-end-events
+        = link_to contacts_city_path(city[:slug]) do
+          = image_tag "news_app.jpg", class: "newsfeed-image"
+        .container.city
+          = link_to contacts_city_path(city[:slug]), class: "newsfeed-link" do
+            %h2.sub-heading
+              = city.name
+          %p.paragraph
             Запишитесь на прием в клинику города
-          = link_to records_path, class: "red-button" do
-            Запись на прием
-            %span.icon.right-icon
-          = link_to contacts_city_path(city[:slug]), class: "blue-button" do
-            Отделения
-            %span.icon.right-icon
-    %article.right-column
+            %br
+            %br
+            = link_to records_path, class: "red-button" do
+              Запись на прием
+              %span.icon.right-icon
+            %br
+            %br
+            = link_to contacts_city_path(city[:slug]), class: "blue-button" do
+              Отделения
+              %span.icon.right-icon
 = render "layouts/record"
 %section.main.content-section.smarter-engagement#news
   .section-wrapper
-    %h2.section-heading
+    %h2.section-heading.white
       Новости Медифаст
     .carousel-container
       %article.carousel
@@ -133,8 +142,9 @@
                       = post.title.html_safe
                     = link_to show_news_path(post[:slug]), class: "case-studies-link" do
                       Узнайте больше
-                      %span.case-studies-icon
-    %h3.sub-heading
+                      %span.case-studies-icon.black
+
+    %h3.sub-heading.white
       Наши партнеры
     .companies-container
       = image_tag "storz_medical.png", class: "logo samsung-logo"

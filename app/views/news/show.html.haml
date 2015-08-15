@@ -5,25 +5,15 @@
       Все новости
     .left-section
       %aside.article-aside
-        = image_tag "news_app.jpg", class: "aside-content"
+        = image_tag "#{@post.image_url}", class: "aside-content"
     .right-section
       %article.article-template
         %h2.section-heading
-          Открытие отделения
+          = @post.name
         .page
           .layoutArea
             .column
             %p
-              С ноября 2007г. в клинике «МЕДИФАСТ» открыто единственное в г.Мариуполе отделение кардиологии и эндоваскулярной хирургии.
+              = @post.description
             %p
-              Эрозия представляет собой дефект слизистой оболочки шейки матки. Истинная эрозия шейки матки встречается довольно редко и существует недолго. Ее заживление обычно наступает через 10-14 дней.
-            %p
-%section.main.content-section.priem#priem
-  .section-wrapper
-    %h1.header-intro
-      Запись на прием онлайн это просто
-    %p.header-standfirst
-      Наши доктора всегда готовы Вам помочь
-    = link_to root_path, class: "red-button" do
-      Подробней
-      %span.icon.right-icon
+= render "layouts/record"
