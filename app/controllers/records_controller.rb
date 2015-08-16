@@ -13,7 +13,7 @@ class RecordsController < ApplicationController
 
     respond_to do |format|
       if @record.save
-        format.html { redirect_to root_path, notice: 'Запись на прием удачно создана, наши администраторы саяжутся с Вами в ближайшее время' }
+        format.html { redirect_to root_path, notice: 'Запись на прием удачно создана, наши администраторы свяжутся с Вами в ближайшее время' }
         format.json { render action: 'show', status: :created, location: @record }
       else
         format.html { render action: 'new' }

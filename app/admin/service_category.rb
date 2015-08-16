@@ -29,10 +29,10 @@ ActiveAdmin.register ServiceCategory do
       attributes_table_for service_category do
         row('Приоритет') { |b| service_category.rang}
         row('Изображение маленькое') do
-          image_tag service_category.image_url
+          image_tag service_category.image_small_url
         end
         row('Изображение большое') do
-          image_tag service_category.image_small_url
+          image_tag service_category.image_url
         end
       end
     end
