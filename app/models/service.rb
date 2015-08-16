@@ -2,6 +2,7 @@ class Service < ActiveRecord::Base
   belongs_to :service_category
   has_many :records
   has_many :consultations
+  mount_uploader :image_url, ImageUploader
 
   validates :name, :rang, :image_url, :description, :service_category_id, presence: true
   validates :name, length: {

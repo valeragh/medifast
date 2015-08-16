@@ -8,8 +8,8 @@
           = category.name
 %section.content-section.newsfeed.active
   .section-wrapper
-    %article.newsfeed-article
-      - @service_categories.each do |category|
+    - @service_categories.each do |category|
+      %article.newsfeed-article
         = link_to procedure_category_path(category[:slug]) do
           = image_tag "#{category.image_small_url}", class: "newsfeed-image"
         .container.procedure

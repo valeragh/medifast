@@ -1,5 +1,7 @@
 class ServiceCategory < ActiveRecord::Base
   has_many :services, :dependent => :destroy
+  mount_uploader :image_url, ImageUploader
+  mount_uploader :image_small_url, ImageUploader
 
   validates :name, :rang, :image_url, :image_small_url, presence: true
   validates :name, length: {

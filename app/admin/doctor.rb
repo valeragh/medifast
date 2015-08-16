@@ -21,7 +21,7 @@ ActiveAdmin.register Doctor do
     f.inputs 'Резюме доктора' do
       f.input :description, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent ], blocks: :basic
     end
-    f.inputs 'Изображение маленькое 656X478' do
+    f.inputs 'Изображение маленькое 656X478', :multipart => true do
       f.input :image_url
     end
     f.actions

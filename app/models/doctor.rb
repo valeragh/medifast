@@ -1,6 +1,7 @@
 class Doctor < ActiveRecord::Base
 	belongs_to :clinic
 	has_many :certificate
+	mount_uploader :image_url, ImageUploader
 
 	validates :name, :position, :image_url, :description, :clinic_id, presence: true
   

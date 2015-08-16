@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-
+  mount_uploader :image_url, ImageUploader
   validates :name, :title, :category, :image_url, :description, presence: true
 
   CATEGORY_TYPES = [ "Стационар", "Поликлиника", "Филиалы", "Специалисты" ]

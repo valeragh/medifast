@@ -15,10 +15,10 @@ ActiveAdmin.register ServiceCategory do
     f.inputs 'Приоритет' do
       f.input :rang, as: :select, collection: ServiceCategory::RANG_TYPES
     end
-    f.inputs 'Изображение большое 1684X893' do
+    f.inputs 'Изображение большое 1684X893', :multipart => true do
       f.input :image_url
     end
-    f.inputs 'Изображение маленькое 656X478' do
+    f.inputs 'Изображение маленькое 656X478', :multipart => true do
       f.input :image_small_url
     end
     f.actions
