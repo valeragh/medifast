@@ -428,7 +428,7 @@ ru:
         few:  "Новости"
         many: "Новости"
         other: "Новости"
-      stock:
+      sale:
         one:  "Акция"
         few:  "Акции"
         many: "Акции"

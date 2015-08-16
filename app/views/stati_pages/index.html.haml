@@ -46,13 +46,14 @@
       = image_tag "new_medifast.jpg"
 %section.main.content-section.delivering-experience.sale#sale
   .section-wrapper
-    %article.right-column
-      = image_tag "sale_medifast.jpg"
-    %article.left-column
-      %h2.section-heading
-        Акция выходного дня
-      %p
-        Каждую субботу и воскресенье в клинике «МЕДИФАСТ» проходит акция, по условиям которой, каждый записавшийся на эндоскопию, ФГДС (гастроскопия), колоноскопию, эндоскопию гортани, бронхоскопию получают 15% скидку.
+    - @sales.each do |sale|
+      %article.right-column
+        = image_tag "#{sale.image_url}"
+      %article.left-column
+        %h2.section-heading
+          = sale.name
+        %p
+          = sale.description.html_safe
 
 %section.main.content-section.delivering-experience#personal
   .section-wrapper

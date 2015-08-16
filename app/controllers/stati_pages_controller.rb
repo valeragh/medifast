@@ -7,6 +7,7 @@ class StatiPagesController < ApplicationController
     @cities = City.all
     @reviews = Review.all.sample(1)
     @posts_slide = Post.all.first(5)
+    @sales = Sale.where("rang = 'Показать'")
   end
 
   def about_us
