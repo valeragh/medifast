@@ -433,6 +433,11 @@ ru:
         few:  "Акции"
         many: "Акции"
         other: "Акции"
+      advertising:
+        one:  "Реклама"
+        few:  "Реклама"
+        many: "Реклама"
+        other: "Реклама"
       personal:
         one:  "Доктор онлайн"
         few:  "Доктора онлайн"

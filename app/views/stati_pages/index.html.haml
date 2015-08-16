@@ -16,7 +16,7 @@
     .carouselBody
       %ul
         - @service_category.each do |category|
-          %li{:style => "background: url(#{image_path "#{category.image_url}"})"}
+          %li{:style => "background: url(#{image_path "#{category.image_url}"}); background-position: top center; -webkit-background-size: cover; -ms-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"}
             .carousel-slide
               .section-wrapper
                 %h1.header-intro
@@ -31,19 +31,14 @@
     %span.right-icon
 %section.main.content-section.delivering-experience.ads
   .section-wrapper
-    %article.right-column
-      %h2.section-heading
-        Литотрипсия "Золотой" стандарт лечения мочекаменной болезни
-      %p
-        Литотрипсия – дробление камней, находящихся в почках, мочеточниках, мочевом пузыре, которые могут вызывать, боли в пояснице, рези мочеиспускании, повышение температуры тела, примесь крови в моче. Появление этого метода явилось революцией в лечении мочекаменной болезни, так как он малоинвазивный, малотравматичный и высокоэффективный.
-        %br
-        %br
-        Принцип этого метода состоит в фрагментации конкрементов, находящихся в мочевом тракте и эвакуации всех фрагметов под эндоскопическим контролем во время процедуры. Подлежат дроблению любые камни независимо от плотности, локализации и размеров. Так как травматизация тканей минимальная пациент в кратчайшие сроки выписывается и полностью возвращается к работе.
-        %br
-        %br
-        После проведения литотрипсии обязательно необходимы постоянные методы по профилактике повторного камнеобразования и ведение здорового образа жизни.
-    %article.left-column
-      = image_tag "new_medifast.jpg"
+    - @advertisings.each do |advertising|
+      %article.right-column
+        %h2.section-heading
+          = advertising.name
+        %p
+          = advertising.description.html_safe
+      %article.left-column
+        = image_tag "#{advertising.image_url}"
 %section.main.content-section.delivering-experience.sale#sale
   .section-wrapper
     - @sales.each do |sale|
