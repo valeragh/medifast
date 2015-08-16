@@ -33,13 +33,13 @@
             %br
             = clinic.description.html_safe
             %br
-            = link_to "Посмотреть на карте", contacts_clinic_path(clinic.city[:slug], clinic[:slug])
+            = link_to "Посмотреть на карте", contacts_clinic_path(clinic.city[:slug], clinic[:slug]), class: "link login"
             %p.paragraph
               Контакты:
               %br
               = clinic.contacts.html_safe
               %br
-              = link_to "support@medifast.com", root_path
+              = link_to "support@medifast.com", letters_path, class: "link login"
 
 = render "layouts/consultation"
 = render "layouts/record"
