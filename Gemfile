@@ -45,6 +45,8 @@ gem 'cancancan'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
+gem "rmagick"
+gem "carrierwave"
 
 
 group :production do

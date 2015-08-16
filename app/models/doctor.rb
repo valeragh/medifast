@@ -1,5 +1,6 @@
 class Doctor < ActiveRecord::Base
 	belongs_to :clinic
+	has_many :certificate
 
 	validates :name, :position, :image_url, :description, :clinic_id, presence: true
   

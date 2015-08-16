@@ -34,6 +34,11 @@ ActiveAdmin.register Doctor do
         row('Изображение маленькое') do
           image_tag doctor.image_url
         end
+        attributes_table_for doctor.certificate do
+          row("Сертификаты") do |certificate|
+             image_tag certificate.image_url
+          end
+        end
       end
     end
     active_admin_comments

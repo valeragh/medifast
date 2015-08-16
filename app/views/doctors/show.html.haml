@@ -10,6 +10,7 @@
       %article.article-template
         %h2.section-heading
           = @doctor.name
+        %h3.section-heding  
           = @doctor.position
         .page
           .layoutArea
@@ -17,4 +18,6 @@
             %p
               = @doctor.description
             %p
+            - @certificates.each do |certificate|
+              = image_tag certificate.image_url_url.to_s
 = render "layouts/record"
