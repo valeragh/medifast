@@ -43,19 +43,16 @@
         %br
         После проведения литотрипсии обязательно необходимы постоянные методы по профилактике повторного камнеобразования и ведение здорового образа жизни.
     %article.left-column
-      = image_tag "medifast_personal.jpg"
+      = image_tag "new_medifast.jpg"
 %section.main.content-section.delivering-experience.sale#sale
   .section-wrapper
     %article.right-column
-      = image_tag "medifast_personal.jpg"
+      = image_tag "sale_medifast.jpg"
     %article.left-column
       %h2.section-heading
         Акция выходного дня
       %p
         Каждую субботу и воскресенье в клинике «МЕДИФАСТ» проходит акция, по условиям которой, каждый записавшийся на эндоскопию, ФГДС (гастроскопия), колоноскопию, эндоскопию гортани, бронхоскопию получают 15% скидку.
-      = link_to root_path, class: "blue-button" do
-        Подробней
-        %span.icon.right-icon
 
 %section.main.content-section.delivering-experience#personal
   .section-wrapper
@@ -104,7 +101,7 @@
     - @cities.each do |city|
       %article.newsfeed-article.news-end-events
         = link_to contacts_city_path(city[:slug]) do
-          = image_tag "news_app.jpg", class: "newsfeed-image"
+          = image_tag "clinic_medifast.jpg", class: "newsfeed-image"
         .container.city
           = link_to contacts_city_path(city[:slug]), class: "newsfeed-link" do
             %h2.sub-heading
