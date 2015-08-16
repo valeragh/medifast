@@ -1,0 +1,16 @@
+%section.content-section.feature
+  .section-wrapper
+    %article.carousel.newsfeed-carousel
+      .carouselBody.partners-carousel
+        %ul
+          - @doctors_slide.each do |doctor|
+            %li
+              .carousel-slider
+                = image_tag "#{doctor.image_url}", class: "feature-image"
+                %article.feature-article
+                  %h1.section-heading
+                    = doctor.name
+                  %p.paragraph
+                    = doctor.position
+                  = link_to show_doctors_path(doctor[:slug]), class: "feature-link blue-button" do
+                    Узнайте больше

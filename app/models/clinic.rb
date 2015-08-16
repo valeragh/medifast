@@ -1,6 +1,7 @@
 class Clinic < ActiveRecord::Base
   belongs_to :city
   has_many :records
+  has_many :doctors
 
   geocoded_by :address
   after_validation :geocode

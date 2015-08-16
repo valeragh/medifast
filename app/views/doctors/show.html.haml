@@ -1,0 +1,20 @@
+%section.content-section.article
+  .section-wrapper
+    = link_to doctors_path, class: "back-link" do
+      %span.icon
+      Весь персонал
+    .left-section
+      %aside.article-aside
+        = image_tag "#{@doctor.image_url}", class: "aside-content"
+    .right-section
+      %article.article-template
+        %h2.section-heading
+          = @doctor.name
+          = @doctor.position
+        .page
+          .layoutArea
+            .column
+            %p
+              = @doctor.description
+            %p
+= render "layouts/record"

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'doctors/index'
+
+  get 'doctors/show'
+
   devise_for :personals,
              path: '',
              path_names: { sign_in: 'login_personal' }
@@ -10,8 +14,6 @@ Rails.application.routes.draw do
 
 
   ActiveAdmin.routes(self)
-
-  get 'personals/show'
 
   resources :records
   resources :consultations
@@ -35,5 +37,8 @@ Rails.application.routes.draw do
   match '/contacts', to: 'contacts#index', via: 'get'
   get '/contacts/:city_id', to: 'contacts#show', as: :contacts_city
   get '/contacts/:city_id/clinic/:id', to: 'contacts#show_clinic', as: :contacts_clinic
+  match '/doctors', to: 'doctors#index', via: 'get'
+  get '/doctors/clinic/:clinic_id', to: 'doctors#clinic', as: :doctors_clinic
+  get '/doctors/:doctor_id', to: 'doctors#show', as: :show_doctors
 
 end

@@ -1,0 +1,21 @@
+= render "doctors/slide"
+= render "doctors/nav"
+%section.content-section.newsfeed.active#newsfeed
+  #newsfeedBody.section-wrapper
+    - @doctors.each do |doctor|
+      %article.newsfeed-article.news-end-events
+        = link_to show_doctors_path(doctor[:slug]) do
+          = image_tag "#{doctor.image_url}", class: "newsfeed-image"
+        .container
+          = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
+            %h2.sub-heading
+              = doctor.name
+          %p.paragraph
+            = doctor.position
+          = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
+            %span.case-studies-icon.black
+            Узнайте больше
+
+- content_for :scripts do
+  :javascript
+    Newsfeed.init();

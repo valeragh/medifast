@@ -12,7 +12,7 @@ ActiveAdmin.register Record do
   filter :checked_out_at, label: 'Дата ответа'
   filter :name, label: 'Имя'
   filter :service, label: 'Процедура', as: :select, collection: proc { Service.find(Record.pluck(:service_id)).map { |m| [m.name, m.id] } }
-  #filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Record.pluck(:clinic_id)).map { |m| [m.name, m.id] } }
+  filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Record.pluck(:clinic_id)).map { |m| [m.address, m.id] } }
 
   scope "Все", :all, :default => true
   scope "Новый", :in_progress

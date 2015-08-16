@@ -1,0 +1,20 @@
+class DoctorsController < ApplicationController
+
+  def index
+  	@doctors = Doctor.all
+    @doctors_slide = Doctor.all.sample(5)
+    @clinics = Clinic.all
+  end
+
+  def show
+  	@doctor = Doctor.friendly.find(params[:doctor_id])
+  end
+
+  def clinic
+  	@clinic = Clinic.friendly.find(params[:clinic_id])
+  	@doctors = @clinic.doctors
+  	@clinics = Clinic.all
+  	@doctors_slide = Doctor.all.sample(5)
+  end
+
+end
