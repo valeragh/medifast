@@ -1,0 +1,42 @@
+/* line 3, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-dragonfly-611164ff0255/app/assets/stylesheets/active_admin/active_admin_dragonfly.css.sass */
+.input.dragonfly {
+  padding: 0;
+}
+/* line 8, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-dragonfly-611164ff0255/app/assets/stylesheets/active_admin/active_admin_dragonfly.css.sass */
+.input.dragonfly .fragments > legend {
+  display: none;
+}
+/* line 20, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/bourbon-4.2.3/app/assets/stylesheets/addons/_clearfix.scss */
+.input.dragonfly .fragments ol li::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+/* line 16, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-dragonfly-611164ff0255/app/assets/stylesheets/active_admin/active_admin_dragonfly.css.sass */
+.input.dragonfly .fragments ol li label {
+  text-align: right;
+}
+/* line 20, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-dragonfly-611164ff0255/app/assets/stylesheets/active_admin/active_admin_dragonfly.css.sass */
+.input.dragonfly .fragments ol li.component-remove label {
+  padding-left: 110px;
+  width: auto;
+  float: none;
+  text-align: left;
+}
+/* line 27, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-dragonfly-611164ff0255/app/assets/stylesheets/active_admin/active_admin_dragonfly.css.sass */
+.input.dragonfly .fragments ol li.component-preview > a {
+  float: left;
+  display: block;
+  padding: 5px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+/* line 35, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-dragonfly-611164ff0255/app/assets/stylesheets/active_admin/active_admin_dragonfly.css.sass */
+.input.dragonfly .fragments ol li.component-preview > a img {
+  display: block;
+}
+/* line 39, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-dragonfly-611164ff0255/app/assets/stylesheets/active_admin/active_admin_dragonfly.css.sass */
+.input.dragonfly .component-preview .no-image {
+  line-height: 32px;
+}

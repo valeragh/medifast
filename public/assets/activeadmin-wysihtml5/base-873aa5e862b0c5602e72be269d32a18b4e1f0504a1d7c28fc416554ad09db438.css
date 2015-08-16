@@ -1,0 +1,594 @@
+/* line 1, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_icons.scss */
+span.icon {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* line 2, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_icons.scss */
+span.icon svg {
+  vertical-align: baseline;
+}
+
+/* line 12, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_icons.scss */
+span.icon {
+  width: 0.8em;
+  height: 0.8em;
+}
+
+/* line 4, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.wysihtml5-sandbox {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 7, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+#modal-overlay {
+  position: fixed;
+  z-index: 1000;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  display: none;
+  opacity: 0.6;
+}
+
+/* line 18, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal {
+  background-color: white;
+  width: 550px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+/* line 25, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-title {
+  border-bottom: 1px solid #ccc;
+  background-color: #F1F1F1;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 110%;
+  border-top-radius: 5px;
+}
+/* line 33, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content {
+  padding: 20px;
+}
+/* line 36, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .tabs {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+/* line 41, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .tabs li {
+  display: inline-block;
+  list-style-type: none;
+}
+/* line 45, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .tabs li a {
+  background-color: #F1F1F1;
+  border-radius: 6px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 5px 11px;
+  display: inline-block;
+  margin-right: 6px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+/* line 56, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .tabs li a.active {
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+/* line 59, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .input {
+  margin-bottom: 8px;
+}
+/* line 62, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .input label {
+  width: 100px;
+  display: inline-block;
+  margin-right: 5px;
+  font-weight: bold;
+  color: #444;
+}
+/* line 69, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .input input[type="text"] {
+  padding: 4px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 13px;
+  width: 350px;
+  margin: 0;
+}
+/* line 78, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .input.boolean {
+  padding-left: 85px;
+}
+/* line 81, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .input.boolean label {
+  width: 400px;
+}
+/* line 85, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .input.radio label.option {
+  width: auto;
+  margin-right: 15px;
+}
+/* line 89, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .optional-inputs {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #F1F1F1;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+/* line 97, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .assets-container ul {
+  max-height: 300px;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+}
+/* line 103, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .assets-container ul li {
+  float: left;
+  margin: 5px;
+  list-style-type: none;
+}
+/* line 108, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .assets-container ul li a {
+  border: 1px solid transparent;
+  padding: 2px;
+  display: block;
+}
+/* line 113, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .assets-container ul li a.selected {
+  background-color: red;
+  border-color: #ccc;
+}
+/* line 117, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .assets-container ul li a img {
+  display: block;
+}
+/* line 122, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .asset-uploader .qq-uploader {
+  text-align: center;
+  padding: 15px 0;
+}
+/* line 126, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .asset-uploader .qq-upload-drop-area {
+  border: 2px dashed #ccc;
+  height: 50px;
+  line-height: 50px;
+  color: #777;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+/* line 135, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .asset-uploader .qq-upload-button {
+  border-radius: 200px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.0em;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 12px;
+  margin-right: 3px;
+  padding: 7px 16px 6px;
+  text-decoration: none;
+  background-color: #838a90;
+  background-image: linear-gradient(180deg, #838a90, #414549);
+  text-shadow: #000 0 1px 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0px rgba(255, 255, 255, 0.2) inset;
+  border: solid 1px #484e53;
+  border-color: #484e53;
+  border-top-color: #616a71;
+  border-right-color: #484e53;
+  border-bottom-color: #363b3f;
+  border-left-color: #484e53;
+  color: #efefef;
+}
+/* line 12, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_buttons.scss */
+.activeadmin-wysihtml5-modal .modal-content .asset-uploader .qq-upload-button.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+/* line 29, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_buttons.scss */
+.activeadmin-wysihtml5-modal .modal-content .asset-uploader .qq-upload-button:not(.disabled):hover {
+  background-color: #8b9297;
+  background-image: linear-gradient(180deg, #8b9297, #484d51);
+}
+/* line 33, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_buttons.scss */
+.activeadmin-wysihtml5-modal .modal-content .asset-uploader .qq-upload-button:not(.disabled):active {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset, 0 1px 0 0px #FFF;
+  background-color: #71797f;
+  background-image: linear-gradient(180deg, #71797f, #35383b);
+}
+/* line 138, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-content .asset-uploader .qq-upload-list {
+  display: none;
+}
+/* line 141, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-footer {
+  border-top: 1px solid #ccc;
+  background-color: #F1F1F1;
+  padding: 10px 15px;
+  text-align: right;
+  border-bottom-radius: 5px;
+}
+/* line 148, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-footer .button {
+  border-radius: 200px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.0em;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 12px;
+  margin-right: 3px;
+  padding: 7px 16px 6px;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  background-image: linear-gradient(180deg, #FFFFFF, #E7E7E7);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(255, 255, 255, 0.8) inset;
+  border: solid 1px #c7c7c7;
+  border-color: #c7c7c7;
+  border-top-color: #d3d3d3;
+  border-right-color: #c7c7c7;
+  border-bottom-color: #c2c2c2;
+  border-left-color: #c7c7c7;
+  text-shadow: #fff 0 1px 0;
+  color: #5E6469;
+}
+/* line 12, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_buttons.scss */
+.activeadmin-wysihtml5-modal .modal-footer .button.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+/* line 50, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_buttons.scss */
+.activeadmin-wysihtml5-modal .modal-footer .button:not(.disabled):hover {
+  background-color: #FFFFFF;
+  background-image: linear-gradient(180deg, #FFFFFF, #F1F1F1);
+}
+/* line 54, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_buttons.scss */
+.activeadmin-wysihtml5-modal .modal-footer .button:not(.disabled):active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22) inset, 0 1px 0 0px #EEE;
+  border-color: #b9b9b9;
+  border-top-color: #c2c2c2;
+  border-right-color: #b9b9b9;
+  border-bottom-color: #b7b7b7;
+  border-left-color: #b9b9b9;
+  background-color: #F3F3F3;
+  background-image: linear-gradient(180deg, #F3F3F3, #D8D8D8);
+}
+/* line 151, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+.activeadmin-wysihtml5-modal .modal-footer .button.primary {
+  border-radius: 200px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.0em;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 12px;
+  margin-right: 3px;
+  padding: 7px 16px 6px;
+  text-decoration: none;
+  background-color: #838a90;
+  background-image: linear-gradient(180deg, #838a90, #414549);
+  text-shadow: #000 0 1px 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0px rgba(255, 255, 255, 0.2) inset;
+  border: solid 1px #484e53;
+  border-color: #484e53;
+  border-top-color: #616a71;
+  border-right-color: #484e53;
+  border-bottom-color: #363b3f;
+  border-left-color: #484e53;
+  color: #efefef;
+}
+/* line 12, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_buttons.scss */
+.activeadmin-wysihtml5-modal .modal-footer .button.primary.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+/* line 29, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_buttons.scss */
+.activeadmin-wysihtml5-modal .modal-footer .button.primary:not(.disabled):hover {
+  background-color: #8b9297;
+  background-image: linear-gradient(180deg, #8b9297, #484d51);
+}
+/* line 33, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_buttons.scss */
+.activeadmin-wysihtml5-modal .modal-footer .button.primary:not(.disabled):active {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset, 0 1px 0 0px #FFF;
+  background-color: #71797f;
+  background-image: linear-gradient(180deg, #71797f, #35383b);
+}
+
+/* line 20, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/bourbon-4.2.3/app/assets/stylesheets/addons/_clearfix.scss */
+body.active_admin form .input.wysihtml5::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+/* line 162, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 {
+  float: right;
+  width: 89%;
+}
+/* line 66, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_reset.scss */
+body.active_admin form .activeadmin-wysihtml5 div, body.active_admin form .activeadmin-wysihtml5 span, body.active_admin form .activeadmin-wysihtml5 object, body.active_admin form .activeadmin-wysihtml5 iframe, body.active_admin form .activeadmin-wysihtml5 h1, body.active_admin form .activeadmin-wysihtml5 h2, body.active_admin form .activeadmin-wysihtml5 h3, body.active_admin form .activeadmin-wysihtml5 h4, body.active_admin form .activeadmin-wysihtml5 h5, body.active_admin form .activeadmin-wysihtml5 h6, body.active_admin form .activeadmin-wysihtml5 p,
+body.active_admin form .activeadmin-wysihtml5 pre, body.active_admin form .activeadmin-wysihtml5 a, body.active_admin form .activeadmin-wysihtml5 abbr, body.active_admin form .activeadmin-wysihtml5 acronym, body.active_admin form .activeadmin-wysihtml5 address, body.active_admin form .activeadmin-wysihtml5 code, body.active_admin form .activeadmin-wysihtml5 del, body.active_admin form .activeadmin-wysihtml5 dfn, body.active_admin form .activeadmin-wysihtml5 em, body.active_admin form .activeadmin-wysihtml5 img,
+body.active_admin form .activeadmin-wysihtml5 dl, body.active_admin form .activeadmin-wysihtml5 dt, body.active_admin form .activeadmin-wysihtml5 dd, body.active_admin form .activeadmin-wysihtml5 ol, body.active_admin form .activeadmin-wysihtml5 ul, body.active_admin form .activeadmin-wysihtml5 li, body.active_admin form .activeadmin-wysihtml5 fieldset, body.active_admin form .activeadmin-wysihtml5 form, body.active_admin form .activeadmin-wysihtml5 label, body.active_admin form .activeadmin-wysihtml5 legend, body.active_admin form .activeadmin-wysihtml5 caption, body.active_admin form .activeadmin-wysihtml5 tbody, body.active_admin form .activeadmin-wysihtml5 tfoot, body.active_admin form .activeadmin-wysihtml5 thead, body.active_admin form .activeadmin-wysihtml5 tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+/* line 71, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_reset.scss */
+body.active_admin form .activeadmin-wysihtml5 table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+/* line 73, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_reset.scss */
+body.active_admin form .activeadmin-wysihtml5 caption, body.active_admin form .activeadmin-wysihtml5 th, body.active_admin form .activeadmin-wysihtml5 td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+/* line 75, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_reset.scss */
+body.active_admin form .activeadmin-wysihtml5 q, body.active_admin form .activeadmin-wysihtml5 blockquote {
+  quotes: "" "";
+}
+/* line 126, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_reset.scss */
+body.active_admin form .activeadmin-wysihtml5 q:before, body.active_admin form .activeadmin-wysihtml5 q:after, body.active_admin form .activeadmin-wysihtml5 blockquote:before, body.active_admin form .activeadmin-wysihtml5 blockquote:after {
+  content: "";
+}
+/* line 77, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/activeadmin-1.0.0.pre1/app/assets/stylesheets/active_admin/mixins/_reset.scss */
+body.active_admin form .activeadmin-wysihtml5 a img {
+  border: none;
+}
+/* line 167, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > textarea {
+  font-size: 13px;
+  line-height: 17px;
+  width: 100% !important;
+}
+/* line 172, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > textarea.source {
+  font-family: Pragmata, Menlo, "DejaVu LGC Sans Mono", "DejaVu Sans Mono", Consolas, "Everson Mono", "Lucida Console", "Andale Mono", "Nimbus Mono L", "Liberation Mono", FreeMono, "Osaka Monospaced", Courier, "New Courier", monospace;
+}
+/* line 175, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar {
+  position: relative;
+  margin-bottom: 5px;
+}
+/* line 179, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li {
+  display: inline-block;
+  padding-right: 5px;
+}
+/* line 183, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector {
+  background-color: white;
+  background-image: -webkit-linear-gradient(white, #E6E6E6);
+  background-image: linear-gradient(white, #E6E6E6);
+  padding: 4px 10px;
+  display: inline-block;
+  line-height: 18px;
+  color: #333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+  border: 1px solid #CCC;
+  border-bottom-color: #B3B3B3;
+  border-left-width: 0;
+  text-decoration: none;
+  position: relative;
+}
+/* line 198, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.wysihtml5-command-active, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.wysihtml5-action-active, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.wysihtml5-command-active, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.wysihtml5-action-active {
+  background-color: #cdcdcd;
+  background-image: -webkit-linear-gradient(#cdcdcd, #E6E6E6);
+  background-image: linear-gradient(#cdcdcd, #E6E6E6);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+/* line 202, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a:hover, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector:hover {
+  background: #E6E6E6;
+}
+/* line 205, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a:first-child, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector:first-child {
+  border-left-width: 1px;
+  border-left-radius: 2px;
+}
+/* line 209, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a:last-child, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector:last-child {
+  border-right-radius: 2px;
+}
+/* line 212, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.bold, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.bold {
+  font-weight: bold;
+}
+/* line 215, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.italic, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.italic {
+  font-style: italic;
+}
+/* line 218, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.underline, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.underline {
+  text-decoration: underline;
+}
+/* line 221, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.ul span, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.ul span {
+  margin-top: 2px;
+  background: url(/assets/activeadmin-wysihtml5/icons.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  text-indent: -1000em;
+  display: inline-block;
+  background-position: -264px 0;
+}
+/* line 224, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.ol span, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.ol span {
+  margin-top: 2px;
+  background: url(/assets/activeadmin-wysihtml5/icons.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  text-indent: -1000em;
+  display: inline-block;
+  background-position: -360px -48px;
+}
+/* line 227, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.outdent span, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.outdent span {
+  margin-top: 2px;
+  margin-top: 2px;
+  background: url(/assets/activeadmin-wysihtml5/icons.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  text-indent: -1000em;
+  display: inline-block;
+  background-position: -408px -48px;
+}
+/* line 231, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.indent span, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.indent span {
+  margin-top: 2px;
+  background: url(/assets/activeadmin-wysihtml5/icons.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  text-indent: -1000em;
+  display: inline-block;
+  background-position: -384px -48px;
+}
+/* line 290, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/icons.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.image span:before, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.image span:before {
+  content: "";
+  background: url(/assets/activeadmin-wysihtml5/icons.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  text-indent: -1000em;
+  display: inline-block;
+  background-position: -456px -48px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+/* line 290, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/icons.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.video span:before, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.video span:before {
+  content: "";
+  background: url(/assets/activeadmin-wysihtml5/icons.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  text-indent: -1000em;
+  display: inline-block;
+  background-position: -192px 0;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+/* line 290, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/icons.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.link span:before, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.link span:before {
+  content: "";
+  background: url(/assets/activeadmin-wysihtml5/icons.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  text-indent: -1000em;
+  display: inline-block;
+  background-position: -120px -72px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+/* line 290, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/icons.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > a.source span:before, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector.source span:before {
+  content: "";
+  background: url(/assets/activeadmin-wysihtml5/icons.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  text-indent: -1000em;
+  display: inline-block;
+  background-position: -24px -24px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+/* line 246, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector {
+  position: relative;
+}
+/* line 249, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector span {
+  display: inline-block;
+  padding-left: 16px;
+  padding-right: 9px;
+  position: relative;
+}
+/* line 255, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector span:before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 2px;
+  background: url(/assets/activeadmin-wysihtml5/icons.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  text-indent: -1000em;
+  display: inline-block;
+  background-position: -144px -48px;
+}
+/* line 261, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector span:after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: -2px;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-top: 4px solid #000000;
+  border-right: 4px solid transparent;
+  display: inline-block;
+  height: 0;
+  vertical-align: top;
+}
+/* line 274, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector ul {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 28px;
+  left: 0px;
+  width: 140px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+}
+/* line 285, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector ul li a {
+  padding: 3px 15px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+  text-shadow: none;
+}
+/* line 292, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector ul li a:hover {
+  background-color: #38678b;
+  color: white;
+}
+/* line 296, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar > li > .blocks-selector:hover ul {
+  display: block;
+}
+/* line 301, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar.wysihtml5-commands-disabled > li > a, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar.wysihtml5-commands-disabled > li > .blocks-selector {
+  background: #E6E6E6 !important;
+  color: #777;
+}
+/* line 306, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar.wysihtml5-commands-disabled > li > a:hover, body.active_admin form .activeadmin-wysihtml5 > ul.toolbar.wysihtml5-commands-disabled > li > .blocks-selector:hover {
+  background: #E6E6E6 !important;
+  color: #777 !important;
+}
+/* line 310, /home/lwd/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/bundler/gems/activeadmin-wysihtml5-cf609b7bd433/app/assets/stylesheets/activeadmin-wysihtml5/base.css.sass */
+body.active_admin form .activeadmin-wysihtml5 > ul.toolbar.wysihtml5-commands-disabled > li > .blocks-selector:hover ul {
+  display: none !important;
+}
