@@ -20,12 +20,11 @@
     = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
 
   %fieldset
-    = f.label :service_id, "Услуга*"
-    = collection_select :record, :service_id, Service.all, :id, :name, {}, { :multiple => false }
+    = f.label :service_category_id, "Услуга*"
+    = collection_select :consultation, :service_category_id, ServiceCategory.all, :id, :name, {}, { :multiple => false }
 
-  %fieldset
-    = f.label :description, "Вопрос"
-    = f.text_field :description, type: 'text', placeholder: "Ваш вопрос"
+  = f.label :description, "Вопрос*"
+  = f.text_area :description, type: 'text', placeholder: "Ваш вопрос"
 
   .actions
     = f.submit "Отправить", class: "blue-button submit"

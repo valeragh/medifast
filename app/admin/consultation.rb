@@ -1,7 +1,7 @@
 ActiveAdmin.register Consultation do
 
 
-  permit_params :name, :phone, :service_id, :email, :description, :checked_out_at
+  permit_params :name, :phone, :service_category_id, :email, :description, :checked_out_at
 
   config.per_page = 10
 
@@ -11,7 +11,7 @@ ActiveAdmin.register Consultation do
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'
   filter :name, label: 'Имя'
-  filter :service, label: 'Процедура', as: :select, collection: proc { Service.find(Consultation.pluck(:service_id)).map { |m| [m.name, m.id] } }
+  filter :service_category, label: 'Процедура', as: :select, collection: proc { ServiceCategory.find(Consultation.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
 
 
   scope "Все", :all, :default => true
@@ -29,7 +29,7 @@ ActiveAdmin.register Consultation do
     panel "Данные" do
       attributes_table_for consultation do
         row('Дата создания') { |b| l consultation.created_at, format: :long}
-        row("Услуга"){|b| consultation.service.name}
+        row("Услуга"){|b| consultation.service_category.name}
         row("Вопрос"){|b| consultation.description}
         row("Статус"){|b| status_tag(consultation.state)}
         row('Дата ответа') { |b| consultation.checked_out_at}
@@ -51,7 +51,7 @@ ActiveAdmin.register Consultation do
     column("Дата создания"){|consultation| l consultation.created_at, format: :long}
     column("Имя"){|consultation| consultation.name }
     column("Телефон"){|consultation| consultation.phone}
-    column("Услуга"){|consultation| consultation.service.name}
+    column("Услуга"){|consultation| consultation.service_category.name}
     column("Вопрос"){|consultation| consultation.description}
     column("Статус"){|consultation| status_tag(consultation.state)}
     actions

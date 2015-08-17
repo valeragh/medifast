@@ -22,7 +22,7 @@ ActiveAdmin.register_page "Dashboard" do
             column("Дата создания"){|consultation| l consultation.created_at, format: :long}
             column("Имя"){|consultation| consultation.name }
             column("Телефон"){|consultation| consultation.phone}
-            column("Услуга"){|consultation| consultation.service.name}
+            column("Услуга"){|consultation| consultation.service_category.name}
             column("Вопрос"){|consultation| consultation.description}
             column("Статус"){|consultation| status_tag(consultation.state)}
           end
