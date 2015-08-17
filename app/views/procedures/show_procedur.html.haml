@@ -16,6 +16,11 @@
             %p
               = @service.description.html_safe
             %p
+              = image_tag "#{@service.image_one_url}"
+              = image_tag "#{@service.image_two_url}"
+            %p
+              = @service.description_two.html_safe
+            %p
               = link_to consultations_path, class: "blue-button" do
                 Задать вопрос
                 %span.icon.right-icon

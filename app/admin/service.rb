@@ -1,6 +1,6 @@
 ActiveAdmin.register Service do
 
-  permit_params :name, :rang, :image_url, :description, :service_category_id
+  permit_params :name, :rang, :image_url, :image_one_url, :image_two_url, :description, :description_two, :service_category_id
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
   actions :all
 
@@ -22,8 +22,17 @@ ActiveAdmin.register Service do
     f.inputs 'Описание услуги' do
       f.input :description, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent ], blocks: :basic
     end
+    f.inputs 'Дополнительное описание услуги' do
+      f.input :description_two, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent ], blocks: :basic
+    end
     f.inputs 'Изображение маленькое 656X478', :multipart => true do
       f.input :image_url
+    end
+    f.inputs 'Изображение в описание услуги', :multipart => true do
+      f.input :image_one_url
+    end
+    f.inputs 'Изображение в описание услуги', :multipart => true do
+      f.input :image_two_url
     end
     f.actions
   end
@@ -34,6 +43,12 @@ ActiveAdmin.register Service do
         row('Описание услуги') { |b| service.description.html_safe}
         row('Изображение маленькое') do
           image_tag service.image_url
+        end
+        row('Изображение в описание') do
+          image_tag service.image_one_url
+        end
+        row('Изображение в описание') do
+          image_tag service.image_two_url
         end
       end
     end

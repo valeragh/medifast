@@ -16,7 +16,9 @@
           .layoutArea
             .column
             %p
-              = @doctor.description
+              = @doctor.clinic.address
+            %p
+              = @doctor.description.html_safe
             %p
             - @certificates.each do |certificate|
               = image_tag certificate.image_url_url.to_s
