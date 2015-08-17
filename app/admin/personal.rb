@@ -1,9 +1,9 @@
 ActiveAdmin.register Personal do
 
-  permit_params :name, :clinic, :description, :position, :image_url, :email, :password, :password_confirmation
+  permit_params :name, :clinic_id, :description, :position, :image_url, :email, :password, :password_confirmation
   actions :all
 
-  filter :clinic, label: 'Клиника'
+  filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Personal.pluck(:clinic_id)).map { |m| [m.address, m.id] } }
   filter :position, label: 'Должность'
   filter :name, label: 'Имя доктора'
   filter :email, label: 'Email'
@@ -16,7 +16,7 @@ ActiveAdmin.register Personal do
       f.input :position
     end
     f.inputs 'Клиника' do
-      f.input :clinic
+      f.input :clinic_id, as: :select, collection: Clinic.all.map { |m| [m.address, m.id] }
     end
     f.inputs 'Резюме доктора' do
       f.input :description, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent ], blocks: :basic
@@ -51,7 +51,7 @@ ActiveAdmin.register Personal do
    sidebar "Детали", only: :show do
     attributes_table_for personal do
       row("Должность"){|b| personal.position}
-      row("Клиника"){|b| personal.clinic}
+      row("Клиника"){|b| personal.clinic.address}
       row("Email"){|b| personal.email}
     end
   end
@@ -59,7 +59,7 @@ ActiveAdmin.register Personal do
   index do
     column("Имя"){|personal| personal.name}
     column("Должность"){|personal| personal.position}
-    column("Клиника"){|personal| personal.clinic}
+    column("Клиника"){|personal| personal.clinic.address}
     column("Email"){|personal| personal.email}
     column "Дата создания", :created_at
     actions

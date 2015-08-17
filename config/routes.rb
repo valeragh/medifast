@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'doctors/index'
-
-  get 'doctors/show'
-
   devise_for :personals,
              path: '',
              path_names: { sign_in: 'login_personal' }

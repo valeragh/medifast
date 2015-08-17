@@ -12,6 +12,8 @@
               = doctor.name
           %p.paragraph
             = doctor.position
+            %br
+            = doctor.clinic.address
           = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
             %span.case-studies-icon.black
             Узнайте больше

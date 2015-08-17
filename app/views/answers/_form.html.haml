@@ -23,6 +23,10 @@
     = f.label :vacancy_id, "Вакансия*"
     = collection_select :answer, :vacancy_id, Vacancy.all, :id, :name, {}, { :multiple => false }
 
+  %fieldset
+    = f.label :file, "Загрузите файл*"
+    = f.file_field :file
+
   = f.label :description, "Резюме*"
   = f.text_area :description, type: 'text', placeholder: "Ваше резюме"
 

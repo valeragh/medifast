@@ -1,12 +1,12 @@
 ActiveAdmin.register Answer do
 
 
-  permit_params :name, :phone, :vacancy_id, :email, :description, :checked_out_at
+  permit_params :name, :phone, :file, :vacancy_id, :email, :description, :checked_out_at
 
   config.per_page = 10
 
   menu :priority => 3
-  actions :index, :show, :edit, :update
+  actions :all
 
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'

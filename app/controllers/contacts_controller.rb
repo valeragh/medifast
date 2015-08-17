@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
       marker.lng clinic.longitude
       marker.infowindow clinic.description
     end
+    @citys = City.all
   end
 
   def show
@@ -18,6 +19,7 @@ class ContactsController < ApplicationController
       marker.lng clinic.longitude
       marker.infowindow clinic.description
     end
+    @citys = City.all
   end
 
   def show_clinic
@@ -28,6 +30,7 @@ class ContactsController < ApplicationController
       marker.lng clinic.longitude
       marker.infowindow clinic.description
     end
+    @citys = City.all
   end
 
   private

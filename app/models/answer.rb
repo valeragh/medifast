@@ -1,6 +1,7 @@
 class Answer < ActiveRecord::Base
 
   belongs_to :vacancy
+  mount_uploader :file, ImageUploader
 
   validates :name, :email, :phone, :description, presence: true
   validates :phone, length: {

@@ -1,0 +1,10 @@
+%section.content-section.newsfeed-filter
+  .section-wrapper
+    %nav.filter-nav
+      = link_to contacts_path, class: "filter-link all active", data:{filter: "*"} do
+        Все отделения
+      - @citys.each do |city|
+        = link_to contacts_city_path(city[:slug]), class: "filter-link all", data:{filter: "*"} do
+          = city.name
+        
+      
