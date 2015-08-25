@@ -17,7 +17,8 @@
       %ul
         - @service_category.each do |category|
           %li{:style => "background: url(#{image_path "#{category.image_url}"}); background-position: top center; -webkit-background-size: cover; -ms-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"}
-            .carousel-slide
+            .overlay
+            .carousel-slide(style="z-index: 10; position: absolute;")
               .section-wrapper
                 %h1.header-intro
                   = category.name
@@ -26,6 +27,7 @@
                 = link_to procedures_path, class: "red-button" do
                   Подробней
                   %span.icon.right-icon
+
   %a.main-cta#stickyNavPoint
     Все услуги клиники
     %span.right-icon
@@ -73,23 +75,31 @@
         Подробней
         %span.icon.right-icon
     %article.left-column
-      = image_tag "medifast_personal.jpg"
-      %span.text-center.name
-        %h2
-          Шарафан Владимир Григорьевич
-        %p
-          Заведующий хирургическим отделением
-%section.main.content-section.bold-quote
+      - @chief_doctors.each do |chief_doctor|
+        = image_tag "#{chief_doctor.image}"
+        %span.text-center.name
+          %h2
+            = chief_doctor.name
+          %p
+            = chief_doctor.position
+%section.main.content-section.comments
   .section-wrapper
-    %h2.section-heading
+    %h2.section-heading.comments
       Отзывы пациентов
+%section.main.content-section.feature.bold-quote
+  .section-wrapper
     %span.quotation-icon.up
     %span.quotation-icon.down
-    - @reviews.each do |review|
-      %h2.section-heading
-        = review.description
-      %span.citation
-        = review.name
+    %article.carousel.newsfeed-carousel
+      .carouselBody.partners-carousel.comments
+        %ul
+          - @reviews.each do |review|
+            %li
+              .carousel-slider
+                %h2.section-heading
+                  = review.description
+                %span.citation
+                  = review.name
 %section.content-section.newsfeed.active#newsfeed
   #newsfeedBody.section-wrapper
     %h2.section-heading.white

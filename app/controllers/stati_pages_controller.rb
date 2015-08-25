@@ -5,10 +5,11 @@ class StatiPagesController < ApplicationController
     @service_category = ServiceCategory.all
     #@service_category = ServiceCategory.where(("rang = 'Высокий'"))
     @cities = City.all
-    @reviews = Review.all.sample(1)
+    @reviews = Review.all
     @posts_slide = Post.all.first(5)
     @sales = Sale.where("rang = 'Показать'")
     @advertisings = Advertising.where("rang = 'Показать'")
+    @chief_doctors = ChiefDoctor.where("status = 'Показать'")
   end
 
   def about_us
