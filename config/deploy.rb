@@ -85,6 +85,7 @@ set :scm,             :git
 
 ## Если ваш репозиторий в GitHub, используйте такую конфигурацию
 set :repository,    "git@github.com:valeragh/medifast.git"
+set :shared_children, shared_children + %w{public/uploads}
 
 ## --- Ниже этого места ничего менять скорее всего не нужно ---
 
@@ -106,7 +107,7 @@ namespace :deploy do
       CMD
     end
   end
-  
+
   desc "Start application"
   task :start, :roles => :app do
     run unicorn_start_cmd
