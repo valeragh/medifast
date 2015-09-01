@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
-  #before_filter :authenticate_user!
-  skip_before_filter  :verify_authenticity_token
+  before_filter :authenticate_user!
+  #skip_before_filter  :verify_authenticity_token
 
   def create
     @conversation = Conversation.find(params[:conversation_id])

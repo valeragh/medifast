@@ -522,8 +522,11 @@ ru:
         created_at: "Создано"
         updated_at: "Обновлено"
       conversation:
-       sender: "Отправитель"
-       recipient: "Доктор онлайн"
-       messages: "Сообщение"
-       created_at: "Создано"
-       updated_at: "Обновлено"
+        sender: "Отправитель"
+        recipient: "Доктор онлайн"
+        messages: "Сообщение"
+        created_at: "Создано"
+        updated_at: "Обновлено"
+      user:
+        password: "Пароль"
+        password_confirmation: "Повторный пароль"

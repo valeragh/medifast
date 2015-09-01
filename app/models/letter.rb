@@ -1,6 +1,7 @@
 class Letter < ActiveRecord::Base
 
   validates :name, :email, :description, presence: true
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
   scope :in_progress, ->{where("letters.checked_out_at IS NULL")}
   scope :complete, -> {where("letters.checked_out_at IS NOT NULL")}

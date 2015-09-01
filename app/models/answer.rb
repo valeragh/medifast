@@ -10,6 +10,7 @@ class Answer < ActiveRecord::Base
     too_short: "должен содержать не менее %{count} цифр",
     too_long: "должен содержать не более %{count} цифр"
   }
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
   scope :in_progress, ->{where("answers.checked_out_at IS NULL")}
   scope :complete, -> {where("answers.checked_out_at IS NOT NULL")}

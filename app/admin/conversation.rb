@@ -19,6 +19,9 @@ ActiveAdmin.register Conversation do
         column('Сообщение') do |message|
           message.body
         end
+        column('Дата') do |message|
+          l message.created_at, format: :short
+        end
       end
     end
     active_admin_comments
