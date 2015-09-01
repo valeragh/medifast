@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825072022) do
+ActiveRecord::Schema.define(version: 20150831220953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,16 @@ ActiveRecord::Schema.define(version: 20150825072022) do
     t.datetime "updated_at"
   end
 
+  create_table "conversations", force: true do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "conversations", ["recipient_id"], name: "index_conversations_on_recipient_id", using: :btree
+  add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
+
   create_table "doctors", force: true do |t|
     t.string   "name"
     t.string   "position"
@@ -124,6 +134,17 @@ ActiveRecord::Schema.define(version: 20150825072022) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "messages", force: true do |t|
+    t.text     "body"
+    t.integer  "conversation_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "personals", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -232,6 +253,10 @@ ActiveRecord::Schema.define(version: 20150825072022) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.integer  "clinic_id"
+    t.text     "description"
+    t.string   "image_url"
+    t.string   "position"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

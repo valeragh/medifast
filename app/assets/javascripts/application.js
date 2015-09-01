@@ -12,6 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap.min
 //= require modernizr
 //= require underscore
 //= require gmaps/google
+//= require private_pub
+//= require chat
+
+

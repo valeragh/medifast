@@ -10,12 +10,9 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
-  def authenticate_active_admin_user!
-    authenticate_user!
-    unless current_user.role?(:admin)
-      flash[:alert] = "У Вас нет прав доступа к этому ресурсу, авторизируйтесь пожалуйста"
-      redirect_to root_path
-    end
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = "У Вас нет доступа к данному ресурсу"
+    redirect_to root_url
   end
 
 end

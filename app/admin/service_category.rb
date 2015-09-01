@@ -40,8 +40,8 @@ ActiveAdmin.register ServiceCategory do
   end
 
    sidebar "Детали", only: :show do
-    attributes_table_for service_category.services do
-      row("Услуги") do |service|
+    table_for service_category.services do
+      column("Услуги") do |service|
          link_to service.name, [ :admin, service ]
       end
     end

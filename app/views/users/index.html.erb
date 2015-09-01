@@ -1,0 +1,111 @@
+<section class="content-section about">
+  <div class="section-wrapper">
+    <h2 class="section-heading">
+      Кабинет пользователя
+    </h2>
+    <div class="left-column">
+      <p class="paragraph">
+        Кабинет разбит на два блока - список докторов онлайн, у которых можно получить консультацию и история сообшений с докторами.
+      </p>
+    </div>
+    <div class="right-column">
+      <p class="paragraph">
+        Если у Вас есть вопросы напишите нам, наши администраторы с радостью на них ответят
+      </p>
+      <%= link_to letters_path, class: "blue-button" do %>
+        Задать вопрос
+        <span class="icon right-icon"></span>
+      <% end %>
+    </div>
+  </div>
+</section>
+<section class="content-section who-we-are active" id="who-we-are">
+  <div class="section-wrapper">
+    <h2 class="section-heading white">
+      Доктора онлайн
+    </h2>
+    <%- @users.each do |user| %>
+      <dl class="accordion bio">
+        <dt class="accordion-name">
+          <a class="name">
+            <%= user.name %>
+          </a>
+          <span class="standfirst">
+            <%= user.position %>
+          </span>
+          <span class="standfirst">
+            Медифаст
+            <%= user.clinic.address %>
+          </span>
+          <div class="icon-wrapper">
+            <span class="icon-open"></span>
+            <span class="icon-close"></span>
+          </div>
+          <span class="status-open">
+            открыть
+          </span>
+          <span class="status-close">
+            закрыть
+          </span>
+        </dt>
+        <dd class="bio-body">
+          <div class="accordion-content">
+            <%= image_tag "#{user.image_url}", class: "accordion-image" %>
+            <p class="paragraph">
+              <%= user.description.html_safe %>
+              <br>
+              <br>
+              <%= link_to "#", class: "blue-button btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => user.id do %>
+                Отправить сообщение
+                <span class="icon right-icon">
+              <% end %>
+              |
+              <%= link_to records_path, class: "red-button" do %>
+                Запись на прием
+                <span class="icon right-icon">
+              <% end %>
+            </p>
+          </div>
+        </dd>
+      </dl>
+    <% end %>
+  </div>
+</section>
+<section class="content-section who-we-are active" id="who-we-are">
+  <div class="section-wrapper">
+    <h2 class="section-heading white">
+      История сообщений
+    </h2>
+    <div style="height: 400px; overflow-y: auto;">
+      <% if @conversations.any? %>
+          <ul class="media-list">
+            <% @conversations.each do |conversation| %>
+                <li class="media">
+                  <%= image_tag("#{conversation.recipient.image_url}", class: "media-object pull-left") %>
+                  <div class="media-body">
+                    <%= link_to "", conversation_path(conversation), class: "conversation", "data-cid" => conversation.id %>
+                        <h4 class="media-heading blue"><%= conversation_interlocutor(conversation).name %></h4>
+                        <p><%= conversation.messages.last.nil? ? "No messages" : truncate(conversation.messages.last.body, length: 45) %></p>
+                  </div>
+                </li>
+
+            <% end %>
+          </ul>
+      <% else %>
+          <p>Вы еще не написали не одного сообщения. Выберите доктора и задайте вопрос.</p>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class="col-md-4">
+
+  </div>
+
+</section>
+
+<%- content_for :scripts do %>
+  <script>
+    About.init();
+  </script>
+<% end %>

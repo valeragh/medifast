@@ -47,6 +47,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 gem "rmagick"
 gem "carrierwave"
+gem 'private_pub'
+gem 'thin'
 
 
 group :production do

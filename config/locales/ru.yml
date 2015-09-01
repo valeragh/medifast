@@ -488,6 +488,11 @@ ru:
         few:  "Главные доктора"
         many: "Главные доктора"
         other: "Главные доктора"
+      conversation:
+        one:  "Cессия"
+        few:  "Сессии"
+        many: "Сессии"
+        other: "Сессии"
     attributes:
       record:
         name: "Ф.И.О."
@@ -495,16 +500,30 @@ ru:
         service_id: "Услуга"
         clinic_id: "Клиника"
         description: "Сообщение"
+        created_at: "Создано"
+        updated_at: "Обновлено"
       consultation:
         name: "Имя"
         phone: "Номер телефона"
         service_id: "Услуга"
         description: "Вопрос"
+        created_at: "Создано"
+        updated_at: "Обновлено"
       letter:
         name: "Имя"
         description: "Сообщение"
+        created_at: "Создано"
+        updated_at: "Обновлено"
       answer:
         name: "Имя"
         phone: "Номер телефона"
         vacancy_id: "Вакансия"
         description: "Резюме"
+        created_at: "Создано"
+        updated_at: "Обновлено"
+      conversation:
+       sender: "Отправитель"
+       recipient: "Доктор онлайн"
+       messages: "Сообщение"
+       created_at: "Создано"
+       updated_at: "Обновлено"

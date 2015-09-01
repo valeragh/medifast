@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :vkontakte]
+  has_many :conversations, :foreign_key => :sender_id
+  belongs_to :clinic
+  mount_uploader :image_url, ImageUploader
 
   def role?(r)
     role.include? r.to_s
@@ -23,4 +26,8 @@ class User < ActiveRecord::Base
       user.name = auth_hash.info.name
     end
   end
+
+  private
+
+
 end

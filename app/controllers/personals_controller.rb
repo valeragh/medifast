@@ -1,5 +1,5 @@
 class PersonalsController < ApplicationController
   def index
-    @personals = Personal.all.order(name: :desc)
+    @personals = User.where("role = 'doctor'")
   end
 end

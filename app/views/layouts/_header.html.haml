@@ -13,7 +13,7 @@
       %span.icon
       = link_to "Запись на прием", records_path, class: "link red"
       - if signed_in?
-        = link_to "Личный кабинет", edit_user_registration_path, class: "link login", style: "margin-right: -1px"
+        = link_to "Личный кабинет", cabinet_path, class: "link login", style: "margin-right: -1px"
         \/
         = link_to "Выйти", destroy_user_session_path, :method => :delete, class: "link login"
       - else

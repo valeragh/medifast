@@ -1,22 +1,24 @@
 Rails.application.routes.draw do
 
-  devise_for :personals,
-             path: '',
-             path_names: { sign_in: 'login_personal' }
   devise_for :users,
-             controllers: { :omniauth_callbacks => 'users/omniauth_callbacks' },
+             #controllers: { :omniauth_callbacks => 'users/omniauth_callbacks' },
              path: '',
              path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
 
 
   ActiveAdmin.routes(self)
 
+
   resources :records
   resources :consultations
   resources :letters
   resources :answers
+  resources :conversations do
+    resources :messages
+  end
 
   root 'stati_pages#index'
+  match '/cabinet', to: 'users#index', via: 'get'
   match '/about_us', to: 'stati_pages#about_us', via: 'get'
   match '/faqs', to: 'stati_pages#faqs', via: 'get'
   match '/vacansies', to: 'stati_pages#vacansies', via: 'get'

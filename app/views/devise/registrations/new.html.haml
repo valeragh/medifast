@@ -17,6 +17,10 @@
           = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
 
         %fieldset
+          = f.label :name, "Имя"
+          = f.text_field :name, type: 'text', placeholder: "Имя/Логин"
+
+        %fieldset
           = f.label :password, "Пароль"
           - if @minimum_password_length
             %em

@@ -2,6 +2,8 @@
 <html>
 <head>
   <%= metamagic %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link href='http://fonts.googleapis.com/css?family=Cuprum:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
@@ -12,6 +14,8 @@
   <%= render "layouts/messages" %>
   <%= yield %>
   <%= render 'layouts/footer' %>
+
+  <%= javascript_include_tag 'users' %>
   <%= javascript_include_tag 'scripts' %>
   <%= yield :scripts %>
 </body>

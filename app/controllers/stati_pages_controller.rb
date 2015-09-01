@@ -19,6 +19,7 @@ class StatiPagesController < ApplicationController
   def faqs
   end
 
+
   def vacansies
     @vacansies = Vacancy.all
   end

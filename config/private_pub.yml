@@ -1,0 +1,10 @@
+development:
+  server: "http://localhost:9292/faye"
+  secret_token: "secret"
+test:
+  server: "http://localhost:9292/faye"
+  secret_token: "secret"
+production:
+  server: "http://medifast.lalightwebdesign.lclients.ru/faye"
+  secret_token: "55225bc4a4cfce371983b3a4cd45d215ed0ee454a1b54ce8f3187bf037857aa1"
+  signature_expiration: 3600 # one hour
