@@ -3,6 +3,7 @@ class Clinic < ActiveRecord::Base
   has_many :records
   has_many :doctors
   has_many :users
+  has_and_belongs_to_many :service_categories
 
   geocoded_by :address
   after_validation :geocode

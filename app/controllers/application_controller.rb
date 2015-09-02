@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  protect_from_forgery
 
   before_action :set_locale
 
@@ -10,9 +10,8 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
-  rescue_from CanCan::AccessDenied do |exception|
-    flash[:error] = "У Вас нет доступа к данному ресурсу"
-    redirect_to root_url
+  def access_denied(exception)
+    redirect_to root_path, :alert => exception.message
   end
 
 end

@@ -1,6 +1,7 @@
 class ServiceCategory < ActiveRecord::Base
   has_many :services, :dependent => :destroy
   has_many :consultations
+  has_and_belongs_to_many :clinics
   mount_uploader :image_url, ImageUploader
   mount_uploader :image_small_url, ImageUploader
 

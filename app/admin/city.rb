@@ -1,7 +1,7 @@
 ActiveAdmin.register City do
 
 
-  permit_params :name, :slug
+  permit_params :name, :image_url, :slug
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
 
   menu :priority => 3
@@ -12,6 +12,9 @@ ActiveAdmin.register City do
   form do |f|
     f.inputs 'Город' do
       f.input :name
+    end
+    f.inputs 'Изображение маленькое 333X176', :multipart => true do
+      f.input :image_url
     end
     actions
   end

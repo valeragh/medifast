@@ -1,7 +1,7 @@
 class City < ActiveRecord::Base
   has_many :clinics
-
-  validates :name, presence: true
+  mount_uploader :image_url, ImageUploader
+  validates :name, :image_url, presence: true
 
   extend FriendlyId
   friendly_id :name, use: :slugged
