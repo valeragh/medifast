@@ -5,6 +5,6 @@ test:
   server: "http://localhost:9292/faye"
   secret_token: "secret"
 production:
-  server: "http://medifast.lalightwebdesign.lclients.ru/faye"
+  server: "http://medifast.lalightwebdesign.lclients.ru:9292/faye"
   secret_token: "89e004720af45e61a350a30cf7ee3f50163ca141a02ea130db0b5007a0b75058"
   signature_expiration: 86400 # one hour
