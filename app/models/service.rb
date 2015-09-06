@@ -1,6 +1,6 @@
 class Service < ActiveRecord::Base
   belongs_to :service_category
-  has_many :records
+
   mount_uploader :image_url, ImageUploader
   mount_uploader :image_one_url, ImageUploader
   mount_uploader :image_two_url, ImageUploader

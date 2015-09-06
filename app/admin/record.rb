@@ -1,7 +1,7 @@
 ActiveAdmin.register Record do
 
 
-  permit_params :name, :phone, :service_id, :email, :clinic_id, :description, :checked_out_at
+  permit_params :name, :phone, :service_category_id, :email, :clinic_id, :description, :checked_out_at
 
   config.per_page = 10
 
@@ -11,7 +11,7 @@ ActiveAdmin.register Record do
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'
   filter :name, label: 'Имя'
-  filter :service, label: 'Процедура', as: :select, collection: proc { Service.find(Record.pluck(:service_id)).map { |m| [m.name, m.id] } }
+  filter :service_category, label: 'Услуга', as: :select, collection: proc { ServiceCategory.find(Record.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
   filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Record.pluck(:clinic_id)).map { |m| [m.address, m.id] } }
 
   scope "Все", :all, :default => true
@@ -29,7 +29,7 @@ ActiveAdmin.register Record do
     panel "Данные" do
       attributes_table_for record do
         row('Дата создания') { |b| l record.created_at, format: :long}
-        row("Услуга"){|b| record.service.name}
+        row("Услуга"){|b| record.service_category.name}
         row("Клиника"){|b| record.clinic.address}
         row("Статус"){|b| status_tag(record.state)}
         row('Дата ответа') { |b| record.checked_out_at}
@@ -51,7 +51,7 @@ ActiveAdmin.register Record do
     column("Дата создания"){|record| l record.created_at, format: :long}
     column("Имя"){|record| record.name }
     column("Телефон"){|record| record.phone}
-    column("Услуга"){|record| record.service.name}
+    column("Услуга"){|record| record.service_category.name}
     column("Клиника"){|record| record.clinic.address}
     column("Статус"){|record| status_tag(record.state)}
     actions

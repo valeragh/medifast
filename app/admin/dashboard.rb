@@ -11,7 +11,7 @@ ActiveAdmin.register_page "Dashboard" do
             column("Дата создания"){|record| l record.created_at, format: :long}
             column("Имя"){|record| record.name }
             column("Телефон"){|record| record.phone}
-            column("Услуга"){|record| record.service.name}
+            column("Услуга"){|record| record.service_category.name}
             column("Клиника"){|record| record.clinic.address}
             column("Статус"){|record| status_tag(record.state)}
           end

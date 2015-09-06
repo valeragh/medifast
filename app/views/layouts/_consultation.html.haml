@@ -30,7 +30,7 @@
                       Работа с нами
                     %p.paragraph
                       Если Вы хотите устроится к нам на работу, просмотрите раздел Вакансии и напишите нам. Наша администрация ответит Вам в ближайшее время
-                    = link_to "Вакансии", root_path, class: "partner-link"
+                    = link_to "Вакансии", vacansies_path, class: "partner-link"
                 %li
                   .carousel-slide
                     = image_tag "medifast_warning.png", class: "3D-and-imaging"
@@ -51,7 +51,7 @@
                       Регистрация
                     %p.paragraph
                       Для получения консультации, необходимо зарегистрироваться на нашем сайте, перейдя в раздел Регистрация, заполнив се необходимы поля.
-                    = link_to "Регистрация", root_path, class: "partner-link"
+                    = link_to "Регистрация", cabinet_path, class: "partner-link"
                 %li
                   .carousel-slide
                     = image_tag "medifast_diary.png", class: "3D-and-imaging"
@@ -59,7 +59,7 @@
                       Личный кабинет
                     %p.paragraph
                       После регистрации, Вы можите войти в свой личный кабинет, где будет сохраняться история Ваших консультаций и другие возможности
-                    = link_to "Ваш кабинет", root_path, class: "partner-link"
+                    = link_to "Ваш кабинет", cabinet_path, class: "partner-link"
                 %li
                   .carousel-slide
                     = image_tag "medifast_doctor.png", class: "3D-and-imaging"
@@ -67,4 +67,4 @@
                       Поиск врача
                     %p.paragraph
                       В Вашем личном кабинете Вы можите просмотреть список наших врачей, которые проводят бесплатные консультации и задать врачу вопрос
-                    = link_to "Личный кабинет", root_path, class: "partner-link"
+                    = link_to "Личный кабинет", cabinet_path, class: "partner-link"

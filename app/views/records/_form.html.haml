@@ -20,12 +20,12 @@
     = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
 
   %fieldset
-    = f.label :service_id, "Услуга*"
-    = collection_select :record, :service_id, Service.all, :id, :name, {}, { :multiple => false }
+    = f.label :service_category_id, "Услуга*"
+    = collection_select :record, :service_category_id, ServiceCategory.order(:name), :id, :name, include_blank: true
 
   %fieldset
     = f.label :clinic_id, "Клиника*"
-    = collection_select :record, :clinic_id, Clinic.all, :id, :address, {}, { :multiple => false }
+    = grouped_collection_select :record, :clinic_id, ServiceCategory.order(:name), :clinics, :name, :id, :address, {}, { :multiple => false }
 
   %fieldset
     = f.label :description, "Сообщение"

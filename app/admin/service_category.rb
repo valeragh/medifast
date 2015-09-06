@@ -1,11 +1,12 @@
 ActiveAdmin.register ServiceCategory do
 
-  permit_params :name, :rang, :image_url, :image_small_url
+  permit_params :name, :tail, :rang, :image_url, :image_small_url, :clinic_ids => []
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
   actions :all
 
   filter :name, label: 'Название категории'
-  filter :rang, label: 'Приоритет', as: :select, collection: Service::RANG_TYPES
+  filter :tail, label: 'Приоритет'
+  filter :rang, label: 'Cлайд', as: :select, collection: ServiceCategory::RANG_TYPES
   filter :created_at, label: 'Дата создания'
 
   form do |f|
@@ -13,7 +14,13 @@ ActiveAdmin.register ServiceCategory do
       f.input :name
     end
     f.inputs 'Приоритет' do
+      f.input :tail
+    end
+    f.inputs 'Cлайд' do
       f.input :rang, as: :select, collection: ServiceCategory::RANG_TYPES
+    end
+    f.inputs 'Клиники' do
+      f.input :clinic_ids, as: :check_boxes, collection: Clinic.all.map { |m| [m.address, m.id] }, multiple: true
     end
     f.inputs 'Изображение большое 1684X893', :multipart => true do
       f.input :image_url
@@ -27,7 +34,8 @@ ActiveAdmin.register ServiceCategory do
   show title: :name do
     panel "Данные" do
       attributes_table_for service_category do
-        row('Приоритет') { |b| service_category.rang}
+        row('Приоритет') { |b| service_category.tail}
+        row('Cлайд') { |b| service_category.rang}
         row('Изображение маленькое') do
           image_tag service_category.image_small_url
         end
@@ -45,6 +53,11 @@ ActiveAdmin.register ServiceCategory do
          link_to service.name, [ :admin, service ]
       end
     end
+    table_for service_category.clinics do
+      column("Клиники") do |clinic|
+        link_to clinic.address, [ :admin, clinic ]
+      end
+    end
   end
 
   controller do
@@ -59,7 +72,8 @@ ActiveAdmin.register ServiceCategory do
 
   index do
     column("Название"){|service_category| service_category.name}
-    column("Приоритет"){|service_category| service_category.rang}
+    column("Приоритет"){|service_category| service_category.tail}
+    column("Cлайд"){|service_category| service_category.rang}
     column "Дата создания", :created_at
     actions
   end

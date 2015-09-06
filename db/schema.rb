@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150902134829) do
+ActiveRecord::Schema.define(version: 20150906054424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,13 @@ ActiveRecord::Schema.define(version: 20150902134829) do
   end
 
   add_index "clinics", ["slug"], name: "index_clinics_on_slug", unique: true, using: :btree
+
+  create_table "clinics_service_categories", force: true do |t|
+    t.integer  "service_category_id"
+    t.integer  "clinic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "consultations", force: true do |t|
     t.string   "name"
@@ -184,7 +191,7 @@ ActiveRecord::Schema.define(version: 20150902134829) do
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
 
   create_table "records", force: true do |t|
-    t.integer  "service_id"
+    t.integer  "service_category_id"
     t.string   "name"
     t.string   "email"
     t.text     "description"
@@ -221,13 +228,7 @@ ActiveRecord::Schema.define(version: 20150902134829) do
     t.datetime "updated_at"
     t.string   "image_small_url"
     t.string   "rang"
-  end
-
-  create_table "service_categories_clinics", force: true do |t|
-    t.integer  "service_category_id"
-    t.integer  "clinic_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "tail"
   end
 
   create_table "services", force: true do |t|

@@ -2,8 +2,8 @@ class StatiPagesController < ApplicationController
   before_action :load_city, only: [:show]
 
   def index
-    @service_category = ServiceCategory.all
-    #@service_category = ServiceCategory.where(("rang = 'Высокий'"))
+    #@service_category = ServiceCategory.all.first(10)
+    @service_category = ServiceCategory.where(("rang = 'Показать'"))
     @cities = City.all
     @reviews = Review.all
     @posts_slide = Post.all.first(5)

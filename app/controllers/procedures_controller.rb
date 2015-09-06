@@ -3,7 +3,7 @@ class ProceduresController < ApplicationController
 
 
   def index
-    @service_categories = ServiceCategory.all.order_by_priority
+    @service_categories = ServiceCategory.order(:tail)
   end
 
   def show

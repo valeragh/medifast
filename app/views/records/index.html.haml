@@ -47,3 +47,24 @@
 - content_for :scripts do
   :javascript
     About.init();
+    (function() {
+      jQuery(function() {
+        var clinics;
+        $('#record_clinic_id').parent().hide();
+        clinics = $('#record_clinic_id').html();
+        return $('#record_service_category_id').change(function() {
+          var escaped_service_category, options, service_category;
+          service_category = $('#record_service_category_id :selected').text();
+          escaped_service_category = service_category.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+          options = $(clinics).filter("optgroup[label='" + escaped_service_category + "']").html();
+          if (options) {
+            $('#record_clinic_id').html(options);
+            return $('#record_clinic_id').parent().show();
+          } else {
+            $('#record_clinic_id').empty();
+            return $('#record_clinic_id').parent().hide();
+          }
+        });
+      });
+
+    }).call(this);

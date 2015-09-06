@@ -1,8 +1,8 @@
 class Record < ActiveRecord::Base
-  belongs_to :service
+  belongs_to :service_category
   belongs_to :clinic
 
-  validates :name, :phone, :service_id, :clinic_id, presence: true
+  validates :name, :phone, :service_category_id, :clinic_id, presence: true
   validates :phone, length: {
     minimum: 6,
     maximum: 13,
