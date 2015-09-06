@@ -10,7 +10,7 @@
       %article.article-template
         %h2.section-heading
           = @doctor.name
-        %h3.section-heding  
+        %h3.section-heding
           = @doctor.position
         .page
           .layoutArea
@@ -21,5 +21,5 @@
               = @doctor.description.html_safe
             %p
             - @certificates.each do |certificate|
-              = image_tag certificate.image_url_url.to_s
+              = image_tag certificate.image_url_url.to_s, class: "service-image"
 = render "layouts/record"

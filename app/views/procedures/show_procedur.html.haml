@@ -16,8 +16,8 @@
             %p
               = @service.description.html_safe
             %p
-              = image_tag "#{@service.image_one_url}"
-              = image_tag "#{@service.image_two_url}"
+              = image_tag "#{@service.image_one_url}", class: "service-image"
+              = image_tag "#{@service.image_two_url}", class: "service-image"
             %p
               = @service.description_two.html_safe
             %p
