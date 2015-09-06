@@ -49,6 +49,7 @@ gem "rmagick"
 gem "carrierwave"
 gem 'private_pub'
 gem 'thin'
+gem 'pg_search'
 
 
 group :production do

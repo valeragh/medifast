@@ -408,7 +408,9 @@ html, body {
   text-transform: uppercase;
   max-width: 747px;
 }
-
+.header-intro.white{
+  color: #fff;
+}
 /*========================================================================
   Main Nav
 ==========================================================================*/
@@ -587,7 +589,7 @@ html, body {
   height: 40px;
   display: none;
   background-size: 100% 100%;
-  background-image: url('../images/icon-mobilemenu.jpg');
+  background-image: url(<%= asset_path('icon-mobilemenu.jpg') %>);
   -webkit-transition: 0.3s all cubic-bezier(0.23, 1, 0.32, 1);
   -ms-transition: 0.3s all cubic-bezier(0.23, 1, 0.32, 1);
   -moz-transition: 0.3s all cubic-bezier(0.23, 1, 0.32, 1);
@@ -6999,7 +7001,7 @@ polyline {
 }
 /* line 288, ../../Sass/pages/_newsfeed.scss */
 .feature .carousel nav ul {
-  bottom: -55px;
+  bottom: -36px;
 }
 
 /* line 295, ../../Sass/pages/_newsfeed.scss */
@@ -9036,17 +9038,17 @@ polyline {
   /* line 881, ../../Sass/pages/_breakpoints.scss */
   .nav .link:hover {
     border-color: transparent;
-    color: #009edc;
+    color: #179C8C;
   }
   /* line 886, ../../Sass/pages/_breakpoints.scss */
   .nav .link.active {
     border-color: transparent;
-    color: #009edc;
+    color: #179C8C;
   }
 
   /* line 892, ../../Sass/pages/_breakpoints.scss */
   .nav.open {
-    height: 300px;
+    height: 500px;
   }
   /* line 895, ../../Sass/pages/_breakpoints.scss */
   .nav.open .link {
@@ -9054,7 +9056,7 @@ polyline {
   }
   /* line 899, ../../Sass/pages/_breakpoints.scss */
   .nav.open .icon-mobilemenu {
-    background-image: url('../images/icon-menu-close.jpg');
+    background-image: url(<%= asset_path('icon-menu-close.jpg') %>);
   }
 
   /* line 904, ../../Sass/pages/_breakpoints.scss */
@@ -9085,6 +9087,7 @@ polyline {
   /* line 928, ../../Sass/pages/_breakpoints.scss */
   .header-content .red-button {
     display: none;
+    min-width: 130px;
   }
   /* line 932, ../../Sass/pages/_breakpoints.scss */
   .header-content .header-title {
@@ -9339,7 +9342,7 @@ polyline {
   .footer-logo {
     width: 81px;
     height: 49px;
-    background: url('../images/footer-logo.jpg');
+    background: url(<%= asset_path('medifast_logo_footer.png') %>);
     display: block;
     float: none;
     clear: none;

@@ -14,6 +14,17 @@ class ServiceCategory < ActiveRecord::Base
     too_long: "должен содержать не более %{count} символов"
   }
 
+  include PgSearch
+  pg_search_scope :search, against: [:name],
+  associated_against: {services: [:name, :description, :description_two]}
+
+  def self.text_search(query)
+    if query.present?
+      search(query)
+    else
+      all
+    end
+  end
   RANG_TYPES = [ "Показать", "Скрыть" ]
 
   #def self.order_by_case

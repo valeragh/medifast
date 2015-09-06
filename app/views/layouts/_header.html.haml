@@ -1,4 +1,4 @@
-.header
+%header.header
   .nav-wrap.top#top
     %nav.nav
       = link_to root_path do
@@ -20,7 +20,9 @@
         = link_to "Регистрация", new_user_registration_path, class: "link login", style: "margin-right: -1px"
         \/
         = link_to "Войти", new_user_session_path, class: "link login"
-      = link_to root_path, class: "social-icon" do
+      = link_to search_path, class: "social-icon" do
         %i.fa.fa-search.fa-2x
+      %a.icon-close
+      %a.icon-mobilemenu
 
 

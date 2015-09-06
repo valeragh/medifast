@@ -14,9 +14,10 @@
     .carouselBody
       %ul
         %li.clinic
-          .carousel-slide
+          .overlay
+          .carousel-slide(style="z-index: 10; position: absolute;")
             .section-wrapper
-              %h1.header-intro
+              %h1.header-intro.white
                 Клиника медифаст
               %p.header-standfirst
                 Победим болезнь вместе
@@ -54,7 +55,7 @@
         .history-wrapper
           .slider-section
             .top-half
-              %h3.sub-heading.double-line
+              %h3.sub-heading
                 Открытие клиники
               = image_tag "medifast_logo_slide.jpg"
               %span.date
@@ -74,7 +75,7 @@
                 В марте 2007г. открыто амбулаторное отделение по адресу: ул.Олимпийская,181.
           .slider-section
             .top-half
-              %h3.sub-heading
+              %h3.sub-heading.double-line
                 Выдача больничных листов
               = image_tag "medifast_sign.jpg"
               %span.date

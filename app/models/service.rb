@@ -13,6 +13,7 @@ class Service < ActiveRecord::Base
     too_long: "должен содержать не более %{count} символов"
   }
 
+
   RANG_TYPES = [ "Высокий", "Средний", "Низкий" ]
 
   def self.order_by_case

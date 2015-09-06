@@ -19,6 +19,10 @@ class StatiPagesController < ApplicationController
   def faqs
   end
 
+  def search
+    @service_categories = ServiceCategory.text_search(params[:query])
+  end
+
 
   def vacansies
     @vacansies = Vacancy.all

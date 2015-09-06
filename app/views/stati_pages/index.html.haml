@@ -8,7 +8,7 @@
       Отделения клиники
     %a(class="link" href="#priem")
       Запись на прием
-    %a(class="link" href="#news")
+    %a(class="link" href="#smarter-engagement")
       Новости
 %button.back-to-top.back-to-top-bind#back-to-top
 %article.header-content#carousel
@@ -20,11 +20,11 @@
             .overlay
             .carousel-slide(style="z-index: 10; position: absolute;")
               .section-wrapper
-                %h1.header-intro
+                %h1.header-intro.white
                   = category.name
                 %p.header-standfirst
                   Победим болезнь вместе
-                = link_to procedures_path, class: "red-button" do
+                = link_to procedure_category_path(category[:slug]), class: "red-button" do
                   Подробней
                   %span.icon.right-icon
 
@@ -125,17 +125,17 @@
               Отделения
               %span.icon.right-icon
 = render "layouts/record"
-%section.main.content-section.smarter-engagement#news
+%section.main.content-section.smarter-engagement#smarter-engagement
   .section-wrapper
     %h2.section-heading.white
       Новости Медифаст
     .carousel-container
       %article.carousel
-        .carouselBody
+        .carouselBody(style="height: 478px;")
           %ul
             - @posts_slide.each do |post|
               %li
-                .carousel-slider
+                .carousel-slide
                   .left-section
                     = image_tag "#{post.image_url}", class: "carousel-image"
                   %article.carousel-content

@@ -1,0 +1,23 @@
+%button.back-to-top.back-to-top-bind#back-to-top
+= render "layouts/record"
+%section.content-section.newsfeed-filter
+  .section-wrapper
+    %nav.filter-nav#contact-form(style="margin: 10px 0 10px 0;")
+      = form_tag search_path, method: :get do
+        %fieldset
+          = text_field_tag :query, params[:query], placeholder: "Что Вы ищите?"
+          = submit_tag "Поиск", name: nil, class: "blue-button submit", style: "margin-top:5px;"
+
+%section.content-section.newsfeed.active
+  .section-wrapper
+    - @service_categories.each do |category|
+      %article.newsfeed-article
+        = link_to procedure_category_path(category[:slug]) do
+          = image_tag "#{category.image_small_url}", class: "newsfeed-image"
+        .container.procedure
+          = link_to procedure_category_path(category[:slug]), class: "newsfeed-link" do
+            %h2.sub-heading.text-center
+              = category.name
+
+
+

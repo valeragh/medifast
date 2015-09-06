@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   root 'stati_pages#index'
   match '/cabinet', to: 'users#index', via: 'get'
   match '/about_us', to: 'stati_pages#about_us', via: 'get'
+  match '/search', to: 'stati_pages#search', via: 'get'
   match '/faqs', to: 'stati_pages#faqs', via: 'get'
   match '/vacansies', to: 'stati_pages#vacansies', via: 'get'
   match '/news', to: 'news#index', via: 'get'
