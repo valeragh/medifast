@@ -5,7 +5,7 @@
         %ul
           - @doctors_slide.each do |doctor|
             %li
-              .carousel-slider
+              .carousel-slide
                 = image_tag "#{doctor.image_url}", class: "feature-image"
                 %article.feature-article
                   %h1.section-heading

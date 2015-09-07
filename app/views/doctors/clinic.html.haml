@@ -4,7 +4,7 @@
   #newsfeedBody.section-wrapper
     - @doctors.each do |doctor|
       %article.newsfeed-article.news-end-events
-        = link_to show_doctors_path(doctor[:slug]) do
+        = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
           = image_tag "#{doctor.image_url}", class: "newsfeed-image"
         .container
           = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do

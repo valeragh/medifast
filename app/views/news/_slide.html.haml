@@ -5,7 +5,7 @@
         %ul
           - @posts_slide.each do |post|
             %li
-              .carousel-slider
+              .carousel-slide
                 = image_tag "#{post.image_url}", class: "feature-image"
                 %article.feature-article
                   %h1.section-heading

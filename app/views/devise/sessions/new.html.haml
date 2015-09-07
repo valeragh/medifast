@@ -16,7 +16,7 @@
 
         %fieldset
           = f.label :password, "Пароль"
-          = f.password_field :password, autocomplete: "off", type: 'text', placeholder: "Пароль"
+          = f.password_field :password, autocomplete: "off", type: 'password', placeholder: "Пароль"
 
         - if devise_mapping.rememberable?
           %fieldset

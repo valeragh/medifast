@@ -4,7 +4,7 @@
   #newsfeedBody.section-wrapper
     - @posts.each do |post|
       %article.newsfeed-article.news-end-events
-        = link_to show_news_path(post[:slug]) do
+        = link_to show_news_path(post[:slug]), class: "newsfeed-link" do
           = image_tag "#{post.image_url}", class: "newsfeed-image"
         .container
           = link_to show_news_path(post[:slug]), class: "newsfeed-link" do

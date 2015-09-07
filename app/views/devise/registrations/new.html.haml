@@ -27,12 +27,12 @@
               = @minimum_password_length
               символов минимум
           %br
-          = f.password_field :password, autocomplete: "off", type: 'text', placeholder: "Пароль"
+          = f.password_field :password, autocomplete: "off", type: 'password', placeholder: "Пароль"
 
         %fieldset
           = f.label :password_confirmation, "Повторите пароль"
           %br
-          = f.password_field :password_confirmation, autocomplete: "off", type: 'text', placeholder: "Пароль"
+          = f.password_field :password_confirmation, autocomplete: "off", type: 'password', placeholder: "Пароль"
 
 
         .actions
