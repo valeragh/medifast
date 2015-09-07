@@ -12,6 +12,7 @@ class AnswersController < ApplicationController
 
     respond_to do |format|
       if @answer.save
+        UserMailer.answer_confirmation(@answer).deliver
         format.html { redirect_to root_path, notice: 'Ваше письмо удачно создано, наши администраторы саяжутся с Вами в ближайшее время' }
         format.json { render action: 'show', status: :created, location: @answer }
       else
