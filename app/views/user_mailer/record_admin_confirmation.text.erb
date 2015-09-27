@@ -1,0 +1,11 @@
+Добрый день администрация клиники Медифаст
+
+Новая запись на прием
+
+Дата записи - <%= l @user.created_at, format: :long %>
+Услуга - <%= @user.service_category.name %>
+Клиника - <%= @user.clinic.address %>
+ФИО пользователя - <%= @user.name %>
+Email пользователя - <%= @user.email %>
+Телефон пользователя - <%= @user.phone %>
+Вопрос пользователя - <%= @user.description %>
