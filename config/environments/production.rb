@@ -32,7 +32,7 @@ Rails.application.configure do
   # Generate digests for assets URLs.
   config.assets.digest = true
 
-  config.action_mailer.raise_delivery_errors = true
+  #config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
