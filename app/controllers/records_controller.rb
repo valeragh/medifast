@@ -14,6 +14,7 @@ class RecordsController < ApplicationController
     respond_to do |format|
       if @record.save
         UserMailer.record_confirmation(@record).deliver
+        UserMailer.record__admin_confirmation(@record).deliver
         format.html { redirect_to root_path, notice: 'Запись на прием удачно создана, наши администраторы свяжутся с Вами в ближайшее время' }
         format.json { render action: 'show', status: :created, location: @record }
       else

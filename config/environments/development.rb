@@ -21,7 +21,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
    :address              => "smtp.gmail.com",
    :port                 => 587,
-   :domain => "medifast.lalightwebdesign.lclients.ru",
+   :domain => "medifast.com.ua",
    :user_name            => Rails.application.secrets.gmail_username,
    :password             => Rails.application.secrets.gmail_password,
    :authentication       => "plain",
