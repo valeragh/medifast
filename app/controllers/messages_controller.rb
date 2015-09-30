@@ -10,9 +10,11 @@ class MessagesController < ApplicationController
     if current_user.role != 'doctor'
       UserMailer.user_send_confirmation(@message).deliver
       UserMailer.doctor_send_confirmation(@message).deliver
+      ManagerMailer.manager_conversation_user_doctor(@message).deliver
     else
       UserMailer.user_answer_confirmation(@message).deliver
       UserMailer.doctor_answer_confirmation(@message).deliver
+      ManagerMailer.manager_conversation_doctor_user(@message).deliver
     end
 
     @path = conversation_path(@conversation)

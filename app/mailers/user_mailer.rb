@@ -77,4 +77,6 @@ class UserMailer < ActionMailer::Base
 
     mail to: message.conversation.recipient.email, subject: "Доктор #{message.conversation.recipient.name} Ваше письмо отправлено"
   end
+
+
 end
