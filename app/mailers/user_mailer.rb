@@ -53,4 +53,28 @@ class UserMailer < ActionMailer::Base
 
     mail to: "medifastklinik@gmail.com", subject: "Новое письмо"
   end
+
+  def user_send_confirmation(message)
+    @user = message
+
+    mail to: message.user.email, subject: "Подтверждения отправки вопроса доктору #{message.conversation.recipient.name} клиники Медифаст"
+  end
+
+  def doctor_send_confirmation(message)
+    @user = message
+
+    mail to: message.conversation.recipient.email, subject: "У Вас новый вопрос доктор #{message.conversation.recipient.name}"
+  end
+
+  def user_answer_confirmation(message)
+    @user = message
+
+    mail to: message.conversation.sender.email, subject: "Ответ на Ваш вопрос от доктора #{message.conversation.recipient.name} клиники Медифаст"
+  end
+
+  def doctor_answer_confirmation(message)
+    @user = message
+
+    mail to: message.conversation.recipient.email, subject: "Доктор #{message.conversation.recipient.name} Ваше письмо отправлено"
+  end
 end

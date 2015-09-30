@@ -7,6 +7,13 @@ class MessagesController < ApplicationController
     @message = @conversation.messages.build(message_params)
     @message.user_id = current_user.id
     @message.save!
+    if current_user.role != 'doctor'
+      UserMailer.user_send_confirmation(@message).deliver
+      UserMailer.doctor_send_confirmation(@message).deliver
+    else
+      UserMailer.user_answer_confirmation(@message).deliver
+      UserMailer.doctor_answer_confirmation(@message).deliver
+    end
 
     @path = conversation_path(@conversation)
   end
