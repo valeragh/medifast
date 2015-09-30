@@ -1,15 +1,16 @@
 ActiveAdmin.register User do
 
   permit_params :name, :position, :clinic_id, :description, :image_url, :email, :password, :password_confirmation, :role
+  #before_filter :update, :only => [:edit, :update]
 
   index do
-      column("Имя"){|user| user.name}
-      column :email
-      #column("Дата текущего посещения"){|user| user.current_sign_in_at}
-      #column("Дата последнего посещения"){|user| user.last_sign_in_at}
-      column("Посещаемость"){|user| user.sign_in_count}
-      column("Роль"){|user| user.role}
-      actions
+    column("Имя"){|user| user.name}
+    column :email
+    #column("Дата текущего посещения"){|user| user.current_sign_in_at}
+    #column("Дата последнего посещения"){|user| user.last_sign_in_at}
+    column("Посещаемость"){|user| user.sign_in_count}
+    column("Роль"){|user| user.role}
+    actions
   end
 
   filter :email
@@ -74,6 +75,16 @@ ActiveAdmin.register User do
       column("Сессии") do |conversation|
         link_to conversation.recipient.name, [ :admin, conversation ]
       end
+    end
+  end
+
+  controller do
+    def update
+      if params[:user][:password].blank?
+        params[:user].delete("password")
+        params[:user].delete("password_confirmation")
+      end
+      super
     end
   end
 

@@ -9,8 +9,8 @@ ActiveAdmin.register Conversation do
     actions
   end
 
-  filter :sender, label: "Отправитель", as: :select
-  filter :recipient, label: "Доктор онлайн", as: :select
+  filter :sender, label: "Отправитель", as: :select, collection: proc { User.find(Conversation.pluck(:sender_id)).map { |m| [m.name, m.id] } }
+  filter :recipient, label: "Доктор онлайн", as: :select, collection: proc { User.find(Conversation.pluck(:recipient_id)).map { |m| [m.name, m.id] } }
   filter :created_at
 
   show title: :id do
@@ -18,6 +18,9 @@ ActiveAdmin.register Conversation do
       table_for conversation.messages do
         column('Сообщение') do |message|
           message.body
+        end
+        column('Отправитель') do |message|
+          message.user.name
         end
         column('Дата') do |message|
           l message.created_at, format: :short
