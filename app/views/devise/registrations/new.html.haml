@@ -7,21 +7,23 @@
         Личный кабинет
       %p.paragraph
         После регистрации у Вас появится возможность в Вашем личном кабинете бесплатно консультироваться с врачами клиники Медифаст
+      %p.paragraph
+        Поля со зведочкой обязательные для заполнения
     #contact-form.right-column
 
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
 
         %fieldset
-          = f.label :email
+          = f.label :email, "email*"
           = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
 
         %fieldset
-          = f.label :name, "Имя"
+          = f.label :name, "Имя*"
           = f.text_field :name, type: 'text', placeholder: "Имя/Логин"
 
         %fieldset
-          = f.label :password, "Пароль"
+          = f.label :password, "Пароль*"
           - if @minimum_password_length
             %em
               = @minimum_password_length
@@ -30,7 +32,7 @@
           = f.password_field :password, autocomplete: "off", type: 'password', placeholder: "Пароль"
 
         %fieldset
-          = f.label :password_confirmation, "Повторите пароль"
+          = f.label :password_confirmation, "Повторите пароль*"
           %br
           = f.password_field :password_confirmation, autocomplete: "off", type: 'password', placeholder: "Пароль"
 

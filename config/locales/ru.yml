@@ -530,3 +530,4 @@ ru:
       user:
         password: "Пароль"
         password_confirmation: "Повторный пароль"
+        name: "Имя"
