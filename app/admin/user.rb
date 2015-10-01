@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
 
-  permit_params :name, :position, :clinic_id, :description, :image_url, :email, :password, :password_confirmation, :role
+  permit_params :name, :position, :rang, :clinic_id, :description, :image_url, :email, :password, :password_confirmation, :role
   #before_filter :update, :only => [:edit, :update]
 
   index do
@@ -19,6 +19,9 @@ ActiveAdmin.register User do
   form do |f|
     f.inputs 'Имя доктора' do
       f.input :name
+    end
+    f.inputs 'Приоритет' do
+      f.input :rang, as: :select, collection: User::RANG_TYPES
     end
     f.inputs 'Должность' do
       f.input :position
@@ -52,6 +55,7 @@ ActiveAdmin.register User do
       attributes_table_for user do
         row('Email') { |b| user.email}
         row('Роль') { |b| user.role}
+        row('Приоритет') { |b| user.rang}
         #row('Должность') { |b| user.position}
         #row('Клиника') { |b| user.clinic.address}
         #row('Описание') { |b| user.description.html_safe}

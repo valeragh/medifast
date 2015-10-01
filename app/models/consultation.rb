@@ -2,7 +2,7 @@ class Consultation < ActiveRecord::Base
 
   belongs_to :service_category
 
-  validates :name, :phone, :service_category_id, presence: true
+  validates :name, :phone, :email, :description, :service_category_id, presence: true
   validates :phone, length: {
     minimum: 6,
     maximum: 13,

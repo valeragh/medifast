@@ -16,7 +16,7 @@
     = f.phone_field :phone, autofocus: true, type: 'text', placeholder: "Ваш номер телефона"
 
   %fieldset
-    = f.label :email
+    = f.label :email, "Email*"
     = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
 
   %fieldset
@@ -28,7 +28,7 @@
     = grouped_collection_select :record, :clinic_id, ServiceCategory.order(:name), :clinics, :name, :id, :address, {}, { :multiple => false }
 
   %fieldset
-    = f.label :description, "Сообщение"
+    = f.label :description, "Сообщение*"
     = f.text_field :description, type: 'text', placeholder: "Ваше сообщение"
 
   .actions
