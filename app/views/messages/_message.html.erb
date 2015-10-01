@@ -1,9 +1,9 @@
 <li class="<%=  self_or_other(message) %>">
   <div class="avatar">
     <% if message.user.image_url? %>
-      <%= image_tag "#{message.user.image_url}", style: "width:50px;" %>
+      <%= image_tag "#{message.user.image_url}", style: "width:40px;" %>
     <% else %>
-      <%= image_tag "default-avatar.jpg", style: "width:50px;" %>
+      <%= image_tag "default-avatar.jpg", style: "width:40px;" %>
     <% end %>
   </div>
   <div class="chatboxmessagecontent">
