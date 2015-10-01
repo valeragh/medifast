@@ -3,8 +3,8 @@ class Doctor < ActiveRecord::Base
 	has_many :certificate
 	mount_uploader :image_url, ImageUploader
 
-	validates :name, :position, :image_url, :description, :clinic_id, presence: true
-  
+	validates :name, :position, :image_url, :description, :tail, :clinic_id, presence: true
+
   extend FriendlyId
   friendly_id :name, use: :slugged
 

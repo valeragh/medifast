@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150906183441) do
+ActiveRecord::Schema.define(version: 20151001023601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,6 +130,7 @@ ActiveRecord::Schema.define(version: 20150906183441) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.integer  "tail"
   end
 
   add_index "doctors", ["slug"], name: "index_doctors_on_slug", unique: true, using: :btree

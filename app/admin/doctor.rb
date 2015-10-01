@@ -1,16 +1,20 @@
 ActiveAdmin.register Doctor do
 
-  permit_params :name, :clinic_id, :description, :position, :image_url
+  permit_params :name, :clinic_id, :description, :position, :tail, :image_url
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
   actions :all
 
+  filter :tail, label: 'Приоритет'
   filter :position, label: 'Должность'
   filter :name, label: 'Имя доктора'
   filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Doctor.pluck(:clinic_id)).map { |m| [m.address, m.id] } }
-  
+
   form do |f|
     f.inputs 'Имя доктора' do
       f.input :name
+    end
+    f.inputs 'Приоритет' do
+      f.input :tail
     end
     f.inputs 'Должность' do
       f.input :position
@@ -48,6 +52,7 @@ ActiveAdmin.register Doctor do
     attributes_table_for doctor do
       row("Должность"){|b| doctor.position}
       row("Клиника"){|b| doctor.clinic.address}
+      row("Приоритет"){|b| doctor.tail}
     end
   end
 
@@ -62,11 +67,12 @@ ActiveAdmin.register Doctor do
   end
 
   index do
+    column("Приоритет"){|doctor| doctor.tail}
     column("Имя"){|doctor| doctor.name}
     column("Должность"){|doctor| doctor.position}
     column("Клиника"){|doctor| doctor.clinic.address}
     column "Дата создания", :created_at
     actions
-  end  
+  end
 
 end
