@@ -8961,7 +8961,7 @@ function(n) {
                 Modernizr.csstransforms3d ? n(".carouselBody > ul", i).queue(u) : u()
             }
             function p() {
-                n(".carouselBody > ul > li", i).length > 1 && (n(".carouselBody", i).hasClass("partners-carousel") || r.hasClass("home-carousel") ? n(i).append(n("<nav><ul><\/ul><button class='previous'><span class='icon'><\/span><\/button><button class='next'><span class='icon'><\/span><\/button><\/nav>")) : n(i).append(n("<nav><ul><\/ul><button class='previous'><span class='icon'><\/span>Prev<\/button><button class='next'>Next<span class='icon'><\/span><\/button><\/nav>")),
+                n(".carouselBody > ul > li", i).length > 1 && (n(".carouselBody", i).hasClass("partners-carousel") || r.hasClass("home-carousel") ? n(i).append(n("<nav><ul><\/ul><button class='previous'><span class='icon'><\/span><\/button><button class='next'><span class='icon'><\/span><\/button><\/nav>")) : n(i).append(n("<nav><ul><\/ul><button class='previous'><span class='icon'><\/span>Назад<\/button><button class='next'>Вперед<span class='icon'><\/span><\/button><\/nav>")),
                 n(".carouselBody > ul > li", i).each(function() {
                     var t = n("h2", this).text() + " - " + n("h3", this).text();
                     n("nav > ul", i).append(n("<li><button>" + t + "<\/button><\/li>").attr("title", t))
