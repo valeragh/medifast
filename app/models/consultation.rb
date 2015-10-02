@@ -3,6 +3,7 @@ class Consultation < ActiveRecord::Base
   belongs_to :service_category
 
   validates :name, :phone, :email, :description, :service_category_id, presence: true
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :phone, length: {
     minimum: 6,
     maximum: 13,

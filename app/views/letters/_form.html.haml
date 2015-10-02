@@ -11,6 +11,9 @@
     = f.label :name, "Имя*"
     = f.text_field :name, autofocus: true, type: 'text', placeholder: "Ваше имя"
 
+  %fieldset
+    = f.label :phone, "Телефон*"
+    = f.phone_field :phone, autofocus: true, type: 'text', placeholder: "Ваш номер телефона"
 
   %fieldset
     = f.label :email, "Email*"

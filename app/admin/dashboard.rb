@@ -32,6 +32,7 @@ ActiveAdmin.register_page "Dashboard" do
           table_for Letter.order(created_at: :desc).limit(10) do
             column("Дата создания"){|letter| l letter.created_at, format: :long}
             column("Имя"){|letter| letter.name }
+            column("Телефон"){|letter| letter.name }
             column("Email"){|letter| letter.email}
             column("Сообщение"){|letter| letter.description}
             column("Статус"){|letter| status_tag(letter.state)}

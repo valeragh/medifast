@@ -50,6 +50,7 @@ ActiveAdmin.register Consultation do
   index do
     column("Дата создания"){|consultation| l consultation.created_at, format: :long}
     column("Имя"){|consultation| consultation.name }
+    column("Email"){|consultation| consultation.email }
     column("Телефон"){|consultation| consultation.phone}
     column("Услуга"){|consultation| consultation.service_category.name}
     column("Вопрос"){|consultation| consultation.description}

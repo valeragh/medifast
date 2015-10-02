@@ -1,11 +1,11 @@
 ActiveAdmin.register Letter do
 
-  permit_params :name, :email, :description, :checked_out_at
+  permit_params :name, :email, :phone, :description, :checked_out_at
 
   config.per_page = 10
 
   menu :priority => 3
-  actions :index, :show, :edit, :update
+
 
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'
@@ -40,7 +40,7 @@ ActiveAdmin.register Letter do
     attributes_table_for letter do
       row("Имя"){|b| letter.name}
       row("Email"){|b| letter.email}
-
+      row("Телефон"){|b| letter.phone}
     end
   end
 
@@ -48,6 +48,7 @@ ActiveAdmin.register Letter do
     column("Дата создания"){|letter| l letter.created_at, format: :long}
     column("Имя"){|letter| letter.name }
     column("Email"){|letter| letter.email}
+    column("Телефон"){|letter| letter.phone}
     column("Сообщение"){|letter| letter.description}
     column("Статус"){|letter| status_tag(letter.state)}
     actions
