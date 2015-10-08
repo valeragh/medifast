@@ -9,6 +9,8 @@ class ProceduresController < ApplicationController
   def show
     @service_category = ServiceCategory.friendly.find(params[:service_category_id])
     @services = @service_category.services.order_by_priority
+    @doctors = @service_category.doctors.order(:tail)
+    @clinics = @service_category.clinics
   end
 
   def show_procedur

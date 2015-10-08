@@ -1,5 +1,25 @@
 %button.back-to-top.back-to-top-bind#back-to-top
 = render "layouts/record"
+= render "procedures/nav"
+%section.content-section.newsfeed.active#personal
+  #newsfeedBody.section-wrapper
+    %h2.section-heading.white
+      Ведущие специалисты
+    - @doctors.each do |doctor|
+      %article.newsfeed-article.news-end-events
+        = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
+          = image_tag "#{doctor.image_url}", class: "newsfeed-image"
+        .container
+          = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
+            %h2.sub-heading
+              = doctor.name
+          %p.paragraph
+            = doctor.position
+            %br
+            = doctor.clinic.address
+          = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
+            %span.case-studies-icon.black
+            Узнайте больше
 %section.content-section.newsfeed-filter
   .section-wrapper
     %nav.filter-nav
@@ -8,6 +28,9 @@
           = service.name
 %section.content-section.newsfeed.active
   .section-wrapper
+    %h2.section-heading.white
+      Услуги отдела
+      = @service_category.name
     - @services.each do |service|
       %article.newsfeed-article
         = link_to procedure_path(@service_category[:slug], service[:slug]) do

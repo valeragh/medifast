@@ -12,7 +12,7 @@
 = render "contacts/nav"
 %section.content-section.who-we-are.active#who-we-are
   .section-wrapper
-    %h2.section-heading
+    %h2.section-heading.white
       Контакты отделения медифаст
     %p.paragraph
       Как к нам доехать:
@@ -23,7 +23,14 @@
       %br
       = @clinics.contacts.html_safe
       %br
-      = link_to "medifastklinik@gmail.com", letters_path, class: "link login"
+      = link_to "klinikmedifast@gmail.com", letters_path, class: "link login"
+%section.content-section.newsfeed-filter
+  .section-wrapper
+    %nav.filter-nav
+      Услуги клиники:
+      - @clinics.service_categories.each do |service_category|
+        = link_to procedure_category_path(service_category[:slug]), class: "filter-link all" do
+          = service_category.name
 
 = render "layouts/consultation"
 = render "layouts/record"

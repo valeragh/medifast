@@ -58,6 +58,11 @@ ActiveAdmin.register ServiceCategory do
         link_to clinic.address, [ :admin, clinic ]
       end
     end
+    table_for service_category.doctors do
+      column("Персонал") do |doctor|
+        link_to doctor.name, [ :admin, doctor ]
+      end
+    end
   end
 
   controller do

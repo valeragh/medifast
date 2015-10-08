@@ -1,6 +1,6 @@
 ActiveAdmin.register Doctor do
 
-  permit_params :name, :clinic_id, :description, :position, :tail, :image_url
+  permit_params :name, :clinic_id, :service_category_id, :description, :position, :tail, :image_url
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
   actions :all
 
@@ -8,6 +8,7 @@ ActiveAdmin.register Doctor do
   filter :position, label: 'Должность'
   filter :name, label: 'Имя доктора'
   filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Doctor.pluck(:clinic_id)).map { |m| [m.address, m.id] } }
+  #filter :service_category, label: 'Категория', as: :select, collection: proc { ServiceCategory.find(Doctor.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
 
   form do |f|
     f.inputs 'Имя доктора' do
@@ -18,6 +19,9 @@ ActiveAdmin.register Doctor do
     end
     f.inputs 'Должность' do
       f.input :position
+    end
+    f.inputs 'Категория' do
+      f.input :service_category_id, as: :select, collection: ServiceCategory.all.map { |m| [m.name, m.id] }
     end
     f.inputs 'Клиника' do
       f.input :clinic_id, as: :select, collection: Clinic.all.map { |m| [m.address, m.id] }
@@ -51,6 +55,7 @@ ActiveAdmin.register Doctor do
    sidebar "Детали", only: :show do
     attributes_table_for doctor do
       row("Должность"){|b| doctor.position}
+      row("Категория"){|b| doctor.service_category.name}
       row("Клиника"){|b| doctor.clinic.address}
       row("Приоритет"){|b| doctor.tail}
     end
@@ -70,6 +75,7 @@ ActiveAdmin.register Doctor do
     column("Приоритет"){|doctor| doctor.tail}
     column("Имя"){|doctor| doctor.name}
     column("Должность"){|doctor| doctor.position}
+    #column("Категория"){|doctor| doctor.service_category.name}
     column("Клиника"){|doctor| doctor.clinic.address}
     column "Дата создания", :created_at
     actions

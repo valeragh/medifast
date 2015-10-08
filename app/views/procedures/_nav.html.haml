@@ -1,0 +1,9 @@
+%section.content-section.newsfeed-filter
+  .section-wrapper
+    %nav.filter-nav
+      %div.filter-link.all.active
+        Отделения
+      - @clinics.each do |clinic|
+        = link_to contacts_clinic_path(clinic.city[:slug], clinic[:slug]), class: "filter-link all" do
+          = clinic.address
+
