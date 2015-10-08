@@ -1,6 +1,6 @@
 ActiveAdmin.register ServiceCategory do
 
-  permit_params :name, :tail, :rang, :image_url, :image_small_url, :clinic_ids => []
+  permit_params :name, :tail, :rang, :image_url, :image_small_url, :video_url, :clinic_ids => []
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
   actions :all
 
@@ -28,6 +28,9 @@ ActiveAdmin.register ServiceCategory do
     f.inputs 'Изображение маленькое 656X478', :multipart => true do
       f.input :image_small_url
     end
+    f.inputs 'Видео с YouTube' do
+      f.input :video_url
+    end
     f.actions
   end
 
@@ -36,6 +39,7 @@ ActiveAdmin.register ServiceCategory do
       attributes_table_for service_category do
         row('Приоритет') { |b| service_category.tail}
         row('Cлайд') { |b| service_category.rang}
+        row('Видео с YouTube') { |b| service_category.video_url}
         row('Изображение маленькое') do
           image_tag service_category.image_small_url
         end

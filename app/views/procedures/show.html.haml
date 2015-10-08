@@ -39,3 +39,9 @@
           = link_to procedure_path(@service_category[:slug], service[:slug]), class: "newsfeed-link" do
             %h2.sub-heading.text-center
               = service.name
+%section.content-section.newsfeed.active
+  .section-wrapper
+    - if @service_category.video_url.present?
+      .embed-container
+        = embed(@service_category.video_url)
+
