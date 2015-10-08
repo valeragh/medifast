@@ -14,7 +14,7 @@ class ServiceCategory < ActiveRecord::Base
     too_short: "должен содержать не менее %{count} символа",
     too_long: "должен содержать не более %{count} символов"
   }
-  validates_format_of :video_url, :with => /^http:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]*)$/
+  #validates_format_of :video_url, :with => /^http:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]*)$/
 
 
   include PgSearch

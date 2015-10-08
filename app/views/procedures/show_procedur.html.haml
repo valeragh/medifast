@@ -20,6 +20,10 @@
               = image_tag "#{@service.image_two_url}", class: "service-image"
             %p
               = @service.description_two.html_safe
+            %br
+              - if @service.video_url.present?
+                .embed-container
+                  = embed(@service.video_url)
             %p
               = link_to consultations_path, class: "blue-button" do
                 Задать вопрос
@@ -28,6 +32,7 @@
               = link_to records_path, class: "red-button" do
                 Запись на прием
                 %span.icon.right-icon
+
 = render "layouts/record"
 = render "layouts/consultation"
 

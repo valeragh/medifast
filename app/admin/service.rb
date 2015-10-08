@@ -1,6 +1,6 @@
 ActiveAdmin.register Service do
 
-  permit_params :name, :rang, :image_url, :image_one_url, :image_two_url, :description, :description_two, :service_category_id
+  permit_params :name, :rang, :video_url, :image_url, :image_one_url, :image_two_url, :description, :description_two, :service_category_id
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
   actions :all
 
@@ -34,12 +34,16 @@ ActiveAdmin.register Service do
     f.inputs 'Изображение в описание услуги', :multipart => true do
       f.input :image_two_url
     end
+    f.inputs 'Видео с YouTube' do
+      f.input :video_url
+    end
     f.actions
   end
 
   show title: :name do
     panel "Данные" do
       attributes_table_for service do
+        row('Видео с YouTube') { |b| service.video_url}
         row('Описание услуги') { |b| service.description.html_safe}
         row('Изображение маленькое') do
           image_tag service.image_url
