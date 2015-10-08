@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "medifastklinik@gmail.com"
+  default from: "klinikmedifast@gmail.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
   def record_admin_confirmation(record)
     @user = record
 
-    mail to: "medifastklinik@gmail.com", subject: "Новая запись на прием"
+    mail to: "klinikmedifast@gmail.com", subject: "Новая запись на прием"
   end
 
   def record_confirmation(record)
@@ -21,7 +21,7 @@ class UserMailer < ActionMailer::Base
   def consultation_admin_confirmation(consultation)
     @user = consultation
 
-    mail to: "medifastklinik@gmail.com", subject: "Новая запись на консультацию"
+    mail to: "klinikmedifast@gmail.com", subject: "Новая запись на консультацию"
   end
 
   def consultation_confirmation(consultation)
@@ -30,11 +30,7 @@ class UserMailer < ActionMailer::Base
     mail to: consultation.email, subject: "Подтверждения запроса на консультацию в клинику Медифаст"
   end
 
-  def answer_admin_confirmation(answer)
-    @user = answer
 
-    mail to: "medifastklinik@gmail.com", subject: "Новый ответ на вакансию"
-  end
 
   def answer_confirmation(answer)
     @user = answer
@@ -51,7 +47,7 @@ class UserMailer < ActionMailer::Base
   def letter_admin_confirmation(letter)
     @user = letter
 
-    mail to: "medifastklinik@gmail.com", subject: "Новое письмо"
+    mail to: "klinikmedifast@gmail.com", subject: "Новое письмо"
   end
 
   def user_send_confirmation(message)

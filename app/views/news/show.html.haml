@@ -14,6 +14,6 @@
           .layoutArea
             .column
             %p
-              = @post.description
+              = @post.description.html_safe
             %p
 = render "layouts/record"

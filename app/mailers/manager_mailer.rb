@@ -1,6 +1,6 @@
 class ManagerMailer < ActionMailer::Base
   default to: Proc.new { User.where("role = 'manager'").pluck(:email) },
-          from: "medifastklinik@gmail.com"
+          from: "klinikmedifast@gmail.com"
 
   def manager_conversation_user_doctor(message)
     @user = message

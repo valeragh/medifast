@@ -14,6 +14,7 @@ class LettersController < ApplicationController
       if @letter.save
         UserMailer.letter_confirmation(@letter).deliver
         UserMailer.letter_admin_confirmation(@letter).deliver
+        AdminMailer.letter_admin_confirmation(@letter).deliver
         format.html { redirect_to root_path, notice: 'Письмо удачно создано, наши администраторы саяжутся с Вами в ближайшее время' }
         format.json { render action: 'show', status: :created, location: @letter }
       else
