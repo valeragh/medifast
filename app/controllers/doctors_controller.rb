@@ -13,7 +13,7 @@ class DoctorsController < ApplicationController
 
   def clinic
   	@clinic = Clinic.friendly.find(params[:clinic_id])
-  	@doctors = @clinic.doctors
+  	@doctors = @clinic.doctors.order(:tail)
   	@clinics = Clinic.all
   	@doctors_slide = Doctor.all.sample(5)
   end

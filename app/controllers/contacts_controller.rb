@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   before_action :load_city, only: [:show]
 
   def index
-    @clinics = Clinic.all
+    @clinics = Clinic.all.order(:city_id)
     @hash = Gmaps4rails.build_markers(@clinics) do |clinic, marker|
       marker.lat clinic.latitude
       marker.lng clinic.longitude
