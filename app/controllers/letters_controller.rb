@@ -28,6 +28,6 @@ class LettersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def letter_params
-      params.require(:letter).permit(:name, :email, :description, :checked_out_at)
+      params.require(:letter).permit(:name, :email, :phone, :description, :checked_out_at)
     end
 end
