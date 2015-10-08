@@ -20,6 +20,11 @@ class Ability
       can :manage, Consultation
       can :read, Conversation
       can :read, ActiveAdmin::Page, :name => "Dashboard"
+    elsif user.role == 'reception'
+      can [:read, :update], Record
+      can [:read, :update], Consultation
+      can [:read, :update], letter
+      can :read, ActiveAdmin::Page, :name => "Dashboard"
     end
     #
     # The first argument to `can` is the action you are giving the user

@@ -36,12 +36,22 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
+  #config.action_mailer.smtp_settings = {
+   #:address              => "smtp.gmail.com",
+   #:port                 => 587,
+   #:domain => "medifast.com.ua",
+   #:user_name            => Rails.application.secrets.gmail_username,
+   #:password             => Rails.application.secrets.gmail_password,
+   #:authentication       => "plain",
+   #:enable_starttls_auto => true
+  #}
+
   config.action_mailer.smtp_settings = {
    :address              => "smtp.gmail.com",
    :port                 => 587,
    :domain => "medifast.com.ua",
-   :user_name            => Rails.application.secrets.gmail_username,
-   :password             => Rails.application.secrets.gmail_password,
+   :user_name            => Rails.application.secrets.gmail_reception_name,
+   :password             => Rails.application.secrets.gmail_reception_password,
    :authentication       => "plain",
    :enable_starttls_auto => true
   }

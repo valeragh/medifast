@@ -6,7 +6,7 @@ ActiveAdmin.register Answer do
   config.per_page = 10
 
   menu :priority => 3
-  actions :index, :show, :edit, :update
+  actions :all
 
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'

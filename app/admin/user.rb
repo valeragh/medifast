@@ -36,7 +36,7 @@ ActiveAdmin.register User do
       f.input :image_url
     end
     f.inputs 'Роль' do
-      f.input :role, as: :radio, collection: {None: "none", Administrator: "admin", Manager: "manager", Security: "security", Doctor: "doctor" }
+      f.input :role, as: :radio, collection: {None: "none", Administrator: "admin", Manager: "manager", Reception: "reception", Security: "security", Doctor: "doctor" }
     end
     f.inputs 'Email' do
       f.input :email
