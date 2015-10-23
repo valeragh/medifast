@@ -5,8 +5,8 @@
     %nav.filter-nav#contact-form(style="margin: 10px 0 10px 0;")
       = form_tag search_path, method: :get do
         %fieldset
-          = text_field_tag :query, params[:query], placeholder: "Что Вы ищите?"
-          = submit_tag "Поиск", name: nil, class: "blue-button submit", style: "margin-top:5px;"
+          = text_field_tag :query, params[:query], placeholder: "Что Вы ищите?", class: "red-field"
+          = submit_tag "Поиск", name: nil, class: "red-button submit", style: "margin-top:5px;"
 
 %section.content-section.newsfeed.active
   .section-wrapper

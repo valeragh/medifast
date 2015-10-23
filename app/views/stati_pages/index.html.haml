@@ -17,12 +17,11 @@
       %ul
         - @service_category.each do |category|
           %li{:style => "background: url(#{image_path "#{category.image_url}"}); background-position: top center; -webkit-background-size: cover; -ms-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"}
-            .overlay
             .carousel-slide(style="z-index: 10; position: absolute;")
               .section-wrapper
-                %h1.header-intro.white
+                %h1.header-intro.red
                   = category.name
-                %p.header-standfirst
+                %p.header-standfirst.green
                   Победим болезнь вместе
                 = link_to procedure_category_path(category[:slug]), class: "red-button" do
                   Подробней
