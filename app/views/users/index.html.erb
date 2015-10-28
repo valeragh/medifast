@@ -29,7 +29,7 @@
     </h2>
     <%- @users.each do |user| %>
       <dl class="accordion bio">
-        <dt class="accordion-name">
+        <dt class="accordion-name show">
           <a class="name">
             <%= user.name %>
           </a>
@@ -44,14 +44,14 @@
             <span class="icon-open"></span>
             <span class="icon-close"></span>
           </div>
-          <span class="status-open">
+          <span class="status-open show">
             открыть
           </span>
-          <span class="status-close">
+          <span class="status-close show">
             закрыть
           </span>
         </dt>
-        <dd class="bio-body">
+        <dd class="bio-body open" style="height:365px;">
           <div class="accordion-content">
             <%= image_tag "#{user.image_url}", class: "accordion-image" %>
             <p class="paragraph">

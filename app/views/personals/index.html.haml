@@ -42,7 +42,7 @@
       Ведущие специалисты
     - @personals.each do |personal|
       %dl.accordion.bio
-        %dt.accordion-name
+        %dt.accordion-name.show
           %a.name
             = personal.name
           %span.standfirst
@@ -53,11 +53,11 @@
           .icon-wrapper
             %span.icon-open
             %span.icon-close
-          %span.status-open
+          %span.status-open.show
             открыть
-          %span.status-close
+          %span.status-close.show
             закрыть
-        %dd.bio-body
+        %dd.bio-body.open(style="height:365px;")
           .accordion-content
             = image_tag "#{personal.image_url}", class: "accordion-image"
             %p.paragraph
