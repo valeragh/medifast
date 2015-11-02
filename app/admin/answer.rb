@@ -19,7 +19,7 @@ ActiveAdmin.register Answer do
 
   form do |f|
     f.inputs 'Дата ответа' do
-      f.date_select :checked_out_at, order: [:day, :month, :year]
+      f.date_select :checked_out_at, :combined => true, :default => Time.now.change(:hour => 11, :min => 30), :minute_interval => 15, :time_separator => "", :start_hour => 7, :start_minute => 30, :end_hour => 18, :end_minute => 30
     end
     actions
   end
@@ -27,11 +27,15 @@ ActiveAdmin.register Answer do
   show do
     panel "Данные" do
       attributes_table_for answer do
-        row('Дата создания') { |b| l answer.created_at, format: :long}
+        row('Дата создания') { |b| l answer.created_at, format: :short}
         row("Вакансия"){|b| answer.vacancy.name}
         row("Резюме"){|b| answer.description}
         row("Статус"){|b| status_tag(answer.state)}
-        row('Дата ответа') { |b| answer.checked_out_at}
+        if answer.checked_out_at?
+          row('Дата ответа') { |b| l answer.checked_out_at, format: :short}
+        else
+          row('Дата ответа') { |b| answer.checked_out_at}
+        end
       end
     end
     active_admin_comments
@@ -46,7 +50,7 @@ ActiveAdmin.register Answer do
   end
 
   index do
-    column("Дата создания"){|answer| l answer.created_at, format: :long}
+    column("Дата создания"){|answer| l answer.created_at, format: :short}
     column("Имя"){|answer| answer.name }
     column("Телефон"){|answer| answer.phone}
     column("Вакансия"){|answer| answer.vacancy.name}

@@ -8,7 +8,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Записи на прием" do
           table_for Record.order(created_at: :desc).limit(10) do
-            column("Дата создания"){|record| l record.created_at, format: :long}
+            column("Дата создания"){|record| l record.created_at, format: :short}
             column("Имя"){|record| record.name }
             column("Телефон"){|record| record.phone}
             column("Услуга"){|record| record.service_category.name}
@@ -19,7 +19,7 @@ ActiveAdmin.register_page "Dashboard" do
 
         panel "Консультации" do
           table_for Consultation.order(created_at: :desc).limit(10) do
-            column("Дата создания"){|consultation| l consultation.created_at, format: :long}
+            column("Дата создания"){|consultation| l consultation.created_at, format: :short}
             column("Имя"){|consultation| consultation.name }
             column("Телефон"){|consultation| consultation.phone}
             column("Услуга"){|consultation| consultation.service_category.name}
@@ -30,7 +30,7 @@ ActiveAdmin.register_page "Dashboard" do
 
         panel "Письма" do
           table_for Letter.order(created_at: :desc).limit(10) do
-            column("Дата создания"){|letter| l letter.created_at, format: :long}
+            column("Дата создания"){|letter| l letter.created_at, format: :short}
             column("Имя"){|letter| letter.name }
             column("Телефон"){|letter| letter.name }
             column("Email"){|letter| letter.email}
@@ -41,7 +41,7 @@ ActiveAdmin.register_page "Dashboard" do
 
         panel "Ответы на вакансии" do
           table_for Answer.order(created_at: :desc).limit(10) do
-            column("Дата создания"){|answer| l answer.created_at, format: :long}
+            column("Дата создания"){|answer| l answer.created_at, format: :short}
             column("Имя"){|answer| answer.name }
             column("Телефон"){|answer| answer.phone}
             column("Вакансия"){|answer| answer.vacancy.name}

@@ -19,7 +19,7 @@ ActiveAdmin.register Letter do
 
   form do |f|
     f.inputs 'Дата ответа' do
-      f.date_select :checked_out_at, order: [:day, :month, :year]
+      f.date_select :checked_out_at, :combined => true, :default => Time.now.change(:hour => 11, :min => 30), :minute_interval => 15, :time_separator => "", :start_hour => 7, :start_minute => 30, :end_hour => 18, :end_minute => 30
     end
     actions
   end
@@ -27,10 +27,14 @@ ActiveAdmin.register Letter do
   show do
     panel "Данные" do
       attributes_table_for letter do
-        row('Дата создания') { |b| l letter.created_at, format: :long}
+        row('Дата создания') { |b| l letter.created_at, format: :short}
         row("Сообщение"){|b| letter.description}
         row("Статус"){|b| status_tag(letter.state)}
-        row('Дата ответа') { |b| letter.checked_out_at}
+        if letter.checked_out_at?
+          row('Дата ответа') { |b| l letter.checked_out_at, format: :short}
+        else
+          row('Дата ответа') { |b| letter.checked_out_at}
+        end
       end
     end
     active_admin_comments
@@ -45,7 +49,7 @@ ActiveAdmin.register Letter do
   end
 
   index do
-    column("Дата создания"){|letter| l letter.created_at, format: :long}
+    column("Дата создания"){|letter| l letter.created_at, format: :short}
     column("Имя"){|letter| letter.name }
     column("Email"){|letter| letter.email}
     column("Телефон"){|letter| letter.phone}

@@ -51,6 +51,7 @@ gem 'private_pub'
 gem 'thin'
 gem 'pg_search'
 gem 'bootstrap-modal-rails'
+gem "combined_time_select", "~> 1.0.1"
 
 
 group :production do

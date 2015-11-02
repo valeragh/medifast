@@ -20,7 +20,7 @@ ActiveAdmin.register Record do
 
   form do |f|
     f.inputs 'Дата ответа' do
-      f.date_select :checked_out_at, order: [:day, :month, :year]
+      f.time_select :checked_out_at, :combined => true, :default => Time.now.change(:hour => 11, :min => 30), :minute_interval => 15, :time_separator => "", :start_hour => 7, :start_minute => 30, :end_hour => 18, :end_minute => 30
     end
     actions
   end
@@ -28,11 +28,15 @@ ActiveAdmin.register Record do
   show do
     panel "Данные" do
       attributes_table_for record do
-        row('Дата создания') { |b| l record.created_at, format: :long}
+        row('Дата создания') { |b| l record.created_at, format: :short}
         row("Услуга"){|b| record.service_category.name}
         row("Клиника"){|b| record.clinic.address}
         row("Статус"){|b| status_tag(record.state)}
-        row('Дата ответа') { |b| record.checked_out_at}
+        if record.checked_out_at?
+          row('Дата ответа') { |b| l record.checked_out_at, format: :short}
+        else
+          row('Дата ответа') { |b| record.checked_out_at}
+        end
       end
     end
     active_admin_comments
@@ -48,7 +52,7 @@ ActiveAdmin.register Record do
   end
 
   index do
-    column("Дата создания"){|record| l record.created_at, format: :long}
+    column("Дата создания"){|record| l record.created_at, format: :short}
     column("Имя"){|record| record.name }
     column("Телефон"){|record| record.phone}
     column("Услуга"){|record| record.service_category.name}

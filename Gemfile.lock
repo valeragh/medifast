@@ -96,6 +96,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    combined_time_select (1.0.1)
     commonjs (0.2.7)
     cookiejar (0.3.2)
     daemons (1.2.3)
@@ -365,6 +366,7 @@ DEPENDENCIES
   capistrano!
   carrierwave
   coffee-rails (~> 4.0.0)
+  combined_time_select (~> 1.0.1)
   devise
   execjs
   factory_girl_rails (~> 4.0)

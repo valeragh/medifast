@@ -20,7 +20,7 @@ ActiveAdmin.register Consultation do
 
   form do |f|
     f.inputs 'Дата ответа' do
-      f.date_select :checked_out_at, order: [:day, :month, :year]
+      f.date_select :checked_out_at, :combined => true, :default => Time.now.change(:hour => 11, :min => 30), :minute_interval => 15, :time_separator => "", :start_hour => 7, :start_minute => 30, :end_hour => 18, :end_minute => 30
     end
     actions
   end
@@ -32,7 +32,11 @@ ActiveAdmin.register Consultation do
         row("Услуга"){|b| consultation.service_category.name}
         row("Вопрос"){|b| consultation.description}
         row("Статус"){|b| status_tag(consultation.state)}
-        row('Дата ответа') { |b| consultation.checked_out_at}
+        if consultation.checked_out_at?
+          row('Дата ответа') { |b| l consultation.checked_out_at, format: :short}
+        else
+          row('Дата ответа') { |b| consultation.checked_out_at}
+        end
       end
     end
     active_admin_comments
