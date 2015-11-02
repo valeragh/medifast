@@ -14,7 +14,7 @@ class ConsultationsController < ApplicationController
       if @consultation.save
         UserMailer.consultation_confirmation(@consultation).deliver
         UserMailer.consultation_admin_confirmation(@consultation).deliver
-        format.html { redirect_to root_path, notice: 'Запрос на консультацию удачно создан, наши администраторы саяжутся с Вами в ближайшее время' }
+        format.html { redirect_to modal_path(modal: 'consultation') }
         format.json { render action: 'show', status: :created, location: @consultation }
       else
         format.html { render action: 'new' }

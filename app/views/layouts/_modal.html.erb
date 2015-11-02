@@ -1,0 +1,27 @@
+<div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+  <div class="modal-body">
+    <% if params[:modal] == 'letter' %>
+      <p>Письмо удачно создано, наши администраторы свяжутся с Вами в ближайшее рабочее время</p>
+    <% elsif params[:modal] == 'record' %>
+      <p>Запись на прием удачно создана, наши администраторы свяжутся с Вами в ближайшее рабочее время</p>
+    <% elsif params[:modal] == 'consultation' %>
+      <p>Запрос на консультацию удачно создан, наши администраторы свяжутся с Вами в ближайшее рабочее время</p>
+     <% elsif params[:modal] == 'answer_vacancy' %>
+      <p>Ваше письмо удачно создано, наши администраторы свяжутся с Вами в ближайшее рабочее время</p>
+    <% end %>
+
+
+    <p>
+      Рабочее время :
+      <br>
+      Понедельник- Пятница с 7-00 до 18-00 ;
+      <br>
+      Суббота с 8-00 до 14-00;
+      <br>
+      Воскресенье - выходной
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" data-dismiss="modal" class="blue-button">Продолжить</button>
+  </div>
+</div>

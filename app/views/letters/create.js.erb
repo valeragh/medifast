@@ -1,0 +1,8 @@
+$('p.errors').remove();
+
+<% if @letter.persisted? %>
+  $('#static').modal('show');
+<% else %>
+  $('<p>').text('<%= @letter.errors.full_messages.to_sentence.capitalize %>')
+  .prepend('form')
+<% end %>

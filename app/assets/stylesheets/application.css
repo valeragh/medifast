@@ -10,7 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+
+ *= require bootstrap
  *= require bootstrap_and_overrides
  *= require stati_pages
  *= require chat
+ *= require animate
+ *= require bootstrap-modal-bs3patch
+ *= require bootstrap-modal
  */

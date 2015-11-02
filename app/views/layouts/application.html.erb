@@ -12,12 +12,25 @@
 <body>
   <%= render 'layouts/header' %>
   <%= render "layouts/messages" %>
+
+  <%= render "layouts/modal" %>
   <!--<p class="red"> Сайт работает в тестовом режиме</p>-->
   <%= yield %>
   <%= render 'layouts/footer' %>
 
   <%= javascript_include_tag 'users' %>
   <%= javascript_include_tag 'scripts' %>
+  <%= javascript_include_tag 'bootstrap-modalmanager' %>
+  <%= javascript_include_tag 'bootstrap-modal' %>
+  <% if params[:modal] == 'letter' %>
+    <%= render "layouts/script_letter" %>
+  <% elsif params[:modal] == 'record' %>
+    <%= render "layouts/script_letter" %>
+  <% elsif params[:modal] == 'consultation' %>
+    <%= render "layouts/script_letter" %>
+   <% elsif params[:modal] == 'answer_vacancy' %>
+    <%= render "layouts/script_letter" %>
+  <% end %>
   <%= yield :scripts %>
 </body>
 </html>

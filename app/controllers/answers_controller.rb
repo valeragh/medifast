@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
       if @answer.save
         UserMailer.answer_confirmation(@answer).deliver
         AdminMailer.answer_admin_confirmation(@answer).deliver
-        format.html { redirect_to root_path, notice: 'Ваше письмо удачно создано, наши администраторы саяжутся с Вами в ближайшее время' }
+        format.html { redirect_to modal_path(modal: 'answer_vacancy') }
         format.json { render action: 'show', status: :created, location: @answer }
       else
         format.html { render action: 'new' }

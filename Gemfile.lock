@@ -74,6 +74,8 @@ GEM
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.10)
+    bootstrap-modal-rails (2.2.5)
+      railties (>= 3.1)
     bootstrap-sass (3.0.3.0)
       sass (~> 3.2)
     bourbon (4.2.3)
@@ -357,6 +359,7 @@ DEPENDENCIES
   activeadmin (~> 1.0.0.pre1)
   activeadmin-dragonfly!
   activeadmin-wysihtml5!
+  bootstrap-modal-rails
   bootstrap-sass (~> 3.0.3.0)
   cancancan
   capistrano!

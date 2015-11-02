@@ -13,7 +13,7 @@ ActiveAdmin.register City do
     f.inputs 'Город' do
       f.input :name
     end
-    f.inputs 'Изображение маленькое 333X176', :multipart => true do
+    f.inputs 'Изображение 656X478', :multipart => true do
       f.input :image_url
     end
     actions
