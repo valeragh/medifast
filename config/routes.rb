@@ -40,6 +40,9 @@ Rails.application.routes.draw do
   get '/doctors/clinic/:clinic_id', to: 'doctors#clinic', as: :doctors_clinic
   get '/doctors/:doctor_id', to: 'doctors#show', as: :show_doctors
   get '/modal/:modal' => 'stati_pages#index', as: :modal
-  match '*path' => redirect('/'), via: :get
+  #match '*path' => redirect('/'), via: :get
+  match '/contests', to: 'contests#index', via: 'get'
+  resources 'surveys'
+  resources 'attempts'
 
 end

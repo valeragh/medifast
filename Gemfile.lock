@@ -74,6 +74,11 @@ GEM
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.10)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-modal-rails (2.2.5)
       railties (>= 3.1)
     bootstrap-sass (3.0.3.0)
@@ -82,6 +87,7 @@ GEM
       sass (~> 3.4)
       thor
     builder (3.2.2)
+    callsite (0.0.11)
     cancancan (1.12.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -100,6 +106,7 @@ GEM
     commonjs (0.2.7)
     cookiejar (0.3.2)
     daemons (1.2.3)
+    debug_inspector (0.0.2)
     devise (3.5.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -147,6 +154,7 @@ GEM
     friendly_id (5.0.5)
       activerecord (>= 4.0.0)
     geocoder (1.2.9)
+    git-version-bump (0.15.1)
     gmaps4rails (2.1.2)
     haml (4.0.7)
       tilt
@@ -197,6 +205,10 @@ GEM
     libv8 (3.16.14.11)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    meta_request (0.3.4)
+      callsite (~> 0.0, >= 0.0.11)
+      rack-contrib (~> 1.1)
+      railties (>= 3.0.0, < 5.0.0)
     metamagic (3.1.7)
       rails (>= 3.0.0)
     method_source (0.8.2)
@@ -252,6 +264,9 @@ GEM
     rack (1.5.5)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-contrib (1.4.0)
+      git-version-bump (~> 0.15)
+      rack (~> 1.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.6)
@@ -321,6 +336,9 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    survey (0.2)
+      rails (>= 3.2.6, < 5)
+      railties (>= 3.2.6, < 5)
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
@@ -360,6 +378,8 @@ DEPENDENCIES
   activeadmin (~> 1.0.0.pre1)
   activeadmin-dragonfly!
   activeadmin-wysihtml5!
+  better_errors
+  binding_of_caller
   bootstrap-modal-rails
   bootstrap-sass (~> 3.0.3.0)
   cancancan
@@ -371,6 +391,7 @@ DEPENDENCIES
   execjs
   factory_girl_rails (~> 4.0)
   ffaker
+  formtastic
   friendly_id (~> 5.0.0)
   geocoder
   gmaps4rails
@@ -379,6 +400,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   libv8 (~> 3.16.14.7)
+  meta_request
   metamagic
   nokogiri
   omniauth
@@ -396,6 +418,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
+  survey (~> 0.1)
   therubyracer
   thin
   turbolinks

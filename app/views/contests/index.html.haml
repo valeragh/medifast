@@ -1,0 +1,23 @@
+%section.content-section.contest
+  .section-wrapper
+    %h2.section-heading
+      Анкета
+    .left-column
+      %p.paragraph
+        Клиника Медифаст работает для Вас. Для того что бы улучшить наш сервис, мы проводим опрос среди наших пользователей и пациентов.
+      %p.paragraph
+        Ответе на эти вопросы. Нам интересно Ваше мнение.
+    .right-column
+      %p.paragraph
+        Для каждого вопроса есть варинт ответа. Можно отвечать на любое количество вопросов.
+      %p.paragraph
+        Помогите нам сделать клинику Медифаст лучше.
+%section.content-section.serveys
+  .section-wrapper
+
+    - @surveys.each do |survey|
+      %h2.section-heading
+        = link_to survey.name, new_attempt_path(survey_id: survey.id), class: 'survey-name'
+      .left-column
+        %p.paragraph
+          = survey.description

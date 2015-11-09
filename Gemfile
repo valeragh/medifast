@@ -35,6 +35,7 @@ gem 'execjs'
 gem 'nokogiri'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'activeadmin', '~> 1.0.0.pre1'
+gem "formtastic"
 gem 'devise'
 gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
 gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
@@ -52,6 +53,7 @@ gem 'thin'
 gem 'pg_search'
 gem 'bootstrap-modal-rails'
 gem "combined_time_select", "~> 1.0.1"
+gem "survey", "~> 0.1"
 
 
 group :production do
@@ -65,4 +67,10 @@ group :test, :development do
   gem 'pry-rails'
   gem 'ffaker'
   gem 'spring'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
 end

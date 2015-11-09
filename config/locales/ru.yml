@@ -493,6 +493,11 @@ ru:
         few:  "Сессии"
         many: "Сессии"
         other: "Сессии"
+      survey_survey:
+        one:  "Анкета"
+        few:  "Анкету"
+        many: "Анкеты"
+        other: "Анкеты"
     attributes:
       record:
         name: "Ф.И.О."
