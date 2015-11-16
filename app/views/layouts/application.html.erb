@@ -22,6 +22,7 @@
   <%= javascript_include_tag 'scripts' %>
   <%= javascript_include_tag 'bootstrap-modalmanager' %>
   <%= javascript_include_tag 'bootstrap-modal' %>
+  <%= render 'layouts/google_analytics' %>
   <% if params[:modal] == 'letter' %>
     <%= render "layouts/script_letter" %>
   <% elsif params[:modal] == 'record' %>
