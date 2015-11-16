@@ -4,6 +4,13 @@ class Post < ActiveRecord::Base
 
   CATEGORY_TYPES = [ "Стационар", "Поликлиника", "Филиалы", "Специалисты" ]
 
+  after_commit  :update_sitemap
+
+  def update_sitemap
+    system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:generate")
+    #system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:symlink")
+  end
+
   extend FriendlyId
   friendly_id :name, use: :slugged
 

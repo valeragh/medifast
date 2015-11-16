@@ -16,6 +16,12 @@ class ServiceCategory < ActiveRecord::Base
   }
   #validates_format_of :video_url, :with => /^http:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]*)$/
 
+  after_commit  :update_sitemap
+
+  def update_sitemap
+    system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:generate")
+    #system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:symlink")
+  end
 
   include PgSearch
   pg_search_scope :search, against: [:name],

@@ -16,6 +16,13 @@ class Service < ActiveRecord::Base
 
   RANG_TYPES = [ "Высокий", "Средний", "Низкий" ]
 
+  after_commit  :update_sitemap
+
+  def update_sitemap
+    system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:generate")
+    #system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:symlink")
+  end
+
   def self.order_by_case
     ret = "CASE"
     RANG_TYPES.each_with_index do |p, i|

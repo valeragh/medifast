@@ -10,6 +10,13 @@ class Clinic < ActiveRecord::Base
 
   validates :city_id, :address, :contacts, :description, :title , presence: true
 
+  after_commit  :update_sitemap
+
+  def update_sitemap
+    system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:generate")
+    #system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:symlink")
+  end
+
   extend FriendlyId
   friendly_id :address, use: :slugged
 

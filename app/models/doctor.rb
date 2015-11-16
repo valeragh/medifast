@@ -6,6 +6,13 @@ class Doctor < ActiveRecord::Base
 
 	validates :name, :position, :image_url, :description, :tail, :clinic_id, :service_category_id, presence: true
 
+  after_commit  :update_sitemap
+
+  def update_sitemap
+    system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:generate")
+    #system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:symlink")
+  end
+
   extend FriendlyId
   friendly_id :name, use: :slugged
 
