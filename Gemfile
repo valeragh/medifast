@@ -52,6 +52,7 @@ gem 'thin'
 gem 'pg_search'
 gem 'bootstrap-modal-rails'
 gem "combined_time_select", "~> 1.0.1"
+gem "dynamic_sitemaps"
 
 
 group :production do

@@ -28,6 +28,18 @@ class StatiPagesController < ApplicationController
     @vacansies = Vacancy.all
   end
 
+  def sitemap
+    respond_to do |format|
+      format.xml { render file: 'public/sitemaps/sitemap.xml' }
+      format.html { redirect_to root_url }
+    end
+  end
+
+  def robots
+    robots = File.read(Rails.root + "config/robots.#{Rails.env}.txt")
+    render :text => robots, :layout => false, :content_type => "text/plain"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def load_city
