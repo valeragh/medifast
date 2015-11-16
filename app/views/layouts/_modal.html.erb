@@ -1,17 +1,8 @@
-<div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
-  <div class="modal-body">
-    <% if params[:modal] == 'letter' %>
+<% if params[:modal] == 'letter' %>
+  <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+    <div class="modal-body">
       <p>Письмо удачно создано, наши администраторы свяжутся с Вами в ближайшее рабочее время</p>
-    <% elsif params[:modal] == 'record' %>
-      <p>Запись на прием удачно создана, наши администраторы свяжутся с Вами в ближайшее рабочее время</p>
-    <% elsif params[:modal] == 'consultation' %>
-      <p>Запрос на консультацию удачно создан, наши администраторы свяжутся с Вами в ближайшее рабочее время</p>
-     <% elsif params[:modal] == 'answer_vacancy' %>
-      <p>Ваше письмо удачно создано, наши администраторы свяжутся с Вами в ближайшее рабочее время</p>
-    <% end %>
-
-
-    <p>
+      <p>
       Рабочее время :
       <br>
       Понедельник- Пятница с 7-00 до 18-00 ;
@@ -20,8 +11,134 @@
       <br>
       Воскресенье - выходной
     </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" data-dismiss="modal" class="btn blue-button">Продолжить</button>
+    </div>
   </div>
-  <div class="modal-footer">
-    <button type="button" data-dismiss="modal" class="blue-button">Продолжить</button>
+<% elsif params[:modal] == 'record' %>
+  <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+    <div class="modal-body">
+      <p>Запись на прием удачно создана, наши администраторы свяжутся с Вами в ближайшее рабочее время</p>
+      <p>
+      Рабочее время :
+      <br>
+      Понедельник- Пятница с 7-00 до 18-00 ;
+      <br>
+      Суббота с 8-00 до 14-00;
+      <br>
+      Воскресенье - выходной
+    </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" data-dismiss="modal" class="btn blue-button">Продолжить</button>
+    </div>
   </div>
-</div>
+<% elsif params[:modal] == 'consultation' %>
+  <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+    <div class="modal-body">
+      <p>Запрос на консультацию удачно создан, наши администраторы свяжутся с Вами в ближайшее рабочее время</p>
+      <p>
+      Рабочее время :
+      <br>
+      Понедельник- Пятница с 7-00 до 18-00 ;
+      <br>
+      Суббота с 8-00 до 14-00;
+      <br>
+      Воскресенье - выходной
+    </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" data-dismiss="modal" class="btn blue-button">Продолжить</button>
+    </div>
+  </div>
+<% elsif params[:modal] == 'answer_vacancy' %>
+  <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+    <div class="modal-body">
+      <p>Ваше письмо удачно создано, наши администраторы свяжутся с Вами в ближайшее рабочее время</p>
+      <p>
+      Рабочее время :
+      <br>
+      Понедельник- Пятница с 7-00 до 18-00 ;
+      <br>
+      Суббота с 8-00 до 14-00;
+      <br>
+      Воскресенье - выходной
+    </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" data-dismiss="modal" class="btn blue-button">Продолжить</button>
+    </div>
+  </div>
+<% elsif params[:modal] == 'user' %>
+  <div id="static_user" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+    <div class="modal-body">
+      <p>Вы зарегистрировались на сайте Медифаст Клиники</p>
+    </div>
+    <div class="modal-footer">
+      <%= link_to "Личный кабинет", cabinet_path, type: "button", class: "btn blue-button" %>
+      <button type="button" data-dismiss="modal" class="btn red-button">Продолжить</button>
+    </div>
+  </div>
+<% elsif params[:modal] == 'login' %>
+  <% if current_user.role == 'admin' %>
+    <div id="static_login" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+      <div class="modal-body">
+        <p>Администратор, Вы вошли на сайт Медифаст Клиники</p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Админ панель", admin_dashboard_path, type: "button", class: "btn blue-button" %>
+        <button type="button" data-dismiss="modal" class="btn red-button">Продолжить</button>
+      </div>
+    </div>
+  <% elsif current_user.role == 'security' %>
+    <div id="static_login" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+      <div class="modal-body">
+        <p>Отдел безопасности, Вы вошли на сайт Медифаст Клиники</p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Админ панель", admin_dashboard_path, type: "button", class: "btn blue-button" %>
+        <button type="button" data-dismiss="modal" class="btn red-button">Продолжить</button>
+      </div>
+    </div>
+  <% elsif current_user.role == 'manager' %>
+    <div id="static_login" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+      <div class="modal-body">
+        <p>Начальник отдела, Вы вошли на сайт Медифаст Клиники</p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Админ панель", admin_dashboard_path, type: "button", class: "btn blue-button" %>
+        <button type="button" data-dismiss="modal" class="btn red-button">Продолжить</button>
+      </div>
+    </div>
+  <% elsif current_user.role == 'reception' %>
+    <div id="static_login" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+      <div class="modal-body">
+        <p>Рецепция, Вы вошли на сайт Медифаст Клиники</p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Админ панель", admin_dashboard_path, type: "button", class: "btn blue-button" %>
+        <button type="button" data-dismiss="modal" class="btn red-button">Продолжить</button>
+      </div>
+    </div>
+  <% else %>
+    <div id="static_login" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+      <div class="modal-body">
+        <p>Вы вошли на сайт Медифаст Клиники</p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Личный кабинет", cabinet_path, type: "button", class: "btn blue-button" %>
+        <button type="button" data-dismiss="modal" class="btn red-button">Продолжить</button>
+      </div>
+    </div>
+  <% end %>
+<% elsif params[:modal] == 'logout' %>
+  <div id="static_logout" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+    <div class="modal-body">
+      <p>Вы вышли с сайта Медифаст Клиники</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" data-dismiss="modal" class="btn blue-button">Продолжить</button>
+    </div>
+  </div>
+<% end %>
