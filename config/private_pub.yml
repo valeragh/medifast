@@ -7,4 +7,4 @@ test:
 production:
   server: "http://medifast.com.ua:9393/faye"
   secret_token: "89e004720af45e61a350a30cf7ee3f50163ca141a02ea130db0b5007a0b75058"
-  signature_expiration: 86400 # one hour
+  signature_expiration: 2628000 # one month
