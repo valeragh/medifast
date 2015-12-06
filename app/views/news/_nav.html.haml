@@ -1,13 +1,13 @@
 %section.content-section.newsfeed-filter
   .section-wrapper
     %nav.filter-nav
-      = link_to news_path, class: "filter-link all active", data:{filter: "*"} do
+      = link_to news_path, class: "filter-link all #{active_class(news_path)}" do
         Все новости
-      = link_to news_stacionar_path, class: "filter-link all", data:{filter: ".news-and-events"} do
+      = link_to news_stacionar_path, class: "filter-link all #{active_class(news_stacionar_path)}" do
         Стационар
-      = link_to news_policlinica_path, class: "filter-link all", data:{filter: ".news-and-events"} do
+      = link_to news_policlinica_path, class: "filter-link all #{active_class(news_policlinica_path)}" do
         Поликлиника
-      = link_to news_filialy_path, class: "filter-link all", data:{filter: ".news-and-events"} do
+      = link_to news_filialy_path, class: "filter-link all #{active_class(news_filialy_path)}" do
         Филиалы
-      = link_to news_specialisty_path, class: "filter-link all", data:{filter: ".news-and-events"} do
+      = link_to news_specialisty_path, class: "filter-link all #{active_class(news_specialisty_path)}" do
         Специалисты

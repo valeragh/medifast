@@ -1,10 +1,9 @@
 %section.content-section.newsfeed-filter
   .section-wrapper
     %nav.filter-nav
-      = link_to doctors_path, class: "filter-link all active", data:{filter: "*"} do
+      = link_to doctors_path, class: "filter-link all #{active_class(doctors_path)}" do
         Весь персонал
       - @clinics.each do |clinic|
-        = link_to doctors_clinic_path(clinic[:slug]), class: "filter-link all", data:{filter: "*"} do
+        = link_to doctors_clinic_path(clinic[:slug]), class: "filter-link all #{active_class(doctors_clinic_path(clinic[:slug]))}" do
           = clinic.address
-        
-      
+
