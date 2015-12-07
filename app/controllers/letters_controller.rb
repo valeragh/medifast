@@ -1,12 +1,12 @@
 class LettersController < ApplicationController
   def index
     @letter = Letter.new
-    @clinics_show = Clinic.where("rang = 'Показать'")
+    @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end
 
   def new
     @letter = Letter.new
-    @clinics_show = Clinic.where("rang = 'Показать'")
+    @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end
 
   def create

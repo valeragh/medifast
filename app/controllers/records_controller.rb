@@ -2,12 +2,12 @@ class RecordsController < ApplicationController
 
   def index
     @record = Record.new
-    @clinics_show = Clinic.where("rang = 'Показать'")
+    @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end
 
   def new
     @record = Record.new
-    @clinics_show = Clinic.where("rang = 'Показать'")
+    @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end
 
   def create

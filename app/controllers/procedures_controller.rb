@@ -4,7 +4,7 @@ class ProceduresController < ApplicationController
 
   def index
     @service_categories = ServiceCategory.order(:tail)
-    @clinics_show = Clinic.where("rang = 'Показать'")
+    @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end
 
   def show
@@ -12,13 +12,13 @@ class ProceduresController < ApplicationController
     @services = @service_category.services.order_by_priority
     @doctors = @service_category.doctors.order(:tail)
     @clinics = @service_category.clinics
-    @clinics_show = Clinic.where("rang = 'Показать'")
+    @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end
 
   def show_procedur
     @service_category = ServiceCategory.friendly.find(params[:service_category_id])
     @service = @service_category.services.friendly.find(params[:id])
-    @clinics_show = Clinic.where("rang = 'Показать'")
+    @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end
 
   private

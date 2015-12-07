@@ -4,13 +4,13 @@ class DoctorsController < ApplicationController
   	@doctors = Doctor.all.order(:tail)
     @doctors_slide = Doctor.all.sample(5)
     @clinics = Clinic.all
-    @clinics_show = Clinic.where("rang = 'Показать'")
+    @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end
 
   def show
   	@doctor = Doctor.friendly.find(params[:doctor_id])
     @certificates = @doctor.certificate
-    @clinics_show = Clinic.where("rang = 'Показать'")
+    @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end
 
   def clinic
@@ -18,7 +18,7 @@ class DoctorsController < ApplicationController
   	@doctors = @clinic.doctors.order(:tail)
   	@clinics = Clinic.all
   	@doctors_slide = Doctor.all.sample(5)
-    @clinics_show = Clinic.where("rang = 'Показать'")
+    @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end
 
 end
