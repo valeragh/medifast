@@ -1,10 +1,12 @@
 class ConsultationsController < ApplicationController
   def index
     @consultation = Consultation.new
+    @clinics_show = Clinic.where("rang = 'Показать'")
   end
 
   def new
     @consultation = Consultation.new
+    @clinics_show = Clinic.where("rang = 'Показать'")
   end
 
   def create

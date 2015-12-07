@@ -10,22 +10,27 @@ class StatiPagesController < ApplicationController
     @sales = Sale.where("rang = 'Показать'")
     @advertisings = Advertising.where("rang = 'Показать'")
     @chief_doctors = ChiefDoctor.where("status = 'Показать'")
+    @clinics_show = Clinic.where("rang = 'Показать'")
   end
 
   def about_us
+   @clinics_show = Clinic.where("rang = 'Показать'")
   end
 
 
   def faqs
+    @clinics_show = Clinic.where("rang = 'Показать'")
   end
 
   def search
     @service_categories = ServiceCategory.text_search(params[:query])
+    @clinics_show = Clinic.where("rang = 'Показать'")
   end
 
 
   def vacansies
     @vacansies = Vacancy.all
+    @clinics_show = Clinic.where("rang = 'Показать'")
   end
 
   def sitemap

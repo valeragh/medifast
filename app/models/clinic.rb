@@ -8,9 +8,10 @@ class Clinic < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
 
-  validates :city_id, :address, :contacts, :description, :title , presence: true
+  validates :city_id, :address, :rang, :contacts, :description, :title , presence: true
 
   after_commit  :update_sitemap
+  RANG_TYPES = [ "Показать", "Скрыть" ]
 
   def update_sitemap
     system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:generate")

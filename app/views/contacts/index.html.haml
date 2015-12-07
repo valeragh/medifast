@@ -30,7 +30,7 @@
             закрыть
         %dd.bio-body
           .accordion-content
-            %nav.filter-nav
+            %nav.filter-nav(style="color:#179C8C;")
               Услуги клиники:
               - clinic.service_categories.each do |service_category|
                 = link_to procedure_category_path(service_category[:slug]), class: "filter-link all" do

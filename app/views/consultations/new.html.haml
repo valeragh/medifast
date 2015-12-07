@@ -1,3 +1,12 @@
+%section.main-content-section.share-decisions
+  .section-wrapper
+    - @clinics_show.each do |clinic|
+      %article.triple-column
+        %i.fa.fa-phone-square.fa-2x
+        %h3.sub-heading.contacts
+          = clinic.city.name
+        %p
+          = clinic.contacts.html_safe
 = render "layouts/record"
 %section.content-section.about
   .section-wrapper

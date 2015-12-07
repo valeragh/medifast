@@ -11,6 +11,15 @@
     %a(class="link" href="#smarter-engagement")
       Новости
 %button.back-to-top.back-to-top-bind#back-to-top
+%section.main-content-section.share-decisions
+  .section-wrapper
+    - @clinics_show.each do |clinic|
+      %article.triple-column
+        %i.fa.fa-phone-square.fa-2x
+        %h3.sub-heading.contacts
+          = clinic.city.name
+        %p
+          = clinic.contacts.html_safe
 %article.header-content#carousel
   %article.carousel.home-carousel
     .carouselBody
@@ -109,7 +118,7 @@
           = image_tag "#{city.image_url}", class: "newsfeed-image"
         .container.city
           = link_to contacts_city_path(city[:slug]), class: "newsfeed-link" do
-            %h2.sub-heading
+            %h2.sub-heading(style="color:#179C8C;")
               = city.name
           %p.paragraph
             Запишитесь на прием в клинику города

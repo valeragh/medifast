@@ -1,6 +1,6 @@
 ActiveAdmin.register Clinic do
 
-  permit_params :latitude, :longitude, :address, :description, :title, :city_id, :contacts, :slug
+  permit_params :latitude, :longitude, :address, :rang, :description, :title, :city_id, :contacts, :slug
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
 
   menu :priority => 3
@@ -11,6 +11,9 @@ ActiveAdmin.register Clinic do
   form do |f|
     f.inputs 'Адрес' do
       f.input :address, palceholder: "Скопировать с Google map"
+    end
+    f.inputs 'Показать в шапке сайта' do
+      f.input :rang, as: :select, collection: Clinic::RANG_TYPES
     end
     f.inputs 'Контактные данные' do
       f.input :contacts, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent ], blocks: :basic
@@ -31,6 +34,7 @@ ActiveAdmin.register Clinic do
     panel "Данные" do
       attributes_table_for clinic do
         row('Адрес') { |b| clinic.address}
+        row('Показать в шапке сайта') { |b| clinic.rang}
         row('Город') { |b| clinic.city.name}
         row('Описание') { |b| clinic.description.html_safe}
       end
@@ -56,6 +60,7 @@ ActiveAdmin.register Clinic do
 
   index do
     column("Адрес"){|clinic| clinic.address}
+    column("Показать в шапке сайта"){|clinic| clinic.rang}
     column("Город"){|clinic| clinic.city.name}
     column("Контакты"){|clinic| clinic.contacts.html_safe}
     actions
