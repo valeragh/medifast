@@ -74,37 +74,49 @@
     <% end %>
   </div>
 </section>
-<section class="content-section who-we-are active" id="who-we-are">
-  <div class="section-wrapper">
+<section class="content-section newsfeed active" id="personal">
+  <div id="newsfeedBody" class="section-wrapper">
     <h2 class="section-heading white">
       История сообщений
     </h2>
-    <div style="height: 400px; overflow-y: auto;">
-      <% if @conversations.any? %>
-          <ul class="media-list">
-            <% @conversations.each do |conversation| %>
-                <li class="media">
-                  <%= image_tag("#{conversation.recipient.image_url}", class: "media-object pull-left") %>
-                  <div class="media-body">
-                    <%= link_to "", conversation_path(conversation), class: "conversation", "data-cid" => conversation.id %>
-                        <h4 class="media-heading blue"><%= conversation_interlocutor(conversation).name %></h4>
-                        <p><%= conversation.messages.last.nil? ? "No messages" : truncate(conversation.messages.last.body, length: 45) %></p>
-                  </div>
-                </li>
-
+    <%- if @conversations.any? %>
+      <%- @conversations.each do |conversation| %>
+        <article class="newsfeed-article news-end-events" style="width:20%">
+          <%= link_to conversation_path(conversation), class: "conversation", "data-cid" => conversation.id do %>
+            <% if current_user.role == 'doctor' %>
+              <%= image_tag "creative-image.png", class: "newsfeed-image", style: "background: #179c8c;" %>
+            <% else %>
+              <%= image_tag "#{conversation.recipient.image_url}", style: "width:221px;" %>
             <% end %>
-          </ul>
-      <% else %>
-          <p>Вы еще не написали не одного сообщения. Выберите доктора и задайте вопрос.</p>
+          <% end %>
+          <div class="container">
+            <%= link_to conversation_path(conversation), class: "conversation newsfeed-link", "data-cid" => conversation.id do %>
+              <h2 class="sub-heading">
+                <%= conversation_interlocutor(conversation).name %>
+              </h2>
+            <% end %>
+            <p class="paragraph">
+              <span style="color:#179c8c;">
+                <%= conversation.messages.last.nil? ? "No date" : truncate(l conversation.messages.last.created_at, format: :long) %>
+              </span>
+              <br></br>
+              <%= conversation.messages.last.nil? ? "No messages" : truncate(conversation.messages.last.body, length: 45) %>
+            </p>
+            <%= link_to conversation_path(conversation), class: "conversation blue-button btn-xs", "data-cid" => conversation.id do %>
+              <span class="case-studies-icon.black"></span>
+              Открыть чат
+            <% end %>
+
+          </div>
+        </article>
       <% end %>
-    </div>
-
+    <% else %>
+      <p>Вы еще не написали не одного сообщения. Выберите доктора и задайте вопрос.</p>
+    <% end %>
   </div>
-
   <div class="col-md-4">
 
   </div>
-
 </section>
 
 <%- content_for :scripts do %>
