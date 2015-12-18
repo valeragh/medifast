@@ -19,7 +19,7 @@ ActiveAdmin.register Answer do
 
   form do |f|
     f.inputs 'Дата ответа' do
-      f.time_select :checked_out_at, :combined => true, :default => Time.now.change(:hour => 11, :min => 30), :minute_interval => 15, :time_separator => "", :start_hour => 7, :start_minute => 30, :end_hour => 18, :end_minute => 30
+      f.time_select :checked_out_at, :default => Time.now.change(:hour => 11, :min => 30), :minute_interval => 15, :start_hour => 7, :start_minute => 30, :end_hour => 18, :end_minute => 30
     end
     actions
   end
