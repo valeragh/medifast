@@ -1,12 +1,4 @@
-%section.main-content-section.share-decisions
-  .section-wrapper
-    - @clinics_show.each do |clinic|
-      %article.triple-column
-        %i.fa.fa-phone-square.fa-2x
-        %h3.sub-heading.contacts
-          = clinic.city.name
-        %p
-          = clinic.contacts.html_safe
+= render "layouts/clinic_phone"
 = render "doctors/slide"
 = render "doctors/nav"
 %section.content-section.newsfeed.active#newsfeed
