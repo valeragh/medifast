@@ -18,7 +18,7 @@ ActiveAdmin.register Advertising do
     f.inputs 'Описание рекламы' do
       f.input :description, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent ], blocks: :basic
     end
-    f.inputs 'Изображение', :multipart => true do
+    f.inputs 'Изображение 500X500', :multipart => true do
       f.input :image_url
     end
     f.actions

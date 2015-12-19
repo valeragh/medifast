@@ -1,13 +1,14 @@
 .nav-wrap.sub-nav#sub-nav-wrapper
   %nav.nav#sub-nav
+    %a(class="link" href="#priem")
+      Запись на прием
     %a(class="link" href="#sale")
       Акция дня
     %a(class="link" href="#personal")
       Персонал
     %a(class="link" href="#contacts")
       Отделения клиники
-    %a(class="link" href="#priem")
-      Запись на прием
+
     %a(class="link" href="#smarter-engagement")
       Новости
 %button.back-to-top.back-to-top-bind#back-to-top
@@ -31,7 +32,7 @@
   = link_to procedures_path, class: "main-cta", id: "stickyNavPoint" do
     Все услуги клиники
     %span.right-icon
-%section.main.content-section.delivering-experience.ads
+%section.main.content-section.delivering-experience.prolog
   .section-wrapper
     - @advertisings.each do |advertising|
       %article.right-column
@@ -41,17 +42,39 @@
           = advertising.description.html_safe
       %article.left-column
         = image_tag "#{advertising.image_url}"
-%section.main.content-section.delivering-experience.sale#sale
+%section.main.content-section.comments
+  .section-wrapper
+    %h2.section-heading.comments
+      Доктор онлайн
+= render "layouts/record"
+%section.main.content-section.delivering-experience.prolog#sale
   .section-wrapper
     - @sales.each do |sale|
       %article.right-column
-        = image_tag "#{sale.image_url}"
-      %article.left-column
         %h2.section-heading
           = sale.name
         %p
           = sale.description.html_safe
-
+      %article.left-column
+        = image_tag "#{sale.image_url}"
+%section.main.content-section.comments
+  .section-wrapper
+    %h2.section-heading.comments
+      Отзывы пациентов
+%section.main.content-section.feature.bold-quote
+  .section-wrapper
+    %span.quotation-icon.up
+    %span.quotation-icon.down
+    %article.carousel.newsfeed-carousel
+      .carouselBody.partners-carousel.comments
+        %ul
+          - @reviews.each do |review|
+            %li
+              .carousel-slider
+                %h2.section-heading
+                  = review.description
+                %span.citation
+                  = review.name
 %section.main.content-section.delivering-experience#personal
   .section-wrapper
     %article.right-column
@@ -82,27 +105,10 @@
             = chief_doctor.name
           %p
             = chief_doctor.position
-%section.main.content-section.comments
-  .section-wrapper
-    %h2.section-heading.comments
-      Отзывы пациентов
-%section.main.content-section.feature.bold-quote
-  .section-wrapper
-    %span.quotation-icon.up
-    %span.quotation-icon.down
-    %article.carousel.newsfeed-carousel
-      .carouselBody.partners-carousel.comments
-        %ul
-          - @reviews.each do |review|
-            %li
-              .carousel-slider
-                %h2.section-heading
-                  = review.description
-                %span.citation
-                  = review.name
+
 %section.content-section.newsfeed.active#contacts
   #newsfeedBody.section-wrapper
-    %h2.section-heading.white
+    %h2.section-heading.white(style="text-align:center;")
       Отделения клиники
     - @cities.each do |city|
       %article.newsfeed-article.news-end-events
@@ -124,7 +130,7 @@
             = link_to contacts_city_path(city[:slug]), class: "blue-button" do
               Отделения
               %span.icon.right-icon
-= render "layouts/record"
+
 %section.main.content-section.smarter-engagement#smarter-engagement
   .section-wrapper
     %h2.section-heading.white
