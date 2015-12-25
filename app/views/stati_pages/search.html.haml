@@ -28,16 +28,20 @@
             = link_to show_doctors_path([pg_search_document.searchable.slug]), class: "newsfeed-link" do
               %span.case-studies-icon.black
               Узнайте больше
-        - elsif
+        - elsif pg_search_document.searchable.class == ServiceCategory
           = link_to procedure_category_path([pg_search_document.searchable.slug]) do
-            - if pg_search_document.searchable.class == ServiceCategory
-              = image_tag pg_search_document.searchable.image_small_url, class: "newsfeed-image"
-            - elsif pg_search_document.searchable.class == Service
-              = image_tag pg_search_document.searchable.image_url, class: "newsfeed-image"
-            .container.search_procedures
-              = link_to procedure_category_path([pg_search_document.searchable.slug]), class: "newsfeed-link" do
-                %h2.sub-heading.text-center.search
-                  = pg_search_document.searchable.name
+            = image_tag pg_search_document.searchable.image_small_url, class: "newsfeed-image"
+          .container.search_procedures
+            = link_to procedure_category_path([pg_search_document.searchable.slug]), class: "newsfeed-link" do
+              %h2.sub-heading.text-center.search
+                = pg_search_document.searchable.name
+        - elsif pg_search_document.searchable.class == Service
+          = link_to procedure_path(pg_search_document.searchable.service_category.slug, pg_search_document.searchable.slug) do
+            = image_tag pg_search_document.searchable.image_url, class: "newsfeed-image"
+          .container.search_procedures
+            = link_to procedure_path(pg_search_document.searchable.service_category.slug, pg_search_document.searchable.slug), class: "newsfeed-link" do
+              %h2.sub-heading.text-center.search
+                = pg_search_document.searchable.name
 
 
 
