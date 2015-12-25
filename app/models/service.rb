@@ -1,4 +1,6 @@
 class Service < ActiveRecord::Base
+  include PgSearch
+  multisearchable :against => [:name, :description, :description_two]
   belongs_to :service_category
 
   mount_uploader :image_url, ImageUploader

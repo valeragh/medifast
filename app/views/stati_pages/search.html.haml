@@ -12,14 +12,33 @@
 
 %section.content-section.newsfeed.active
   .section-wrapper
-    - @service_categories.each do |category|
-      %article.newsfeed-article
-        = link_to procedure_category_path(category[:slug]) do
-          = image_tag "#{category.image_small_url}", class: "newsfeed-image"
-        .container.procedure
-          = link_to procedure_category_path(category[:slug]), class: "newsfeed-link" do
-            %h2.sub-heading.text-center
-              = category.name
+    - @pg_search_documents.each do |pg_search_document|
+      %article.newsfeed-article.news-end-events.search
+        - if pg_search_document.searchable.class == Doctor
+          = link_to show_doctors_path([pg_search_document.searchable.slug]), class: "newsfeed-link" do
+            = image_tag pg_search_document.searchable.image_url, class: "newsfeed-image"
+          .container.search
+            = link_to show_doctors_path([pg_search_document.searchable.slug]), class: "newsfeed-link" do
+              %h2.sub-heading
+                = pg_search_document.searchable.name
+            %p.paragraph
+              = pg_search_document.searchable.position
+              %br
+              = pg_search_document.searchable.clinic.address
+            = link_to show_doctors_path([pg_search_document.searchable.slug]), class: "newsfeed-link" do
+              %span.case-studies-icon.black
+              Узнайте больше
+        - elsif
+          = link_to procedure_category_path([pg_search_document.searchable.slug]) do
+            - if pg_search_document.searchable.class == ServiceCategory
+              = image_tag pg_search_document.searchable.image_small_url, class: "newsfeed-image"
+            - elsif pg_search_document.searchable.class == Service
+              = image_tag pg_search_document.searchable.image_url, class: "newsfeed-image"
+            .container.search_procedures
+              = link_to procedure_category_path([pg_search_document.searchable.slug]), class: "newsfeed-link" do
+                %h2.sub-heading.text-center.search
+                  = pg_search_document.searchable.name
+
 
 
 

@@ -23,7 +23,8 @@ class StatiPagesController < ApplicationController
   end
 
   def search
-    @service_categories = ServiceCategory.text_search(params[:query])
+    @pg_search_documents = PgSearch.multisearch(params[:query])
+    #@service_categories = ServiceCategory.text_search(params[:query])
     @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end
 

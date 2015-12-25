@@ -1,9 +1,11 @@
 class ServiceCategory < ActiveRecord::Base
+  include PgSearch
   has_many :services, :dependent => :destroy
   has_many :consultations
   has_many :records
   has_many :doctors
   has_and_belongs_to_many :clinics
+  multisearchable :against => [:name]
   mount_uploader :image_url, ImageUploader
   mount_uploader :image_small_url, ImageUploader
 
@@ -17,15 +19,14 @@ class ServiceCategory < ActiveRecord::Base
   #validates_format_of :video_url, :with => /^http:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]*)$/
 
   after_commit  :update_sitemap
+  after_save :reindex
 
   def update_sitemap
     system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:generate")
     #system("RAILS_ENV=#{Rails.env} bundle exec rake sitemap:symlink")
   end
 
-  include PgSearch
-  pg_search_scope :search, against: [:name],
-  associated_against: {services: [:name, :description, :description_two]}
+
 
   def self.text_search(query)
     if query.present?
@@ -51,5 +52,11 @@ class ServiceCategory < ActiveRecord::Base
 
   def should_generate_new_friendly_id?
     new_record?
+  end
+
+  private
+
+  def reindex
+    PgSearch::Multisearch.rebuild(Hero)
   end
 end
