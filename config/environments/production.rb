@@ -45,7 +45,7 @@ Rails.application.configure do
    #:authentication       => "plain",
    #:enable_starttls_auto => true
   #}
-
+  Rails.application.routes.default_url_options[:host] = 'medifast.com.ua'
   config.action_mailer.smtp_settings = {
    :address              => "smtp.gmail.com",
    :port                 => 587,
