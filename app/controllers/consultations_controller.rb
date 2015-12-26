@@ -10,6 +10,7 @@ class ConsultationsController < ApplicationController
   end
 
   def create
+    @clinics_show = Clinic.where("rang = 'Показать'").first(3)
     @consultation = Consultation.new(consultation_params)
 
     respond_to do |format|

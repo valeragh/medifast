@@ -10,6 +10,7 @@ class LettersController < ApplicationController
   end
 
   def create
+    @clinics_show = Clinic.where("rang = 'Показать'").first(3)
     @letter = Letter.new(letter_params)
 
     respond_to do |format|

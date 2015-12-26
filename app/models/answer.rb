@@ -5,13 +5,8 @@ class Answer < ActiveRecord::Base
 
   validates :name, :email, :phone, :description, presence: true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-  validates :phone, length: {
-    minimum: 6,
-    maximum: 13,
-    too_short: "должен содержать не менее %{count} цифр",
-    too_long: "должен содержать не более %{count} цифр"
-  }
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  validates_format_of :phone, :with => /(?<!\w)(?:(?:(?:(?:\+?3)?8\W{0,5})?0\W{0,5})?[34569]\s?\d[^\w,;(\+]{0,5})?\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d(?!(\W?\d))/x
+
 
   scope :in_progress, ->{where("answers.checked_out_at IS NULL")}
   scope :complete, -> {where("answers.checked_out_at IS NOT NULL")}
