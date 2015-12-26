@@ -20,10 +20,12 @@
         = link_to "Регистрация", new_user_registration_path, class: "link login #{active_class(new_user_registration_path)}", style: "margin-right: -1px"
         \/
         = link_to "Войти", new_user_session_path, class: "link login #{active_class(new_user_session_path)}"
-      = link_to search_path, class: "social-icon" do
+      %a(href = "#full-width-search" data-toggle = "modal" class="social-icon")
         %i.fa.fa-search.fa-2x
       %a.icon-close
       %a.icon-mobilemenu
+
+
 
 
 

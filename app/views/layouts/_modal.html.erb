@@ -142,3 +142,24 @@
     </div>
   </div>
 <% end %>
+<div id="full-width-search" class="modal fade" tabindex="-1" style="display: none;">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">Поиск по сайту</h4>
+  </div>
+  <div class="modal-body">
+    <p>Введите название услуги или фамилию нужного врача</p>
+    <div id="contact-form">
+      <%= form_tag search_path, method: :get do %>
+        <fieldset>
+          <%= text_field_tag :query, params[:query], placeholder: "Что Вы ищите?", class: "red-field" %>
+        </fieldset>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" data-dismiss="modal" class="blue-button">Закрыть</button>
+    <%= button_tag "Поиск", name: nil, class: "red-button submit" %>
+    <% end %>
+  </div>
+</div>
+
