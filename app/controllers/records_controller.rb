@@ -16,8 +16,8 @@ class RecordsController < ApplicationController
 
     respond_to do |format|
       if @record.save
-        #UserMailer.record_confirmation(@record).deliver
-        #UserMailer.record_admin_confirmation(@record).deliver
+        UserMailer.record_confirmation(@record).deliver
+        UserMailer.record_admin_confirmation(@record).deliver
         format.html { redirect_to modal_path(modal: 'record') }
         format.json { render action: 'show', status: :created, location: @record }
       else
