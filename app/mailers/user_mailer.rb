@@ -40,7 +40,7 @@ class UserMailer < ActionMailer::Base
 
   def letter_confirmation(letter)
     @user = letter
-
+    attachments.inline['foto_email_template_letter.jpg'] = File.read("#{Rails.root}/app/assets/images/foto_email_template_letter.jpg")
     mail to: letter.email, subject: "Подтверждения отправки письма в клинику Медифаст"
   end
 
@@ -52,7 +52,7 @@ class UserMailer < ActionMailer::Base
 
   def user_send_confirmation(message)
     @user = message
-
+    attachments.inline['foto_email_template.jpg'] = File.read("#{Rails.root}/app/assets/images/foto_email_template.jpg")
     mail to: message.user.email, subject: "Подтверждения отправки вопроса доктору #{message.conversation.recipient.name} клиники Медифаст"
   end
 
@@ -64,7 +64,7 @@ class UserMailer < ActionMailer::Base
 
   def user_answer_confirmation(message)
     @user = message
-
+    attachments.inline['foto_email_template.jpg'] = File.read("#{Rails.root}/app/assets/images/foto_email_template.jpg")
     mail to: message.conversation.sender.email, subject: "Ответ на Ваш вопрос от доктора #{message.conversation.recipient.name} клиники Медифаст"
   end
 

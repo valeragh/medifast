@@ -13,7 +13,7 @@
 = render "contacts/nav"
 %section.content-section.who-we-are.active#who-we-are
   .section-wrapper
-    %h2.section-heading
+    %h2.section-heading.white
       Контакты отделений медифаст
     - @clinics.each do |clinic|
       %dl.accordion.bio
@@ -36,10 +36,6 @@
               - clinic.service_categories.each do |service_category|
                 = link_to procedure_category_path(service_category[:slug]), class: "filter-link all" do
                   = service_category.name
-            %br
-            Как к нам доехать:
-            %br
-            = clinic.description.html_safe
             %br
             = link_to "Посмотреть на карте", contacts_clinic_path(clinic.city[:slug], clinic[:slug]), class: "link login"
             %p.paragraph

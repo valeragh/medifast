@@ -2,25 +2,17 @@
   .section-wrapper
     %h2.section-heading.white
       Выберите отделения Медифаст
-  #newsfeedBody.section-wrapper
-    %article.newsfeed-article.news-end-events
-      .container{class: "#{active_class(doctors_path)}"}
+    %article.newsfeed-article
+      .container.procedure{class: "#{active_class(doctors_path)}"}
         = link_to doctors_path, class: "newsfeed-link" do
           %h2.sub-heading
             Весь персонал
-        = link_to doctors_path, class: "newsfeed-link" do
-          %span.case-studies-icon.black
-          Открыть
     - @clinics.each do |clinic|
-      %article.newsfeed-article.news-end-events
-        .container{class: "#{active_class(doctors_clinic_path(clinic[:slug]))}"}
+      %article.newsfeed-article
+        .container.procedure{class: "#{active_class(doctors_clinic_path(clinic[:slug]))}"}
           = link_to doctors_clinic_path(clinic[:slug]), class: "newsfeed-link" do
-            %h2.sub-heading
-              Медифаст
-          %p.paragraph
-            = clinic.address
-          = link_to doctors_clinic_path(clinic[:slug]), class: "newsfeed-link" do
-            %span.case-studies-icon.black
-            Открыть
+            %p.paragraph
+              = clinic.address
+
 
 
