@@ -7,6 +7,10 @@ class ContactsController < ApplicationController
       marker.lat clinic.latitude
       marker.lng clinic.longitude
       marker.infowindow clinic.description
+      marker.picture({
+        "url" => view_context.image_url('medifast_map_pointer.png'),
+        "width" => 46,
+        "height" => 57})
     end
     @citys = City.all
   end
@@ -18,6 +22,10 @@ class ContactsController < ApplicationController
       marker.lat clinic.latitude
       marker.lng clinic.longitude
       marker.infowindow clinic.description
+      marker.picture({
+        "url" => view_context.image_url('medifast_map_pointer.png'),
+        "width" => 46,
+        "height" => 57})
     end
     @citys = City.all
   end
@@ -29,6 +37,10 @@ class ContactsController < ApplicationController
       marker.lat clinic.latitude
       marker.lng clinic.longitude
       marker.infowindow clinic.description
+      marker.picture({
+        "url" => view_context.image_url('medifast_map_pointer.png'),
+        "width" => 46,
+        "height" => 57})
     end
     @citys = City.all
   end

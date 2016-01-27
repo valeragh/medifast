@@ -21,7 +21,7 @@
           = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
             %span.case-studies-icon.black
             Узнайте больше
-
+= render "layouts/clinic_phone_footer"
 - content_for :scripts do
   :javascript
     Newsfeed.init();

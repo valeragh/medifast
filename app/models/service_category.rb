@@ -57,6 +57,6 @@ class ServiceCategory < ActiveRecord::Base
   private
 
   def reindex
-    PgSearch::Multisearch.rebuild(Hero)
+    PgSearch::Multisearch.rebuild(ServiceCategory)
   end
 end

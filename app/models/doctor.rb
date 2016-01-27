@@ -28,6 +28,6 @@ class Doctor < ActiveRecord::Base
   private
 
   def reindex
-    PgSearch::Multisearch.rebuild(Hero)
+    PgSearch::Multisearch.rebuild(Doctor)
   end
 end
