@@ -9,6 +9,8 @@
       Наша команда
     %a(class="link" href="#meet-our-partners")
       Вопрос специалистам
+    %a(class="link" href="#product")
+      Аптека
 %button.back-to-top.back-to-top-bind#back-to-top
 = render "layouts/clinic_phone"
 %article.header-content#carousel
@@ -180,6 +182,7 @@
         Подробней
         %span.icon.right-icon
 = render "layouts/consultation"
+= render "layouts/product"
 = render "layouts/clinic_phone_footer"
 
 - content_for :scripts do

@@ -16,6 +16,24 @@
       <button type="button" data-dismiss="modal" class="btn blue-button">Продолжить</button>
     </div>
   </div>
+<% elsif params[:modal] == 'order' %>
+  <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+    <div class="modal-body">
+      <p>Спасибо за Ваш заказ, наши администраторы свяжутся с Вами в ближайшее рабочее время</p>
+      <p>
+      Рабочее время :
+      <br>
+      Понедельник- Пятница с 7-00 до 18-00 ;
+      <br>
+      Суббота с 8-00 до 14-00;
+      <br>
+      Воскресенье - выходной
+    </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" data-dismiss="modal" class="btn blue-button">Продолжить</button>
+    </div>
+  </div>
 <% elsif params[:modal] == 'record' %>
   <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
     <div class="modal-body">

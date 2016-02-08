@@ -1,26 +1,37 @@
 - meta :title => "medifast.com.ua Клиника Медифаст. Персонал клиники. Стационар, поликлинические услуги, лаборатория, Узи.", :description => "medifast.com.ua Персонал клиники Медифаст. В клинике принимают врачи Педиатр, Уролог, Терапевт – кардиолог, Аллерголог, Дерматолог, Невролог, Хирург, Эндокринолог, ЛОР, Гастроэнтеролог, Ортопед-травматолог, Иммунолог, Гинеколог, Дневной стационар, УЗИ диагностика, Лаборатория, Услуга вызов врача на дом, Семейный врач"
 = render "layouts/clinic_phone"
-= render "doctors/nav"
-%section.content-section.newsfeed.personal
+%section.content-section.clinic.newsfeed.active#newsfeed
   .section-wrapper
-    %h2.section-heading.white
-      Персонал Медифаст
-  #newsfeedBody.section-wrapper
-    - @doctors.each do |doctor|
-      %article.newsfeed-article.news-end-events
-        = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
-          = image_tag "#{doctor.image_url}", class: "newsfeed-image"
-        .container
-          = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
+    %h2.section-heading.white.text-center
+      Персонал клники Медифаст
+    .container.nav-vertical
+      %article.newsfeed-article.nav-vertical
+        .container.procedure{class: "#{active_class(doctors_path)}"}
+          = link_to doctors_path, class: "newsfeed-link" do
             %h2.sub-heading
-              = doctor.name
-          %p.paragraph
-            = doctor.position
-            %br
-            = doctor.clinic.address
+              Весь персонал
+      - @clinics.each do |clinic|
+        %article.newsfeed-article.nav-vertical
+          .container.procedure{class: "#{active_class(doctors_clinic_path(clinic[:slug]))}"}
+            = link_to doctors_clinic_path(clinic[:slug]), class: "newsfeed-link" do
+              %p.paragraph
+                = clinic.address
+    .container.product
+      - @doctors.each do |doctor|
+        %article.newsfeed-article.news-end-events
           = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
-            %span.case-studies-icon.black
-            Узнайте больше
+            = image_tag "#{doctor.image_url}", class: "newsfeed-image"
+          .container
+            = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
+              %h2.sub-heading
+                = doctor.name
+            %p.paragraph
+              = doctor.position
+              %br
+              = doctor.clinic.address
+            = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
+              %span.case-studies-icon.black
+              Узнайте больше
 = render "layouts/clinic_phone_footer"
 - content_for :scripts do
   :javascript

@@ -2051,7 +2051,17 @@ html, body {
   display: inline-block;
   margin-bottom: -8px;
 }
-
+.case-studies-icon.red{
+  width: 26px;
+  height: 26px;
+  display: block;
+  position: relative;
+  margin-right: 10px;
+  background: url(<%= asset_path('case-link-icon_red.png') %>);
+  background-size: 100%;
+  display: inline-block;
+  margin-bottom: -8px;
+}
 /*==================================
   Cinema Diagram
 ====================================*/
@@ -6778,6 +6788,12 @@ polyline {
   color: #111111;
   height: 40px;
 }
+.newsfeed-article .container.product_category {
+  padding: 15px;
+  background-color: white;
+  color: #111111;
+  height: 40px;
+}
 
 /* line 82, ../../Sass/pages/_newsfeed.scss */
 .newsfeed-image {
@@ -9592,6 +9608,9 @@ h2.section-heading.text-center{
 .nav .link.red{
   color: #E80000;
 }
+.nav .link.green{
+  color: rgb(16, 167, 112);
+}
 .nav .link.login{
   color: #179C8C;
 }
@@ -9600,6 +9619,16 @@ h2.section-heading.text-center{
 }
 .content-section.priem{
   background-image: url(<%= asset_path('record_online_medifast.jpg') %>);
+  background-position: top center;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 15%;
+}
+.content-section.product{
+  background-image: url(<%= asset_path('pharmacy_ad.jpg') %>);
   background-position: top center;
   -webkit-background-size: cover;
   -ms-background-size: cover;
@@ -9683,6 +9712,9 @@ h2.sub-heading.text-center{
 }
 .section-heading.white{
   color: #fff;
+}
+.section-heading.green{
+  color: #179C8C
 }
 a.link.login{
   color: #179C8C;
@@ -9900,6 +9932,16 @@ h2.search{
 .container.procedure.active a.newsfeed-link{
   color: #ffffff;
 }
+.container.product_category.active{
+  background-color: #179C8C;
+  color: #ffffff
+}
+.container.product_category.active h2.sub-heading{
+  color: #ffffff;
+}
+.container.product_category.active a.newsfeed-link{
+  color: #ffffff;
+}
 section.personal{
   margin-top: 0;
 }
@@ -9919,4 +9961,120 @@ section.personal{
   padding-top:0;
   margin-top: 10px;
 }
+}
+.container.nav-vertical{
+  width: 25%;
+  float: left;
+}
+@media screen and (max-width: 500px){
+  .container.nav-vertical{
+  width: 100%;
+  float: left;
+  }
+  section.personal h2.section-heading{
+    padding-top: 100px;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 768px){
+  .container.nav-vertical{
+  width: 100%;
+  float: left;
+  }
+  section.personal h2.section-heading{
+    padding-top: 50px;
+  }
+}
+
+article.nav-vertical{
+  width: 100%;
+}
+@media screen and (min-width: 501px) and (max-width: 768px){
+  article.nav-vertical{
+  width: 46%;
+}
+}
+.container.product{
+  width: 75%;
+  float: left;
+}
+@media screen and (max-width: 500px){
+  .container.product{
+  width: 100%;
+  float: left;
+  }
+  .nav-wrap{
+    height: auto;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 768px){
+  .container.product{
+  width: 100%;
+  float: left;
+  }
+  .nav-wrap{
+    height: 100px;
+  }
+  .nav .link{
+    margin-right: 25px;
+  }
+}
+
+
+.table>tbody>tr>td, .table>tfoot>tr>td{
+    vertical-align: middle;
+}
+@media screen and (max-width: 600px) {
+    table#cart tbody td .form-control{
+    width:20%;
+    display: inline !important;
+  }
+  .cart h2{
+    padding-top: 25px;
+  }
+  .col-sm-10{
+    min-width: 180px;
+  }
+  .actions .btn{
+    width:36%;
+    margin:1.5em 0;
+  }
+
+  .actions .btn-info{
+    float:left;
+  }
+  .actions .btn-danger{
+    float:right;
+  }
+  tbody td{
+    float: left;
+  }
+  td.hidden-xs{
+    text-align: center;
+  }
+  table#cart thead { display: none; }
+  table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
+  table#cart tbody td:before {
+    content: attr(data-th); font-weight: bold;
+    display: inline-block; width: 8rem;
+  }
+
+
+
+  table#cart tfoot td{display:block; }
+  table#cart tfoot td .btn{display:block;}
+
+}
+.btn{
+  text-decoration: none;
+}
+h4.nomargin{
+  font-size: 1.3rem;
+  padding-top: 15px;
+}
+th.green{
+  color: #179C8C;
+  font-weight:700;
+}
+a.newsfeed-link.red{
+  color: #E80000;
 }

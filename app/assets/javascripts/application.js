@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require bootstrap.min
 //= require modernizr
@@ -18,7 +19,7 @@
 //= require gmaps/google
 //= require private_pub
 //= require chat
-
+//= require_tree .
 
 
 

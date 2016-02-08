@@ -25,7 +25,7 @@ ActiveAdmin.register Clinic do
       f.input :description, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent ], blocks: :basic
     end
     f.inputs 'Компания' do
-      f.input :title, palceholder: "Как и описание для будет использоваться для карты"
+      f.input :title, palceholder: "Как и описание будет использоваться для карты"
     end
     actions
   end

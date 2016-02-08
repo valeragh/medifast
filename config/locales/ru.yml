@@ -493,6 +493,26 @@ ru:
         few:  "Сессии"
         many: "Сессии"
         other: "Сессии"
+      product_category:
+        one:  "Категорию лекарств"
+        few:  "Категории лекарств"
+        many: "Категории лекарств"
+        other: "Категории лекарств"
+      product:
+        one:  "Лекарства"
+        few:  "Лекарства"
+        many: "Лекарства"
+        other: "Лекарства"
+      pharmacy:
+        one:  "Аптека"
+        few:  "Аптека"
+        many: "Аптеки"
+        other: "Аптеки"
+      order:
+        one:  "Заказ"
+        few:  "Заказы"
+        many: "Заказы"
+        other: "Заказы"
     attributes:
       record:
         name: "Ф.И.О."

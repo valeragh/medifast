@@ -1,0 +1,36 @@
+<div class="container">
+  <table id="cart" class="table table-hover table-condensed">
+    <thead>
+      <tr style="border-bottom: 1px solid black;">
+        <th class="green" style="width:40%;">Название</th>
+        <th class="green" style="width:15%;">Стоимость</th>
+        <th class="green" style="width:20%;">Количество</th>
+        <th class="green" style="width:22%;" class="text-center">Итого</th>
+        <th style="width:10%;"></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= render (cart.line_items) %>
+
+</tbody>
+<tfoot>
+    <tr>
+      <td style="padding-top: 15px;">
+        <%= link_to cart, :method => :delete, :confirm => "Are you sure?", :remote => true, class: "btn btn-danger btn-sm" do %>
+          <i class="fa fa-trash-o"></i>
+          Очистить корзину
+        <% end %>
+      </td>
+      <td colspan="2" class="hidden-xs"></td>
+      <td class="hidden-xs text-center" style="padding-top: 15px;"><strong style="font-weight:700;">Итого: <%= number_to_currency(cart.total_price, :unit => "грн") %></strong></td>
+      <td style="padding-top: 15px;">
+        <%= link_to new_order_path, :method => :get, class: "btn btn-success" do %>
+        Оформить заказ
+        <i class="fa fa-angle-right"></i>
+        <% end %>
+      </td>
+    </tr>
+  </tfoot>
+
+</table>
+</div>

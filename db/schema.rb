@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151207124518) do
+ActiveRecord::Schema.define(version: 20160208081832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,11 @@ ActiveRecord::Schema.define(version: 20151207124518) do
     t.datetime "updated_at"
     t.datetime "checked_out_at"
     t.string   "file"
+  end
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "certificates", force: true do |t|
@@ -147,6 +152,15 @@ ActiveRecord::Schema.define(version: 20151207124518) do
     t.string   "phone"
   end
 
+  create_table "line_items", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quantity",   default: 1
+    t.integer  "order_id"
+  end
+
   create_table "messages", force: true do |t|
     t.text     "body"
     t.integer  "conversation_id"
@@ -157,6 +171,18 @@ ActiveRecord::Schema.define(version: 20151207124518) do
 
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
+
+  create_table "orders", force: true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "email"
+    t.string   "pay_type"
+    t.string   "shipping_type"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "checked_out_at"
+  end
 
   create_table "personals", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -191,6 +217,18 @@ ActiveRecord::Schema.define(version: 20151207124518) do
 
   add_index "pg_search_documents", ["searchable_id", "searchable_type"], name: "index_pg_search_documents_on_searchable_id_and_searchable_type", using: :btree
 
+  create_table "pharmacies", force: true do |t|
+    t.integer  "city_id"
+    t.string   "address"
+    t.text     "contacts"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "rang"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -203,6 +241,27 @@ ActiveRecord::Schema.define(version: 20151207124518) do
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
+
+  create_table "product_categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+    t.string   "status"
+  end
+
+  add_index "product_categories", ["slug"], name: "index_product_categories_on_slug", unique: true, using: :btree
+
+  create_table "products", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image_url"
+    t.decimal  "price",               precision: 8, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status"
+    t.integer  "product_category_id"
+  end
 
   create_table "records", force: true do |t|
     t.integer  "service_category_id"

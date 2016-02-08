@@ -1,0 +1,21 @@
+<% if line_item == @current_item %>
+<tr id="current_item">
+<% else %>
+<tr style="border-bottom: 1px solid black;">
+<% end %>
+  <td data-th="Название">
+    <div class="row">
+
+      <div class="col-sm-10" style="float: left;padding: 5px;">
+        <h4 class="nomargin"><%= line_item.product.title %></h4>
+        <p style="padding-top: 15px;"><%= line_item.product.description %></p>
+      </div>
+    </div>
+  </td>
+  <td data-th="Стоимость:"><%= number_to_currency(line_item.total_price, :unit => "грн") %></td>
+  <td data-th="Количество:" style="padding-left: 3%;">
+    <%= line_item.quantity %>
+  </td>
+  <td data-th="Итого:" class="text-center"><%= number_to_currency(line_item.total_price, :unit => "грн") %></td>
+  <td data-th></td>
+  </tr>

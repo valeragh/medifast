@@ -7,6 +7,8 @@
       Акция дня
     %a(class="link" href="#personal")
       Персонал
+    %a(class="link" href="#product")
+      Аптека
     %a(class="link" href="#contacts")
       Отделения клиники
 
@@ -106,6 +108,8 @@
             = chief_doctor.name
           %p
             = chief_doctor.position
+
+= render "layouts/product"
 
 %section.content-section.newsfeed.active#contacts
   #newsfeedBody.section-wrapper

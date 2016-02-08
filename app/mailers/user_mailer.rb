@@ -50,6 +50,18 @@ class UserMailer < ActionMailer::Base
     mail to: "klinikmedifast@gmail.com", subject: "Новое письмо"
   end
 
+  def order_confirmation(order)
+    @user = order
+    attachments.inline['foto_email_template_letter.jpg'] = File.read("#{Rails.root}/app/assets/images/foto_email_template_letter.jpg")
+    mail to: order.email, subject: "Подтверждения получения заказа аптеки Медифаст"
+  end
+
+  def order_admin_confirmation(order)
+    @user = order
+
+    mail to: "klinikmedifast@gmail.com", subject: "Новый заказ"
+  end
+
   def user_send_confirmation(message)
     @user = message
     attachments.inline['foto_email_template.jpg'] = File.read("#{Rails.root}/app/assets/images/foto_email_template.jpg")

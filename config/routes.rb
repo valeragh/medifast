@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :orders
+
   devise_for :users,
              controllers: { registrations: 'registrations', sessions: 'sessions' },
              path: '',
@@ -9,6 +11,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
 
+  resources :line_items
+  resources :carts
   resources :records
   resources :consultations
   resources :letters
@@ -29,6 +33,8 @@ Rails.application.routes.draw do
   match '/news/filialy', to: 'news#filialy', via: 'get'
   match '/news/specialisty', to: 'news#specialisty', via: 'get'
   get '/news/:id', to: 'news#show', as: :show_news
+  match '/products', to: 'products#index', via: 'get'
+  get '/products/:products_category_id', to: 'products#show', as: :product_category
   match '/procedures', to: 'procedures#index', via: 'get'
   get '/procedures/:service_category_id', to: 'procedures#show', as: :procedure_category
   get '/procedures/:service_category_id/service/:id', to: 'procedures#show_procedur', as: :procedure

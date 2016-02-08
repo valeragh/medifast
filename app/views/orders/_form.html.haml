@@ -1,0 +1,31 @@
+= form_for @order do |f|
+  - if @order.errors.any?
+    #error_explanation
+      %p
+        Исправте следующие ошибки перед отправкой:
+      %ul
+        - @order.errors.full_messages.each do |msg|
+          %li= msg
+
+  %fieldset
+    = f.label :name, "Ф.И.О.*"
+    = f.text_field :name, autofocus: true, type: 'text', placeholder: "Ваше имя"
+
+  %fieldset
+    = f.label :phone, "Телефон*"
+    = f.phone_field :phone, autofocus: true, type: 'text', placeholder: "xxx-xxx-xx-xx"
+
+  %fieldset
+    = f.label :email, "Email*"
+    = f.email_field :email, autofocus: true, type: 'text', placeholder: "Email"
+  %fieldset
+    = f.label :pay_type, "Способ оплаты*"
+    = f.select :pay_type, Order::PAYMENT_TYPES
+  %fieldset
+    = f.label :shipping_type, "Доставка*"
+    = f.select :shipping_type, Order::SHIPPING_TYPES
+  %fieldset
+    = f.label :address, "Адрес доставки"
+    = f.text_field :address
+  .actions
+    = f.submit 'Отправить', class: "blue-button submit"

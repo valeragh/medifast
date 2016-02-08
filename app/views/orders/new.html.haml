@@ -1,0 +1,40 @@
+- meta :title => "medifast.com.ua Клиника Медифаст. Аптеки клиники Медифаст. Продажа медикоментов с доставкой на дом", :description => "medifast.com.ua Аптека клиники Медифаст. Продажа медикоментов с доставкой на дом по наличному и безналичному расчету"
+%button.back-to-top.back-to-top-bind#back-to-top
+%section.content-section.about
+  .section-wrapper
+    %h2.section-heading
+      Аптека клиники Медифаст
+    .left-column
+      %p.paragraph
+        Этот сервис мы разработали для Вашего удобства. Купить медикаменты в аптеки Медифаст теперь можно онлайн на нашем сайте.
+      %p.paragraph
+        Для этого необходимо заполнить свои контактные данные, Ваше имя, номер телефона и адрес электроной почты.
+    .right-column
+      %p.paragraph
+        Так же необходимо выбрать способ оплаты и вид доставки. Если выбрана доставка на дом, так же укажите адрес доставки.
+      %p.paragraph
+        После отправки Ваших данных, администраторы клиники Медифаст, ответят Вам в ближайшее рабочее время.
+        %br
+        Рабочее время :
+        %br
+        Пн.- Пт. с  7-00 до 18-00 ;
+        %br
+        Сб. с 8-00 до 14-00;
+        %br
+        Вс. - выходной.
+%section.content-section.contact
+  .section-wrapper
+    .left-column
+      %h1.section-heading
+        Запись на прием
+      %h2.sub-heading
+        Введите Ваши данные
+      %p.paragraph
+        Поля со зведочкой обязательные для заполнения
+    #contact-form.right-column
+
+      = render "orders/form"
+- content_for :scripts do
+  :javascript
+    About.init();
+
