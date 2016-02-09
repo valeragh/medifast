@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   validates :title, :status, :image_url, :description, :price, :unit, presence: true
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
 
-  STATUS_TYPES = [ "Скрыть", "Показать" ]
+  STATUS_TYPES = [ "Скрыть", "Показать", "Нет в наличие" ]
 
   private
 

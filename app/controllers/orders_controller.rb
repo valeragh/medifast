@@ -95,7 +95,7 @@ class OrdersController < InheritedResources::Base
   private
 
     def order_params
-      params.require(:order).permit(:name, :address, :email, :pay_type, :shipping_type, :phone)
+      params.require(:order).permit(:name, :checked_out_at, :address, :email, :pay_type, :shipping_type, :phone)
     end
 end
 
