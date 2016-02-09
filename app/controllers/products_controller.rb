@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@pharmacies) do |pharmacy, marker|
       marker.lat pharmacy.latitude
       marker.lng pharmacy.longitude
-      marker.infowindow pharmacy.contacts
+      marker.infowindow pharmacy.description
       marker.picture({
         "url" => view_context.image_url('medifast_map_pointer.png'),
         "width" => 46,
