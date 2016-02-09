@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160208081832) do
+ActiveRecord::Schema.define(version: 20160209011538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,15 @@ ActiveRecord::Schema.define(version: 20160208081832) do
   add_index "conversations", ["recipient_id"], name: "index_conversations_on_recipient_id", using: :btree
   add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
 
+  create_table "discounts", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "status"
+    t.string   "image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "doctors", force: true do |t|
     t.string   "name"
     t.string   "position"
@@ -227,6 +236,7 @@ ActiveRecord::Schema.define(version: 20160208081832) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
   end
 
   create_table "posts", force: true do |t|
@@ -261,6 +271,7 @@ ActiveRecord::Schema.define(version: 20160208081832) do
     t.datetime "updated_at"
     t.string   "status"
     t.integer  "product_category_id"
+    t.string   "unit"
   end
 
   create_table "records", force: true do |t|

@@ -12,12 +12,18 @@
           = pharmacy.city.name
         %p
           = pharmacy.contacts.html_safe
-%section.main.content-section.product#product
-  .section-wrapper
-    %h1.header-intro
-      Аптека онлайн
-    %p.header-standfirst
-      Покупайте медикаменты с доставкой на дом
+%article.header-content#carousel
+  %article.carousel.home-carousel
+    .carouselBody
+      %ul
+        - @pharmacies_sale.each do |sale|
+          %li{:style => "background: url(#{image_path "#{sale.image_url}"}); background-position: top center; -webkit-background-size: cover; -ms-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"}
+            .carousel-slide(style="z-index: 10; position: absolute;")
+              .section-wrapper
+                %h1.header-intro.red
+                  = sale.name
+                %p.header-standfirst.green(style="color: #10A770;")
+                  = sale.description.html_safe
 %section.content-section.cart
   .section-wrapper
     %h2.section-heading.green.text-center#title
@@ -44,18 +50,34 @@
               = category.name
     .container.product
       - @products.each do |product|
+        #static_description.modal.fade(tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;")
+          .modal-header
+            %button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+            %h4.modal-title
+              = product.title
+          .modal-body
+            %p
+              = product.description.html_safe
+          .modal-footer
+            %button.blue-button(type="button" data-dismiss="modal") Закрыть
+            = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "red-button submit", data:{dismiss: "modal"} do
+              Купить
         %article.newsfeed-article.news-end-events
           = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link" do
             = image_tag "#{product.image_url}", class: "newsfeed-image"
-          .container
+          .container.products
             = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link" do
-              %h2.sub-heading
+              %h2.sub-heading.product
                 = product.title
-            %p.paragraph
-              = product.description.html_safe
-            %p.paragraph
+            %p.paragraph.product
+              = product.unit
+            %p.paragraph.green
               = sprintf("%0.02f", product.price)
               грн
+            %a.description(href="#static_description" data-toggle = "modal")
+              %p.paragraph.description
+                = product.description.html_safe.split(/\s+/).slice(0,6).join(' ')
+                \...
             = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link red" do
               %span.case-studies-icon.red
               Купить

@@ -1,6 +1,6 @@
 ActiveAdmin.register Product do
 
-  permit_params :title, :status, :image_url, :description, :price, :product_category_id
+  permit_params :title, :status, :unit, :image_url, :description, :price, :product_category_id
   actions :all
 
   filter :title, label: 'Название лекарства'
@@ -14,6 +14,9 @@ ActiveAdmin.register Product do
     end
     f.inputs 'Категория' do
       f.input :product_category_id, as: :select, collection: ProductCategory.all.map { |m| [m.name, m.id] }
+    end
+    f.inputs 'Единица измерения' do
+      f.input :unit
     end
     f.inputs 'Стоимость лекарства' do
       f.input :price
@@ -45,6 +48,7 @@ ActiveAdmin.register Product do
    sidebar "Детали", only: :show do
     attributes_table_for product do
       row('Статус') { |b| product.status}
+      row('Единица измерения') { |b| product.unit}
       row("Категория"){|b| product.product_category.name}
     end
   end

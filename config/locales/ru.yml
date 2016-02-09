@@ -513,6 +513,11 @@ ru:
         few:  "Заказы"
         many: "Заказы"
         other: "Заказы"
+      discount:
+        one:  "Скидка аптека"
+        few:  "Скидки аптека"
+        many: "Скидки аптека"
+        other: "Скидки аптека"
     attributes:
       record:
         name: "Ф.И.О."

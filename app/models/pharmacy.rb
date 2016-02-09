@@ -4,7 +4,7 @@ class Pharmacy < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
 
-  validates :city_id, :address, :rang, :contacts, :title , presence: true
+  validates :city_id, :address, :description, :rang, :contacts, :title , presence: true
 
   RANG_TYPES = [ "Показать", "Скрыть" ]
 end

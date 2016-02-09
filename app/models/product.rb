@@ -5,14 +5,8 @@ class Product < ActiveRecord::Base
 
   before_destroy :ensure_not_referenced_by_any_line_item
   mount_uploader :image_url, ImageUploader
-  validates :title, :status, :image_url, :description, :price, presence: true
+  validates :title, :status, :image_url, :description, :price, :unit, presence: true
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
-  validates :title, length: {
-    minimum: 2,
-    maximum: 20,
-    too_short: "должен содержать не менее %{count} символа",
-    too_long: "должен содержать не более %{count} символов"
-  }
 
   STATUS_TYPES = [ "Скрыть", "Показать" ]
 

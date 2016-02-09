@@ -1,7 +1,7 @@
 ActiveAdmin.register Pharmacy do
 
 
-  permit_params :latitude, :longitude, :address, :rang, :title, :city_id, :contacts
+  permit_params :latitude, :longitude, :address, :description, :rang, :title, :city_id, :contacts
 
   menu :priority => 3
   actions :all
@@ -18,6 +18,9 @@ ActiveAdmin.register Pharmacy do
     f.inputs 'Контактные данные' do
       f.input :contacts, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent ], blocks: :basic
     end
+    f.inputs 'Описание' do
+      f.input :description, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent ], blocks: :basic
+    end
     f.inputs 'Город' do
       f.input :city_id, as: :select, collection: City.all.map { |m| [m.name, m.id] }
     end
@@ -31,6 +34,7 @@ ActiveAdmin.register Pharmacy do
     panel "Данные" do
       attributes_table_for pharmacy do
         row('Адрес') { |b| pharmacy.address}
+        row('Описание') { |b| pharmacy.description.html_safe}
         row('Показать в шапке сайта') { |b| pharmacy.rang}
         row('Город') { |b| pharmacy.city.name}
       end
