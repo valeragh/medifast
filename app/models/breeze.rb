@@ -1,4 +1,4 @@
-class Advertising < ActiveRecord::Base
+class Breeze < ActiveRecord::Base
   validates :name, :rang, :image_url, :description, presence: true
   mount_uploader :image_url, ImageUploader
 

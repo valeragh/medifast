@@ -8,7 +8,7 @@ class StatiPagesController < ApplicationController
     @reviews = Review.all
     @posts_slide = Post.all.first(5)
     @sales = Sale.where("rang = 'Показать'")
-    @advertisings = Advertising.where("rang = 'Показать'")
+    @breezes = Breeze.where("rang = 'Показать'")
     @chief_doctors = ChiefDoctor.where("status = 'Показать'")
     @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end

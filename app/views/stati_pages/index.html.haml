@@ -35,34 +35,59 @@
   = link_to procedures_path, class: "main-cta", id: "stickyNavPoint" do
     Все услуги клиники
     %span.right-icon
-%section.main.content-section.delivering-experience.prolog
+%section.main.content-section.smarter-engagement#smarter-engagement
   .section-wrapper
-    - @advertisings.each do |advertising|
-      %article.right-column
-        %h2.section-heading
-          = advertising.name
-        %p
-          = advertising.description.html_safe
-      %article.left-column
-        = image_tag "#{advertising.image_url}"
-%section.main.content-section.comments
-  .section-wrapper
-    %h2.section-heading.comments
-      Доктор онлайн
+    %h2.section-heading.white
+      Новинки от Медифаст
+    .carousel-container
+      %article.carousel
+        .carouselBody(style="height: 478px;")
+          %ul
+            - @breezes.each do |breeze|
+              %li
+                .carousel-slide
+                  .left-section
+                    = image_tag "#{breeze.image_url}", class: "carousel-image"
+                  %article.carousel-content
+                    %h4.sub-heading
+                      = breeze.name
+                    %p.paragraph
+                      = breeze.description.html_safe
+          %button.next
+            %span.icon
+            преведущий
+          %button.next
+            %span.icon
+            следующий
 = render "layouts/record"
-%section.main.content-section.delivering-experience.prolog#sale
+%section.main.content-section.smarter-engagement#smarter-engagement
   .section-wrapper
-    - @sales.each do |sale|
-      %article.right-column
-        %h2.section-heading
-          = sale.name
-        %p
-          = sale.description.html_safe
-      %article.left-column
-        = image_tag "#{sale.image_url}"
+    %h2.section-heading.white
+      Акции от Медифаст
+    .carousel-container
+      %article.carousel
+        .carouselBody(style="height: 478px;")
+          %ul
+            - @sales.each do |sale|
+              %li
+                .carousel-slide
+                  .left-section
+                    = image_tag "#{sale.image_url}", class: "carousel-image"
+                  %article.carousel-content
+                    %h4.sub-heading
+                      = sale.name
+                    %p.paragraph
+                      = sale.description.html_safe
+          %button.next
+            %span.icon
+            преведущий
+          %button.next
+            %span.icon
+            следующий
+
 %section.main.content-section.comments
   .section-wrapper
-    %h2.section-heading.comments
+    %h2.section-heading.comments.green
       Отзывы пациентов
 %section.main.content-section.feature.bold-quote
   .section-wrapper

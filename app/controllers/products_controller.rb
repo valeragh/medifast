@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
     @pharmacies_sale = Discount.where("status = 'Показать'")
     @product_categories = ProductCategory.where("status = 'Показать'")
     @products = Product.where("status = 'Показать'")
+    @products_not_available = Product.where("status = 'Нет в наличие'")
     @cart = current_cart
     @pharmacies_show = Pharmacy.where("rang = 'Показать'").first(3)
     @pharmacies = Pharmacy.all.order(:city_id)
@@ -25,6 +26,7 @@ class ProductsController < ApplicationController
     @product_categories = ProductCategory.where("status = 'Показать'")
     @product_category = ProductCategory.friendly.find(params[:products_category_id])
     @products = @product_category.products.where("status = 'Показать'")
+    @products_not_available = @product_category.products.where("status = 'Нет в наличие'")
     @cart = current_cart
     @pharmacies_show = Pharmacy.where("rang = 'Показать'").first(3)
     @pharmacies = Pharmacy.all.order(:city_id)

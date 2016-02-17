@@ -91,7 +91,7 @@
 <% elsif params[:modal] == 'user' %>
   <div id="static_user" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
     <div class="modal-body">
-      <p>Вы зарегистрировались на сайте Медифаст Клиники</p>
+      <p>Вы зарегистрировались на сайте клиники Медифаст</p>
     </div>
     <div class="modal-footer">
       <%= link_to "Личный кабинет", cabinet_path, type: "button", class: "btn blue-button" %>
@@ -102,7 +102,7 @@
   <% if current_user.role == 'admin' %>
     <div id="static_login" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
       <div class="modal-body">
-        <p>Администратор, Вы вошли на сайт Медифаст Клиники</p>
+        <p>Администратор, Вы вошли на сайт клиники Медифаст</p>
       </div>
       <div class="modal-footer">
         <%= link_to "Админ панель", admin_dashboard_path, type: "button", class: "btn blue-button" %>
@@ -112,10 +112,20 @@
   <% elsif current_user.role == 'security' %>
     <div id="static_login" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
       <div class="modal-body">
-        <p>Отдел безопасности, Вы вошли на сайт Медифаст Клиники</p>
+        <p>Отдел безопасности, Вы вошли на сайт клиники Медифаст</p>
       </div>
       <div class="modal-footer">
         <%= link_to "Админ панель", admin_dashboard_path, type: "button", class: "btn blue-button" %>
+        <button type="button" data-dismiss="modal" class="btn red-button">Продолжить</button>
+      </div>
+    </div>
+   <% elsif current_user.role == 'druggist' %>
+    <div id="static_login" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
+      <div class="modal-body">
+        <p>Фармацевт, Вы вошли на сайт клиники Медифаст</p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Админ панель", admin_orders_path, type: "button", class: "btn blue-button" %>
         <button type="button" data-dismiss="modal" class="btn red-button">Продолжить</button>
       </div>
     </div>
@@ -132,7 +142,7 @@
   <% elsif current_user.role == 'reception' %>
     <div id="static_login" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
       <div class="modal-body">
-        <p>Рецепция, Вы вошли на сайт Медифаст Клиники</p>
+        <p>Рецепция, Вы вошли на сайт клиники Медифаст</p>
       </div>
       <div class="modal-footer">
         <%= link_to "Админ панель", admin_dashboard_path, type: "button", class: "btn blue-button" %>
@@ -142,7 +152,7 @@
   <% else %>
     <div id="static_login" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
       <div class="modal-body">
-        <p>Вы вошли на сайт Медифаст Клиники</p>
+        <p>Вы вошли на сайт клиники Медифаст</p>
       </div>
       <div class="modal-footer">
         <%= link_to "Личный кабинет", cabinet_path, type: "button", class: "btn blue-button" %>
@@ -153,7 +163,7 @@
 <% elsif params[:modal] == 'logout' %>
   <div id="static_logout" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
     <div class="modal-body">
-      <p>Вы вышли с сайта Медифаст Клиники</p>
+      <p>Вы вышли с сайта клиники Медифаст</p>
     </div>
     <div class="modal-footer">
       <button type="button" data-dismiss="modal" class="btn blue-button">Продолжить</button>

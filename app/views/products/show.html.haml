@@ -30,6 +30,10 @@
     %h2.section-heading.green.text-center#title
       Ваша корзина
       %i.fa.fa-shopping-cart
+    %p.paragraph.product.green
+      Заказ можно оформить от 300грн
+      %span.italic
+        (в стоимость входить бесплатная доставку по Мариуполю)
     .container.cart#cart
       -if @cart
         = hidden_div_if(@cart.line_items.empty?, :id => "cart") do
@@ -82,6 +86,40 @@
             = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link red" do
               %span.case-studies-icon.red
               Купить
+      - @products_not_available.each do |product|
+        #static_description.modal.fade(tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;")
+          .modal-header
+            %button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+            %h4.modal-title
+              = product.title
+          .modal-body
+            %p
+              = product.description.html_safe
+          .modal-footer
+            %button.blue-button(type="button" data-dismiss="modal") Закрыть
+            = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "red-button submit", data:{dismiss: "modal"} do
+              Заказать
+        %article.newsfeed-article.news-end-events
+          = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link" do
+            = image_tag "#{product.image_url}", class: "newsfeed-image"
+          .container.products
+            = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link" do
+              %h2.sub-heading.product
+                = product.title
+            %p.paragraph.product
+              = product.unit
+            %p.paragraph.green
+              = sprintf("%0.02f", product.price)
+              грн
+            %a.description(href="#static_description" data-toggle = "modal")
+              %p.paragraph.description
+                = product.description.html_safe.split(/\s+/).slice(0,6).join(' ')
+                \...
+              %p.paragraph.product.green
+                Нет в наличие
+            = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link red" do
+              %span.case-studies-icon.red
+              Заказать
 %section.content-section.newsfeed.map
   .section-wrapper
     %h2.section-heading.white.text-center
