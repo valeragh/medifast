@@ -33,7 +33,7 @@
     %p.paragraph.product.green
       Заказ можно оформить от 300грн
       %span.italic
-        (в стоимость входить бесплатная доставку по Мариуполю)
+        (в стоимость входит бесплатная доставка по Мариуполю)
     .container.cart#cart
       -if @cart
         = hidden_div_if(@cart.line_items.empty?, :id => "cart") do

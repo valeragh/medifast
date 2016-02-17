@@ -26,11 +26,11 @@ class Ability
       can [:read, :update], letter
       can :read, ActiveAdmin::Page, :name => "Dashboard"
     elsif user.role == 'druggist'
-      can [:read, :update], Order
-      can [:read, :update], ProductCategory
-      can [:read, :update], Product
-      can [:read, :update], Discount
-      can [:read, :update], Pharmacy
+      can :manage, Order
+      can :manage, ProductCategory
+      can :manage, Product
+      can :manage, Discount
+      can :manage, Pharmacy
     end
     #
     # The first argument to `can` is the action you are giving the user
