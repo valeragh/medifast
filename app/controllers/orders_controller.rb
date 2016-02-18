@@ -23,6 +23,7 @@ class OrdersController < InheritedResources::Base
   # GET /orders/new
   # GET /orders/new.json
   def new
+    @invoice = Invoice.first
     @cart = current_cart
 
     if @cart.line_items.empty?

@@ -31,6 +31,15 @@
         Введите Ваши данные
       %p.paragraph
         Поля со зведочкой обязательные для заполнения
+      %p.paragraph
+        Бесплатная доставка по городу Мариуполь
+      %p.paragraph
+        Карта Приватбанка для перевода
+        %br
+        = @invoice.number
+        %br
+        %span.italic
+          = @invoice.name
     #contact-form.right-column
 
       = render "orders/form"

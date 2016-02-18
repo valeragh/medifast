@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :load_product_category, only: [:show]
 
   def index
-    @pharmacies_sale = Discount.where("status = 'Показать'")
+    @pharmacies_sale = Discount.where("status = 'Показать'").order(:tail)
     @product_categories = ProductCategory.where("status = 'Показать'")
     @products = Product.where("status = 'Показать'")
     @products_not_available = Product.where("status = 'Нет в наличие'")
@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @pharmacies_sale = Discount.where("status = 'Показать'")
+    @pharmacies_sale = Discount.where("status = 'Показать'").order(:tail)
     @pharmacies_show = Pharmacy.where("rang = 'Показать'").first(3)
     @product_categories = ProductCategory.where("status = 'Показать'")
     @product_category = ProductCategory.friendly.find(params[:products_category_id])

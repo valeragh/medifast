@@ -23,16 +23,16 @@
               .section-wrapper
                 %h1.header-intro.red
                   = sale.name
-                %p.header-standfirst.green(style="color: #10A770;")
+                %p.header-standfirst.green.pharmacy(style="color: #10A770;")
                   = sale.description.html_safe
 %section.content-section.cart
   .section-wrapper
     %h2.section-heading.green.text-center#title
       Ваша корзина
       %i.fa.fa-shopping-cart
-    %p.paragraph.product.green
+    %p.paragraph.product.red
       Заказ можно оформить от 300грн
-      %span.italic
+      %span.italic.red
         (в стоимость входит бесплатная доставка по Мариуполю)
     .container.cart#cart
       -if @cart
@@ -43,33 +43,25 @@
     %h2.section-heading.white.text-center
       Медикаменты аптеки Медифаст
     .container.nav-vertical
-      %article.newsfeed-article.nav-vertical
-        .container.product_category{class: "#{active_class(products_path)}"}
-          = link_to products_path, class: "newsfeed-link" do
+      = link_to products_path, class: "newsfeed-link" do
+        %article.newsfeed-article.nav-vertical
+          .container.product_category{class: "#{active_class(products_path)}"}
             %h2.sub-heading
               Все категории
       - @product_categories.each do |category|
-        %article.newsfeed-article.nav-vertical
-          .container.product_category{class: "#{active_class(product_category_path(category[:slug]))}"}
-            = link_to product_category_path(category[:slug]), class: "newsfeed-link" do
+        = link_to product_category_path(category[:slug]), class: "newsfeed-link" do
+          %article.newsfeed-article.nav-vertical
+            .container.product_category{class: "#{active_class(product_category_path(category[:slug]))}"}
               = category.name
     .container.product
-      - @products.each do |product|
-        #static_description.modal.fade(tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;")
-          .modal-header
-            %button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
-            %h4.modal-title
-              = product.title
-          .modal-body
-            %p
-              = product.description.html_safe
-          .modal-footer
-            %button.blue-button(type="button" data-dismiss="modal") Закрыть
-            = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "red-button submit", data:{dismiss: "modal"} do
-              Купить
+      - @products.each_with_index do |product, index|
+
         %article.newsfeed-article.news-end-events
           = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link" do
-            = image_tag "#{product.image_url}", class: "newsfeed-image"
+            - if product.image_url?
+              = image_tag "#{product.image_url}", class: "newsfeed-image"
+            - else
+              = image_tag "pharmacy.jpg", class: "newsfeed-image"
           .container.products
             = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link" do
               %h2.sub-heading.product
@@ -79,20 +71,42 @@
             %p.paragraph.green
               = sprintf("%0.02f", product.price)
               грн
-            %a.description(href="#static_description" data-toggle = "modal")
+            = link_to "#static_description_#{index}", class: "description", tabindex: "1", "data-toggle" => "modal" do
               %p.paragraph.description
                 = product.description.html_safe.split(/\s+/).slice(0,6).join(' ')
                 \...
             = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link red" do
               %span.case-studies-icon.red
               Купить
-
-      - @products_not_available.each do |product|
-        #static_description.modal.fade(tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;")
+        .modal.fade{:id => "static_description_#{index}"}(tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;")
           .modal-header
             %button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
             %h4.modal-title
               = product.title
+            %h4.modal-title.italic
+              = product.unit
+            %h4.modal-title.green
+              = sprintf("%0.02f", product.price)
+              грн
+          .modal-body
+            %p
+              = product.description.html_safe
+          .modal-footer
+            %button.blue-button(type="button" data-dismiss="modal") Закрыть
+            = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "red-button submit", data:{dismiss: "modal"} do
+              Купить
+
+      - @products_not_available.each_with_index do |product, index|
+        .modal.fade{:id => "static_desc_#{index}"}(tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;")
+          .modal-header
+            %button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+            %h4.modal-title
+              = product.title
+            %h4.modal-title.italic
+              = product.unit
+            %h4.modal-title.green
+              = sprintf("%0.02f", product.price)
+              грн
           .modal-body
             %p
               = product.description.html_safe
@@ -102,7 +116,10 @@
               Заказать
         %article.newsfeed-article.news-end-events
           = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link" do
-            = image_tag "#{product.image_url}", class: "newsfeed-image"
+            - if product.image_url?
+              = image_tag "#{product.image_url}", class: "newsfeed-image"
+            - else
+              = image_tag "pharmacy.jpg", class: "newsfeed-image"
           .container.products
             = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link" do
               %h2.sub-heading.product
@@ -112,7 +129,7 @@
             %p.paragraph.green
               = sprintf("%0.02f", product.price)
               грн
-            %a.description(href="#static_description" data-toggle = "modal")
+            = link_to "#static_desc_#{index}", class: "description", tabindex: "1", "data-toggle" => "modal" do
               %p.paragraph.description
                 = product.description.html_safe.split(/\s+/).slice(0,6).join(' ')
                 \...

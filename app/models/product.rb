@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 
   before_destroy :ensure_not_referenced_by_any_line_item
   mount_uploader :image_url, ImageUploader
-  validates :title, :status, :image_url, :description, :price, :unit, presence: true
+  validates :title, :status, :description, :price, :unit, presence: true
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
 
   STATUS_TYPES = [ "Скрыть", "Показать", "Нет в наличие" ]

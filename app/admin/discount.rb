@@ -1,6 +1,6 @@
 ActiveAdmin.register Discount do
 
-  permit_params :name, :status, :image_url, :description
+  permit_params :name, :status, :image_url, :description, :tail
   actions :all
 
   filter :name, label: 'Название акции'
@@ -13,6 +13,9 @@ ActiveAdmin.register Discount do
     end
     f.inputs 'Статус' do
       f.input :status, as: :select, collection: Discount::STATUS_TYPES
+    end
+    f.inputs 'Приоритет' do
+      f.input :tail
     end
     f.inputs 'Описание скидки' do
       f.input :description, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent ], blocks: :basic
@@ -37,12 +40,14 @@ ActiveAdmin.register Discount do
 
    sidebar "Детали", only: :show do
     attributes_table_for discount do
+      row('Приоритет') { |b| discount.tail}
       row('Статус') { |b| discount.status}
     end
   end
 
   index do
     column("Заголовок"){|discount| discount.name}
+    column("Приоритет"){|discount| discount.tail}
     column("Статус"){|discount| discount.status}
     column "Дата создания", :created_at
     actions

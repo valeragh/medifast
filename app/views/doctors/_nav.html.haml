@@ -3,15 +3,15 @@
     %h2.section-heading.white.text-center
       Персонал клники Медифаст
     .container.nav-vertical
-      %article.newsfeed-article.nav-vertical
-        .container.procedure{class: "#{active_class(doctors_path)}"}
-          = link_to doctors_path, class: "newsfeed-link" do
+      = link_to doctors_path, class: "newsfeed-link" do
+        %article.newsfeed-article.nav-vertical
+          .container.procedure{class: "#{active_class(doctors_path)}"}
             %h2.sub-heading
               Весь персонал
       - @clinics.each do |clinic|
-        %article.newsfeed-article.nav-vertical
-          .container.procedure{class: "#{active_class(doctors_clinic_path(clinic[:slug]))}"}
-            = link_to doctors_clinic_path(clinic[:slug]), class: "newsfeed-link" do
+         = link_to doctors_clinic_path(clinic[:slug]), class: "newsfeed-link" do
+          %article.newsfeed-article.nav-vertical
+            .container.procedure{class: "#{active_class(doctors_clinic_path(clinic[:slug]))}"}
               %p.paragraph
                 = clinic.address
 

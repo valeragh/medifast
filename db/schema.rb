@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217074927) do
+ActiveRecord::Schema.define(version: 20160217190355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20160217074927) do
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tail"
   end
 
   create_table "doctors", force: true do |t|
@@ -150,6 +151,13 @@ ActiveRecord::Schema.define(version: 20160217074927) do
   end
 
   add_index "doctors", ["slug"], name: "index_doctors_on_slug", unique: true, using: :btree
+
+  create_table "invoices", force: true do |t|
+    t.string   "number"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "letters", force: true do |t|
     t.string   "name"
