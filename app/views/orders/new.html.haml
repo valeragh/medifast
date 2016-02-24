@@ -36,10 +36,14 @@
       %p.paragraph
         Карта Приватбанка для перевода
         %br
-        = @invoice.number
-        %br
-        %span.italic
-          = @invoice.name
+        - if @invoice.present?
+          = @invoice.number
+          %br
+          %span.italic
+            = @invoice.name
+        - else
+          Номер карты сообщит администратор
+
     #contact-form.right-column
 
       = render "orders/form"
