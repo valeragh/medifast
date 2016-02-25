@@ -56,11 +56,7 @@ class UserMailer < ActionMailer::Base
     mail to: order.email, subject: "Подтверждения получения заказа аптеки Медифаст"
   end
 
-  def order_admin_confirmation(order)
-    @user = order
 
-    mail to: "klinikmedifast@gmail.com", subject: "Новый заказ"
-  end
 
   def user_send_confirmation(message)
     @user = message

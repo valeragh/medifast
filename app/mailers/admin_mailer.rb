@@ -13,4 +13,10 @@ class AdminMailer < ActionMailer::Base
 
     mail(subject: "Новое письмо")
   end
+
+  def order_admin_confirmation(order)
+    @user = order
+
+    mail(subject: "Новый заказ")
+  end
 end

@@ -1,0 +1,18 @@
+Добрый день администрация аптеки Медифаст
+
+Получен новый заказ
+
+Дата создания - <%= l @user.created_at, format: :long %>
+Имя пользователя - <%= @user.name %>
+Email пользователя - <%= @user.email %>
+Телефон пользователя - <%= @user.phone %>
+Способ оплаты - <%= @user.pay_type %>
+Вид доставки - Способ оплаты - <%= @user.shipping_type %>
+Адрес пользователя - <%= @user.address %>
+Медикаменты:
+<%- @user.line_items.each do |line_item| %>
+  Наименование: <%= line_item.product.title %>
+  Количество: <%= line_item.quantity %>
+  Цена: <%= line_item.product.price %>
+  Итого: <%= line_item.total_price %> грн
+<% end %>

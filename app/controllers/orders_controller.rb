@@ -55,7 +55,8 @@ class OrdersController < InheritedResources::Base
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         UserMailer.order_confirmation(@order).deliver
-        UserMailer.order_admin_confirmation(@order).deliver
+        AdminMailer.order_admin_confirmation(@order).deliver
+        DruggistMailer.order_admin_confirmation(@order).deliver
         format.html { redirect_to modal_path(modal: 'order') }
         format.json { render json: @order, status: :created, location: @order }
       else

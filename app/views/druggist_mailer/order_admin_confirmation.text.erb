@@ -1,4 +1,4 @@
-Добрый день администрация клиники Медифаст
+ДДобрый день администрация аптеки Медифаст
 
 Получен новый заказ
 
@@ -11,11 +11,8 @@ Email пользователя - <%= @user.email %>
 Адрес пользователя - <%= @user.address %>
 Медикаменты:
 <%- @user.line_items.each do |line_item| %>
-  Наименование:
-  <%= line_item.product.title %>
-  Количество:
-  <%= line_item.quantity %>
-  Цена:
-  <%= line_item.product.price %>
+  Наименование: <%= line_item.product.title %>
+  Количество: <%= line_item.quantity %>
+  Цена: <%= line_item.product.price %>
   Итого: <%= line_item.total_price %> грн
 <% end %>

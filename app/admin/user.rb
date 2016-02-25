@@ -50,7 +50,7 @@ ActiveAdmin.register User do
     f.actions
   end
 
-  show title: :name do
+  show title: :email do
     panel "Данные" do
       attributes_table_for user do
         row('Email') { |b| user.email}
