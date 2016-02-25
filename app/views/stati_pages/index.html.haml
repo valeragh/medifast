@@ -144,7 +144,7 @@
       %article.newsfeed-article.news-end-events
         = link_to contacts_city_path(city[:slug]) do
           = image_tag "#{city.image_url}", class: "newsfeed-image"
-        .container.city
+        .container.city_home
           = link_to contacts_city_path(city[:slug]), class: "newsfeed-link" do
             %h2.sub-heading(style="color:#179C8C;")
               = city.name

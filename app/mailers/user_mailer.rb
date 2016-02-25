@@ -14,7 +14,7 @@ class UserMailer < ActionMailer::Base
 
   def record_confirmation(record)
     @user = record
-
+    attachments.inline['foto_email_template_letter.jpg'] = File.read("#{Rails.root}/app/assets/images/foto_email_template_letter.jpg")
     mail to: record.email, subject: "Подтверждения запроса на запись в клинику Медифаст"
   end
 
@@ -26,7 +26,7 @@ class UserMailer < ActionMailer::Base
 
   def consultation_confirmation(consultation)
     @user = consultation
-
+    attachments.inline['foto_email_template_letter.jpg'] = File.read("#{Rails.root}/app/assets/images/foto_email_template_letter.jpg")
     mail to: consultation.email, subject: "Подтверждения запроса на консультацию в клинику Медифаст"
   end
 
