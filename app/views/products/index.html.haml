@@ -31,9 +31,9 @@
       Ваша корзина
       %i.fa.fa-shopping-cart
     %p.paragraph.product.red
-      Заказ можно оформить от 300грн
+      Бесплатная доставка по городу Мариуполю
       %span.italic.red
-        (в стоимость входит бесплатная доставка по Мариуполю)
+        (при оформление заказа от 300 грн)
     .container.cart#cart
       -if @cart
         = hidden_div_if(@cart.line_items.empty?, :id => "cart") do

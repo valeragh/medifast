@@ -2,7 +2,7 @@ class Order < ActiveRecord::Base
   PAYMENT_TYPES = [ "Наличные", "Перевод на карту" ]
   SHIPPING_TYPES = [ "Доставка на дом", "Заберу в аптеке"]
 
-  validates :name, :email, :phone, :pay_type, :shipping_type, :presence => true
+  validates :name, :email, :phone, :pay_type, :presence => true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates_format_of :phone, :with => /(?<!\w)(?:(?:(?:(?:\+?3)?8\W{0,5})?0\W{0,5})?[34569]\s?\d[^\w,;(\+]{0,5})?\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d(?!(\W?\d))/x
 

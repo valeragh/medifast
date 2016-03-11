@@ -24,13 +24,9 @@
       <td colspan="2" class="hidden-xs"></td>
       <td class="hidden-xs text-center" style="padding-top: 15px;"><strong style="font-weight:700;">Итого: <%= number_to_currency(cart.total_price, :unit => "грн") %></strong></td>
       <td style="padding-top: 15px;">
-      <% if cart.total_price >= 300 %>
         <%= link_to new_order_path, :method => :get, class: "btn btn-success" do %>
         Оформить заказ
         <i class="fa fa-angle-right"></i>
-        <% end %>
-      <% elsif cart.total_price < 300 %>
-        Добавьте в корзину медикаментов
         <% end %>
       </td>
     </tr>

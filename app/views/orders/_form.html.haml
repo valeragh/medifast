@@ -21,11 +21,15 @@
   %fieldset
     = f.label :pay_type, "Способ оплаты*"
     = f.select :pay_type, Order::PAYMENT_TYPES
-  %fieldset
-    = f.label :shipping_type, "Доставка*"
-    = f.select :shipping_type, Order::SHIPPING_TYPES
-  %fieldset
-    = f.label :address, "Адрес доставки"
-    = f.text_field :address
+  - if @cart.total_price >= 300
+    %fieldset
+      = f.label :shipping_type, "Доставка*"
+      = f.select :shipping_type, Order::SHIPPING_TYPES
+    %fieldset
+      = f.label :address, "Адрес доставки*"
+      = f.text_field :address
+  - else
+    %fieldset
+      %p Медикаменты Вы можете забрать в нашей аптеки по адресу: г. Мариуполь, Волгодонская, 18.
   .actions
     = f.submit 'Отправить', class: "blue-button submit"
