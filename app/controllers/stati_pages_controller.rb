@@ -3,7 +3,7 @@ class StatiPagesController < ApplicationController
 
   def index
     #@service_category = ServiceCategory.all.first(10)
-    @service_category = ServiceCategory.where(("rang = 'Показать'"))
+    @service_category = ServiceCategory.where(("rang = 'Показать'")).order(:tail)
     @cities = City.all
     @reviews = Review.all
     @posts_slide = Post.all.first(5)

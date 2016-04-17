@@ -3,7 +3,7 @@
   %nav.nav#sub-nav
     %a(class="link" href="#priem")
       Запись на прием
-    %a(class="link" href="#sale")
+    %a(class="link" href="#sale" style="color: #E80000")
       Акция дня
     %a(class="link" href="#personal")
       Персонал
@@ -59,10 +59,9 @@
           %button.next
             %span.icon
             следующий
-= render "layouts/record"
-%section.main.content-section.smarter-engagement#smarter-engagement
+%section.main.content-section.smarter-engagement.sale#sale
   .section-wrapper
-    %h2.section-heading.white
+    %h2.section-heading.white.sales
       Акции от Медифаст
     .carousel-container
       %article.carousel
@@ -76,7 +75,7 @@
                   %article.carousel-content
                     %h4.sub-heading
                       = sale.name
-                    %p.paragraph
+                    %p.paragraph.sales
                       = sale.description.html_safe
           %button.next
             %span.icon
@@ -84,6 +83,8 @@
           %button.next
             %span.icon
             следующий
+= render "layouts/record"
+
 
 %section.main.content-section.comments
   .section-wrapper

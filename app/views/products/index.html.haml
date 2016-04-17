@@ -73,7 +73,7 @@
               грн
             = link_to "#static_description_#{index}", class: "description", tabindex: "1", "data-toggle" => "modal" do
               %p.paragraph.description
-                = product.description.html_safe.split(/\s+/).slice(0,6).join(' ')
+                = product.description.html_safe.split(/\s+/).slice(0,12).join(' ')
                 \...
             = link_to line_items_path(:product_id => product.id), :method => :post, remote: true, class: "newsfeed-link red" do
               %span.case-studies-icon.red
