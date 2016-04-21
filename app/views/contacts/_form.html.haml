@@ -14,6 +14,9 @@
         закрыть
     %dd.bio-body
       .accordion-content
+        %p
+          = clinic.description.html_safe
+        %br
         = link_to "Посмотреть на карте", contacts_clinic_path(@city[:slug], clinic[:slug]), class: "link login"
         %p.paragraph
           Контакты:

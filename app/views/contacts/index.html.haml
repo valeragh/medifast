@@ -38,6 +38,8 @@
                 = link_to procedure_category_path(service_category[:slug]), class: "filter-link all" do
                   = service_category.name
             %br
+            = clinic.description.html_safe
+            %br
             = link_to "Посмотреть на карте", contacts_clinic_path(clinic.city[:slug], clinic[:slug]), class: "link login"
             %p.paragraph
               Контакты:
