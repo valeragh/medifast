@@ -11,6 +11,7 @@ ActiveAdmin.register_page "Dashboard" do
             column("Дата создания"){|record| l record.created_at, format: :short}
             column("Имя"){|record| record.name }
             column("Телефон"){|record| record.phone}
+            column("Email"){|record| record.email}
             column("Услуга"){|record| record.service_category.name}
             column("Клиника"){|record| record.clinic.address}
             column("Статус"){|record| status_tag(record.state)}
@@ -22,6 +23,7 @@ ActiveAdmin.register_page "Dashboard" do
             column("Дата создания"){|consultation| l consultation.created_at, format: :short}
             column("Имя"){|consultation| consultation.name }
             column("Телефон"){|consultation| consultation.phone}
+            column("Email"){|consultation| consultation.email}
             column("Услуга"){|consultation| consultation.service_category.name}
             column("Вопрос"){|consultation| consultation.description}
             column("Статус"){|consultation| status_tag(consultation.state)}
