@@ -53,7 +53,7 @@ ActiveAdmin.register Letter do
     column("Имя"){|letter| letter.name }
     column("Email"){|letter| letter.email}
     column("Телефон"){|letter| letter.phone}
-    column("Сообщение"){|letter| letter.description}
+    column("Сообщение"){|letter| letter.description.split(/\s+/).slice(0,10).join(' ')}
     column("Статус"){|letter| status_tag(letter.state)}
     actions
   end

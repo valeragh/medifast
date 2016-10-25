@@ -60,7 +60,7 @@ ActiveAdmin.register Post do
   index do
     column("Название"){|post| post.name}
     column("Категория"){|post| post.category}
-    column("Вступительный текст"){|post| post.title.html_safe}
+    column("Вступительный текст"){|post| post.title.split(/\s+/).slice(0,10).join(' ').html_safe}
     column "Дата создания", :created_at
     actions
   end

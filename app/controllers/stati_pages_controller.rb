@@ -30,7 +30,7 @@ class StatiPagesController < ApplicationController
 
 
   def vacansies
-    @vacansies = Vacancy.all
+    @vacansies = Vacancy.where("status = 'Показать'")
     @clinics_show = Clinic.where("rang = 'Показать'").first(3)
   end
 

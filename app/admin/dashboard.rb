@@ -1,6 +1,5 @@
 ActiveAdmin.register_page "Dashboard" do
 
-=begin
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
@@ -27,7 +26,7 @@ ActiveAdmin.register_page "Dashboard" do
             column("Телефон"){|consultation| consultation.phone}
             column("Email"){|consultation| consultation.email}
             column("Услуга"){|consultation| consultation.service_category.name}
-            column("Вопрос"){|consultation| consultation.description}
+            column("Вопрос"){|consultation| consultation.description.split(/\s+/).slice(0,10).join(' ')}
             column("Статус"){|consultation| status_tag(consultation.state)}
           end
         end
@@ -38,7 +37,7 @@ ActiveAdmin.register_page "Dashboard" do
             column("Имя"){|letter| letter.name }
             column("Телефон"){|letter| letter.name }
             column("Email"){|letter| letter.email}
-            column("Сообщение"){|letter| letter.description}
+            column("Сообщение"){|letter| letter.description.split(/\s+/).slice(0,10).join(' ')}
             column("Статус"){|letter| status_tag(letter.state)}
           end
         end
@@ -57,5 +56,4 @@ ActiveAdmin.register_page "Dashboard" do
 
     end
   end # content
-=end
 end

@@ -57,7 +57,7 @@ ActiveAdmin.register Consultation do
     column("Email"){|consultation| consultation.email }
     column("Телефон"){|consultation| consultation.phone}
     column("Услуга"){|consultation| consultation.service_category.name}
-    column("Вопрос"){|consultation| consultation.description}
+    column("Вопрос"){|consultation| consultation.description.split(/\s+/).slice(0,10).join(' ')}
     column("Статус"){|consultation| status_tag(consultation.state)}
     actions
   end

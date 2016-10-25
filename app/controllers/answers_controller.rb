@@ -1,9 +1,11 @@
 class AnswersController < ApplicationController
   def index
+    @vacansies = Vacancy.where("status = 'Показать'")
     @answer = Answer.new
   end
 
   def new
+    @vacansies = Vacancy.where("status = 'Показать'")
     @answer = Answer.new
   end
 

@@ -11,6 +11,6 @@
                   %h1.section-heading
                     = post.name
                   %p.paragraph
-                    = post.title.html_safe
+                    = post.title.split(/\s+/).slice(0,20).join(' ').html_safe
                   = link_to show_news_path(post[:slug]), class: "feature-link blue-button" do
                     Узнайте больше

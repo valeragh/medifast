@@ -4,4 +4,6 @@ class Vacancy < ActiveRecord::Base
 
   validates :name, :description, presence: true
 
+  STATUS_TYPES = [ "Скрыть", "Показать" ]
+
 end
