@@ -285,7 +285,6 @@ GEM
     ref (2.0.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
-    rmagick (2.15.4)
     rspec-collection_matchers (1.1.2)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (2.99.2)
@@ -393,7 +392,6 @@ DEPENDENCIES
   rails (= 4.1.6)
   rails-i18n (~> 4.0.0)
   ransack
-  rmagick
   rspec-rails (~> 2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

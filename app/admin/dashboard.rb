@@ -1,9 +1,11 @@
 ActiveAdmin.register_page "Dashboard" do
 
+=begin
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
     columns do
+
 
       column do
         panel "Записи на прием" do
@@ -52,6 +54,8 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
 
+
     end
   end # content
+=end
 end
