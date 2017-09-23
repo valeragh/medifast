@@ -1,16 +1,16 @@
 %section.main-content-section.share-decisions.footer
-  .section-wrapper
-    - @clinics_show.each do |clinic|
-      %article.triple-column
-        %i.fa.fa-phone-square
-        %h3.sub-heading.contacts
-          = clinic.city.name
-        %p
-          = clinic.contacts.html_safe
+	.section-wrapper
+		- @clinics_show.each do |clinic|
+			%article.triple-column
+				%i.fa.fa-phone-square
+				%h3.sub-heading.contacts
+					= clinic.city.name
+				%p
+					= clinic.contacts.html_safe
 %section.main.content-section.view-case-studies.trust
-  .companies-container
-    %p.text-center{:style=>"color:white;"}
+	.companies-container
+		%p.text-center{:style=>"color:white;"}
 			Набрав "Телефон доверия" Вы можете проинформировать руководство клиники "Медифаст" о положительных и отрицательных действиях наших сотрудников, выразить свое мнение, а также высказать предложения, способствующие повышению качества предоставляемых услуг. Телефон доверия:
-    %h3{:style=>"color:#E80000;"}
-      +38(050)-478-95-30
+		%h3{:style=>"color:#E80000;"}
+			+38(050)-478-95-30
 
