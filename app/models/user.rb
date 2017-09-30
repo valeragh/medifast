@@ -7,9 +7,8 @@ class User < ActiveRecord::Base
   belongs_to :clinic
   mount_uploader :image_url, ImageUploader
 
-  #validates :name, presence: true
-  #validates :name, :email, presence: true
-  #validates :password, :password_confirmation, presence: true, on: :create
+  validates :name, :email, presence: true
+  validates :password, :password_confirmation, presence: true, on: :create
   #validates :password, confirmation: true
 
   RANG_TYPES = [ "Показать", "Скрыть" ]

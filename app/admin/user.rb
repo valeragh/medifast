@@ -4,7 +4,7 @@ ActiveAdmin.register User do
   #before_filter :update, :only => [:edit, :update]
 
   index do
-    #column("Имя"){|user| user.name}
+    column("Имя"){|user| user.name}
     column :email
     #column("Дата текущего посещения"){|user| user.current_sign_in_at}
     #column("Дата последнего посещения"){|user| user.last_sign_in_at}
