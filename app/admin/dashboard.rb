@@ -13,8 +13,8 @@ ActiveAdmin.register_page "Dashboard" do
             column("Имя"){|record| record.name }
             column("Телефон"){|record| record.phone}
             column("Email"){|record| record.email}
-            column("Услуга"){|record| record.service_category.name}
-            column("Клиника"){|record| record.clinic.address}
+            column("Услуга"){|record| record.service_category.present? ? (record.service_category.name) : "Нет в системе"}
+            column("Клиника"){|record| record.clinic.present? ? (record.clinic.address) : "Нет в системе"}
             column("Статус"){|record| status_tag(record.state)}
           end
         end
@@ -25,7 +25,7 @@ ActiveAdmin.register_page "Dashboard" do
             column("Имя"){|consultation| consultation.name }
             column("Телефон"){|consultation| consultation.phone}
             column("Email"){|consultation| consultation.email}
-            column("Услуга"){|consultation| consultation.service_category.name}
+            column("Услуга"){|consultation|  consultation.service_category.present? ? (consultation.service_category.name) : "Нет в системе"}
             column("Вопрос"){|consultation| consultation.description.split(/\s+/).slice(0,10).join(' ')}
             column("Статус"){|consultation| status_tag(consultation.state)}
           end
@@ -47,7 +47,7 @@ ActiveAdmin.register_page "Dashboard" do
             column("Дата создания"){|answer| l answer.created_at, format: :short}
             column("Имя"){|answer| answer.name }
             column("Телефон"){|answer| answer.phone}
-            column("Вакансия"){|answer| answer.vacancy.name}
+            column("Вакансия"){|answer| answer.vacancy.present? ? (answer.vacancy.name) : "Нет в системе"}
             column("Статус"){|answer| status_tag(answer.state)}
           end
         end
