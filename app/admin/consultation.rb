@@ -29,7 +29,7 @@ ActiveAdmin.register Consultation do
     panel "Данные" do
       attributes_table_for consultation do
         row('Дата создания') { |b| l consultation.created_at, format: :long}
-        row("Услуга"){|b| consultation.service_category.name}
+        row("Услуга"){|b| consultation.service_category.present? ? (consultation.service_category.name) : "Нет в системе"}
         row("Вопрос"){|b| consultation.description}
         row("Статус"){|b| status_tag(consultation.state)}
         if consultation.checked_out_at?
@@ -56,7 +56,7 @@ ActiveAdmin.register Consultation do
     column("Имя"){|consultation| consultation.name }
     column("Email"){|consultation| consultation.email }
     column("Телефон"){|consultation| consultation.phone}
-    column("Услуга"){|consultation| consultation.service_category.name}
+    column("Услуга"){|consultation| consultation.service_category.present? ? (consultation.service_category.name) : "Нет в системе"}
     column("Вопрос"){|consultation| consultation.description.split(/\s+/).slice(0,10).join(' ')}
     column("Статус"){|consultation| status_tag(consultation.state)}
     actions

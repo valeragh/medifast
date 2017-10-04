@@ -33,7 +33,7 @@ ActiveAdmin.register Order do
         end
         table_for order.line_items do
           column("Продукция") do |line_item|
-            line_item.product.title
+            line_item.product.present? ? (line_item.product.title) : "Нет в системе"
           end
           column("Количество") do |line_item|
             line_item.quantity

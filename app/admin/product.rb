@@ -49,14 +49,14 @@ ActiveAdmin.register Product do
     attributes_table_for product do
       row('Статус') { |b| product.status}
       row('Единица измерения') { |b| product.unit}
-      row("Категория"){|b| product.product_category.name}
+      row("Категория"){|b| product.product_category.present? ? (product.product_category.name) : "Нет в системе"}
     end
   end
 
   index do
     column("Название лекарства"){|product| product.title}
     column("Статус"){|product_category| product_category.status}
-    column("Категория"){|product| product.product_category.name}
+    column("Категория"){|product| product.product_category.present? ? (product.product_category.name) : "Нет в системе"}
     column "Дата создания", :created_at
     actions
   end

@@ -30,8 +30,8 @@ ActiveAdmin.register Record do
     panel "Данные" do
       attributes_table_for record do
         row('Дата создания') { |b| l record.created_at, format: :short}
-        row("Услуга"){|b| record.service_category.name}
-        row("Клиника"){|b| record.clinic.address}
+        row("Услуга"){|b| record.service_category.present? ? (record.service_category.name) : "Нет в системе"}
+        row("Клиника"){|b| record.clinic.present? ? (record.clinic.address) : "Нет в системе"}
         row("Статус"){|b| status_tag(record.state)}
         if record.checked_out_at?
           row('Дата ответа') { |b| l record.checked_out_at, format: :short}
@@ -56,8 +56,8 @@ ActiveAdmin.register Record do
     column("Дата создания"){|record| l record.created_at, format: :short}
     column("Имя"){|record| record.name }
     column("Телефон"){|record| record.phone}
-    column("Услуга"){|record| record.service_category.name}
-    column("Клиника"){|record| record.clinic.address}
+    column("Услуга"){|record| record.service_category.present? ? (record.service_category.name) : "Нет в системе"}
+    column("Клиника"){|record| record.clinic.present? ? (record.clinic.address) : "Нет в системе"}
     column("Статус"){|record| status_tag(record.state)}
     actions
   end

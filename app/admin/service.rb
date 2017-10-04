@@ -62,7 +62,7 @@ ActiveAdmin.register Service do
    sidebar "Детали", only: :show do
     attributes_table_for service do
       row('Приоритет') { |b| service.rang}
-      row("Категория"){|b| service.service_category.name}
+      row("Категория"){|b| service.service_category.present? ? (service.service_category.name) : "Нет в системе"}
     end
   end
 
@@ -78,8 +78,8 @@ ActiveAdmin.register Service do
 
   index do
     column("Название"){|service| service.name}
-    column("Приоритет"){|service_category| service_category.rang}
-    column("Категория"){|service| service.service_category.name}
+    column("Приоритет"){|service| service.rang}
+    column("Категория"){|service| service.service_category.present? ? (service.service_category.name) : "Нет в системе"}
     column "Дата создания", :created_at
     actions
   end

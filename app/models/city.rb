@@ -1,6 +1,6 @@
 class City < ActiveRecord::Base
-  has_many :clinics
-  has_many :pharmacies
+  has_many :clinics, :dependent => :destroy
+  has_many :pharmacies, :dependent => :destroy
   mount_uploader :image_url, ImageUploader
   validates :name, :image_url, presence: true
 

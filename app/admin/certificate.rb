@@ -16,7 +16,7 @@ ActiveAdmin.register Certificate do
   end
 
   index do
-    column("Доктор"){|certificate| certificate.doctor.name}
+    column("Доктор"){|certificate| certificate.doctor.present? ? (certificate.doctor.name) : "Нет в системе"}
     column("Сертификат"){|certificate| image_tag certificate.image_url}
     column "Дата создания", :created_at
     actions

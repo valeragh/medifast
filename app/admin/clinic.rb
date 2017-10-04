@@ -35,7 +35,7 @@ ActiveAdmin.register Clinic do
       attributes_table_for clinic do
         row('Адрес') { |b| clinic.address}
         row('Показать в шапке сайта') { |b| clinic.rang}
-        row('Город') { |b| clinic.city.name}
+        row('Город') { |b| clinic.city.present? ? (clinic.city.name) : "Нет в системе"}
         row('Описание') { |b| clinic.description.html_safe}
       end
     end

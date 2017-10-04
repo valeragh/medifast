@@ -3,7 +3,7 @@ class Doctor < ActiveRecord::Base
   multisearchable :against => [:name, :description]
   belongs_to :service_category
   belongs_to :clinic
-	has_many :certificate
+	has_many :certificate, :dependent => :destroy
 	mount_uploader :image_url, ImageUploader
 
 

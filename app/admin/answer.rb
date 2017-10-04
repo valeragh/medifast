@@ -28,7 +28,7 @@ ActiveAdmin.register Answer do
     panel "Данные" do
       attributes_table_for answer do
         row('Дата создания') { |b| l answer.created_at, format: :short}
-        row("Вакансия"){|b| answer.vacancy.name}
+        row("Вакансия"){|b| answer.vacancy.present? ? (answer.vacancy.name) : "Нет в системе"}
         row("Резюме"){|b| answer.description}
         row("Статус"){|b| status_tag(answer.state)}
         if answer.checked_out_at?
@@ -53,7 +53,7 @@ ActiveAdmin.register Answer do
     column("Дата создания"){|answer| l answer.created_at, format: :short}
     column("Имя"){|answer| answer.name }
     column("Телефон"){|answer| answer.phone}
-    column("Вакансия"){|answer| answer.vacancy.name}
+    column("Вакансия"){|answer| answer.vacancy.present? ? (answer.vacancy.name) : "Нет в системе"}
     column("Статус"){|answer| status_tag(answer.state)}
     actions
   end

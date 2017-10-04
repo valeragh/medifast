@@ -36,7 +36,7 @@ ActiveAdmin.register Pharmacy do
         row('Адрес') { |b| pharmacy.address}
         row('Описание') { |b| pharmacy.description.html_safe}
         row('Показать в шапке сайта') { |b| pharmacy.rang}
-        row('Город') { |b| pharmacy.city.name}
+        row('Город') { |b| pharmacy.city.present? ? (pharmacy.city.name) : "Нет в системе"}
       end
     end
     active_admin_comments
@@ -51,7 +51,7 @@ ActiveAdmin.register Pharmacy do
   index do
     column("Адрес"){|pharmacy| pharmacy.address}
     column("Показать в шапке сайта"){|pharmacy| pharmacy.rang}
-    column("Город"){|pharmacy| pharmacy.city.name}
+    column("Город"){|pharmacy| pharmacy.city.present? ? (pharmacy.city.name) : "Нет в системе"}
     column("Контакты"){|pharmacy| pharmacy.contacts.html_safe}
     actions
   end

@@ -55,8 +55,8 @@ ActiveAdmin.register Doctor do
    sidebar "Детали", only: :show do
     attributes_table_for doctor do
       row("Должность"){|b| doctor.position}
-      row("Категория"){|b| doctor.service_category.name}
-      row("Клиника"){|b| doctor.clinic.address}
+      row("Категория"){|b| doctor.service_category? ? (doctor.service_category.name) : "Нет в системе"}
+      row("Клиника"){|b| doctor.clinic.present? ? (doctor.clinic.address) : "Нет в системе"}
       row("Приоритет"){|b| doctor.tail}
     end
   end
@@ -76,7 +76,7 @@ ActiveAdmin.register Doctor do
     column("Имя"){|doctor| doctor.name}
     column("Должность"){|doctor| doctor.position}
     #column("Категория"){|doctor| doctor.service_category.name}
-    column("Клиника"){|doctor| doctor.clinic.address}
+    column("Клиника"){|doctor| doctor.clinic.present? ? (doctor.clinic.address) : "Нет в системе"}
     column "Дата создания", :created_at
     actions
   end
