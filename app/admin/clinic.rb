@@ -61,8 +61,8 @@ ActiveAdmin.register Clinic do
   index do
     column("Адрес"){|clinic| clinic.address}
     column("Показать в шапке сайта"){|clinic| clinic.rang}
-    column("Город"){|clinic| clinic.city.name}
-    column("Контакты"){|clinic| clinic.contacts.html_safe}
+    column("Город"){|clinic| clinic.city.present? ? (clinic.city.name) : "Нет в системе"}
+    column("Контакты"){|clinic| clinic.contacts.present? ? (clinic.contacts.html_safe) : "Нет описания"}
     actions
   end
 

@@ -74,10 +74,10 @@ ActiveAdmin.register User do
     active_admin_comments
   end
 
-   sidebar "Детали", only: :show do
+  sidebar "Детали", only: :show do
     table_for user.conversations do
       column("Сессии") do |conversation|
-        link_to conversation.recipient.name, [ :admin, conversation ]
+        conversation.recipient.present? ? conversation.recipient.name : "Нет в системе"
       end
     end
   end

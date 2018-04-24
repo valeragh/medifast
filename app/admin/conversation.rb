@@ -3,8 +3,8 @@ ActiveAdmin.register Conversation do
   actions :index, :show, :destroy
 
   index do
-    column("Отправитель"){|conversation| conversation.sender.name}
-    column("Доктор Онлайн"){|conversation| conversation.recipient.name}
+    column("Отправитель"){|conversation| conversation.sender.present? ? (conversation.sender.name) : "Нет в системе"}
+    column("Доктор Онлайн"){|conversation| conversation.recipient.present? ? (conversation.recipient.name) : "Нет в системе"}
     column("Создано"){|conversation| l conversation.created_at, format: :long}
     actions
   end
@@ -32,8 +32,8 @@ ActiveAdmin.register Conversation do
 
    sidebar "Детали", only: :show do
     attributes_table_for conversation do
-      row('Отправитель') { |b| conversation.sender.name}
-      row('Доктор онлайн') { |b| conversation.recipient.name}
+      row('Отправитель') { |b| conversation.sender.present? ? (conversation.sender.name) : "Нет в системе"}
+      row('Доктор онлайн') { |b| conversation.recipient.present? ? (conversation.recipient.name) : "Нет в системе"}
       row('Создано') { |b| conversation.created_at}
     end
   end
