@@ -6,7 +6,7 @@ ActiveAdmin.register Service do
 
   filter :name, label: 'Название услуги'
   filter :rang, label: 'Приоритет', as: :select, collection: Service::RANG_TYPES
-  filter :service_category, label: 'Категория', as: :select, collection: proc { ServiceCategory.find(Service.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
+  #filter :service_category, label: 'Категория', as: :select, collection: proc { ServiceCategory.find(Service.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
   filter :created_at, label: 'Дата создания'
 
   form do |f|

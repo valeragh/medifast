@@ -11,7 +11,7 @@ ActiveAdmin.register Consultation do
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'
   filter :name, label: 'Имя'
-  filter :service_category, label: 'Процедура', as: :select, collection: proc { ServiceCategory.find(Consultation.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
+  #filter :service_category, label: 'Процедура', as: :select, collection: proc { ServiceCategory.find(Consultation.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
 
 
   scope "Все", :all, :default => true

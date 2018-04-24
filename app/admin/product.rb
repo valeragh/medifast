@@ -5,7 +5,7 @@ ActiveAdmin.register Product do
 
   filter :title, label: 'Название лекарства'
   filter :status, label: 'Статус', as: :select, collection: Product::STATUS_TYPES
-  filter :product_category, label: 'Категория', as: :select, collection: proc { ProductCategory.find(Product.pluck(:product_category_id)).map { |m| [m.name, m.id] } }
+  #filter :product_category, label: 'Категория', as: :select, collection: proc { ProductCategory.find(Product.pluck(:product_category_id)).map { |m| [m.name, m.id] } }
   filter :created_at, label: 'Дата создания'
 
   form do |f|

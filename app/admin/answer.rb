@@ -11,7 +11,7 @@ ActiveAdmin.register Answer do
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'
   filter :name, label: 'Имя'
-  filter :vacancy, label: 'Вакансия', as: :select, collection: proc { Vacancy.find(Answer.pluck(:vacancy_id)).map { |m| [m.name, m.id] } }
+  #filter :vacancy, label: 'Вакансия', as: :select, collection: proc { Vacancy.find(Answer.pluck(:vacancy_id)).map { |m| [m.name, m.id] } }
 
   scope "Все", :all, :default => true
   scope "Новый", :in_progress

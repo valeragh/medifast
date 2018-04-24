@@ -7,7 +7,7 @@ ActiveAdmin.register Doctor do
   filter :tail, label: 'Приоритет'
   filter :position, label: 'Должность'
   filter :name, label: 'Имя доктора'
-  filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Doctor.pluck(:clinic_id)).map { |m| [m.address, m.id] } }
+  #filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Doctor.pluck(:clinic_id)).map { |m| [m.address, m.id] } }
   #filter :service_category, label: 'Категория', as: :select, collection: proc { ServiceCategory.find(Doctor.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
 
   form do |f|

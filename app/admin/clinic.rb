@@ -6,7 +6,7 @@ ActiveAdmin.register Clinic do
   menu :priority => 3
   actions :all
 
-  filter :city, label: 'Город', as: :select, collection: proc { City.find(Clinic.pluck(:city_id)).map { |m| [m.name, m.id] } }
+  #filter :city, label: 'Город', as: :select, collection: proc { City.find(Clinic.pluck(:city_id)).map { |m| [m.name, m.id] } }
 
   form do |f|
     f.inputs 'Адрес' do

@@ -9,9 +9,9 @@ ActiveAdmin.register Conversation do
     actions
   end
 
-  filter :sender, label: "Отправитель", as: :select, collection: proc { User.find(Conversation.pluck(:sender_id)).map { |m| [m.name, m.id] } }
-  filter :recipient, label: "Доктор онлайн", as: :select, collection: proc { User.find(Conversation.pluck(:recipient_id)).map { |m| [m.name, m.id] } }
-  filter :created_at
+  #filter :sender, label: "Отправитель", as: :select, collection: proc { User.find(Conversation.pluck(:sender_id)).map { |m| [m.name, m.id] } }
+  #filter :recipient, label: "Доктор онлайн", as: :select, collection: proc { User.find(Conversation.pluck(:recipient_id)).map { |m| [m.name, m.id] } }
+  #filter :created_at
 
   show title: :id do
     panel "Данные" do

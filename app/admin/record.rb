@@ -11,8 +11,8 @@ ActiveAdmin.register Record do
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'
   filter :name, label: 'Имя'
-  filter :service_category, label: 'Услуга', as: :select, collection: proc { ServiceCategory.find(Record.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
-  filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Record.pluck(:clinic_id)).map { |m| [m.address, m.id] } }
+  #filter :service_category, label: 'Услуга', as: :select, collection: proc { ServiceCategory.find(Record.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
+  #filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Record.pluck(:clinic_id)).map { |m| [m.address, m.id] } }
 
   scope "Все", :all, :default => true
   scope "Новый", :in_progress
