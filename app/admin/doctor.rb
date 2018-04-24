@@ -75,7 +75,7 @@ ActiveAdmin.register Doctor do
     column("Приоритет"){|doctor| doctor.tail}
     column("Имя"){|doctor| doctor.name}
     column("Должность"){|doctor| doctor.position}
-    column("Категория"){|doctor| doctor.service_category? ? (doctor.service_category.name) : "Нет в системе"}
+    column("Категория"){|doctor| doctor.service_category.present? ? (doctor.service_category.name) : "Нет в системе"}
     column("Клиника"){|doctor| doctor.clinic.present? ? (doctor.clinic.address) : "Нет в системе"}
     column "Дата создания", :created_at
     actions
