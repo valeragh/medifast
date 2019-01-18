@@ -18,7 +18,7 @@
           .layoutArea
             .column
             %p
-              = @doctor.clinic.address
+              = doctor.clinic.present? ? doctor.clinic.address : "Не указана"
             %p
               = @doctor.description.html_safe
             %p

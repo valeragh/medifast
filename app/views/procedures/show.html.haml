@@ -18,7 +18,7 @@
           %p.paragraph
             = doctor.position
             %br
-            = doctor.clinic.address
+            = doctor.clinic.present? ? doctor.clinic.address : "Не указана"
           = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
             %span.case-studies-icon.black
             Узнайте больше

@@ -48,6 +48,10 @@ Rails.application.routes.draw do
   get '/modal/:modal' => 'stati_pages#index', as: :modal
   get 'sitemap' => 'stati_pages#sitemap'
   get '/robots.txt' => 'static_pages#robots'
+  get 'errors/not_found'
+  get 'errors/internal_server_error'
   match '*path' => redirect('/'), via: :get
+  match "/404", :to => "errors#not_found", :via => :all
+  match "/500", :to => "errors#internal_server_error", :via => :all
 
 end
