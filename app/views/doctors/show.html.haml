@@ -17,7 +17,7 @@
         .page
           .layoutArea
             .column
-            - if @doctor.clinics.present? do
+            - if @doctor.clinics.present?
               - @doctor.clinics.each do |clinic|
                 %p
                   = clinic.address
