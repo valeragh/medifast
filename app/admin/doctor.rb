@@ -24,7 +24,7 @@ ActiveAdmin.register Doctor do
       f.input :service_category_id, as: :select, collection: ServiceCategory.all.map { |m| [m.name, m.id] }
     end
     f.inputs 'Клиники' do
-      f.input :clinics, as: :check_boxes
+      f.input :clinic_ids, as: :check_boxes, collection: Clinic.all.map { |m| [m.address, m.id] }, multiple: true
     end
     f.inputs 'Резюме доктора' do
       f.input :description, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent ], blocks: :basic

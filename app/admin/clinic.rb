@@ -57,6 +57,14 @@ ActiveAdmin.register Clinic do
     end
   end
 
+  sidebar "Категории", only: :show do
+    table_for clinic.service_categories do
+      column do |category|
+        link_to category.name, [:admin, category]
+      end
+    end
+  end
+
   controller do
     def find_resource
       begin
