@@ -1,8 +1,7 @@
 ActiveAdmin.register Order do
-
+  menu label: "Заказы", priority: 6, parent: "Аптеки", parent_priority: 4
   permit_params :name, :email, :phone, :dop_info, :checked_out_at
-  config.per_page = 10
-  menu :priority => 3
+  config.per_page = 30
 
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'

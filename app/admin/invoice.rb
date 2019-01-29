@@ -1,5 +1,5 @@
 ActiveAdmin.register Invoice do
-
+  menu label: "Номер карты", priority: 4, parent: "Аптеки", parent_priority: 4
   permit_params :name, :number
   actions :all, except: [:show]
 

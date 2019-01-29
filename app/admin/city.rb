@@ -1,10 +1,8 @@
 ActiveAdmin.register City do
-
+  menu label: "Города", priority: 2, parent: "Клиники", parent_priority: 6
 
   permit_params :name, :image_url, :slug
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
-
-  menu :priority => 3
   actions :all, except: [:show]
 
   filter :name, label: 'Город'

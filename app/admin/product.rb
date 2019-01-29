@@ -1,11 +1,12 @@
 ActiveAdmin.register Product do
-
+  menu label: "Лекарства", priority: 2, parent: "Аптеки", parent_priority: 4
   permit_params :title, :status, :unit, :image_url, :description, :price, :product_category_id
-  actions :all
 
   filter :title, label: 'Название лекарства'
   filter :status, label: 'Статус', as: :select, collection: Product::STATUS_TYPES
-  #filter :product_category, label: 'Категория', as: :select, collection: proc { ProductCategory.find(Product.pluck(:product_category_id)).map { |m| [m.name, m.id] } }
+  filter :product_category_name, as: :select,
+    collection: -> { ProductCategory.all },
+    label:      'Категория'
   filter :created_at, label: 'Дата создания'
 
   form do |f|

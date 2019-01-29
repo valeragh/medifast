@@ -1,21 +1,21 @@
 # == Schema Information
 #
-# Table name: cities
+# Table name: doctor_clinics
 #
 #  id         :integer          not null, primary key
-#  image_url  :string(255)
-#  name       :string(255)
-#  slug       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  clinic_id  :integer
+#  doctor_id  :integer
 #
 # Indexes
 #
-#  index_cities_on_slug  (slug) UNIQUE
+#  index_doctor_clinics_on_clinic_id  (clinic_id) UNIQUE
+#  index_doctor_clinics_on_doctor_id  (doctor_id) UNIQUE
 #
 
 require 'spec_helper'
 
-describe City do
+describe DoctorClinic do
   pending "add some examples to (or delete) #{__FILE__}"
 end

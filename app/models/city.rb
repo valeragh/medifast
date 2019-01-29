@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: cities
+#
+#  id         :integer          not null, primary key
+#  image_url  :string(255)
+#  name       :string(255)
+#  slug       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+# Indexes
+#
+#  index_cities_on_slug  (slug) UNIQUE
+#
+
 class City < ActiveRecord::Base
   has_many :clinics, :dependent => :destroy
   has_many :pharmacies, :dependent => :destroy

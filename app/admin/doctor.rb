@@ -1,14 +1,18 @@
 ActiveAdmin.register Doctor do
-
-  permit_params :name, :clinic_id, :service_category_id, :description, :position, :tail, :image_url
+  menu label: "Персонал", priority: 1, parent: "Персонал", parent_priority: 6
+  permit_params :name, :clinic_id, :service_category_id, :description, :position, :tail, :image_url, :clinic_ids =>[]
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
   actions :all
 
   filter :tail, label: 'Приоритет'
   filter :position, label: 'Должность'
   filter :name, label: 'Имя доктора'
-  #filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Doctor.pluck(:clinic_id)).map { |m| [m.address, m.id] } }
-  #filter :service_category, label: 'Категория', as: :select, collection: proc { ServiceCategory.find(Doctor.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
+  filter :clinic_address, as: :select,
+    collection: -> { Clinic.all },
+    label:      'Клиника'
+  filter :service_category_name, as: :select,
+    collection: -> { ServiceCategory.all },
+    label:      'Категория'
 
   form do |f|
     f.inputs 'Имя доктора' do
@@ -23,8 +27,8 @@ ActiveAdmin.register Doctor do
     f.inputs 'Категория' do
       f.input :service_category_id, as: :select, collection: ServiceCategory.all.map { |m| [m.name, m.id] }
     end
-    f.inputs 'Клиника' do
-      f.input :clinic_id, as: :select, collection: Clinic.all.map { |m| [m.address, m.id] }
+    f.inputs 'Клиники' do
+      f.input :clinics, as: :check_boxes
     end
     f.inputs 'Резюме доктора' do
       f.input :description, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent ], blocks: :basic
@@ -56,8 +60,15 @@ ActiveAdmin.register Doctor do
     attributes_table_for doctor do
       row("Должность"){|b| doctor.position}
       row("Категория"){|b| doctor.service_category.present? ? (doctor.service_category.name) : "Нет в системе"}
-      row("Клиника"){|b| doctor.clinic.present? ? (doctor.clinic.address) : "Нет в системе"}
       row("Приоритет"){|b| doctor.tail}
+    end
+  end
+
+  sidebar "Клиники", only: :show do
+    table_for doctor.clinics do
+      column do |clinic|
+        link_to clinic.address, [:admin, clinic]
+      end
     end
   end
 

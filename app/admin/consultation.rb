@@ -1,17 +1,18 @@
 ActiveAdmin.register Consultation do
-
+  menu label: "Консультации", priority: 2, parent: "Записи", parent_priority: 2
 
   permit_params :name, :phone, :service_category_id, :email, :description, :checked_out_at
 
-  config.per_page = 10
+  config.per_page = 30
 
-  menu :priority => 3
-  actions :index, :show, :edit, :update
+  actions :all, :except => [:new, :create, :destroy]
 
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'
   filter :name, label: 'Имя'
-  #filter :service_category, label: 'Процедура', as: :select, collection: proc { ServiceCategory.find(Consultation.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
+  filter :service_category_title, as: :select,
+    collection: -> { ServiceCategory.all },
+    label:      'Категория'
 
 
   scope "Все", :all, :default => true

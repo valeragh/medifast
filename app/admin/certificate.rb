@@ -1,9 +1,11 @@
 ActiveAdmin.register Certificate do
-
+  menu label: "Сертификаты", priority: 2, parent: "Персонал", parent_priority: 6
   permit_params :doctor_id, :image_url
   actions :all, except: [:show]
 
-  #filter :doctor, label: 'Доктор', as: :select, collection: proc { Doctor.find(Certificate.pluck(:doctor_id)).map { |m| [m.name, m.id] } }
+  filter :doctor_name, as: :select,
+    collection: -> { Doctor.all },
+    label:      'Доктор'
 
   form do |f|
     f.inputs 'Доктор' do

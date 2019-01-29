@@ -1,5 +1,5 @@
 ActiveAdmin.register Conversation do
-
+  menu label: "Сессии", priority: 2, parent: "Пользователи", parent_priority: 7
   actions :index, :show, :destroy
 
   index do

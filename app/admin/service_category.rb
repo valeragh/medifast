@@ -1,5 +1,5 @@
 ActiveAdmin.register ServiceCategory do
-
+  menu label: "Категории", priority: 2, parent: "Услуги", parent_priority: 3
   permit_params :name, :tail, :rang, :image_url, :image_small_url, :video_url, :clinic_ids => []
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
   actions :all

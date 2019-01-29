@@ -1,10 +1,9 @@
 ActiveAdmin.register Review do
-
+  menu label: "Отзывы", priority: 3, parent: "Информация", parent_priority: 8
 
   permit_params :name, :description
   config.filters = false
 
-  menu :priority => 3
   actions :all, except: [:show]
 
 

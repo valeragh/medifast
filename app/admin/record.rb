@@ -1,18 +1,20 @@
 ActiveAdmin.register Record do
-
+  menu label: "Записи на прием", priority: 1, parent: "Записи", parent_priority: 2
 
   permit_params :name, :phone, :service_category_id, :email, :clinic_id, :description, :checked_out_at
 
-  config.per_page = 10
-
-  menu :priority => 3
-  actions :all
+  config.per_page = 30
+  actions :all, :except => [:new, :create, :destroy]
 
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'
   filter :name, label: 'Имя'
-  #filter :service_category, label: 'Услуга', as: :select, collection: proc { ServiceCategory.find(Record.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
-  #filter :clinic, label: 'Клиника', as: :select, collection: proc { Clinic.find(Record.pluck(:clinic_id)).map { |m| [m.address, m.id] } }
+  filter :service_category_title, as: :select,
+    collection: -> { ServiceCategory.all },
+    label:      'Категория'
+  filter :clinic_address, as: :select,
+    collection: -> { Clinic.all },
+    label:      'Клиника'
 
   scope "Все", :all, :default => true
   scope "Новый", :in_progress

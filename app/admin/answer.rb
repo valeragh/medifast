@@ -1,17 +1,14 @@
 ActiveAdmin.register Answer do
-
-
+  menu label: "Ответы на вакансии", priority: 2, parent: "Вакансии", parent_priority: 5
   permit_params :name, :phone, :file, :vacancy_id, :email, :description, :checked_out_at
-
-  config.per_page = 10
-
-  menu :priority => 3
-  actions :all
+  config.per_page = 30
 
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'
   filter :name, label: 'Имя'
-  #filter :vacancy, label: 'Вакансия', as: :select, collection: proc { Vacancy.find(Answer.pluck(:vacancy_id)).map { |m| [m.name, m.id] } }
+  filter :vacancy_name, as: :select,
+    collection: -> { Vacancy.all },
+    label:      'Вакансия'
 
   scope "Все", :all, :default => true
   scope "Новый", :in_progress

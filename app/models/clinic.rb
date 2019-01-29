@@ -1,7 +1,30 @@
+# == Schema Information
+#
+# Table name: clinics
+#
+#  id          :integer          not null, primary key
+#  address     :string(255)
+#  contacts    :text
+#  description :text
+#  latitude    :float
+#  longitude   :float
+#  rang        :string(255)
+#  slug        :string(255)
+#  title       :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  city_id     :integer
+#
+# Indexes
+#
+#  index_clinics_on_slug  (slug) UNIQUE
+#
+
 class Clinic < ActiveRecord::Base
   belongs_to :city
   has_many :records
-  has_many :doctors
+  has_many :doctors, through: :doctor_clinics
+  has_many :doctor_clinics, dependent: :destroy
   has_many :users
   has_and_belongs_to_many :service_categories
 

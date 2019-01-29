@@ -1,7 +1,6 @@
 ActiveAdmin.register Discount do
-
+  menu label: "Скидки", priority: 5, parent: "Аптеки", parent_priority: 4
   permit_params :name, :status, :image_url, :description, :tail
-  actions :all
 
   filter :name, label: 'Название акции'
   filter :status, label: 'Статус', as: :select, collection: Discount::STATUS_TYPES

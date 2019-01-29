@@ -1,12 +1,13 @@
 ActiveAdmin.register Clinic do
-
+  menu label: "Клиники", priority: 1, parent: "Клиники", parent_priority: 6
   permit_params :latitude, :longitude, :address, :rang, :description, :title, :city_id, :contacts, :slug
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
 
-  menu :priority => 3
-  actions :all
-
-  #filter :city, label: 'Город', as: :select, collection: proc { City.find(Clinic.pluck(:city_id)).map { |m| [m.name, m.id] } }
+  filter :address, label: 'Адрес'
+  filter :rang, label: 'Показать в шапке сайта', as: :select, collection: Clinic::RANG_TYPES
+  filter :city_name, as: :select,
+    collection: -> { City.all },
+    label:      'Город'
 
   form do |f|
     f.inputs 'Адрес' do
@@ -42,9 +43,17 @@ ActiveAdmin.register Clinic do
     active_admin_comments
   end
 
-   sidebar "Детали", only: :show do
+  sidebar "Детали", only: :show do
     attributes_table_for clinic do
       row("Контакты"){|b| clinic.contacts.html_safe}
+    end
+  end
+
+  sidebar "Доктора", only: :show do
+    table_for clinic.doctors do
+      column do |doctor|
+        link_to doctor.name, [:admin, doctor]
+      end
     end
   end
 

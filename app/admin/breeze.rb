@@ -1,8 +1,7 @@
 ActiveAdmin.register Breeze do
-
+  menu label: "Реклама", priority: 2, parent: "Информация", parent_priority: 8
 
   permit_params :name, :rang, :image_url, :description
-  actions :all
 
   filter :name, label: 'Заголовок рекламы'
   filter :rang, label: 'Приоритет', as: :select, collection: Breeze::RANG_TYPES

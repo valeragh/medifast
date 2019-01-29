@@ -1,7 +1,6 @@
 ActiveAdmin.register ChiefDoctor do
-
+  menu label: "Главные доктора", priority: 3, parent: "Персонал", parent_priority: 6
   permit_params :name, :position, :status, :image
-  actions :all
 
   filter :position, label: 'Должность'
   filter :name, label: 'Имя доктора'

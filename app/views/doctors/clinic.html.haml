@@ -3,7 +3,9 @@
 %section.content-section.clinic.newsfeed.active#newsfeed
   .section-wrapper
     %h2.section-heading.white.text-center
-      Персонал клники Медифаст
+      Персонал клиники Медифаст
+    %p.text-center
+      = @clinic.address
     .container.nav-vertical
       = link_to doctors_path, class: "newsfeed-link" do
         %article.newsfeed-article.nav-vertical
@@ -21,14 +23,12 @@
         %article.newsfeed-article.news-end-events
           = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
             = image_tag "#{doctor.image_url}", class: "newsfeed-image"
-          .container
+          .container.personal
             = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
               %h2.sub-heading
                 = doctor.name
             %p.paragraph
               = doctor.position
-              %br
-              = doctor.clinic.present? ? doctor.clinic.address : "Не указана"
             = link_to show_doctors_path(doctor[:slug]), class: "newsfeed-link" do
               %span.case-studies-icon.black
               Узнайте больше

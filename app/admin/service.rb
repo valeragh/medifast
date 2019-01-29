@@ -1,12 +1,14 @@
 ActiveAdmin.register Service do
-
+  menu label: "Услуги", priority: 1, parent: "Услуги", parent_priority: 3
   permit_params :name, :rang, :video_url, :image_url, :image_one_url, :image_two_url, :description, :description_two, :service_category_id
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
   actions :all
 
   filter :name, label: 'Название услуги'
   filter :rang, label: 'Приоритет', as: :select, collection: Service::RANG_TYPES
-  #filter :service_category, label: 'Категория', as: :select, collection: proc { ServiceCategory.find(Service.pluck(:service_category_id)).map { |m| [m.name, m.id] } }
+  filter :service_category_name, as: :select,
+    collection: -> { ServiceCategory.all },
+    label:      'Категория'
   filter :created_at, label: 'Дата создания'
 
   form do |f|

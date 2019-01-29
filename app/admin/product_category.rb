@@ -1,5 +1,5 @@
 ActiveAdmin.register ProductCategory do
-
+  menu label: "Категории", priority: 3, parent: "Аптеки", parent_priority: 4
 
   permit_params :name, :status, :slug
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]

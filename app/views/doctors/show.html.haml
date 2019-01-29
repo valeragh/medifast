@@ -17,8 +17,12 @@
         .page
           .layoutArea
             .column
-            %p
-              = @doctor.clinic.present? ? @doctor.clinic.address : "Не указана"
+            - if @doctor.clinics.present? do
+              - @doctor.clinics.each do |clinic|
+                %p
+                  = clinic.address
+            - else
+              %p Не указана
             %p
               = @doctor.description.html_safe
             %p

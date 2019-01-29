@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-
+  menu label: "Новости", priority: 4, parent: "Информация", parent_priority: 8
 
   permit_params :name, :title, :image_url, :description, :category
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]

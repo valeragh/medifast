@@ -12,7 +12,5 @@
                     = doctor.name
                   %p.paragraph
                     = doctor.position
-                    %br
-                    = doctor.clinic.present? ? doctor.clinic.address : "Не указана"
                   = link_to show_doctors_path(doctor[:slug]), class: "feature-link blue-button" do
                     Узнайте больше

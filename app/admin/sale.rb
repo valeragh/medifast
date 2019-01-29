@@ -1,7 +1,6 @@
 ActiveAdmin.register Sale do
-
+  menu label: "Акции", priority: 1, parent: "Информация", parent_priority: 8
   permit_params :name, :rang, :image_url, :description
-  actions :all
 
   filter :name, label: 'Название акции'
   filter :rang, label: 'Приоритет', as: :select, collection: Sale::RANG_TYPES

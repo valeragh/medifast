@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-
+  menu label: "Пользователи", priority: 1, parent: "Пользователи", parent_priority: 7
   permit_params :name, :position, :rang, :clinic_id, :description, :image_url, :email, :password, :password_confirmation, :role
   #before_filter :update, :only => [:edit, :update]
 

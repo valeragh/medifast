@@ -1,11 +1,9 @@
 ActiveAdmin.register Letter do
-
+  menu label: "Пиьсма", priority: 3, parent: "Записи", parent_priority: 2
   permit_params :name, :email, :phone, :description, :checked_out_at
 
-  config.per_page = 10
-
-  menu :priority => 3
-
+  config.per_page = 30
+  actions :all, :except => [:new, :create]
 
   filter :created_at, label: 'Дата создания'
   filter :checked_out_at, label: 'Дата ответа'

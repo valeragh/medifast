@@ -1,9 +1,8 @@
 ActiveAdmin.register Vacancy do
-
+  menu label: "Вакансии", priority: 1, parent: "Вакансии", parent_priority: 5
   permit_params :name, :description, :status
   config.filters = false
 
-  menu :priority => 3
   actions :all, except: [:show]
 
 

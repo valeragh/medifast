@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id          :integer          not null, primary key
+#  category    :string(255)
+#  description :text
+#  image_url   :string(255)
+#  name        :string(255)
+#  slug        :string(255)
+#  title       :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+# Indexes
+#
+#  index_posts_on_slug  (slug) UNIQUE
+#
+
 class Post < ActiveRecord::Base
   mount_uploader :image_url, ImageUploader
   validates :name, :title, :category, :image_url, :description, presence: true
