@@ -2,7 +2,6 @@ ActiveAdmin.register Doctor do
   menu label: "Персонал", priority: 1, parent: "Персонал", parent_priority: 6
   permit_params :name, :clinic_id, :service_category_id, :description, :position, :tail, :image_url, :clinic_ids =>[]
   before_filter :find_resource, :only => [:show, :edit, :update, :destroy]
-  actions :all
 
   filter :tail, label: 'Приоритет'
   filter :position, label: 'Должность'
@@ -84,7 +83,6 @@ ActiveAdmin.register Doctor do
     column("Имя"){|doctor| doctor.name}
     column("Должность"){|doctor| doctor.position}
     column("Категория"){|doctor| doctor.service_category.present? ? (doctor.service_category.name) : "Нет в системе"}
-    column("Клиника"){|doctor| doctor.clinic.present? ? (doctor.clinic.address) : "Нет в системе"}
     column "Дата создания", :created_at
     actions
   end
