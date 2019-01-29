@@ -23,8 +23,8 @@
 class Clinic < ActiveRecord::Base
   belongs_to :city
   has_many :records
-  has_many :doctors, through: :doctor_clinics
   has_many :doctor_clinics, dependent: :destroy
+  has_many :doctors, through: :doctor_clinics
   has_many :users
   has_and_belongs_to_many :service_categories
 

@@ -23,9 +23,9 @@ class Doctor < ActiveRecord::Base
 	include PgSearch
   multisearchable :against => [:name, :description]
   belongs_to :service_category
-  has_many :clinics, through: :doctor_clinics
   has_many :doctor_clinics, dependent: :destroy
-	has_many :certificate, :dependent => :destroy
+  has_many :clinics, through: :doctor_clinics
+  has_many :certificate, :dependent => :destroy
   accepts_nested_attributes_for :clinics
   accepts_nested_attributes_for :doctor_clinics
 	mount_uploader :image_url, ImageUploader

@@ -7,9 +7,6 @@ ActiveAdmin.register Doctor do
   filter :tail, label: 'Приоритет'
   filter :position, label: 'Должность'
   filter :name, label: 'Имя доктора'
-  filter :clinic_address, as: :select,
-    collection: -> { Clinic.all },
-    label:      'Клиника'
   filter :service_category_name, as: :select,
     collection: -> { ServiceCategory.all },
     label:      'Категория'
