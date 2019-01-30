@@ -10,8 +10,8 @@
 #
 # Indexes
 #
-#  index_doctor_clinics_on_clinic_id  (clinic_id) UNIQUE
-#  index_doctor_clinics_on_doctor_id  (doctor_id) UNIQUE
+#  index_doctor_clinics_on_clinic_id  (clinic_id)
+#  index_doctor_clinics_on_doctor_id  (doctor_id)
 #
 
 require 'spec_helper'

@@ -144,8 +144,8 @@ ActiveRecord::Schema.define(version: 20190129074513) do
     t.datetime "updated_at"
   end
 
-  add_index "doctor_clinics", ["clinic_id"], name: "index_doctor_clinics_on_clinic_id", unique: true, using: :btree
-  add_index "doctor_clinics", ["doctor_id"], name: "index_doctor_clinics_on_doctor_id", unique: true, using: :btree
+  add_index "doctor_clinics", ["clinic_id"], name: "index_doctor_clinics_on_clinic_id", using: :btree
+  add_index "doctor_clinics", ["doctor_id"], name: "index_doctor_clinics_on_doctor_id", using: :btree
 
   create_table "doctors", force: true do |t|
     t.string   "name"

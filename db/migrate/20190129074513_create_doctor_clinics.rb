@@ -6,7 +6,7 @@ class CreateDoctorClinics < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :doctor_clinics, :doctor_id, unique: true
-    add_index :doctor_clinics, :clinic_id, unique: true
+    add_index :doctor_clinics, :doctor_id
+    add_index :doctor_clinics, :clinic_id
   end
 end
