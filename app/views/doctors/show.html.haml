@@ -18,9 +18,10 @@
           .layoutArea
             .column
             - if @doctor.clinics.present?
-              - @doctor.clinics.each do |clinic|
-                %p
-                  = clinic.address
+              %ul
+                - @doctor.clinics.each do |clinic|
+                  %li
+                    = clinic.address
             - else
               %p Не указана
             %p
