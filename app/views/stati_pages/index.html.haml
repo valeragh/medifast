@@ -11,9 +11,8 @@
       Аптека
     %a(class="link" href="#contacts")
       Отделения клиники
-
-    %a(class="link" href="#smarter-engagement")
-      Новости
+    = link_to "Новости", news_path, class: "link"
+      
 %button.back-to-top.back-to-top-bind#back-to-top
 = render "layouts/clinic_phone"
 %article.header-content#carousel
@@ -189,6 +188,11 @@
           %button.next
             %span.icon
             следующий
+    .all-link
+      = link_to news_path, class: "case-studies-link" do
+        Все новости
+        %span.case-studies-icon.black
+
     %h3.sub-heading.white
       Наши партнеры
     .companies-container
