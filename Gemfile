@@ -48,10 +48,11 @@ group :production do
 end
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.0"
+  gem 'rspec-rails', '~> 3.8'
   gem "factory_girl_rails", "~> 4.0"
   gem 'pry-rails'
   gem 'ffaker'
+  gem "capybara", "~> 2.5"
   gem 'spring'
 end
 
@@ -60,4 +61,9 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'annotate'
+end
+
+group :test do
+  gem "database_cleaner", "~> 1.3.0"
+  gem "launchy", "~> 2.4.2"
 end

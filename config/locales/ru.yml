@@ -523,6 +523,11 @@ ru:
         few:  "Номер карты"
         many: "Номера карты"
         other: "Номера карты"
+      video:
+        one:  "Видео"
+        few:  "Видео"
+        many: "Видео"
+        other: "Видео"
     attributes:
       record:
         name: "Ф.И.О."
@@ -561,3 +566,11 @@ ru:
         password: "Пароль"
         password_confirmation: "Повторный пароль"
         name: "Имя"
+      video:
+        title: "Заголовок"
+        video_url: "Ссылка"
+        category: "Категория"
+        description: "Описание"
+        video_id: "ID"
+        created_at: "Создано"
+        updated_at: "Обновлено"

@@ -13,4 +13,14 @@ module ApplicationHelper
     end
     content_tag("div", attributes, &block)
   end
+
+  def embed(youtube_url)
+    youtube_id = youtube_url.split("=").last
+    "https://www.youtube.com/embed/#{youtube_id}?showinfo=0"
+  end
+
+  def embed_with_frame(youtube_url)
+    youtube_id = youtube_url.split("=").last
+    content_tag(:iframe, nil, src: "https://www.youtube.com/embed/#{youtube_id}")
+  end
 end
