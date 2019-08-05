@@ -1,0 +1,24 @@
+- meta :title => "medifast.com.ua Клиника Медифаст. Видео Медифаст. Услуги клиники. Стационар, поликлинические услуги, лаборатория, Узи. Врач на дом, Семейный врач", :description => "medifast.com.ua видео клиники Медифаст. В клинике принимают врачи Педиатр, Уролог, Терапевт – кардиолог, Аллерголог, Дерматолог, Невролог, Хирург, Эндокринолог, ЛОР, Гастроэнтеролог, Ортопед-травматолог, Иммунолог, Гинеколог, Дневной стационар, УЗИ диагностика, Лаборатория, Услуга вызов врача на дом, Семейный врач"
+
+.main-wrapper.blue
+  %section.videos-section
+    .section-wrapper
+      %h2.section-heading.text-white.text-center
+        Видео-материалы клиники медифаст
+  %section.content-section.newsfeed.active
+    .section-wrapper
+      - if @medifast_videos.present? 
+        - @medifast_videos.each do |medifast_video|
+          %article.newsfeed-article.video
+            .flex-video.youtube
+              = embed_with_frame(medifast_video.video_url)
+            .container.procedure
+              %p.sub-heading
+                = medifast_video.title.truncate(70)
+                %br
+                %span.badge.badge-success
+                  = medifast_video.category
+              %p
+                = simple_format(medifast_video.description.truncate(250)) if medifast_video.description.present?
+      - else
+        %h2 Мы готовим для вас много интересных видео-материалов

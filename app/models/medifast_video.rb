@@ -13,9 +13,9 @@
 #
 
 class MedifastVideo < ActiveRecord::Base
-	validates :video_url, :title, presence: true
+	validates :video_url, :category, :description, :title, presence: true
 
-	tandem_category = Product.pluck(:title)
+	service_categories = ServiceCategory.pluck(:name)
   static_category = ["Информация", "Контакты", "Отзывы"]
-  CATEGORY_TYPES = tandem_category + static_category
+  CATEGORY_TYPES = service_categories + static_category
 end

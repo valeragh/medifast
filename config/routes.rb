@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :orders
-
   devise_for :users,
              controllers: { registrations: 'registrations', sessions: 'sessions' },
              path: '',
@@ -10,7 +8,7 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-
+  resources :orders
   resources :line_items
   resources :carts
   resources :records
@@ -22,6 +20,7 @@ Rails.application.routes.draw do
   end
 
   root 'stati_pages#index'
+  match '/medifast_videos', to: 'medifast_videos#index', via: 'get'
   match '/cabinet', to: 'users#index', via: 'get'
   match '/about_us', to: 'stati_pages#about_us', via: 'get'
   match '/search', to: 'stati_pages#search', via: 'get'

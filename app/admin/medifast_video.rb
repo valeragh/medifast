@@ -36,7 +36,7 @@ ActiveAdmin.register MedifastVideo do
   show do
     panel "Описание" do
       attributes_table_for medifast_video do
-        row :description
+        row('Описание') { |b| medifast_video.description.present? ? (simple_format(medifast_video.description)) : ("нет описания")}
       end
     end
     panel "Видео" do
@@ -50,7 +50,7 @@ ActiveAdmin.register MedifastVideo do
   sidebar "Детали", only: :show do
     attributes_table_for medifast_video do
       row :created_at
-      row :category
+      row("Категория") { |b| status_tag(medifast_video.category)}
     end
   end
 end

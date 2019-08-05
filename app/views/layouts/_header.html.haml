@@ -11,6 +11,7 @@
       = link_to "Контакты", contacts_path, class: "link #{isactive(contacts_path)}"
       %span.icon
       = link_to "Запись на прием", records_path, class: "link red #{active_class(records_path)}"
+      = link_to "Видео", medifast_videos_path, class: "link #{active_class(medifast_videos_path)}"
       - if signed_in?
         = link_to "Личный кабинет", cabinet_path, class: "link login #{active_class(cabinet_path)}", style: "margin-right: -1px"
         \/

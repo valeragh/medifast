@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: videos
+# Table name: medifast_videos
 #
 #  id          :integer          not null, primary key
 #  category    :string(255)

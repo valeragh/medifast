@@ -20,7 +20,7 @@
 //= require gmaps/google
 //= require private_pub
 //= require chat
-//= require_tree .
+//= require users
 
 
 
